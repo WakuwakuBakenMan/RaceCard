@@ -13,10 +13,15 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "data:build": "tsx scripts/build-data.ts",
-    "data:scrape": "tsx scripts/scrape-netkeiba.ts",
     "fetch:dates": "tsx scripts/netkeiba/cli.ts dates",
     "fetch:day": "tsx scripts/netkeiba/cli.ts day",
     "fetch:next": "tsx scripts/netkeiba/cli.ts next",
+    "data:convert:day": "tsx scripts/netkeiba/convert-to-raceday.ts day",
+    "data:convert:next": "tsx scripts/netkeiba/convert-to-raceday.ts next",
+    "data:cards:day": "tsx scripts/netkeiba/build-cards.ts day",
+    "data:cards:next": "tsx scripts/netkeiba/build-cards.ts next",
+    "data:cards:day:ptr": "USE_PUPPETEER=1 tsx scripts/netkeiba/build-cards.ts day",
+    "data:cards:next:ptr": "USE_PUPPETEER=1 tsx scripts/netkeiba/build-cards.ts next",
     "data:publish": "tsx scripts/publish-latest.ts"
   },
   "dependencies": {
@@ -30,7 +35,6 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "autoprefixer": "^10.4.20",
-    "cheerio": "^1.0.0",
     "dayjs": "^1.11.13",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
@@ -43,6 +47,6 @@
     "tailwindcss": "^3.4.12",
     "tsx": "^4.19.1",
     "typescript": "^5.6.2",
-    "puppeteer": "^22.15.0"
+    "playwright": "^1.47.2"
   }
 }
