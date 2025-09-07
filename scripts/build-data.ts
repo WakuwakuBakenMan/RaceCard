@@ -50,7 +50,7 @@ for (let i = 1; i <= 4; i++) {
         track: r.track || '不明',
         kaiji: Number(r.kaiji || 0),
         nichiji: Number(r.nichiji || 0),
-        races: [] as any[]
+        races: [] as any[],
       });
     }
     const meeting = meetingsMap.get(key);
@@ -67,7 +67,7 @@ for (let i = 1; i <= 4; i++) {
         start_time: r.start_time || undefined,
         pace_score: r.pace_score ? Number(r.pace_score) : undefined,
         pace_mark: r.pace_mark || undefined,
-        horses: [] as any[]
+        horses: [] as any[],
       };
       meeting.races.push(race);
     }
@@ -82,18 +82,19 @@ for (let i = 1; i <= 4; i++) {
       trainer: r.trainer || '',
       odds: r.odds ? Number(r.odds) : undefined,
       popularity: r.popularity ? Number(r.popularity) : undefined,
-      pace_type: r.pace_type ? (r.pace_type.split('/').filter(Boolean) as any) : undefined
+      pace_type: r.pace_type
+        ? (r.pace_type.split('/').filter(Boolean) as any)
+        : undefined,
     });
   }
   const out = {
     date: date || '1970-01-01',
     meetings: Array.from(meetingsMap.values()).map((m) => ({
       ...m,
-      races: m.races.sort((a: any, b: any) => a.no - b.no)
-    }))
+      races: m.races.sort((a: any, b: any) => a.no - b.no),
+    })),
   };
   const outPath = path.join(root, 'public', 'data', `date${i}.json`);
   writeJson(outPath, out);
   console.log(`wrote ${outPath}`);
 }
-

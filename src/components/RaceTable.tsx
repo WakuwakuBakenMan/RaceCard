@@ -49,7 +49,10 @@ export default function RaceTable() {
   return (
     <div className="space-y-3">
       <div>
-        <Link to={`/d/${date}`} className="text-sm text-blue-600 hover:underline">
+        <Link
+          to={`/d/${date}`}
+          className="text-sm text-blue-600 hover:underline"
+        >
           ← {date} の一覧へ戻る
         </Link>
       </div>
@@ -67,14 +70,18 @@ export default function RaceTable() {
               ground: race.ground,
               course_note: race.course_note,
               condition: race.condition,
-              start_time: race.start_time
+              start_time: race.start_time,
             })}
           </h1>
           <div className="overflow-x-auto">
             <table className="min-w-full table-sticky border-collapse">
               <thead>
                 <tr className="bg-gray-100">
-                  <Th onClick={() => toggleSort('num')} active={sortKey === 'num'} asc={asc}>
+                  <Th
+                    onClick={() => toggleSort('num')}
+                    active={sortKey === 'num'}
+                    asc={asc}
+                  >
                     馬番
                   </Th>
                   <th className="p-2 text-left border">枠</th>
@@ -83,10 +90,18 @@ export default function RaceTable() {
                   <th className="p-2 text-left border">斤量</th>
                   <th className="p-2 text-left border">騎手</th>
                   <th className="p-2 text-left border">厩舎</th>
-                  <Th onClick={() => toggleSort('popularity')} active={sortKey === 'popularity'} asc={asc}>
+                  <Th
+                    onClick={() => toggleSort('popularity')}
+                    active={sortKey === 'popularity'}
+                    asc={asc}
+                  >
                     人気
                   </Th>
-                  <Th onClick={() => toggleSort('odds')} active={sortKey === 'odds'} asc={asc}>
+                  <Th
+                    onClick={() => toggleSort('odds')}
+                    active={sortKey === 'odds'}
+                    asc={asc}
+                  >
                     オッズ
                   </Th>
                   <th className="p-2 text-left border">展開タイプ</th>
@@ -94,19 +109,33 @@ export default function RaceTable() {
               </thead>
               <tbody>
                 {horses.map((h, idx) => (
-                  <tr key={h.num} className={idx % 2 === 0 ? 'bg-white' : 'bg-gray-50 hover:bg-gray-100'}>
+                  <tr
+                    key={h.num}
+                    className={
+                      idx % 2 === 0
+                        ? 'bg-white'
+                        : 'bg-gray-50 hover:bg-gray-100'
+                    }
+                  >
                     <td className="p-2 border text-right w-14">{h.num}</td>
                     <td className="p-2 border w-14">
                       <FrameBadge draw={h.draw} />
                     </td>
                     <td className="p-2 border whitespace-nowrap">{h.name}</td>
-                    <td className="p-2 border">{h.sex}{h.age}</td>
+                    <td className="p-2 border">
+                      {h.sex}
+                      {h.age}
+                    </td>
                     <td className="p-2 border text-right">{h.weight}</td>
                     <td className="p-2 border">{h.jockey}</td>
                     <td className="p-2 border">{h.trainer}</td>
-                    <td className="p-2 border text-right">{h.popularity ?? '-'}</td>
+                    <td className="p-2 border text-right">
+                      {h.popularity ?? '-'}
+                    </td>
                     <td className="p-2 border text-right">{h.odds ?? '-'}</td>
-                    <td className="p-2 border">{h.pace_type?.join('/') ?? '-'}</td>
+                    <td className="p-2 border">
+                      {h.pace_type?.join('/') ?? '-'}
+                    </td>
                   </tr>
                 ))}
               </tbody>
@@ -118,7 +147,17 @@ export default function RaceTable() {
   );
 }
 
-function Th({ children, onClick, active, asc }: { children: React.ReactNode; onClick: () => void; active: boolean; asc: boolean }) {
+function Th({
+  children,
+  onClick,
+  active,
+  asc,
+}: {
+  children: React.ReactNode;
+  onClick: () => void;
+  active: boolean;
+  asc: boolean;
+}) {
   return (
     <th
       className={`p-2 text-left border cursor-pointer select-none ${active ? 'text-blue-700' : ''}`}
@@ -132,4 +171,3 @@ function Th({ children, onClick, active, asc }: { children: React.ReactNode; onC
     </th>
   );
 }
-

@@ -58,7 +58,19 @@ npm run format
           "pace_score": -2.5,
           "pace_mark": "★",
           "horses": [
-            { "num": 1, "draw": 1, "name": "馬名", "sex": "牡", "age": 3, "weight": 57, "jockey": "騎手", "trainer": "厩舎", "odds": 3.2, "popularity": 1, "pace_type": ["A"] }
+            {
+              "num": 1,
+              "draw": 1,
+              "name": "馬名",
+              "sex": "牡",
+              "age": 3,
+              "weight": 57,
+              "jockey": "騎手",
+              "trainer": "厩舎",
+              "odds": 3.2,
+              "popularity": 1,
+              "pace_type": ["A"]
+            }
           ]
         }
       ]

@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}',
-    './public/**/*.html'
+    './public/**/*.html',
   ],
   theme: {
     extend: {
@@ -15,11 +15,10 @@ module.exports = {
           5: '#ffcc00', // yellow
           6: '#34c759', // green
           7: '#ff9500', // orange
-          8: '#ff2d55' // pink
-        }
-      }
-    }
+          8: '#ff2d55', // pink
+        },
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };
-

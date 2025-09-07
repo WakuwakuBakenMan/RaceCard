@@ -1,4 +1,4 @@
-import react from "@astrojs/react";
+import react from '@astrojs/react';
 import { fileURLToPath } from 'node:url';
 import { defineConfig } from 'astro/config';
 
@@ -8,13 +8,13 @@ export default defineConfig({
   site: 'https://your-user.github.io/RaceCard/',
   base: '/RaceCard',
   build: {
-    format: 'directory'
+    format: 'directory',
   },
   vite: {
     resolve: {
       alias: {
-        '@': fileURLToPath(new URL('./src', import.meta.url))
-      }
-    }
-  }
+        '@': fileURLToPath(new URL('./src', import.meta.url)),
+      },
+    },
+  },
 });

@@ -17,7 +17,10 @@ export default function TopDates() {
         {days.map((d) => (
           <li key={d.date} className="border rounded p-3 bg-white">
             <div className="flex items-center justify-between gap-3 flex-wrap">
-              <Link to={`/d/${d.date}`} className="text-blue-600 hover:underline text-lg font-semibold">
+              <Link
+                to={`/d/${d.date}`}
+                className="text-blue-600 hover:underline text-lg font-semibold"
+              >
                 {d.date}
               </Link>
               <div className="flex gap-2 text-sm">
@@ -39,4 +42,3 @@ export default function TopDates() {
     </div>
   );
 }
-

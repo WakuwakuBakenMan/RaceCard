@@ -19,8 +19,9 @@ export async function loadAllDays(): Promise<RaceDay[]> {
   return results;
 }
 
-export async function loadDayByDate(date: string): Promise<RaceDay | undefined> {
+export async function loadDayByDate(
+  date: string
+): Promise<RaceDay | undefined> {
   const days = await loadAllDays();
   return days.find((d) => d.date === date);
 }
-

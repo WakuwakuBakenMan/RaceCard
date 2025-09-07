@@ -8,9 +8,9 @@ module.exports = {
       parser: 'astro-eslint-parser',
       parserOptions: {
         parser: '@typescript-eslint/parser',
-        extraFileExtensions: ['.astro']
+        extraFileExtensions: ['.astro'],
       },
-      extends: ['plugin:astro/recommended', 'prettier']
+      extends: ['plugin:astro/recommended', 'prettier'],
     },
     {
       files: ['*.ts', '*.tsx'],
@@ -20,13 +20,14 @@ module.exports = {
         'eslint:recommended',
         'plugin:@typescript-eslint/recommended',
         'plugin:react/recommended',
-        'prettier'
+        'prettier',
       ],
       settings: { react: { version: 'detect' } },
       rules: {
-        'react/react-in-jsx-scope': 'off'
-      }
-    }
-  ]
+        'react/react-in-jsx-scope': 'off',
+        '@typescript-eslint/no-explicit-any': 'off',
+        '@typescript-eslint/triple-slash-reference': 'off',
+      },
+    },
+  ],
 };
-

@@ -14,4 +14,3 @@ export default function FrameBadge({ draw }: Props) {
     </span>
   );
 }
-

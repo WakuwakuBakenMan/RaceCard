@@ -6,6 +6,7 @@ import '@/styles/global.css';
 // AstroのBASE_URLをReactRouterのbasenameに渡す
 const basename = import.meta.env.BASE_URL || '/';
 ---
+
 <Layout>
   <div>
     <App client:only="react" basename={basename} />

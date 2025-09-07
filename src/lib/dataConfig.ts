@@ -1,5 +1,10 @@
 // データURL設定。GitHub Pagesの base (/RaceCard) に対応。
-export const DATE_FILES = ['date1.json', 'date2.json', 'date3.json', 'date4.json'] as const;
+export const DATE_FILES = [
+  'date1.json',
+  'date2.json',
+  'date3.json',
+  'date4.json',
+] as const;
 
 /**
  * public/data 以下の相対URLを組み立てる。
@@ -11,4 +16,3 @@ export function dataUrl(file: string): string {
   const normalized = base.endsWith('/') ? base : base + '/';
   return `${normalized}data/${file}`;
 }
-

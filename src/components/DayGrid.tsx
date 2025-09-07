@@ -43,10 +43,13 @@ export default function DayGrid() {
                         r ? 'opacity-100' : 'opacity-60'
                       }`}
                     >
-                      <div className="text-sm text-gray-500">{m.track} {i + 1}R</div>
+                      <div className="text-sm text-gray-500">
+                        {m.track} {i + 1}R
+                      </div>
                       <div className="font-semibold">{r?.name ?? '未設定'}</div>
                       <div className="text-sm text-gray-600">
-                        展開カウント: {r?.pace_score ?? '-'} {r?.pace_mark ?? ''}
+                        展開カウント: {r?.pace_score ?? '-'}{' '}
+                        {r?.pace_mark ?? ''}
                       </div>
                     </Link>
                   );
@@ -59,4 +62,3 @@ export default function DayGrid() {
     </div>
   );
 }
-

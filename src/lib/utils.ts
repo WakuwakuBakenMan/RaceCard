@@ -8,7 +8,7 @@ export function frameBgClass(draw: number): string {
     5: 'bg-yellow-400 text-black',
     6: 'bg-green-500 text-white',
     7: 'bg-orange-500 text-white',
-    8: 'bg-pink-500 text-black'
+    8: 'bg-pink-500 text-black',
   };
   return map[draw] || 'bg-gray-200 text-black';
 }
@@ -36,9 +36,8 @@ export function formatRaceHeader(args: {
     `${args.distance_m}m`,
     args.ground,
     args.condition,
-    args.start_time ? `発走 ${args.start_time}` : undefined
+    args.start_time ? `発走 ${args.start_time}` : undefined,
   ].filter(Boolean);
   if (right.length) parts.push(`／${right.join('・')}`);
   return parts.join('');
 }
-

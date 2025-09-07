@@ -37,4 +37,3 @@ export type RaceDay = {
   date: string; // YYYY-MM-DD
   meetings: Meeting[];
 };
-
