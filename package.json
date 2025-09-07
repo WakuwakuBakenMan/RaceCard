@@ -13,7 +13,11 @@
     "lint": "eslint .",
     "format": "prettier --write .",
     "data:build": "tsx scripts/build-data.ts",
-    "data:scrape": "tsx scripts/scrape-netkeiba.ts"
+    "data:scrape": "tsx scripts/scrape-netkeiba.ts",
+    "fetch:dates": "tsx scripts/netkeiba/cli.ts dates",
+    "fetch:day": "tsx scripts/netkeiba/cli.ts day",
+    "fetch:next": "tsx scripts/netkeiba/cli.ts next",
+    "data:publish": "tsx scripts/publish-latest.ts"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.0",
@@ -26,10 +30,13 @@
     "@typescript-eslint/eslint-plugin": "^7.18.0",
     "@typescript-eslint/parser": "^7.18.0",
     "autoprefixer": "^10.4.20",
+    "cheerio": "^1.0.0",
+    "dayjs": "^1.11.13",
     "eslint": "^8.57.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-astro": "^0.34.0",
     "eslint-plugin-react": "^7.34.3",
+    "iconv-lite": "^0.6.3",
     "postcss": "^8.4.47",
     "prettier": "^3.3.3",
     "prettier-plugin-astro": "^0.14.1",
