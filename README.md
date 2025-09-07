@@ -39,6 +39,35 @@ npm run format
 - JSON 仕様（抜粋）: `src/lib/types.ts` を参照。
 - 任意で、`data/csv/*.csv` から `npm run data:build` で JSON を再生成できます。
 
+## スクレイピング（netkeiba 参考）
+
+サンプルの `sample/Scraping.py` と `sample/PlaceOnBias.py` を参考に、Node/TypeScript 版の簡易スクレイパーを用意しました。
+
+- コマンド: `npm run data:scrape -- --date YYYYMMDD`
+- 期間指定: `npm run data:scrape -- --from YYYYMMDD --to YYYYMMDD`
+- 生成物: 取得した日付の `RaceDay` を既存データとマージし、最新4件を `public/data/date{1..4}.json` に出力します（古→新）。
+
+注意: 対象サイトの利用規約順守、適切なアクセス間隔、実行環境のネットワーク/ヘッドレスブラウザの準備が必要です。初回は `npm i` で Puppeteer を取得してください。
+
+### 展開バイアス（簡易実装の概要）
+
+Python サンプルのロジックに準拠しています。
+
+- 近3走のうち各レースの「通過」を解析（通過順を `1-2-3-...` 形式で取得）。
+- 各馬について:
+  - 全コーナーが4番手以内ならカウント（All4）。
+  - 1コーナーが1番手なら逃げカウント（Nige）。
+- レース全体のスコア（PlcOnCnt 相当）を算出:
+  - All4が2回以上: +1.0、1回: +0.5
+  - Nigeが2回以上: +1.5、0回: -1.5
+  - 先行馬（All4>=2）が少ない（<=2頭）: さらに -1.0
+- バイアス判定（★）は距離でしきい値を変更:
+  - 1600m以下: スコア <= 4.0 をバイアス
+  - 1600m超: スコア <= 3.0 をバイアス
+  - 特別値 -2.5 は「無効」扱い（未使用）。
+
+実装: `scripts/scrape-netkeiba.ts`
+
 ### JSON 例（RaceDay）
 
 ```json
