@@ -16,12 +16,45 @@
           "pace_score": -1.5,
           "pace_mark": "★",
           "horses": [
-            { "num": 1, "draw": 7, "name": "サンプルホースG", "sex": "セ", "age": 3, "weight": 56, "jockey": "G騎手", "trainer": "G厩舎", "odds": 6.8, "popularity": 2, "pace_type": ["B"] },
-            { "num": 2, "draw": 4, "name": "サンプルホースH", "sex": "牝", "age": 4, "weight": 55, "jockey": "H騎手", "trainer": "H厩舎", "odds": 20.1, "popularity": 8, "pace_type": ["C"] }
+            { "num": 1, "draw": 7, "name": "ニイガタ2000-1", "sex": "セ", "age": 3, "weight": 56, "jockey": "G騎手", "trainer": "G厩舎", "odds": 6.8, "popularity": 2, "pace_type": ["B"] },
+            { "num": 2, "draw": 4, "name": "ニイガタ2000-2", "sex": "牝", "age": 4, "weight": 55, "jockey": "H騎手", "trainer": "H厩舎", "odds": 20.1, "popularity": 8, "pace_type": ["C"] },
+            { "num": 3, "draw": 2, "name": "ニイガタ2000-3", "sex": "牡", "age": 3, "weight": 56, "jockey": "I騎手", "trainer": "I厩舎", "odds": 3.9, "popularity": 1 },
+            { "num": 4, "draw": 8, "name": "ニイガタ2000-4", "sex": "牡", "age": 5, "weight": 58, "jockey": "J騎手", "trainer": "J厩舎", "odds": 8.1, "popularity": 4 },
+            { "num": 5, "draw": 6, "name": "ニイガタ2000-5", "sex": "牝", "age": 3, "weight": 54, "jockey": "K騎手", "trainer": "K厩舎", "odds": 5.2, "popularity": 3 }
+          ]
+        },
+        {
+          "no": 2,
+          "name": "2歳未勝利",
+          "distance_m": 1800,
+          "ground": "ダート",
+          "condition": "良",
+          "start_time": "10:35",
+          "pace_score": 0.3,
+          "horses": [
+            { "num": 1, "draw": 1, "name": "ニイガタD1800-1", "sex": "牡", "age": 2, "weight": 55, "jockey": "L騎手", "trainer": "L厩舎", "odds": 2.7, "popularity": 1, "pace_type": ["A"] },
+            { "num": 2, "draw": 3, "name": "ニイガタD1800-2", "sex": "牝", "age": 2, "weight": 54, "jockey": "M騎手", "trainer": "M厩舎", "odds": 6.4, "popularity": 3 },
+            { "num": 3, "draw": 5, "name": "ニイガタD1800-3", "sex": "セ", "age": 2, "weight": 55, "jockey": "N騎手", "trainer": "N厩舎", "odds": 4.9, "popularity": 2 },
+            { "num": 4, "draw": 7, "name": "ニイガタD1800-4", "sex": "牡", "age": 2, "weight": 55, "jockey": "O騎手", "trainer": "O厩舎", "odds": 12.2, "popularity": 5 }
+          ]
+        },
+        {
+          "no": 3,
+          "name": "3歳以上2勝クラス",
+          "distance_m": 1200,
+          "ground": "芝",
+          "condition": "良",
+          "start_time": "11:10",
+          "pace_score": -0.9,
+          "horses": [
+            { "num": 1, "draw": 2, "name": "ニイガタ1200-1", "sex": "牡", "age": 4, "weight": 58, "jockey": "P騎手", "trainer": "P厩舎", "odds": 3.1, "popularity": 1, "pace_type": ["C"] },
+            { "num": 2, "draw": 4, "name": "ニイガタ1200-2", "sex": "牝", "age": 5, "weight": 56, "jockey": "Q騎手", "trainer": "Q厩舎", "odds": 8.7, "popularity": 4 },
+            { "num": 3, "draw": 6, "name": "ニイガタ1200-3", "sex": "セ", "age": 5, "weight": 58, "jockey": "R騎手", "trainer": "R厩舎", "odds": 4.8, "popularity": 2 },
+            { "num": 4, "draw": 8, "name": "ニイガタ1200-4", "sex": "牡", "age": 3, "weight": 56, "jockey": "S騎手", "trainer": "S厩舎", "odds": 6.2, "popularity": 3 },
+            { "num": 5, "draw": 1, "name": "ニイガタ1200-5", "sex": "牝", "age": 4, "weight": 56, "jockey": "T騎手", "trainer": "T厩舎", "odds": 13.0, "popularity": 5 }
           ]
         }
       ]
     }
   ]
 }
-

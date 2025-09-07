@@ -14,14 +14,46 @@
           "condition": "良",
           "start_time": "10:10",
           "pace_score": 0,
-          "pace_mark": "",
           "horses": [
             { "num": 1, "draw": 5, "name": "サンプルホースE", "sex": "牡", "age": 2, "weight": 55, "jockey": "E騎手", "trainer": "E厩舎" },
-            { "num": 2, "draw": 6, "name": "サンプルホースF", "sex": "牝", "age": 2, "weight": 54, "jockey": "F騎手", "trainer": "F厩舎", "odds": 9.9, "popularity": 3, "pace_type": ["A", "C"] }
+            { "num": 2, "draw": 6, "name": "サンプルホースF", "sex": "牝", "age": 2, "weight": 54, "jockey": "F騎手", "trainer": "F厩舎", "odds": 9.9, "popularity": 3, "pace_type": ["A", "C"] },
+            { "num": 3, "draw": 2, "name": "サンプルホースG3", "sex": "牡", "age": 2, "weight": 55, "jockey": "G騎手", "trainer": "G厩舎", "odds": 3.8, "popularity": 1 },
+            { "num": 4, "draw": 3, "name": "サンプルホースH3", "sex": "牝", "age": 2, "weight": 54, "jockey": "H騎手", "trainer": "H厩舎", "odds": 6.2, "popularity": 2 }
+          ]
+        },
+        {
+          "no": 2,
+          "name": "2歳未勝利",
+          "distance_m": 1500,
+          "ground": "芝",
+          "condition": "良",
+          "start_time": "10:45",
+          "pace_score": -0.7,
+          "horses": [
+            { "num": 1, "draw": 1, "name": "サッポロ1500-1", "sex": "牝", "age": 2, "weight": 54, "jockey": "I騎手", "trainer": "I厩舎", "odds": 5.9, "popularity": 3 },
+            { "num": 2, "draw": 4, "name": "サッポロ1500-2", "sex": "牡", "age": 2, "weight": 55, "jockey": "J騎手", "trainer": "J厩舎", "odds": 3.1, "popularity": 1, "pace_type": ["B"] },
+            { "num": 3, "draw": 7, "name": "サッポロ1500-3", "sex": "牡", "age": 2, "weight": 55, "jockey": "K騎手", "trainer": "K厩舎", "odds": 7.8, "popularity": 4 },
+            { "num": 4, "draw": 6, "name": "サッポロ1500-4", "sex": "牝", "age": 2, "weight": 54, "jockey": "L騎手", "trainer": "L厩舎", "odds": 4.4, "popularity": 2 }
+          ]
+        },
+        {
+          "no": 3,
+          "name": "3歳以上1勝クラス",
+          "distance_m": 1700,
+          "ground": "ダート",
+          "condition": "稍重",
+          "start_time": "11:20",
+          "pace_score": 1.0,
+          "pace_mark": "★",
+          "horses": [
+            { "num": 1, "draw": 8, "name": "サッポロD-1", "sex": "牡", "age": 3, "weight": 56, "jockey": "M騎手", "trainer": "M厩舎", "odds": 2.9, "popularity": 1, "pace_type": ["A"] },
+            { "num": 2, "draw": 5, "name": "サッポロD-2", "sex": "牝", "age": 4, "weight": 55, "jockey": "N騎手", "trainer": "N厩舎", "odds": 4.3, "popularity": 2 },
+            { "num": 3, "draw": 2, "name": "サッポロD-3", "sex": "牡", "age": 4, "weight": 58, "jockey": "O騎手", "trainer": "O厩舎", "odds": 12.1, "popularity": 6 },
+            { "num": 4, "draw": 6, "name": "サッポロD-4", "sex": "セ", "age": 5, "weight": 58, "jockey": "P騎手", "trainer": "P厩舎", "odds": 7.6, "popularity": 4 },
+            { "num": 5, "draw": 3, "name": "サッポロD-5", "sex": "牝", "age": 3, "weight": 54, "jockey": "Q騎手", "trainer": "Q厩舎", "odds": 9.0, "popularity": 5 }
           ]
         }
       ]
     }
   ]
 }
-

@@ -18,11 +18,89 @@
           "pace_mark": "★",
           "horses": [
             { "num": 1, "draw": 1, "name": "サンプルホースA", "sex": "牡", "age": 2, "weight": 55, "jockey": "A騎手", "trainer": "A厩舎", "odds": 3.2, "popularity": 1, "pace_type": ["A"] },
-            { "num": 2, "draw": 2, "name": "サンプルホースB", "sex": "牝", "age": 2, "weight": 54, "jockey": "B騎手", "trainer": "B厩舎", "odds": 4.6, "popularity": 2, "pace_type": ["B", "C"] }
+            { "num": 2, "draw": 2, "name": "サンプルホースB", "sex": "牝", "age": 2, "weight": 54, "jockey": "B騎手", "trainer": "B厩舎", "odds": 4.6, "popularity": 2, "pace_type": ["B", "C"] },
+            { "num": 3, "draw": 3, "name": "サンプルホースC", "sex": "牡", "age": 2, "weight": 55, "jockey": "C騎手", "trainer": "C厩舎", "odds": 8.4, "popularity": 4 },
+            { "num": 4, "draw": 4, "name": "サンプルホースD", "sex": "牝", "age": 2, "weight": 54, "jockey": "D騎手", "trainer": "D厩舎", "odds": 15.2, "popularity": 7, "pace_type": ["B"] },
+            { "num": 5, "draw": 5, "name": "サンプルホースE", "sex": "牡", "age": 2, "weight": 55, "jockey": "E騎手", "trainer": "E厩舎", "odds": 6.7, "popularity": 3, "pace_type": ["C"] },
+            { "num": 6, "draw": 6, "name": "サンプルホースF", "sex": "牝", "age": 2, "weight": 54, "jockey": "F騎手", "trainer": "F厩舎", "odds": 21.9, "popularity": 8 },
+            { "num": 7, "draw": 7, "name": "サンプルホースG", "sex": "セ", "age": 2, "weight": 55, "jockey": "G騎手", "trainer": "G厩舎", "odds": 5.5, "popularity": 5, "pace_type": ["A", "C"] },
+            { "num": 8, "draw": 8, "name": "サンプルホースH", "sex": "牡", "age": 2, "weight": 55, "jockey": "H騎手", "trainer": "H厩舎", "odds": 18.3, "popularity": 6 }
+          ]
+        },
+        {
+          "no": 2,
+          "name": "2歳未勝利",
+          "distance_m": 1400,
+          "ground": "ダート",
+          "condition": "稍重",
+          "start_time": "10:35",
+          "pace_score": 0.8,
+          "horses": [
+            { "num": 1, "draw": 1, "name": "ニイガタダート1", "sex": "牡", "age": 2, "weight": 55, "jockey": "I騎手", "trainer": "I厩舎", "odds": 2.9, "popularity": 1 },
+            { "num": 2, "draw": 2, "name": "ニイガタダート2", "sex": "牝", "age": 2, "weight": 54, "jockey": "J騎手", "trainer": "J厩舎", "odds": 5.7, "popularity": 3, "pace_type": ["B"] },
+            { "num": 3, "draw": 3, "name": "ニイガタダート3", "sex": "牡", "age": 2, "weight": 55, "jockey": "K騎手", "trainer": "K厩舎", "odds": 12.0, "popularity": 6 },
+            { "num": 4, "draw": 4, "name": "ニイガタダート4", "sex": "セ", "age": 2, "weight": 55, "jockey": "L騎手", "trainer": "L厩舎", "odds": 4.8, "popularity": 2, "pace_type": ["A"] },
+            { "num": 5, "draw": 5, "name": "ニイガタダート5", "sex": "牝", "age": 2, "weight": 54, "jockey": "M騎手", "trainer": "M厩舎", "odds": 7.6, "popularity": 4 },
+            { "num": 6, "draw": 6, "name": "ニイガタダート6", "sex": "牡", "age": 2, "weight": 55, "jockey": "N騎手", "trainer": "N厩舎", "odds": 16.4, "popularity": 7 }
+          ]
+        },
+        {
+          "no": 3,
+          "name": "3歳以上1勝クラス",
+          "distance_m": 1800,
+          "ground": "芝",
+          "condition": "良",
+          "start_time": "11:05",
+          "pace_score": -1.1,
+          "horses": [
+            { "num": 1, "draw": 8, "name": "ニイガタ芝1", "sex": "牡", "age": 3, "weight": 57, "jockey": "O騎手", "trainer": "O厩舎", "odds": 9.9, "popularity": 5 },
+            { "num": 2, "draw": 7, "name": "ニイガタ芝2", "sex": "牝", "age": 3, "weight": 55, "jockey": "P騎手", "trainer": "P厩舎", "odds": 3.5, "popularity": 2, "pace_type": ["C"] },
+            { "num": 3, "draw": 6, "name": "ニイガタ芝3", "sex": "牡", "age": 4, "weight": 58, "jockey": "Q騎手", "trainer": "Q厩舎", "odds": 2.7, "popularity": 1, "pace_type": ["A", "B"] },
+            { "num": 4, "draw": 5, "name": "ニイガタ芝4", "sex": "セ", "age": 5, "weight": 58, "jockey": "R騎手", "trainer": "R厩舎", "odds": 12.3, "popularity": 6 },
+            { "num": 5, "draw": 4, "name": "ニイガタ芝5", "sex": "牡", "age": 3, "weight": 56, "jockey": "S騎手", "trainer": "S厩舎", "odds": 4.1, "popularity": 3 },
+            { "num": 6, "draw": 3, "name": "ニイガタ芝6", "sex": "牝", "age": 4, "weight": 56, "jockey": "T騎手", "trainer": "T厩舎", "odds": 7.2, "popularity": 4 }
+          ]
+        }
+      ]
+    },
+    {
+      "track": "札幌",
+      "kaiji": 2,
+      "nichiji": 3,
+      "races": [
+        {
+          "no": 1,
+          "name": "2歳新馬",
+          "distance_m": 1200,
+          "ground": "芝",
+          "condition": "良",
+          "start_time": "10:15",
+          "pace_score": 0.0,
+          "horses": [
+            { "num": 1, "draw": 1, "name": "サッポロ芝1", "sex": "牡", "age": 2, "weight": 55, "jockey": "U騎手", "trainer": "U厩舎", "odds": 5.3, "popularity": 2 },
+            { "num": 2, "draw": 2, "name": "サッポロ芝2", "sex": "牝", "age": 2, "weight": 54, "jockey": "V騎手", "trainer": "V厩舎", "odds": 2.8, "popularity": 1, "pace_type": ["A"] },
+            { "num": 3, "draw": 3, "name": "サッポロ芝3", "sex": "牡", "age": 2, "weight": 55, "jockey": "W騎手", "trainer": "W厩舎", "odds": 10.4, "popularity": 4 },
+            { "num": 4, "draw": 4, "name": "サッポロ芝4", "sex": "牝", "age": 2, "weight": 54, "jockey": "X騎手", "trainer": "X厩舎", "odds": 7.9, "popularity": 3 }
+          ]
+        },
+        {
+          "no": 2,
+          "name": "3歳以上1勝クラス",
+          "distance_m": 1700,
+          "ground": "ダート",
+          "condition": "良",
+          "start_time": "10:50",
+          "pace_score": 1.4,
+          "pace_mark": "★",
+          "horses": [
+            { "num": 1, "draw": 6, "name": "サッポロダート1", "sex": "牡", "age": 3, "weight": 56, "jockey": "Y騎手", "trainer": "Y厩舎", "odds": 3.1, "popularity": 1, "pace_type": ["B"] },
+            { "num": 2, "draw": 5, "name": "サッポロダート2", "sex": "牝", "age": 4, "weight": 55, "jockey": "Z騎手", "trainer": "Z厩舎", "odds": 6.5, "popularity": 3 },
+            { "num": 3, "draw": 4, "name": "サッポロダート3", "sex": "セ", "age": 5, "weight": 58, "jockey": "AA騎手", "trainer": "AA厩舎", "odds": 4.7, "popularity": 2 },
+            { "num": 4, "draw": 3, "name": "サッポロダート4", "sex": "牡", "age": 3, "weight": 56, "jockey": "AB騎手", "trainer": "AB厩舎", "odds": 12.6, "popularity": 6 },
+            { "num": 5, "draw": 2, "name": "サッポロダート5", "sex": "牝", "age": 3, "weight": 54, "jockey": "AC騎手", "trainer": "AC厩舎", "odds": 8.9, "popularity": 4 }
           ]
         }
       ]
     }
   ]
 }
-
