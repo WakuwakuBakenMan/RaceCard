@@ -1,0 +1,27 @@
+{
+  "date": "2024-09-03",
+  "meetings": [
+    {
+      "track": "札幌",
+      "kaiji": 2,
+      "nichiji": 3,
+      "races": [
+        {
+          "no": 1,
+          "name": "2歳新馬",
+          "distance_m": 1200,
+          "ground": "芝",
+          "condition": "良",
+          "start_time": "10:10",
+          "pace_score": 0,
+          "pace_mark": "",
+          "horses": [
+            { "num": 1, "draw": 5, "name": "サンプルホースE", "sex": "牡", "age": 2, "weight": 55, "jockey": "E騎手", "trainer": "E厩舎" },
+            { "num": 2, "draw": 6, "name": "サンプルホースF", "sex": "牝", "age": 2, "weight": 54, "jockey": "F騎手", "trainer": "F厩舎", "odds": 9.9, "popularity": 3, "pace_type": ["A", "C"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

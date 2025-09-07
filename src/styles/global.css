@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body {
+  font-feature-settings: "palt" 1;
+}
+
+.table-sticky thead th {
+  position: sticky;
+  top: 0;
+  background: white;
+  z-index: 10;
+}
+

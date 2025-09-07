@@ -1,13 +1,6 @@
-# OS/Editor
+node_modules
+dist
+.astro
 .DS_Store
-Thumbs.db
-.vscode/
 *.log
-# Node/Python系のよくある生成物
-node_modules/
-dist/
-build/
-.cache/
-.env
-__pycache__/
-.venv/
+

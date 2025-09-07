@@ -1,0 +1,12 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import App from '@/App';
+import '@/styles/global.css';
+const basename = import.meta.env.BASE_URL || '/';
+---
+<Layout>
+  <div>
+    <!-- SPA フォールバック: 404 でも同じアプリを描画 -->
+    <App client:only="react" basename={basename} />
+  </div>
+</Layout>

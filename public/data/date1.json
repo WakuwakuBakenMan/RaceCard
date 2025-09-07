@@ -1,0 +1,28 @@
+{
+  "date": "2024-09-01",
+  "meetings": [
+    {
+      "track": "新潟",
+      "kaiji": 3,
+      "nichiji": 3,
+      "races": [
+        {
+          "no": 1,
+          "name": "2歳未勝利",
+          "distance_m": 1600,
+          "ground": "芝",
+          "course_note": "外回り",
+          "condition": "良",
+          "start_time": "10:00",
+          "pace_score": -2.5,
+          "pace_mark": "★",
+          "horses": [
+            { "num": 1, "draw": 1, "name": "サンプルホースA", "sex": "牡", "age": 2, "weight": 55, "jockey": "A騎手", "trainer": "A厩舎", "odds": 3.2, "popularity": 1, "pace_type": ["A"] },
+            { "num": 2, "draw": 2, "name": "サンプルホースB", "sex": "牝", "age": 2, "weight": 54, "jockey": "B騎手", "trainer": "B厩舎", "odds": 4.6, "popularity": 2, "pace_type": ["B", "C"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
+

@@ -1,0 +1,27 @@
+{
+  "date": "2024-09-04",
+  "meetings": [
+    {
+      "track": "新潟",
+      "kaiji": 3,
+      "nichiji": 4,
+      "races": [
+        {
+          "no": 1,
+          "name": "1勝クラス",
+          "distance_m": 2000,
+          "ground": "芝",
+          "condition": "稍重",
+          "start_time": "10:00",
+          "pace_score": -1.5,
+          "pace_mark": "★",
+          "horses": [
+            { "num": 1, "draw": 7, "name": "サンプルホースG", "sex": "セ", "age": 3, "weight": 56, "jockey": "G騎手", "trainer": "G厩舎", "odds": 6.8, "popularity": 2, "pace_type": ["B"] },
+            { "num": 2, "draw": 4, "name": "サンプルホースH", "sex": "牝", "age": 4, "weight": 55, "jockey": "H騎手", "trainer": "H厩舎", "odds": 20.1, "popularity": 8, "pace_type": ["C"] }
+          ]
+        }
+      ]
+    }
+  ]
+}
+
