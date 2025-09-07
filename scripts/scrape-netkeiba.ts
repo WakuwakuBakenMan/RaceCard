@@ -9,7 +9,7 @@
 */
 import fs from 'node:fs';
 import path from 'node:path';
-import { fileURLToPath } from 'node:url';
+// import { fileURLToPath } from 'node:url';
 import puppeteer from 'puppeteer';
 
 type Horse = {
@@ -174,64 +174,81 @@ async function getRaceCard(page: puppeteer.Page, raceId: string): Promise<{ race
   return { race, horses: data.horses, track, kaiji, nichiji };
 }
 
-async function getHorsePassagesBefore(page: puppeteer.Page, horseId: string, yyyymmdd: string): Promise<string[]> {
+type CachedHorseRow = { date: string; passage: string };
+type CachedHorseData = { updatedAt: string; rows: CachedHorseRow[] };
+
+function horseCacheDir() {
+  const p = path.join(process.cwd(), '.cache', 'horse');
+  ensureDir(p);
+  return p;
+}
+
+function isFresh(filePath: string, days = 3): boolean {
+  if (!fs.existsSync(filePath)) return false;
+  const stat = fs.statSync(filePath);
+  const diffMs = Date.now() - stat.mtime.getTime();
+  return diffMs < days * 24 * 60 * 60 * 1000;
+}
+
+async function fetchHorseHistory(page: puppeteer.Page, horseId: string): Promise<CachedHorseRow[]> {
   const url = `https://db.netkeiba.com/horse/${horseId}`;
   await page.goto(url, { waitUntil: 'domcontentloaded' });
-  const targetDate = new Date(`${yyyymmdd.slice(0, 4)}-${yyyymmdd.slice(4, 6)}-${yyyymmdd.slice(6, 8)}T00:00:00`);
-  // テーブル内でヘッダに「通過」が含まれる行を探し、直近3戦の通過順（レース当日より前）を抜き出す
-  const passages: string[] = await page.evaluate((isoDate) => {
-    function parseDate(s: string): Date | null {
-      // 想定: YYYY/MM/DD
-      const m = s.match(/(\d{4})\/(\d{2})\/(\d{2})/);
-      if (!m) return null;
-      return new Date(`${m[1]}-${m[2]}-${m[3]}T00:00:00`);
-    }
-    const tables = Array.from(document.querySelectorAll('table')) as HTMLTableElement[];
-    for (const tbl of tables) {
+  const rows = await page.evaluate(() => {
+    function parseRows(tbl: HTMLTableElement): { date: string; passage: string }[] {
       const headers = Array.from(tbl.querySelectorAll('thead th')).map((th) => th.textContent?.trim());
       const idxPass = headers.findIndex((h) => (h || '').includes('通過'));
       const idxDate = headers.findIndex((h) => (h || '').includes('日付'));
-      if (idxPass === -1 || idxDate === -1) continue;
+      if (idxPass === -1 || idxDate === -1) return [];
       const rows = Array.from(tbl.querySelectorAll('tbody tr')) as HTMLTableRowElement[];
-      const out: string[] = [];
+      const out: { date: string; passage: string }[] = [];
       for (const tr of rows) {
         const tds = Array.from(tr.querySelectorAll('td')) as HTMLTableCellElement[];
         const dateText = tds[idxDate]?.textContent?.trim() || '';
-        const dtObj = parseDate(dateText);
-        if (!dtObj) continue;
-        if (dtObj.getTime() >= Date.parse(isoDate)) continue; // 当日以降は除外
         const pass = tds[idxPass]?.textContent?.trim() || '';
-        out.push(pass);
-        if (out.length >= 3) break;
+        if (dateText) out.push({ date: dateText, passage: pass });
       }
       return out;
     }
+    const tables = Array.from(document.querySelectorAll('table')) as HTMLTableElement[];
+    for (const tbl of tables) {
+      const rows = parseRows(tbl);
+      if (rows.length) return rows;
+    }
     return [];
-  }, targetDate.toISOString());
+  });
+  return rows as CachedHorseRow[];
+}
+
+async function getHorsePassagesBefore(page: puppeteer.Page, horseId: string, yyyymmdd: string): Promise<string[]> {
+  const cachePath = path.join(horseCacheDir(), `${horseId}.json`);
+  let cached: CachedHorseData | undefined;
+  if (isFresh(cachePath, 3)) {
+    try {
+      cached = JSON.parse(fs.readFileSync(cachePath, 'utf8')) as CachedHorseData;
+    } catch (e) {
+      // ignore cache parse errors
+      void e;
+    }
+  }
+  if (!cached) {
+    const rows = await fetchHorseHistory(page, horseId);
+    cached = { updatedAt: new Date().toISOString(), rows };
+    writeJson(cachePath, cached);
+  }
+  const targetDate = new Date(`${yyyymmdd.slice(0, 4)}-${yyyymmdd.slice(4, 6)}-${yyyymmdd.slice(6, 8)}T00:00:00`);
+  const passages: string[] = [];
+  for (const r of cached.rows) {
+    const m = r.date.match(/(\d{4})\/(\d{2})\/(\d{2})/);
+    if (!m) continue;
+    const d = new Date(`${m[1]}-${m[2]}-${m[3]}T00:00:00`);
+    if (d.getTime() >= targetDate.getTime()) continue;
+    if (typeof r.passage === 'string' && r.passage.length > 0) passages.push(r.passage);
+    if (passages.length >= 3) break;
+  }
   return passages;
 }
 
-function computePaceBias(passagesList: string[]): { score: number; mark?: string } {
-  // Pythonサンプルのロジックを踏襲
-  let all4cnt = 0; // 全コーナー4番手以内の回数（最大3）
-  let nigecnt = 0; // 逃げ回数（先頭:1）
-  for (const passages of passagesList) {
-    if (!passages) continue;
-    const parts = passages.split('-').map((s) => parseInt(s, 10)).filter((n) => Number.isFinite(n));
-    if (parts.length === 0) continue;
-    if (Math.max(...parts) <= 4) all4cnt += 1;
-    if (parts[0] === 1) nigecnt += 1;
-  }
-  let score = 0;
-  if (all4cnt >= 2) score += 1.0;
-  else if (all4cnt === 1) score += 0.5;
-  if (nigecnt >= 2) score += 1.5;
-  else if (nigecnt === 0) score -= 1.5;
-  // 先行馬（all4>=2）が少ない場合の調整
-  if (all4cnt <= 2) score -= 1.0;
-  // マークの付与は呼び出し側で距離に応じて判断
-  return { score };
-}
+// computePaceBias は新版ロジックに内包したため未使用
 
 async function main() {
   const args = parseArgs();
@@ -281,15 +298,14 @@ async function main() {
         })
       );
 
-      // 近走通過データを集計
-      let target2Count = 0; // 近3走中2回以上全角4以内
-      let nigeCount = 0; // 近3走中2回以上逃げ
-      let all4Summed = 0; // 近3走全角4以内回数合計
+      // 近走通過データを集計（新版ロジック準拠）
+      let plcOnCnt = 0; // 展開バイアスカウント
+      let target2Count = 0; // 近3走中2回以上全角4以内馬の頭数
+      let nigeUma = 0; // 近3走中2回以上逃げた馬の頭数
       for (const hid of horsesWithIds.filter(Boolean)) {
         const passages = await getHorsePassagesBefore(page, hid, ymd);
-        // Pythonロジックに近い集計
-        let horseAll4 = 0;
-        let horseNige = 0;
+        let horseAll4 = 0; // その馬の全角4以内回数
+        let horseNige = 0; // その馬の逃げ回数
         for (const p of passages) {
           const parts = p
             .split('-')
@@ -299,23 +315,23 @@ async function main() {
           if (Math.max(...parts) <= 4) horseAll4 += 1;
           if (parts[0] === 1) horseNige += 1;
         }
-        all4Summed += horseAll4;
+        if (horseAll4 >= 2) plcOnCnt += 1.0;
+        else if (horseAll4 === 1) plcOnCnt += 0.5;
         if (horseAll4 >= 2) target2Count += 1;
-        if (horseNige >= 2) nigeCount += 1;
+        if (horseNige >= 2) nigeUma += 1;
       }
 
-      // 展開バイアススコア（PlcOnCnt 相当）
-      let paceScore = 0;
-      if (all4Summed >= 2) paceScore += 1.0;
-      else if (all4Summed === 1) paceScore += 0.5;
-      if (nigeCount >= 2) paceScore += 1.5;
-      else if (nigeCount === 0) paceScore -= 1.5;
-      if (target2Count <= 2) paceScore -= 1.0;
+      // 逃げ頭数による調整
+      if (nigeUma === 0) plcOnCnt -= 1.5;
+      else if (nigeUma >= 2) plcOnCnt += 1.5;
+      // 先行馬（All4>=2）が少ない場合の調整
+      if (target2Count <= 2) plcOnCnt -= 1.0;
 
-      // ★の付与（距離しきい値に応じて bias とみなす）
+      // ★の付与（新版: レース不問で 4.0 以下を展開あり。-3.5 は無効）
       let paceMark: string | undefined;
-      const th = card.race.distance_m <= 1600 ? 4.0 : 3.0;
-      if (paceScore <= th && paceScore !== -2.5) paceMark = '★';
+      const paceScore = plcOnCnt;
+      const th = 4.0;
+      if (paceScore <= th && paceScore !== -3.5) paceMark = '★';
 
       meetingsMap.get(meetingKey)!.races.push({ ...card.race, pace_score: paceScore, pace_mark: paceMark, horses: card.horses });
     }
@@ -334,7 +350,10 @@ async function main() {
     if (fs.existsSync(p)) {
       try {
         existing.push(JSON.parse(fs.readFileSync(p, 'utf8')) as RaceDay);
-      } catch {}
+      } catch (e) {
+        // ignore broken JSON
+        void e;
+      }
     }
   }
   const merged = [...existing, ...outDays]
@@ -352,4 +371,3 @@ main().catch((e) => {
   console.error(e);
   process.exit(1);
 });
-
