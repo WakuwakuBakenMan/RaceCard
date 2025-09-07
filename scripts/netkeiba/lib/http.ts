@@ -29,7 +29,7 @@ function decodeBody(buf: Uint8Array, contentType?: string | null): string {
 
 export async function fetchHtml(url: string, opts: FetchOptions = {}): Promise<string> {
   const retry = opts.retry ?? 3;
-  const minInterval = opts.minIntervalMs ?? 500;
+  const minInterval = opts.minIntervalMs ?? Number(process.env.SCRAPER_INTERVAL_MS || 3000);
   let lastError: unknown;
   for (let i = 0; i < retry; i++) {
     try {
@@ -56,4 +56,3 @@ export function toAbsoluteUrl(base: string, href: string): string {
     return href;
   }
 }
-
