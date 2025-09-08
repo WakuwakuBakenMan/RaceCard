@@ -1,0 +1,176 @@
+{
+  "date": "2025-09-06",
+  "track": "阪神",
+  "kaiji": 4,
+  "nichiji": 1,
+  "race": {
+    "no": 3,
+    "name": "3歳未勝利",
+    "distance_m": 1800,
+    "ground": "",
+    "start_time": "",
+    "pace_score": -3.5,
+    "horses": [
+      {
+        "num": 1,
+        "draw": 1,
+        "name": "ラテライト",
+        "sex": "牝",
+        "age": 3,
+        "weight": 55,
+        "jockey": "田口",
+        "trainer": "松下"
+      },
+      {
+        "num": 2,
+        "draw": 1,
+        "name": "エガオムテキ",
+        "sex": "牝",
+        "age": 3,
+        "weight": 54,
+        "jockey": "☆吉村",
+        "trainer": "野中"
+      },
+      {
+        "num": 3,
+        "draw": 2,
+        "name": "ソコトラ",
+        "sex": "牡",
+        "age": 3,
+        "weight": 54,
+        "jockey": "▲田山",
+        "trainer": "中内田"
+      },
+      {
+        "num": 4,
+        "draw": 2,
+        "name": "ショウナンバジャラ",
+        "sex": "牡",
+        "age": 3,
+        "weight": 55,
+        "jockey": "◇永島",
+        "trainer": "高野"
+      },
+      {
+        "num": 5,
+        "draw": 3,
+        "name": "クリノクーチャン",
+        "sex": "牡",
+        "age": 3,
+        "weight": 53,
+        "jockey": "★河原田",
+        "trainer": "渡辺"
+      },
+      {
+        "num": 6,
+        "draw": 3,
+        "name": "コスモサンビタリア",
+        "sex": "牝",
+        "age": 3,
+        "weight": 55,
+        "jockey": "小崎",
+        "trainer": "西園翔"
+      },
+      {
+        "num": 7,
+        "draw": 4,
+        "name": "アルファベガ",
+        "sex": "牝",
+        "age": 3,
+        "weight": 55,
+        "jockey": "亀田",
+        "trainer": "須貝"
+      },
+      {
+        "num": 8,
+        "draw": 4,
+        "name": "コンセントレイト",
+        "sex": "セ",
+        "age": 3,
+        "weight": 56,
+        "jockey": "☆西塚",
+        "trainer": "渡辺"
+      },
+      {
+        "num": 9,
+        "draw": 5,
+        "name": "バンドブラザー",
+        "sex": "牡",
+        "age": 3,
+        "weight": 57,
+        "jockey": "酒井",
+        "trainer": "西村"
+      },
+      {
+        "num": 10,
+        "draw": 5,
+        "name": "ケイアイワイラーパ",
+        "sex": "牡",
+        "age": 3,
+        "weight": 56,
+        "jockey": "☆高杉",
+        "trainer": "野中"
+      },
+      {
+        "num": 11,
+        "draw": 6,
+        "name": "メイショウハリソン",
+        "sex": "牡",
+        "age": 3,
+        "weight": 57,
+        "jockey": "小沢",
+        "trainer": "石橋"
+      },
+      {
+        "num": 12,
+        "draw": 6,
+        "name": "クリノバーグマン",
+        "sex": "牡",
+        "age": 3,
+        "weight": 57,
+        "jockey": "川須",
+        "trainer": "谷"
+      },
+      {
+        "num": 13,
+        "draw": 7,
+        "name": "モズプリヴェール",
+        "sex": "牡",
+        "age": 3,
+        "weight": 57,
+        "jockey": "松山",
+        "trainer": "森田"
+      },
+      {
+        "num": 14,
+        "draw": 7,
+        "name": "サンライズフーガ",
+        "sex": "牡",
+        "age": 3,
+        "weight": 57,
+        "jockey": "高倉",
+        "trainer": "前川"
+      },
+      {
+        "num": 15,
+        "draw": 8,
+        "name": "アズーロエマローネ",
+        "sex": "牡",
+        "age": 3,
+        "weight": 57,
+        "jockey": "角田和",
+        "trainer": "池江"
+      },
+      {
+        "num": 16,
+        "draw": 8,
+        "name": "エムズオルフェ",
+        "sex": "牝",
+        "age": 3,
+        "weight": 55,
+        "jockey": "城戸",
+        "trainer": "荒川"
+      }
+    ]
+  }
+}

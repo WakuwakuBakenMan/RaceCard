@@ -39,34 +39,51 @@ npm run format
 - JSON 仕様（抜粋）: `src/lib/types.ts` を参照。
 - 任意で、`data/csv/*.csv` から `npm run data:build` で JSON を再生成できます。
 
-## スクレイピング（netkeiba 参考）
+## スクレイピング（Playwright 版）
 
-サンプルの `sample/Scraping.py` と `sample/PlaceOnBias.py` を参考に、Node/TypeScript 版の簡易スクレイパーを用意しました。
+サンプルの Python 実装を参考に、Playwright(Chromium) によるスクレイパーを同梱しています。
 
-- コマンド: `npm run data:scrape -- --date YYYYMMDD`
-- 期間指定: `npm run data:scrape -- --from YYYYMMDD --to YYYYMMDD`
-- 生成物: 取得した日付の `RaceDay` を既存データとマージし、最新4件を `public/data/date{1..4}.json` に出力します（古→新）。
+- 事前準備（初回のみ）
+  - `npm ci`
+  - ブラウザの取得: `npx playwright install chromium`
+- 近日開催日の一覧保存: `npm run fetch:dates`
+- 特定日（YYYYMMDD）のレース一覧保存: `npm run fetch:day -- YYYYMMDD`
+- 出馬表＋近走通過→展開スコア生成（単日）: `npm run data:cards:day -- YYYYMMDD`
+- 近日分まとめて生成: `npm run data:cards:next`
+- 生成した日次JSONを公開用に反映（最新4件）:
+  - 基本: `npm run data:publish`
+  - 代替: `node scripts/publish-latest.mjs`
 
-注意: 対象サイトの利用規約順守、適切なアクセス間隔、実行環境のネットワーク/ヘッドレスブラウザの準備が必要です。初回は `npm i` で Puppeteer を取得してください。
+出力先:
+- レース単位: `data/races/YYYY-MM-DD/<track>/<no>.json`（取得できたものから逐次保存）
+- 日次JSON: `data/days/YYYY-MM-DD.json`（全レース揃ったら集約して保存）
+- 公開データ: `public/data/date{1..4}.json`（最古→最新）
 
-### 展開バイアス（簡易実装の概要）
+注意: 対象サイトの利用規約順守、アクセス間隔の遵守、実行環境のネットワーク/ヘッドレスブラウザ準備が必要です。
 
-Python サンプルのロジックに準拠しています。
+### 展開バイアス（ロジック概要）
 
-- 近3走のうち各レースの「通過」を解析（通過順を `1-2-3-...` 形式で取得）。
-- 各馬について:
-  - 全コーナーが4番手以内ならカウント（All4）。
-  - 1コーナーが1番手なら逃げカウント（Nige）。
-- レース全体のスコア（PlcOnCnt 相当）を算出:
-  - All4が2回以上: +1.0、1回: +0.5
-  - Nigeが2回以上: +1.5、0回: -1.5
-  - 先行馬（All4>=2）が少ない（<=2頭）: さらに -1.0
-- バイアス判定（★）は距離でしきい値を変更:
-  - 1600m以下: スコア <= 4.0 をバイアス
-  - 1600m超: スコア <= 3.0 をバイアス
-  - 特別値 -2.5 は「無効」扱い（未使用）。
+- 近3走の各レース「通過」を解析（`1-2-3-...` 形式）。
+- 各馬:
+  - 全コーナー4番手以内（All4）: 2回以上=+1.0、1回=+0.5（race加算）
+  - 逃げ（1コーナー=1番手）: 2回以上の馬がいれば +1.5、ゼロなら -1.5（race調整）
+  - 先行馬（All4>=2）の頭数が2頭以下なら -1.0（race調整）
+- `pace_score` がしきい値以下（標準: 4.0）で `pace_mark: "★"` を付与。通過が全く取れない場合は `-3.5`（特殊値）。
 
-実装: `scripts/scrape-netkeiba.ts`
+### 実行時の環境変数
+
+- `SCRAPER_INTERVAL_MS`: アクセス間隔ミリ秒（既定: 3000）
+- `NAV_TIMEOUT_MS`: ページ遷移/待機のタイムアウト（ms、既定: 60000）
+- `ONLY_TRACK`: 特定の開催名のみ処理（例: `中山`）
+- `ONLY_RACE_NO`: 特定レース番号のみ処理（例: `1`）
+- `DEBUG_PROGRESS=1`: 進捗を `data/progress.json` と標準出力に記録
+- `DEBUG_PACE=1`: レースごとの通過取得サマリ/pace計算のデバッグログを出力
+- `DEBUG_PACE_DETAIL=1`: 各馬ごとの通過件数/タイプまで詳細に出力（冗長）
+- `UA`: 任意の User-Agent（指定が無い場合はPC Chrome相当を使用）
+- `HEADFUL=1`: ブラウザを表示して実行（確認用）。`HEADFUL_DEVTOOLS=1` でDevToolsを開く
+- `HORSE_MAX_WAIT_MS`: 馬ページで通過抽出にかける最大待機時間（ms、既定: 22000）
+- `DEBUG_SNAPSHOT=1`: 必要DOMが取れない場合に HTML/スクショを `data/snapshots/` に保存
+- `USE_SP_FALLBACK=1`: PC版で通過が取れない時にスマートフォン版(db.sp.netkeiba.com)へ1回だけ切替えて再試行（既定: 無効）
 
 ### JSON 例（RaceDay）
 
@@ -117,4 +134,4 @@ Python サンプルのロジックに準拠しています。
 
 - UI/文言は日本語。識別子・設定キーは英語。
 - BASE は `/RaceCard` 固定想定。別パスで配信する場合は `astro.config.mjs` の `site`/`base` を調整してください。
--
+- 旧 `scripts/scrape-netkeiba.ts`（Puppeteerベース）は参考サンプルです。実運用は `scripts/netkeiba/*` を利用してください。

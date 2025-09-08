@@ -1,0 +1,86 @@
+{
+  "date": "2025-09-06",
+  "track": "中山",
+  "kaiji": 4,
+  "nichiji": 1,
+  "race": {
+    "no": 8,
+    "name": "3歳以上1勝クラス",
+    "distance_m": 1800,
+    "ground": "",
+    "start_time": "",
+    "pace_score": -3.5,
+    "horses": [
+      {
+        "num": 1,
+        "draw": 1,
+        "name": "テンホワイトラブ",
+        "sex": "牝",
+        "age": 5,
+        "weight": 56,
+        "jockey": "津村",
+        "trainer": "小西"
+      },
+      {
+        "num": 2,
+        "draw": 2,
+        "name": "フィールオーサム",
+        "sex": "牝",
+        "age": 3,
+        "weight": 53,
+        "jockey": "菅原明",
+        "trainer": "岩戸"
+      },
+      {
+        "num": 3,
+        "draw": 3,
+        "name": "ココボロ",
+        "sex": "牝",
+        "age": 4,
+        "weight": 53,
+        "jockey": "▲土田",
+        "trainer": "松山"
+      },
+      {
+        "num": 4,
+        "draw": 4,
+        "name": "ロフティーイデアル",
+        "sex": "牝",
+        "age": 5,
+        "weight": 56,
+        "jockey": "戸崎圭",
+        "trainer": "林"
+      },
+      {
+        "num": 5,
+        "draw": 5,
+        "name": "ディペンダブル",
+        "sex": "牝",
+        "age": 3,
+        "weight": 50,
+        "jockey": "▲遠藤",
+        "trainer": "菊沢"
+      },
+      {
+        "num": 6,
+        "draw": 6,
+        "name": "ツインクルステージ",
+        "sex": "牝",
+        "age": 4,
+        "weight": 53,
+        "jockey": "▲石神道",
+        "trainer": "高木"
+      },
+      {
+        "num": 7,
+        "draw": 7,
+        "name": "ビップレーヌ",
+        "sex": "牝",
+        "age": 4,
+        "weight": 56,
+        "jockey": "団野",
+        "trainer": "高柳瑞"
+      }
+    ]
+  }
+}

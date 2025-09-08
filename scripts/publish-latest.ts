@@ -58,12 +58,10 @@ function main() {
   });
 }
 
-if (require.main === module) {
-  try {
-    main();
-  } catch (e) {
-    console.error(e);
-    process.exit(1);
-  }
+// ESM 実行
+try {
+  main();
+} catch (e) {
+  console.error(e);
+  process.exit(1);
 }
-
