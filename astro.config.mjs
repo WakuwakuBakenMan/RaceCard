@@ -5,7 +5,7 @@ import { defineConfig } from 'astro/config';
 export default defineConfig({
   integrations: [react()],
   output: 'static',
-  site: 'https://your-user.github.io/RaceCard/',
+  site: 'https://WakuwakuBakenMan.github.io/RaceCard/',
   base: '/RaceCard',
   build: {
     format: 'directory',
