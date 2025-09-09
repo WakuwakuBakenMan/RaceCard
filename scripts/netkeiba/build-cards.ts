@@ -217,7 +217,7 @@ async function fetchRaceCardPlaywright(
     '  const hid=mm? mm[1]:"";',
     '  if(hid) horseIds.push(hid);',
     '  const infoTd=tr.querySelector("td.HorseInfo");',
-    '  const name=(infoTd?.querySelector(".HorseName")?.textContent||infoTd?.textContent||tr.querySelector("a[href*=/horse/]")?.textContent||"").trim();',
+    '  const name=(infoTd?.querySelector(".HorseName")?.textContent||infoTd?.textContent||tr.querySelector(\'a[href*="/horse/"]\')?.textContent||"").trim();',
     '  const rowText=z2h((tr.textContent||"").replace(/\s+/g," "));',
     '  const sm=rowText.match(/(牡|牝|セ)\s*([0-9]+)/);',
     '  const sex=sm? sm[1]:""; const age=sm? (Number(sm[2])||0):0;',
@@ -253,6 +253,7 @@ async function buildDay(ymd: string): Promise<RaceDay> {
   const list = await getRaceList(ymd);
   const meetings: Meeting[] = [];
   const interval = Number(process.env.SCRAPER_INTERVAL_MS || 3000);
+  const horseInterval = Number(process.env.HORSE_INTERVAL_MS || process.env.SCRAPER_INTERVAL_MS || 300);
   const debug = process.env.DEBUG_PROGRESS === '1';
   const onlyTrack = process.env.ONLY_TRACK;
   const onlyRaceNo = process.env.ONLY_RACE_NO ? Number(process.env.ONLY_RACE_NO) : undefined;
@@ -268,11 +269,51 @@ async function buildDay(ymd: string): Promise<RaceDay> {
 
   async function getHorsePassagesBefore(browser: import('playwright').Browser, horseId: string, yyyymmdd: string): Promise<string[]> {
     const url = `https://db.netkeiba.com/horse/${horseId}`;
+    // PC向けUAでアクセス（スマホ簡易版を避けてテーブルを確実に出す）
+    const ua =
+      process.env.UA ||
+      'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36';
     const context = await browser.newContext({
-      locale: 'ja-JP', timezoneId: 'Asia/Tokyo'                         // BrowserContext
+      userAgent: ua,
+      locale: 'ja-JP',
+      timezoneId: 'Asia/Tokyo',
+      viewport: { width: 1280, height: 960 },
     });
     const page = await context.newPage();                               // Page
-    await page.goto(url, { waitUntil: 'networkidle' });
+    try { await context.setExtraHTTPHeaders({ 'Accept-Language': 'ja,en;q=0.9', Referer: 'https://db.netkeiba.com/' }); } catch {}
+    // horseページのブロッキングは一旦無効化（必要要素まで止まるケースがあったため）
+    // 将来はデバッグ時のみ abort URL を記録して精査する
+
+    // page.evaluate内のconsoleを拾えるように（デバッグ時のみ）
+    const debugLogs = process.env.DEBUG_PACE === '1' || process.env.DEBUG_PROGRESS === '1';
+    if (debugLogs) {
+      page.on('console', (msg) => {
+        try { console.log(`[page:horse] ${msg.text()}`); } catch {}
+      });
+    }
+
+    try {
+      const NAV_TIMEOUT_MS = Number(process.env.HORSE_MAX_WAIT_MS || process.env.NAV_TIMEOUT_MS || 60000);
+
+      if (debugLogs) console.log(`[debug] goto start: ${url}`);
+      const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
+      if (debugLogs) console.log(`[debug] goto done status=${resp?.status()} url=${resp?.url()}`);
+
+      // 欲しいDOMをピンポイントで待つ（例：馬テーブルや日付/通過テーブル）
+      await page.waitForSelector('table', { timeout: Math.min(10000, NAV_TIMEOUT_MS) });
+      if (debugLogs) console.log(`[debug] DOM ready for scraping`);
+      
+      // おまけ：短時間だけ idle を試みる（失敗しても続行）
+      await page.waitForLoadState('networkidle', { timeout: 3000 }).catch(() => {
+        if (debugLogs) console.log(`[debug] networkidle not reached (ignored)`);
+      });
+    } catch (e) {
+      console.error(`[error] goto failed for ${url}:`, e);
+      // ここでスナップショットを取ると原因特定が早い
+      // await savePageArtifacts(page, `horse-fail-${someId}`);
+      throw e;
+    }
+
     // 成績タブがあればクリック
     try {
       const tab = page.locator('text=成績').first();
@@ -281,51 +322,86 @@ async function buildDay(ymd: string): Promise<RaceDay> {
         await page.waitForTimeout(300);
       }
     } catch {}
-    await page.waitForSelector('table', { timeout: 3000 }).catch(() => {});
+    // まず最低限のtableが現れるのをポーリング（1秒間隔、最大HORSE_MAX_WAIT_MSまで）
+    const minTables = Number(process.env.HORSE_TABLES_MIN || 3);
+    const pollMs = Number(process.env.READY_POLL_MS || 1000);
+    const maxWaitMs = Number(process.env.HORSE_MAX_WAIT_MS || process.env.NAV_TIMEOUT_MS || 20000);
+    let tableCount = 0;
+    const t0 = Date.now();
+    while (Date.now() - t0 < maxWaitMs) {
+      tableCount = await page.evaluate(() => document.querySelectorAll('table').length).catch(() => 0);
+      if (tableCount >= minTables) {
+        if (debugLogs) console.log(`[debug] tables ready: ${tableCount} (min=${minTables})`);
+        break;
+      }
+      // 途中で「通過」テキストを検出したら即抜け（軽量チェック）
+      const hasPass = await page.locator('table:has-text("通過")').first().isVisible().catch(() => false);
+      if (hasPass) {
+        if (debugLogs) console.log(`[debug] table with 通過 detected (early ready)`);
+        break;
+      }
+      await page.waitForTimeout(pollMs);
+    }
+    // 追加: デバッグ用にページのテーブル数を出力
+    if (debugLogs) console.log(`[debug] Number of tables found on the page: ${tableCount}`);
+    try {
+      if (process.env.DEBUG_SNAPSHOT === '1' && tableCount < minTables) {
+        await savePageArtifacts(page, `horse-${horseId}-tables${tableCount}`);
+      }
+    } catch {}
 
-    const passages = await page.evaluate((dateStr) => {
-      function parseDate(s: string): number | null {
-        const m = s.match(/(\d{4})\/(\d{2})\/(\d{2})/);
-        if (!m) return null;
-        return Date.parse(`${m[1]}-${m[2]}-${m[3]}T00:00:00`);
+    let passages: string[] = [];
+    try {
+      const __date = JSON.stringify(yyyymmdd);
+      const evalScript = [
+        '(() => {',
+        '  const dateStr = ' + __date + ';',
+        '  const parseDate = (s) => {',
+        '    const m = s.match(/(\\d{4})\\/(\\d{2})\\/(\\d{2})/);',
+        '    if (!m) return null;',
+        '    return Date.parse(`${m[1]}-${m[2]}-${m[3]}T00:00:00`);',
+        '  };',
+        '  const isPassage = (s) => /\\d+(-\\d+)+/.test(s);',
+        '  console.log(`[debug] isPassage fn exists`);',
+        '  const target = Date.parse(`${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}T00:00:00`);',
+        '  const tables = Array.from(document.querySelectorAll("table"));',
+        '  console.log(`[debug] target=${target} (${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}), tables.length=${tables.length}`);',
+        '  const outAll = [];',
+        '  for (let ti = 0; ti < tables.length; ti++) {',
+        '    const tbl = tables[ti];',
+        '    const rows = Array.from(tbl.querySelectorAll("tr"));',
+        '    for (let ri = 0; ri < rows.length; ri++) {',
+        '      const tr = rows[ri];',
+        '      const cells = Array.from(tr.querySelectorAll("th,td"));',
+        '      if (!cells.length) continue;',
+        '      const texts = cells.map(c => (c.textContent || "").trim());',
+        '      const idxDate = texts.findIndex(t => /\\d{4}\\/\\d{2}\\/\\d{2}/.test(t));',
+        '      const idxPass = texts.findIndex(t => isPassage(t));',
+        '      if (idxDate === -1 || idxPass === -1) continue;',
+        '      const dts = parseDate(texts[idxDate]);',
+        '      if (dts == null) continue;',
+        '      if (dts >= target) continue;',
+        '      outAll.push(texts[idxPass]);',
+        '      if (outAll.length >= 3) break;',
+        '    }',
+        '    if (outAll.length >= 3) break;',
+        '  }',
+        '  return outAll;',
+        '})()'
+      ].join('\n');
+      const result: any = await page.evaluate(evalScript);
+      passages = Array.isArray(result) ? result : [];
+    } catch (e) {
+      console.error(`[error] evaluate failed for ${url}:`, e);
+      try { if (process.env.DEBUG_SNAPSHOT === '1') await savePageArtifacts(page, `horse-eval-fail-${horseId}`); } catch {}
+      passages = [];
+    }
+    // 取得できなかった場合のスナップショット（デバッグ時のみ）
+    try {
+      if (process.env.DEBUG_SNAPSHOT === '1' && (!passages || passages.length === 0)) {
+        await savePageArtifacts(page, `horse-${horseId}-nopassages`);
       }
-      const isPassage = (s: string) => /\d+(-\d+)+/.test(s);
-      const target = Date.parse(`${dateStr.slice(0,4)}-${dateStr.slice(4,6)}-${dateStr.slice(6,8)}T00:00:00`);
-      const tables = Array.from(document.querySelectorAll('table')) as HTMLTableElement[];
-      for (const tbl of tables) {
-        const headers = Array.from(tbl.querySelectorAll('thead th')).map((th) => (th.textContent || '').trim());
-        let idxDate = headers.findIndex((h) => h.includes('日付'));
-        let idxPass = headers.findIndex((h) => h.includes('通過'));
-        const rows = Array.from(tbl.querySelectorAll('tbody tr')) as HTMLTableRowElement[];
-        if (idxPass === -1 && rows.length) {
-          const cols = Array.from(rows[0].querySelectorAll('td')).length;
-          for (let c = 0; c < cols; c++) {
-            const cell = (rows[0].querySelectorAll('td')[c] as HTMLTableCellElement)?.textContent || '';
-            if (isPassage(cell.trim())) { idxPass = c; break; }
-          }
-        }
-        if (idxDate === -1 && rows.length) {
-          const cols = Array.from(rows[0].querySelectorAll('td')).length;
-          for (let c = 0; c < cols; c++) {
-            const cell = (rows[0].querySelectorAll('td')[c] as HTMLTableCellElement)?.textContent || '';
-            if (/\d{4}\/\d{2}\/\d{2}/.test(cell.trim())) { idxDate = c; break; }
-          }
-        }
-        if (idxPass === -1 || idxDate === -1) continue;
-        const out: string[] = [];
-        for (const tr of rows) {
-          const tds = Array.from(tr.querySelectorAll('td')) as HTMLTableCellElement[];
-          const dts = parseDate((tds[idxDate]?.textContent || '').trim());
-          if (dts == null) continue;
-          if (dts >= target) continue;
-          const pass = (tds[idxPass]?.textContent || '').trim();
-          if (isPassage(pass)) out.push(pass);
-          if (out.length >= 3) break;
-        }
-        if (out.length) return out;
-      }
-      return [] as string[];
-    }, yyyymmdd);
+    } catch {}
     await page.close();
     await context.close();
     return passages as string[];
@@ -405,8 +481,13 @@ async function buildDay(ymd: string): Promise<RaceDay> {
               }
               passagesList.push(passages);
             } catch (e) {
-              // 続行
+              // 続行（デバッグ時は馬ごとの失敗も見えるようにする）
+              if (process.env.DEBUG_PACE === '1' || process.env.DEBUG_PROGRESS === '1') {
+                console.warn(`[warn:horse-passages:error] id=${hid}`, e);
+              }
             }
+            // サイトへの負荷/RateLimit回避のために少し間隔を空ける
+            if (horseInterval > 0) await sleep(horseInterval);
           }
           // 各馬のA/B/C判定
         const types: ('A'|'B'|'C')[][] = passagesList.map((ps) => {
