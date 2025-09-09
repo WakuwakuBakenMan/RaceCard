@@ -292,26 +292,36 @@ async function buildDay(ymd: string): Promise<RaceDay> {
       });
     }
 
-    try {
+    {
       const NAV_TIMEOUT_MS = Number(process.env.HORSE_MAX_WAIT_MS || process.env.NAV_TIMEOUT_MS || 60000);
+      const maxAttempts = Number(process.env.HORSE_GOTO_RETRIES || 2);
+      let lastErr: unknown;
+      for (let attempt = 1; attempt <= Math.max(1, maxAttempts); attempt++) {
+        try {
+          if (debugLogs) console.log(`[debug] goto start (try ${attempt}/${maxAttempts}): ${url}`);
+          const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
+          if (debugLogs) console.log(`[debug] goto done status=${resp?.status()} url=${resp?.url()}`);
 
-      if (debugLogs) console.log(`[debug] goto start: ${url}`);
-      const resp = await page.goto(url, { waitUntil: 'domcontentloaded', timeout: NAV_TIMEOUT_MS });
-      if (debugLogs) console.log(`[debug] goto done status=${resp?.status()} url=${resp?.url()}`);
+          // 欲しいDOMをピンポイントで待つ（例：馬テーブルや日付/通過テーブル）
+          await page.waitForSelector('table', { timeout: Math.min(10000, NAV_TIMEOUT_MS) });
+          if (debugLogs) console.log(`[debug] DOM ready for scraping`);
 
-      // 欲しいDOMをピンポイントで待つ（例：馬テーブルや日付/通過テーブル）
-      await page.waitForSelector('table', { timeout: Math.min(10000, NAV_TIMEOUT_MS) });
-      if (debugLogs) console.log(`[debug] DOM ready for scraping`);
-      
-      // おまけ：短時間だけ idle を試みる（失敗しても続行）
-      await page.waitForLoadState('networkidle', { timeout: 3000 }).catch(() => {
-        if (debugLogs) console.log(`[debug] networkidle not reached (ignored)`);
-      });
-    } catch (e) {
-      console.error(`[error] goto failed for ${url}:`, e);
-      // ここでスナップショットを取ると原因特定が早い
-      // await savePageArtifacts(page, `horse-fail-${someId}`);
-      throw e;
+          // おまけ：短時間だけ idle を試みる（失敗しても続行）
+          await page.waitForLoadState('networkidle', { timeout: 3000 }).catch(() => {
+            if (debugLogs) console.log(`[debug] networkidle not reached (ignored)`);
+          });
+          break; // success
+        } catch (e) {
+          lastErr = e;
+          if (attempt < Math.max(1, maxAttempts)) {
+            if (debugLogs) console.warn(`[warn] goto failed (try ${attempt}/${maxAttempts}) for ${url}: ${e}`);
+            await page.waitForTimeout(800 + attempt * 500);
+            continue;
+          }
+          console.error(`[error] goto failed for ${url}:`, e);
+          throw e;
+        }
+      }
     }
 
     // 成績タブがあればクリック

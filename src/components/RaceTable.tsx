@@ -85,6 +85,7 @@ export default function RaceTable() {
                     馬番
                   </Th>
                   <th className="p-2 text-left border">枠</th>
+                  <th className="p-2 text-left border">展開</th>
                   <th className="p-2 text-left border">馬名</th>
                   <th className="p-2 text-left border">性齢</th>
                   <th className="p-2 text-left border">斤量</th>
@@ -104,7 +105,6 @@ export default function RaceTable() {
                   >
                     オッズ
                   </Th>
-                  <th className="p-2 text-left border">展開タイプ</th>
                 </tr>
               </thead>
               <tbody>
@@ -121,6 +121,7 @@ export default function RaceTable() {
                     <td className="p-2 border w-14">
                       <FrameBadge draw={h.draw} />
                     </td>
+                    <td className="p-2 border whitespace-nowrap">{h.pace_type?.join('/') ?? '-'}</td>
                     <td className="p-2 border whitespace-nowrap">{h.name}</td>
                     <td className="p-2 border">
                       {h.sex}
@@ -133,9 +134,6 @@ export default function RaceTable() {
                       {h.popularity ?? '-'}
                     </td>
                     <td className="p-2 border text-right">{h.odds ?? '-'}</td>
-                    <td className="p-2 border">
-                      {h.pace_type?.join('/') ?? '-'}
-                    </td>
                   </tr>
                 ))}
               </tbody>
