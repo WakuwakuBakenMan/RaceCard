@@ -23,7 +23,8 @@
     "data:cards:day:ptr": "USE_PUPPETEER=1 tsx scripts/netkeiba/build-cards.ts day",
     "data:cards:next:ptr": "USE_PUPPETEER=1 tsx scripts/netkeiba/build-cards.ts next",
     "data:debug:bias": "tsx scripts/netkeiba/debug-bias.ts",
-    "data:publish": "tsx scripts/publish-latest.ts"
+    "data:publish": "tsx scripts/publish-latest.ts",
+    "db:export": "python3 scripts/sqlite/export_raceday.py"
   },
   "dependencies": {
     "@astrojs/react": "^3.6.0",

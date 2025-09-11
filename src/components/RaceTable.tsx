@@ -127,13 +127,13 @@ export default function RaceTable() {
                       {h.sex}
                       {h.age}
                     </td>
-                    <td className="p-2 border text-right">{h.weight}</td>
+                    <td className="p-2 border text-right">{typeof h.weight === 'number' ? h.weight.toFixed(1) : '-'}</td>
                     <td className="p-2 border">{h.jockey}</td>
                     <td className="p-2 border">{h.trainer}</td>
                     <td className="p-2 border text-right">
                       {h.popularity ?? '-'}
                     </td>
-                    <td className="p-2 border text-right">{h.odds ?? '-'}</td>
+                    <td className="p-2 border text-right">{typeof h.odds === 'number' ? h.odds.toFixed(1) : '-'}</td>
                   </tr>
                 ))}
               </tbody>

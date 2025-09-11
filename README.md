@@ -39,6 +39,26 @@ npm run format
 - JSON 仕様（抜粋）: `src/lib/types.ts` を参照。
 - 任意で、`data/csv/*.csv` から `npm run data:build` で JSON を再生成できます。
 
+### DBエクスポート（SQLite → RaceDay JSON）
+
+EveryDB2形式のSQLiteからアプリのJSONを生成できます。
+
+- 事前: SQLite DBファイルを用意（テーブル例: `N_RACE`, `N_UMA_RACE`, `N_KISYU`, `N_CHOKYO`）。
+- 実行例:
+  - 最新4日ぶんを出力＋公開用にも反映:
+    - `npm run db:export -- --db /path/to/everydb2.sqlite --latest 4 --publish-latest`
+  - 特定日を指定（複数可）:
+    - `npm run db:export -- --db /path/to/everydb2.sqlite --date 20240914 --date 20240915`
+
+出力先:
+- 日次JSON: `data/days/YYYY-MM-DD.json`
+- 公開用(最新4件): `public/data/date1.json`（最古）〜`date4.json`（最新）
+
+備考:
+- 確定データのみ（`DataKubun IN ('5','7')`）。
+- 騎手・調教師は `N_KISYU`/`N_CHOKYO` からコード→氏名を解決。
+- 競馬場名・馬場状態等はスクリプト内の最小マップで補完（必要に応じて拡張してください）。
+
 ## スクレイピング（Playwright 版）
 
 サンプルの Python 実装を参考に、Playwright(Chromium) によるスクレイパーを同梱しています。
