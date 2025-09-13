@@ -238,15 +238,28 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
         cur.execute(
             """
             SELECT
-              Umaban, Wakuban, Bamei, SexCD, Barei, Futan,
-              KisyuCode, ChokyosiCode,
-              Odds, Ninki,
-              Jyuni1c, Jyuni2c, Jyuni3c, Jyuni4c,
-              KettoNum
-            FROM N_UMA_RACE
-            WHERE Year=? AND MonthDay=? AND JyoCD=? AND Kaiji=? AND Nichiji=? AND RaceNum=?
-              AND DataKubun IN ('1','2','3','4','5','6','7')
-            ORDER BY CAST(Umaban AS INTEGER)
+              um.Umaban, um.Wakuban, um.Bamei, um.SexCD, um.Barei, um.Futan,
+              um.KisyuCode, um.ChokyosiCode,
+              CASE
+                WHEN um.Odds IS NULL OR CAST(um.Odds AS INTEGER) = 0 THEN so.TanOdds
+                ELSE um.Odds
+              END AS Odds,
+              CASE
+                WHEN um.Ninki IS NULL OR CAST(um.Ninki AS INTEGER) = 0 THEN so.TanNinki
+                ELSE um.Ninki
+              END AS Ninki,
+              um.Jyuni1c, um.Jyuni2c, um.Jyuni3c, um.Jyuni4c,
+              um.KettoNum
+            FROM N_UMA_RACE AS um
+            LEFT JOIN S_ODDS_TANPUKU AS so
+              ON um.Year = so.Year
+              AND um.MonthDay = so.MonthDay
+              AND um.JyoCD = so.JyoCD
+              AND um.RaceNum = so.RaceNum
+              AND um.Umaban = so.Umaban
+            WHERE um.Year=? AND um.MonthDay=? AND um.JyoCD=? AND um.Kaiji=? AND um.Nichiji=? AND um.RaceNum=?
+              AND um.DataKubun IN ('1','2','3','4','5','6','7')
+            ORDER BY CAST(um.Umaban AS INTEGER)
             """,
             key_cols,
         )
