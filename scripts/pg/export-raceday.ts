@@ -303,7 +303,8 @@ async function buildRaceDay(pool: Pool, yyyymmdd: string): Promise<RaceDay> {
     })();
     const paceMark = paceScore <= 4.0 && paceScore !== -3.5 ? '★' : undefined;
 
-    // レース名決定（優先: 年齢帯+クラス → 条件名/略称 → 本題名 → 距離/馬場）
+    // レース名決定（優先: 本題名/略称 → 年齢帯+クラス → 距離/馬場）
+    // 1) 公式レース名（本題）を最優先。なければ略称/条件名。
     const rawName = String(r.kyosomei_hondai ?? '').trim();
     const jn = String((r.jyoken_name ?? r.jyokenname ?? r.jyoken_disp ?? r.jyoken_hyoji ?? r.jyokenname_disp ?? r.kyoso_joken_meisho) ?? '').trim();
     const rk = String((r.ryakusyo_10 ?? r.ryakusyo10 ?? r.ryakusyo ?? r.kyosomei_ryakusho_10 ?? r.kyosomei_ryakusho_6 ?? r.kyosomei_ryakusho_3) ?? '').trim();
@@ -346,16 +347,22 @@ async function buildRaceDay(pool: Pool, yyyymmdd: string): Promise<RaceDay> {
       return undefined;
     })();
     let name: string | undefined;
-    const ageLabel = ageLabelFromText || ageLabelFromHorses;
-    if (ageLabel && classLabel) name = ground === '障' ? `${ageLabel}障害${classLabel}` : `${ageLabel}${classLabel}`;
-    else if (!ageLabel && classLabel) {
-      // 年齢帯が取れない場合は 3歳以上 をデフォルト
-      const fallbackAge = '3歳以上';
-      name = ground === '障' ? `${fallbackAge}障害${classLabel}` : `${fallbackAge}${classLabel}`;
-    }
+    // まずはレース名（本題/略称）を優先
+    if (rawName) name = rawName;
     else if (jn || rk) name = jn || rk;
-    else if (rawName) name = rawName;
-    else name = `${ground}${distance_m}m`;
+    else {
+      // 次に年齢帯+クラスを合成
+      const ageLabel = ageLabelFromText || ageLabelFromHorses;
+      if (ageLabel && classLabel) name = ground === '障' ? `${ageLabel}障害${classLabel}` : `${ageLabel}${classLabel}`;
+      else if (!ageLabel && classLabel) {
+        // 年齢帯が取れない場合は 3歳以上 をデフォルト
+        const fallbackAge = '3歳以上';
+        name = ground === '障' ? `${fallbackAge}障害${classLabel}` : `${fallbackAge}${classLabel}`;
+      } else {
+        // 最後の保険
+        name = `${ground}${distance_m}m`;
+      }
+    }
 
     const raceObj: Race = {
       no: Number(r.race_bango || 0) || 0,
