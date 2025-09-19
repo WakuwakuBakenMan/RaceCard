@@ -1,1084 +1,939 @@
 {
-  "date": "2025-09-14",
+  "date": "2025-09-20",
   "meetings": [
     {
       "track": "中山",
       "kaiji": 4,
-      "nichiji": 4,
+      "nichiji": 6,
       "races": [
         {
           "no": 1,
-          "name": "3歳以上障害未勝利",
-          "distance_m": 2880,
-          "ground": "障",
-          "start_time": "09:45",
+          "name": "2歳未勝利",
+          "distance_m": 1800,
+          "ground": "ダ",
+          "start_time": "10:00",
           "pace_score": 0,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "フェーングロッテン",
-              "sex": "セ",
-              "age": 6,
-              "weight": 600,
-              "jockey": "高田潤",
-              "trainer": "宮本博",
-              "odds": 1.6,
-              "popularity": 1,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 2,
-              "draw": 2,
-              "name": "スラーヴァ",
+              "name": "ブルーミーティア",
               "sex": "牡",
-              "age": 4,
-              "weight": 570,
-              "jockey": "坂口智康",
-              "trainer": "高橋文雅",
-              "odds": 40,
-              "popularity": 8
-            },
-            {
-              "num": 3,
-              "draw": 3,
-              "name": "ゴールデンルーキー",
-              "sex": "牡",
-              "age": 4,
-              "weight": 600,
-              "jockey": "草野太郎",
-              "trainer": "粕谷昌央",
-              "odds": 14.4,
-              "popularity": 5
-            },
-            {
-              "num": 4,
-              "draw": 4,
-              "name": "シュハリ",
-              "sex": "牡",
-              "age": 5,
-              "weight": 600,
-              "jockey": "大江原圭",
-              "trainer": "粕谷昌央",
-              "odds": 7.6,
-              "popularity": 4,
+              "age": 2,
+              "weight": 55,
+              "jockey": "津村明秀",
+              "trainer": "鈴木伸尋",
               "pace_type": [
                 "C"
               ]
             },
             {
+              "num": 2,
+              "draw": 2,
+              "name": "タイセツナヒ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "原優介",
+              "trainer": "杉浦宏昭"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "ニシノロッドマン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "野中悠太",
+              "trainer": "矢嶋大樹"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "テンバコウクウ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "黛弘人",
+              "trainer": "柄崎将寿"
+            },
+            {
               "num": 5,
-              "draw": 5,
-              "name": "ゴーツウキリシマ",
+              "draw": 4,
+              "name": "フラクタル",
               "sex": "牝",
-              "age": 5,
-              "weight": 580,
-              "jockey": "黒岩悠",
-              "trainer": "牧田和弥",
-              "odds": 19.9,
-              "popularity": 6
+              "age": 2,
+              "weight": 55,
+              "jockey": "木幡巧也",
+              "trainer": "牧光二",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 6,
-              "draw": 6,
-              "name": "スティルシャイニン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 580,
-              "jockey": "伴啓太",
-              "trainer": "天間昭一",
-              "odds": 30,
-              "popularity": 7
+              "draw": 5,
+              "name": "ウィングブルー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "戸崎圭太",
+              "trainer": "斎藤誠",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 7,
-              "draw": 7,
-              "name": "フォーディアライフ",
-              "sex": "セ",
-              "age": 4,
-              "weight": 600,
-              "jockey": "石神深一",
-              "trainer": "矢嶋大樹",
-              "odds": 6.9,
-              "popularity": 3,
+              "draw": 5,
+              "name": "カシノユメミヅキ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 52,
+              "jockey": "土田真翔",
+              "trainer": "和田雄二",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 8,
-              "draw": 8,
-              "name": "アルカンサス",
+              "draw": 6,
+              "name": "ラシューバ",
               "sex": "牡",
-              "age": 6,
-              "weight": 600,
-              "jockey": "西谷誠",
-              "trainer": "土田稔",
-              "odds": 6,
-              "popularity": 2
+              "age": 2,
+              "weight": 55,
+              "jockey": "横山典弘",
+              "trainer": "栗田徹"
             },
             {
               "num": 9,
-              "draw": 8,
-              "name": "リケアルフナ",
+              "draw": 6,
+              "name": "マツリダシリウス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "武藤雅",
+              "trainer": "水野貴広"
+            },
+            {
+              "num": 10,
+              "draw": 7,
+              "name": "ラフレードピエル",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菊沢一樹",
+              "trainer": "萱野浩二"
+            },
+            {
+              "num": 11,
+              "draw": 7,
+              "name": "グレースチャクラ",
               "sex": "牝",
-              "age": 3,
-              "weight": 560,
-              "jockey": "水沼元輝",
-              "trainer": "蛯名利弘",
-              "odds": 43.5,
-              "popularity": 9,
-              "pace_type": [
-                "C"
-              ]
+              "age": 2,
+              "weight": 52,
+              "jockey": "上里直汰",
+              "trainer": "加藤士津"
+            },
+            {
+              "num": 12,
+              "draw": 8,
+              "name": "ドレドレ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "石神深道",
+              "trainer": "矢嶋大樹"
+            },
+            {
+              "num": 13,
+              "draw": 8,
+              "name": "ソウルサヴァイヴ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "丹内祐次",
+              "trainer": "岩戸孝樹"
             }
           ]
         },
         {
           "no": 2,
-          "name": "2歳1勝クラス",
-          "distance_m": 1200,
+          "name": "2歳未勝利",
+          "distance_m": 2000,
           "ground": "芝",
-          "start_time": "10:20",
-          "pace_score": 1.5,
+          "start_time": "10:30",
+          "pace_score": -0.5,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "スターオブブライト",
+              "name": "マイネルモンテュス",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "小林脩斗",
-              "trainer": "奥平雅士",
-              "odds": 43.8,
-              "popularity": 10,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 55,
+              "jockey": "野中悠太",
+              "trainer": "和田勇介"
             },
             {
               "num": 2,
-              "draw": 1,
-              "name": "ユキノサイエンス",
-              "sex": "牝",
+              "draw": 2,
+              "name": "クールフィデル",
+              "sex": "牡",
               "age": 2,
-              "weight": 520,
-              "jockey": "上里直汰",
-              "trainer": "小野次郎",
-              "odds": 14.7,
-              "popularity": 5
+              "weight": 55,
+              "jockey": "佐々木大",
+              "trainer": "和田勇介"
             },
             {
               "num": 3,
-              "draw": 2,
-              "name": "リュウセイコウテイ",
+              "draw": 3,
+              "name": "コスモラムバック",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "野中悠太",
-              "trainer": "奥平雅士",
-              "odds": 70.4,
-              "popularity": 11
+              "weight": 55,
+              "jockey": "武藤雅",
+              "trainer": "水野貴広"
             },
             {
               "num": 4,
-              "draw": 2,
-              "name": "ラブデウザ",
+              "draw": 3,
+              "name": "ビレッジルイーザ",
               "sex": "牝",
               "age": 2,
-              "weight": 520,
-              "jockey": "水沼元輝",
-              "trainer": "加藤和宏",
-              "odds": 99.1,
-              "popularity": 14
+              "weight": 51,
+              "jockey": "谷原柚希",
+              "trainer": "伊藤圭三"
             },
             {
               "num": 5,
-              "draw": 3,
-              "name": "エンカウンターベイ",
-              "sex": "牝",
+              "draw": 4,
+              "name": "モリインビクタス",
+              "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "横山琉人",
-              "trainer": "田中剛",
-              "odds": 8.7,
-              "popularity": 3,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 55,
+              "jockey": "杉原誠人",
+              "trainer": "伊藤大士"
             },
             {
               "num": 6,
-              "draw": 3,
-              "name": "キリシマネロ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 520,
-              "jockey": "佐藤翔馬",
-              "trainer": "的場均",
-              "odds": 167.4,
-              "popularity": 15
-            },
-            {
-              "num": 7,
               "draw": 4,
-              "name": "セイウンヤオヨロズ",
-              "sex": "牡",
+              "name": "シルバーゴールド",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "原優介",
-              "trainer": "上原博之",
-              "odds": 34.6,
-              "popularity": 9
-            },
-            {
-              "num": 8,
-              "draw": 4,
-              "name": "フクチャンショウ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "戸崎圭太",
-              "trainer": "加藤征弘",
-              "odds": 2.4,
-              "popularity": 1,
+              "weight": 55,
+              "jockey": "吉田豊",
+              "trainer": "戸田博文",
               "pace_type": [
                 "C"
               ]
             },
             {
-              "num": 9,
+              "num": 7,
               "draw": 5,
-              "name": "ソークール",
+              "name": "アルデキングダム",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "黛弘人",
-              "trainer": "佐藤吉勝",
-              "odds": 173.1,
-              "popularity": 16
+              "weight": 55,
+              "jockey": "江田照男",
+              "trainer": "村田一誠"
+            },
+            {
+              "num": 8,
+              "draw": 5,
+              "name": "ハデステソーロ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "丹内祐次",
+              "trainer": "武市康男"
+            },
+            {
+              "num": 9,
+              "draw": 6,
+              "name": "ピコマーキス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "荻野極",
+              "trainer": "上原佑紀"
             },
             {
               "num": 10,
-              "draw": 5,
-              "name": "スレドナゴラ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "柴田善臣",
-              "trainer": "田中勝春",
-              "odds": 17.9,
-              "popularity": 6
-            },
-            {
-              "num": 11,
               "draw": 6,
-              "name": "ロンドンオービタル",
-              "sex": "牝",
+              "name": "スターオブアダム",
+              "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "津村明秀",
-              "trainer": "岩戸孝樹",
-              "odds": 3.1,
-              "popularity": 2,
+              "weight": 55,
+              "jockey": "木幡巧也",
+              "trainer": "牧光二",
               "pace_type": [
-                "B"
+                "C"
               ]
             },
             {
-              "num": 12,
-              "draw": 6,
-              "name": "ニシノコハルビヨリ",
-              "sex": "牝",
+              "num": 11,
+              "draw": 7,
+              "name": "キンググローリー",
+              "sex": "牡",
               "age": 2,
-              "weight": 520,
-              "jockey": "石田拓郎",
-              "trainer": "尾形和幸",
-              "odds": 28.1,
-              "popularity": 8,
+              "weight": 55,
+              "jockey": "菅原明良",
+              "trainer": "古賀慎明"
+            },
+            {
+              "num": 12,
+              "draw": 7,
+              "name": "ポルフュロゲネトス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "戸崎圭太",
+              "trainer": "矢嶋大樹",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 13,
-              "draw": 7,
-              "name": "エレクトロン",
+              "draw": 8,
+              "name": "ニシノマグノリア",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "杉原誠人",
-              "trainer": "佐藤吉勝",
-              "odds": 23.7,
-              "popularity": 7,
+              "weight": 55,
+              "jockey": "石川裕紀",
+              "trainer": "上原佑紀",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 14,
-              "draw": 7,
-              "name": "カシノリアーナ",
+              "draw": 8,
+              "name": "カンティーナ",
               "sex": "牝",
               "age": 2,
-              "weight": 520,
-              "jockey": "石神深道",
-              "trainer": "天間昭一",
-              "odds": 94.5,
-              "popularity": 13
-            },
-            {
-              "num": 15,
-              "draw": 8,
-              "name": "トラスコンガーデン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "吉田豊",
-              "trainer": "竹内正洋",
-              "odds": 74.5,
-              "popularity": 12,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 16,
-              "draw": 8,
-              "name": "ムーンリットレイン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 520,
-              "jockey": "小林美駒",
-              "trainer": "伊藤圭三",
-              "odds": 9.7,
-              "popularity": 4
+              "weight": 55,
+              "jockey": "大野拓弥",
+              "trainer": "堀内岳志"
             }
           ]
         },
         {
           "no": 3,
-          "name": "2歳未勝利",
+          "name": "3歳以上未勝利",
           "distance_m": 1200,
           "ground": "ダ",
-          "start_time": "10:50",
-          "pace_score": 1.5,
-          "pace_mark": "★",
+          "start_time": "11:00",
+          "pace_score": 8.5,
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ソードスレイプニル",
+              "name": "ウィンウッドテール",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "菅原明良",
-              "trainer": "鈴木慎太",
-              "odds": 35.6,
-              "popularity": 11
+              "age": 5,
+              "weight": 52,
+              "jockey": "谷原柚希",
+              "trainer": "清水英克"
             },
             {
               "num": 2,
-              "draw": 2,
-              "name": "ラブソング",
+              "draw": 1,
+              "name": "セリオーソ",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "丸田恭介",
-              "trainer": "尾関知人",
-              "odds": 11.8,
-              "popularity": 7
+              "age": 5,
+              "weight": 56,
+              "jockey": "吉田豊",
+              "trainer": "高柳瑞樹"
             },
             {
               "num": 3,
               "draw": 2,
-              "name": "パソドブレ",
+              "name": "ルージュベルベット",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "柴田大知",
-              "trainer": "中川公成",
-              "odds": 76.7,
-              "popularity": 13
+              "age": 4,
+              "weight": 53,
+              "jockey": "小林美駒",
+              "trainer": "浅利英明",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 4,
-              "draw": 3,
-              "name": "カラーオブサクセス",
+              "draw": 2,
+              "name": "アルーリングタイム",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "菊沢一樹",
-              "trainer": "武市康男",
-              "odds": 5.7,
-              "popularity": 3
+              "age": 4,
+              "weight": 56,
+              "jockey": "丹内祐次",
+              "trainer": "中舘英二",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 5,
               "draw": 3,
-              "name": "アビエーション",
+              "name": "ハヌル",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "内田博幸",
-              "trainer": "佐藤吉勝",
-              "odds": 62.6,
-              "popularity": 12,
+              "age": 4,
+              "weight": 56,
+              "jockey": "嶋田純次",
+              "trainer": "岩戸孝樹",
               "pace_type": [
-                "C"
+                "B"
               ]
             },
             {
               "num": 6,
-              "draw": 4,
-              "name": "リケアリングイネ",
+              "draw": 3,
+              "name": "エスシーレベッカ",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "原優介",
-              "trainer": "上原博之",
-              "odds": 88.2,
-              "popularity": 14
-            },
-            {
-              "num": 7,
-              "draw": 4,
-              "name": "サトミノアカリ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 520,
-              "jockey": "小林美駒",
-              "trainer": "鈴木伸尋",
-              "odds": 7.7,
-              "popularity": 4
-            },
-            {
-              "num": 8,
-              "draw": 5,
-              "name": "クイーンレグナント",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "荻野極",
-              "trainer": "嘉藤貴行",
-              "odds": 4.8,
-              "popularity": 1,
+              "age": 3,
+              "weight": 54,
+              "jockey": "佐々木大",
+              "trainer": "加藤士津",
               "pace_type": [
                 "C"
               ]
             },
             {
+              "num": 7,
+              "draw": 4,
+              "name": "ジェイエルトランス",
+              "sex": "牝",
+              "age": 5,
+              "weight": 53,
+              "jockey": "石田拓郎",
+              "trainer": "小西一男",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "オオゾラヒバリ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "野中悠太",
+              "trainer": "根本康広"
+            },
+            {
               "num": 9,
               "draw": 5,
-              "name": "フレンドリーエール",
+              "name": "シュヴァルム",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "江田照男",
-              "trainer": "村田一誠",
-              "odds": 5,
-              "popularity": 2,
+              "age": 3,
+              "weight": 54,
+              "jockey": "横山和生",
+              "trainer": "尾関知人",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 10,
-              "draw": 6,
-              "name": "トーセンクリステル",
+              "draw": 5,
+              "name": "グルーヴィーオン",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "木幡巧也",
-              "trainer": "杉浦宏昭",
-              "odds": 29.8,
-              "popularity": 10,
+              "age": 3,
+              "weight": 54,
+              "jockey": "原優介",
+              "trainer": "小手川準",
               "pace_type": [
-                "C"
+                "A",
+                "B"
               ]
             },
             {
               "num": 11,
               "draw": 6,
-              "name": "ニャンモロー",
+              "name": "ニシノクードクール",
               "sex": "牝",
-              "age": 2,
-              "weight": 520,
-              "jockey": "石田拓郎",
-              "trainer": "矢野英一",
-              "odds": 13,
-              "popularity": 8,
-              "pace_type": [
-                "C"
-              ]
+              "age": 3,
+              "weight": 54,
+              "jockey": "武藤雅",
+              "trainer": "武藤善則"
             },
             {
               "num": 12,
-              "draw": 7,
-              "name": "リュウノエッセンス",
+              "draw": 6,
+              "name": "シルフレイ",
               "sex": "牝",
-              "age": 2,
-              "weight": 520,
-              "jockey": "遠藤汰月",
-              "trainer": "伊藤伸一",
-              "odds": 27.8,
-              "popularity": 9,
+              "age": 3,
+              "weight": 54,
+              "jockey": "横山武史",
+              "trainer": "千葉直人",
               "pace_type": [
-                "C"
+                "B"
               ]
             },
             {
               "num": 13,
               "draw": 7,
-              "name": "ビップムーラン",
+              "name": "アンビシュー",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "戸崎圭太",
-              "trainer": "田島俊明",
-              "odds": 9.4,
-              "popularity": 6,
+              "age": 4,
+              "weight": 53,
+              "jockey": "遠藤汰月",
+              "trainer": "村田一誠",
               "pace_type": [
-                "C"
+                "B"
               ]
             },
             {
               "num": 14,
-              "draw": 8,
-              "name": "セイウンマナウス",
+              "draw": 7,
+              "name": "エベリンテソーロ",
               "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "吉田豊",
-              "trainer": "田中剛",
-              "odds": 7.7,
-              "popularity": 4,
-              "pace_type": [
-                "C"
-              ]
+              "age": 3,
+              "weight": 54,
+              "jockey": "木幡巧也",
+              "trainer": "加藤士津"
             },
             {
               "num": 15,
               "draw": 8,
-              "name": "フラゲルムデイ",
+              "name": "ラヴァグロウ",
               "sex": "牝",
-              "age": 2,
-              "weight": 520,
-              "jockey": "水沼元輝",
-              "trainer": "石栗龍彦",
-              "odds": 101.4,
-              "popularity": 15
+              "age": 5,
+              "weight": 56,
+              "jockey": "丸田恭介",
+              "trainer": "畠山吉宏"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "アドリアフレイバー",
+              "sex": "牝",
+              "age": 3,
+              "weight": 52,
+              "jockey": "今村聖奈",
+              "trainer": "久保田貴",
+              "pace_type": [
+                "B"
+              ]
             }
           ]
         },
         {
           "no": 4,
           "name": "2歳1勝クラス",
-          "distance_m": 1800,
-          "ground": "ダ",
-          "start_time": "11:20",
-          "pace_score": 0.5,
-          "pace_mark": "★",
+          "distance_m": 1200,
+          "ground": "芝",
+          "start_time": "11:35",
+          "pace_score": -3.5,
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "シューティングガイ",
-              "sex": "牡",
+              "name": "ナデシコ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "斎藤新",
-              "trainer": "斎藤誠",
-              "odds": 21.5,
-              "popularity": 7,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 55,
+              "jockey": "杉原誠人",
+              "trainer": "村田一誠"
             },
             {
               "num": 2,
               "draw": 2,
-              "name": "モウエエデショー",
+              "name": "ヴェンデボヌール",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "原田和真",
-              "trainer": "萱野浩二",
-              "odds": 34.6,
-              "popularity": 8
+              "weight": 55,
+              "jockey": "戸崎圭太",
+              "trainer": "久保田貴"
             },
             {
               "num": 3,
               "draw": 3,
-              "name": "ハクシンスマイル",
+              "name": "リトルエンジェル",
               "sex": "牝",
               "age": 2,
-              "weight": 520,
-              "jockey": "土田真翔",
-              "trainer": "和田雄二",
-              "odds": 123.7,
-              "popularity": 11
+              "weight": 52,
+              "jockey": "上里直汰",
+              "trainer": "清水英克"
             },
             {
               "num": 4,
               "draw": 4,
-              "name": "パワポケウォーズ",
-              "sex": "牡",
+              "name": "ファインダーズ",
+              "sex": "牝",
               "age": 2,
-              "weight": 520,
-              "jockey": "上里直汰",
-              "trainer": "大和田成",
-              "odds": 57.7,
-              "popularity": 10
+              "weight": 55,
+              "jockey": "佐々木大",
+              "trainer": "和田勇介"
             },
             {
               "num": 5,
               "draw": 5,
-              "name": "ヤマタケボニータ",
-              "sex": "牡",
+              "name": "ニシノヒンメル",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "原優介",
-              "trainer": "萱野浩二",
-              "odds": 36.6,
-              "popularity": 9
+              "weight": 55,
+              "jockey": "野中悠太",
+              "trainer": "竹内正洋"
             },
             {
               "num": 6,
               "draw": 6,
-              "name": "ショウナンタヅナ",
+              "name": "マリンディーゼル",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "佐々木大",
-              "trainer": "武市康男",
-              "odds": 13.8,
-              "popularity": 5
+              "weight": 55,
+              "jockey": "岩部純二",
+              "trainer": "南田美知"
             },
             {
               "num": 7,
               "draw": 6,
-              "name": "スターオブアダム",
-              "sex": "牡",
+              "name": "イッツユー",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "木幡巧也",
-              "trainer": "牧光二",
-              "odds": 13.4,
-              "popularity": 4,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 55,
+              "jockey": "小林凌大",
+              "trainer": "尾形和幸"
             },
             {
               "num": 8,
               "draw": 7,
-              "name": "ワンダーディーン",
-              "sex": "牡",
+              "name": "イソダ",
+              "sex": "牝",
               "age": 2,
-              "weight": 520,
-              "jockey": "石田拓郎",
-              "trainer": "高柳大輔",
-              "odds": 5.3,
-              "popularity": 2
+              "weight": 52,
+              "jockey": "小林美駒",
+              "trainer": "尾形和幸"
             },
             {
               "num": 9,
               "draw": 7,
-              "name": "エルアン",
-              "sex": "牡",
+              "name": "ラヴノー",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "三浦皇成",
-              "trainer": "浅利英明",
-              "odds": 11.4,
-              "popularity": 3,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 55,
+              "jockey": "津村明秀",
+              "trainer": "林徹"
             },
             {
               "num": 10,
               "draw": 8,
-              "name": "コウソクルリアン",
-              "sex": "牡",
+              "name": "クールフィールド",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "武藤雅",
-              "trainer": "武藤善則",
-              "odds": 14.6,
-              "popularity": 6,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 52,
+              "jockey": "石田拓郎",
+              "trainer": "矢野英一"
             },
             {
               "num": 11,
               "draw": 8,
-              "name": "サマーマッドネス",
-              "sex": "牡",
+              "name": "リケアペンネ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "戸崎圭太",
-              "trainer": "森秀行",
-              "odds": 1.5,
-              "popularity": 1,
-              "pace_type": [
-                "B"
-              ]
+              "weight": 55,
+              "jockey": "原優介",
+              "trainer": "上原博之"
             }
           ]
         },
         {
           "no": 5,
           "name": "2歳未勝利",
-          "distance_m": 1800,
+          "distance_m": 1600,
           "ground": "芝",
-          "start_time": "12:10",
+          "start_time": "12:25",
           "pace_score": -3.5,
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "マイネルパーロル",
-              "sex": "牡",
+              "name": "スイープセレニティ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "野中悠太",
-              "trainer": "嘉藤貴行",
-              "odds": 21.6,
-              "popularity": 8
+              "weight": 55,
+              "jockey": "モレイラ",
+              "trainer": "宮田敬介"
             },
             {
               "num": 2,
-              "draw": 2,
-              "name": "シュガーシャック",
+              "draw": 1,
+              "name": "ヴァルボナ",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "戸崎圭太",
-              "trainer": "古賀慎明",
-              "odds": 4.4,
-              "popularity": 2
+              "weight": 55,
+              "jockey": "大野拓弥",
+              "trainer": "田村康仁"
             },
             {
               "num": 3,
-              "draw": 3,
-              "name": "ホールドミーワンス",
+              "draw": 2,
+              "name": "サンブライト",
               "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "菊沢一樹",
-              "trainer": "西園翔太",
-              "odds": 7.1,
-              "popularity": 4
+              "weight": 55,
+              "jockey": "横山武史",
+              "trainer": "鈴木慎太"
             },
             {
               "num": 4,
-              "draw": 4,
-              "name": "アクアマーズ",
-              "sex": "牡",
+              "draw": 2,
+              "name": "クリスタルドレス",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "荻野極",
-              "trainer": "浅利英明",
-              "odds": 4.9,
-              "popularity": 3
+              "weight": 55,
+              "jockey": "黛弘人",
+              "trainer": "高橋文雅"
             },
             {
               "num": 5,
-              "draw": 5,
-              "name": "センジュキヨマル",
+              "draw": 3,
+              "name": "レッドジェルブロワ",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "丸田恭介",
-              "trainer": "南田美知",
-              "odds": 17.9,
-              "popularity": 7
+              "weight": 55,
+              "jockey": "荻野極",
+              "trainer": "鹿戸雄一"
             },
             {
               "num": 6,
-              "draw": 6,
-              "name": "ライヒスアドラー",
+              "draw": 3,
+              "name": "ロジクリスエス",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "佐々木大",
-              "trainer": "上原佑紀",
-              "odds": 2.7,
-              "popularity": 1
+              "weight": 55,
+              "jockey": "丸山元気",
+              "trainer": "国枝栄"
             },
             {
               "num": 7,
-              "draw": 7,
-              "name": "タイセイカラーズ",
+              "draw": 4,
+              "name": "フォルナカリア",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "石川裕紀",
-              "trainer": "奥村武",
-              "odds": 47.6,
-              "popularity": 10
+              "weight": 55,
+              "jockey": "ルメール",
+              "trainer": "栗田徹"
             },
             {
               "num": 8,
-              "draw": 7,
-              "name": "ダンシングアウェイ",
+              "draw": 4,
+              "name": "ゴールドパレード",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
+              "weight": 55,
               "jockey": "横山琉人",
-              "trainer": "相沢郁",
-              "odds": 14.2,
-              "popularity": 6
+              "trainer": "天間昭一"
             },
             {
               "num": 9,
-              "draw": 8,
-              "name": "メイショウユウブ",
-              "sex": "牡",
+              "draw": 5,
+              "name": "レフティサーリ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "江田照男",
-              "trainer": "蛯名正義",
-              "odds": 11.1,
-              "popularity": 5
+              "weight": 55,
+              "jockey": "三浦皇成",
+              "trainer": "西園正都"
             },
             {
               "num": 10,
-              "draw": 8,
-              "name": "ツルノマイハシ",
+              "draw": 5,
+              "name": "ダイユウヴェンティ",
               "sex": "牝",
               "age": 2,
-              "weight": 550,
+              "weight": 55,
+              "jockey": "内田博幸",
+              "trainer": "松永康利"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "タイセイゴッシュ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "石川裕紀",
+              "trainer": "池上昌和"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "ウインリフレクト",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菊沢一樹",
+              "trainer": "嘉藤貴行"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "ブルーエ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
               "jockey": "原優介",
-              "trainer": "杉浦宏昭",
-              "odds": 23.9,
-              "popularity": 9
+              "trainer": "田村康仁"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "ガーネットテソーロ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菅原明良",
+              "trainer": "高木登"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "チャチャット",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "柴田善臣",
+              "trainer": "柄崎将寿"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "ガヴァルニー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "佐々木大",
+              "trainer": "伊藤大士"
             }
           ]
         },
         {
           "no": 6,
           "name": "3歳以上未勝利",
-          "distance_m": 1800,
+          "distance_m": 2400,
           "ground": "ダ",
-          "start_time": "12:40",
-          "pace_score": 3,
+          "start_time": "12:55",
+          "pace_score": -2,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ブレゲアン",
+              "name": "ステイアンビシャス",
               "sex": "牡",
               "age": 3,
-              "weight": 570,
-              "jockey": "三浦皇成",
-              "trainer": "田村康仁",
-              "odds": 19.1,
-              "popularity": 8
+              "weight": 55,
+              "jockey": "松岡正海",
+              "trainer": "堀内岳志"
             },
             {
               "num": 2,
-              "draw": 1,
-              "name": "ハーレムシャフル",
+              "draw": 2,
+              "name": "クールシェルタ",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "木幡巧也",
-              "trainer": "勢司和浩",
-              "odds": 46.8,
-              "popularity": 13
+              "age": 6,
+              "weight": 58,
+              "jockey": "黛弘人",
+              "trainer": "高橋文雅"
             },
             {
               "num": 3,
-              "draw": 2,
-              "name": "ギャランドゥ",
+              "draw": 3,
+              "name": "プレシャスデイ",
               "sex": "牡",
               "age": 3,
-              "weight": 570,
-              "jockey": "戸崎圭太",
-              "trainer": "萩原清",
-              "odds": 4.7,
-              "popularity": 2,
+              "weight": 55,
+              "jockey": "荻野極",
+              "trainer": "伊坂重信"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "コンテソレーラ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "津村明秀",
+              "trainer": "手塚貴久",
               "pace_type": [
                 "C"
               ]
             },
             {
-              "num": 4,
-              "draw": 2,
-              "name": "リカード",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "柴田大知",
-              "trainer": "和田雄二",
-              "odds": 10.5,
-              "popularity": 5
-            },
-            {
               "num": 5,
-              "draw": 3,
-              "name": "クラウンアールシー",
+              "draw": 5,
+              "name": "ユイノレクター",
               "sex": "牡",
               "age": 3,
-              "weight": 570,
-              "jockey": "佐々木大",
-              "trainer": "加藤士津",
-              "odds": 4.3,
-              "popularity": 1,
-              "pace_type": [
-                "B"
-              ]
+              "weight": 55,
+              "jockey": "吉田豊",
+              "trainer": "竹内正洋"
             },
             {
               "num": 6,
-              "draw": 3,
-              "name": "ウラルト",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "江田照男",
-              "trainer": "田中剛",
-              "odds": 95.8,
-              "popularity": 16
+              "draw": 6,
+              "name": "ジーティーアグリム",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "丸田恭介",
+              "trainer": "奥平雅士"
             },
             {
               "num": 7,
-              "draw": 4,
-              "name": "ドラゴンバスター",
-              "sex": "セ",
+              "draw": 6,
+              "name": "マウントバーノン",
+              "sex": "牡",
               "age": 3,
-              "weight": 570,
-              "jockey": "杉原誠人",
-              "trainer": "萱野浩二",
-              "odds": 34.4,
-              "popularity": 11
+              "weight": 55,
+              "jockey": "木幡巧也",
+              "trainer": "戸田博文"
             },
             {
               "num": 8,
-              "draw": 4,
-              "name": "ステイアンビシャス",
+              "draw": 7,
+              "name": "ロードインフェルノ",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "松岡正海",
-              "trainer": "堀内岳志",
-              "odds": 7.6,
-              "popularity": 4
+              "age": 4,
+              "weight": 58,
+              "jockey": "石川裕紀",
+              "trainer": "尾形和幸"
             },
             {
               "num": 9,
-              "draw": 5,
-              "name": "フラッシュタイム",
+              "draw": 7,
+              "name": "ユウオウマイシン",
               "sex": "牡",
               "age": 3,
-              "weight": 570,
-              "jockey": "菊沢一樹",
-              "trainer": "佐藤吉勝",
-              "odds": 57.3,
-              "popularity": 14
+              "weight": 52,
+              "jockey": "佐藤翔馬",
+              "trainer": "松永康利"
             },
             {
               "num": 10,
-              "draw": 5,
-              "name": "ダブルメッセージ",
+              "draw": 8,
+              "name": "サトノリアン",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "石川裕紀",
-              "trainer": "和田正一",
-              "odds": 11.1,
-              "popularity": 6,
-              "pace_type": [
-                "B"
-              ]
+              "age": 4,
+              "weight": 55,
+              "jockey": "石田拓郎",
+              "trainer": "萩原清"
             },
             {
               "num": 11,
-              "draw": 6,
-              "name": "センジュコスモス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "内田博幸",
-              "trainer": "南田美知",
-              "odds": 22.3,
-              "popularity": 9,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 12,
-              "draw": 6,
-              "name": "フローラルデザイン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "菅原明良",
-              "trainer": "畠山吉宏",
-              "odds": 32.7,
-              "popularity": 10
-            },
-            {
-              "num": 13,
-              "draw": 7,
-              "name": "サラニキケン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 520,
-              "jockey": "小林美駒",
-              "trainer": "竹内正洋",
-              "odds": 5.8,
-              "popularity": 3
-            },
-            {
-              "num": 14,
-              "draw": 7,
-              "name": "ポリアンセモス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 520,
-              "jockey": "舟山瑠泉",
-              "trainer": "辻哲英",
-              "odds": 36.5,
-              "popularity": 12
-            },
-            {
-              "num": 15,
               "draw": 8,
-              "name": "ジーティーニャント",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "小林脩斗",
-              "trainer": "堀内岳志",
-              "odds": 77.6,
-              "popularity": 15
-            },
-            {
-              "num": 16,
-              "draw": 8,
-              "name": "マキャベリー",
+              "name": "スペシャリスト",
               "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "原優介",
-              "trainer": "黒岩陽一",
-              "odds": 12.7,
-              "popularity": 7,
-              "pace_type": [
-                "B"
-              ]
+              "age": 5,
+              "weight": 56,
+              "jockey": "宮崎北斗",
+              "trainer": "高橋文雅"
             }
           ]
         },
@@ -1087,386 +942,118 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 2000,
           "ground": "芝",
-          "start_time": "13:10",
-          "pace_score": 1.5,
-          "pace_mark": "★",
-          "horses": [
-            {
-              "num": 1,
-              "draw": 1,
-              "name": "ストレートブラック",
-              "sex": "牝",
-              "age": 3,
-              "weight": 520,
-              "jockey": "石神深道",
-              "trainer": "奥平雅士",
-              "odds": 7.9,
-              "popularity": 2,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 2,
-              "draw": 1,
-              "name": "シャンソンドール",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "戸崎圭太",
-              "trainer": "奥村武",
-              "odds": 4.1,
-              "popularity": 1
-            },
-            {
-              "num": 3,
-              "draw": 2,
-              "name": "イサムダイヤモンド",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "吉田豊",
-              "trainer": "高橋文雅",
-              "odds": 9.8,
-              "popularity": 4
-            },
-            {
-              "num": 4,
-              "draw": 2,
-              "name": "ケイツーブル",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "内田博幸",
-              "trainer": "千葉直人",
-              "odds": 26.7,
-              "popularity": 14
-            },
-            {
-              "num": 5,
-              "draw": 3,
-              "name": "テンドリームガール",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "荻野極",
-              "trainer": "矢野英一",
-              "odds": 14.1,
-              "popularity": 7,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 6,
-              "draw": 3,
-              "name": "クラシカルカイザー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 540,
-              "jockey": "小林美駒",
-              "trainer": "稲垣幸雄",
-              "odds": 14.9,
-              "popularity": 9
-            },
-            {
-              "num": 7,
-              "draw": 4,
-              "name": "ピコラ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "木幡巧也",
-              "trainer": "黒岩陽一",
-              "odds": 18.8,
-              "popularity": 11
-            },
-            {
-              "num": 8,
-              "draw": 4,
-              "name": "レガーロカリーノ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 520,
-              "jockey": "舟山瑠泉",
-              "trainer": "菊沢隆徳",
-              "odds": 64.3,
-              "popularity": 17
-            },
-            {
-              "num": 9,
-              "draw": 5,
-              "name": "デルマサターン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 540,
-              "jockey": "石田拓郎",
-              "trainer": "菊沢隆徳",
-              "odds": 97.6,
-              "popularity": 18
-            },
-            {
-              "num": 10,
-              "draw": 5,
-              "name": "ミッキーラサルダン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "三浦皇成",
-              "trainer": "堀宣行",
-              "odds": 13.9,
-              "popularity": 6,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 11,
-              "draw": 6,
-              "name": "ムーンストラック",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "菅原明良",
-              "trainer": "武市康男",
-              "odds": 14.7,
-              "popularity": 8
-            },
-            {
-              "num": 12,
-              "draw": 6,
-              "name": "マイネルトラオム",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "松岡正海",
-              "trainer": "深山雅史",
-              "odds": 20.3,
-              "popularity": 12,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 13,
-              "draw": 7,
-              "name": "ピュルテ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "嶋田純次",
-              "trainer": "手塚貴久",
-              "odds": 18.5,
-              "popularity": 10
-            },
-            {
-              "num": 14,
-              "draw": 7,
-              "name": "マイネルアウルム",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "津村明秀",
-              "trainer": "加藤士津",
-              "odds": 7.9,
-              "popularity": 2
-            },
-            {
-              "num": 15,
-              "draw": 7,
-              "name": "グラツィオーソ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "柴田大知",
-              "trainer": "田中剛",
-              "odds": 42.3,
-              "popularity": 15,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 16,
-              "draw": 8,
-              "name": "テーオービースト",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "丸田恭介",
-              "trainer": "清水英克",
-              "odds": 56.5,
-              "popularity": 16,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 17,
-              "draw": 8,
-              "name": "テンミラージュ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "黛弘人",
-              "trainer": "深山雅史",
-              "odds": 26.3,
-              "popularity": 13,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 18,
-              "draw": 8,
-              "name": "スピアッジャローザ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "菊沢一樹",
-              "trainer": "蛯名利弘",
-              "odds": 12.2,
-              "popularity": 5
-            }
-          ]
-        },
-        {
-          "no": 8,
-          "name": "3歳以上未勝利",
-          "distance_m": 1800,
-          "ground": "ダ",
-          "start_time": "13:40",
+          "start_time": "13:25",
           "pace_score": 4,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "オブシディアン",
+              "name": "ピジョンポイント",
               "sex": "牡",
-              "age": 5,
-              "weight": 580,
-              "jockey": "菊沢一樹",
-              "trainer": "石栗龍彦",
-              "odds": 81,
-              "popularity": 15
+              "age": 3,
+              "weight": 55,
+              "jockey": "黛弘人",
+              "trainer": "岩戸孝樹"
             },
             {
               "num": 2,
               "draw": 1,
-              "name": "シンボリノエル",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "横山和生",
-              "trainer": "土田稔",
-              "odds": 16,
-              "popularity": 9
-            },
-            {
-              "num": 3,
-              "draw": 2,
-              "name": "キョウキランブ",
+              "name": "レイヤードレッド",
               "sex": "牡",
               "age": 3,
-              "weight": 520,
-              "jockey": "舟山瑠泉",
-              "trainer": "古賀慎明",
-              "odds": 5.6,
-              "popularity": 1,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 4,
-              "draw": 2,
-              "name": "レイズサンライズ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 520,
-              "jockey": "土田真翔",
-              "trainer": "田村康仁",
-              "odds": 86.5,
-              "popularity": 16
-            },
-            {
-              "num": 5,
-              "draw": 3,
-              "name": "アンガアヴィス",
-              "sex": "セ",
-              "age": 3,
-              "weight": 520,
-              "jockey": "石田拓郎",
-              "trainer": "新開幸一",
-              "odds": 67.4,
-              "popularity": 14,
+              "weight": 55,
+              "jockey": "嶋田純次",
+              "trainer": "手塚貴久",
               "pace_type": [
                 "B"
               ]
             },
             {
-              "num": 6,
-              "draw": 3,
-              "name": "ブレイクザアイス",
-              "sex": "セ",
-              "age": 6,
-              "weight": 580,
-              "jockey": "黛弘人",
-              "trainer": "森一誠",
-              "odds": 35.7,
-              "popularity": 12
+              "num": 3,
+              "draw": 2,
+              "name": "エコロライジン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "菅原明良",
+              "trainer": "矢野英一"
             },
             {
-              "num": 7,
-              "draw": 4,
-              "name": "ソラノキャンバス",
+              "num": 4,
+              "draw": 2,
+              "name": "セザンワールド",
               "sex": "セ",
+              "age": 5,
+              "weight": 55,
+              "jockey": "遠藤汰月",
+              "trainer": "蛯名利弘"
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "ルールーリマ",
+              "sex": "牝",
               "age": 3,
-              "weight": 530,
-              "jockey": "今村聖奈",
-              "trainer": "武井亮",
-              "odds": 15.7,
-              "popularity": 8,
+              "weight": 53,
+              "jockey": "三浦皇成",
+              "trainer": "大竹正博"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "ティティナ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 50,
+              "jockey": "小林美駒",
+              "trainer": "和田正一",
               "pace_type": [
                 "C"
               ]
             },
             {
+              "num": 7,
+              "draw": 4,
+              "name": "モアナフリューゲル",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "佐々木大",
+              "trainer": "和田勇介"
+            },
+            {
               "num": 8,
               "draw": 4,
-              "name": "ニシノブレイゼスト",
-              "sex": "牡",
+              "name": "コスモイシュタル",
+              "sex": "牝",
               "age": 3,
-              "weight": 550,
-              "jockey": "菅原明良",
-              "trainer": "高木登",
-              "odds": 16.6,
-              "popularity": 10
+              "weight": 53,
+              "jockey": "津村明秀",
+              "trainer": "深山雅史",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 9,
               "draw": 5,
-              "name": "ハルノアラシ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "石川裕紀",
-              "trainer": "相沢郁",
-              "odds": 5.6,
-              "popularity": 1
+              "name": "ハルノドゥミプリエ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "菊沢一樹",
+              "trainer": "勢司和浩"
             },
             {
               "num": 10,
               "draw": 5,
-              "name": "ノーブルニードル",
+              "name": "コスモキャバリエ",
               "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "柴田大知",
-              "trainer": "粕谷昌央",
-              "odds": 53.8,
-              "popularity": 13,
+              "age": 3,
+              "weight": 52,
+              "jockey": "石神深道",
+              "trainer": "高木登",
               "pace_type": [
                 "B"
               ]
@@ -1474,29 +1061,22 @@
             {
               "num": 11,
               "draw": 6,
-              "name": "カンレイスキー",
+              "name": "マイネルモメンタム",
               "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "佐々木大",
-              "trainer": "竹内正洋",
-              "odds": 8.6,
-              "popularity": 5,
-              "pace_type": [
-                "C"
-              ]
+              "age": 4,
+              "weight": 58,
+              "jockey": "丹内祐次",
+              "trainer": "相沢郁"
             },
             {
               "num": 12,
               "draw": 6,
-              "name": "シャドウキャッスル",
+              "name": "ヴォラヴィア",
               "sex": "牡",
               "age": 3,
-              "weight": 520,
-              "jockey": "石神深道",
-              "trainer": "田中勝春",
-              "odds": 5.6,
-              "popularity": 1,
+              "weight": 55,
+              "jockey": "川又賢治",
+              "trainer": "杉山佳明",
               "pace_type": [
                 "B"
               ]
@@ -1504,38 +1084,32 @@
             {
               "num": 13,
               "draw": 7,
-              "name": "ジャクソン",
+              "name": "ヴェネチアンマスク",
               "sex": "牡",
-              "age": 5,
-              "weight": 580,
-              "jockey": "丸田恭介",
-              "trainer": "武市康男",
-              "odds": 31.8,
-              "popularity": 11
+              "age": 3,
+              "weight": 55,
+              "jockey": "柴田大知",
+              "trainer": "和田雄二"
             },
             {
               "num": 14,
               "draw": 7,
-              "name": "ルシャルムール",
-              "sex": "セ",
-              "age": 3,
-              "weight": 550,
-              "jockey": "原優介",
-              "trainer": "萩原清",
-              "odds": 7.5,
-              "popularity": 4
+              "name": "ディバイングレース",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "内田博幸",
+              "trainer": "蛯名正義"
             },
             {
               "num": 15,
-              "draw": 8,
-              "name": "マーゴットソラーレ",
+              "draw": 7,
+              "name": "ルトンワージ",
               "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "荻野極",
-              "trainer": "伊坂重信",
-              "odds": 12.4,
-              "popularity": 7,
+              "age": 3,
+              "weight": 55,
+              "jockey": "戸崎圭太",
+              "trainer": "斎藤誠",
               "pace_type": [
                 "B"
               ]
@@ -1543,36 +1117,258 @@
             {
               "num": 16,
               "draw": 8,
-              "name": "フジレイメイ",
+              "name": "ケイツールピア",
+              "sex": "牝",
+              "age": 4,
+              "weight": 53,
+              "jockey": "石田拓郎",
+              "trainer": "蛯名利弘"
+            },
+            {
+              "num": 17,
+              "draw": 8,
+              "name": "サクラアドリア",
               "sex": "牡",
               "age": 3,
-              "weight": 550,
-              "jockey": "松岡正海",
+              "weight": 55,
+              "jockey": "横山典弘",
+              "trainer": "尾関知人"
+            },
+            {
+              "num": 18,
+              "draw": 8,
+              "name": "オロスコピオ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 53,
+              "jockey": "原優介",
+              "trainer": "青木孝文",
+              "pace_type": [
+                "C"
+              ]
+            }
+          ]
+        },
+        {
+          "no": 8,
+          "name": "3歳以上未勝利",
+          "distance_m": 1200,
+          "ground": "ダ",
+          "start_time": "13:55",
+          "pace_score": 6,
+          "horses": [
+            {
+              "num": 1,
+              "draw": 1,
+              "name": "サブアトミック",
+              "sex": "牝",
+              "age": 3,
+              "weight": 51,
+              "jockey": "小林美駒",
+              "trainer": "伊藤圭三"
+            },
+            {
+              "num": 2,
+              "draw": 1,
+              "name": "ディーン",
+              "sex": "牝",
+              "age": 5,
+              "weight": 53,
+              "jockey": "水沼元輝",
+              "trainer": "本間忍"
+            },
+            {
+              "num": 3,
+              "draw": 2,
+              "name": "ダノンリュラ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "菊沢一樹",
+              "trainer": "菊沢隆徳",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 4,
+              "draw": 2,
+              "name": "ルイステソーロ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "丹内祐次",
+              "trainer": "畠山吉宏",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "リトルミム",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "大野拓弥",
+              "trainer": "上原博之",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "アサクサグレース",
+              "sex": "牝",
+              "age": 3,
+              "weight": 52,
+              "jockey": "今村聖奈",
+              "trainer": "戸田博文",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "ノアスペシャル",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "木幡巧也",
+              "trainer": "鈴木慎太"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "ゲクウ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "原優介",
+              "trainer": "小手川準",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "チャコール",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "津村明秀",
+              "trainer": "矢野英一",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "ケイツーギルダー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "荻野極",
+              "trainer": "千葉直人"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "フォクシー",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "武藤雅",
+              "trainer": "石栗龍彦",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "サヨノジャンボリー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "内田博幸",
               "trainer": "小笠倫弘",
-              "odds": 11.2,
-              "popularity": 6
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "ヴァリアントマーチ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "横山琉人",
+              "trainer": "林徹",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "アルデショワ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "三浦皇成",
+              "trainer": "田中博康",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "ハジメテノチュウ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "杉原誠人",
+              "trainer": "南田美知",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "ホウオウジュビリー",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "丸田恭介",
+              "trainer": "西田雄一"
             }
           ]
         },
         {
           "no": 9,
-          "name": "3歳以上未勝利",
-          "distance_m": 1600,
+          "name": "カンナステークス",
+          "distance_m": 1200,
           "ground": "芝",
-          "start_time": "14:15",
-          "pace_score": 5.5,
+          "start_time": "14:30",
+          "pace_score": 9.5,
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ミスティア",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "武藤雅",
-              "trainer": "戸田博文",
-              "odds": 12.8,
-              "popularity": 7,
+              "name": "マイオウンウェイ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "佐々木大",
+              "trainer": "高野友和",
               "pace_type": [
                 "C"
               ]
@@ -1580,14 +1376,12 @@
             {
               "num": 2,
               "draw": 2,
-              "name": "ガルサブランカ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "戸崎圭太",
-              "trainer": "木村哲也",
-              "odds": 3.4,
-              "popularity": 2,
+              "name": "ユウファラオ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "丸山元気",
+              "trainer": "森秀行",
               "pace_type": [
                 "B"
               ]
@@ -1595,14 +1389,12 @@
             {
               "num": 3,
               "draw": 3,
-              "name": "ピコローズ",
+              "name": "セイウンアインス",
               "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "佐々木大",
-              "trainer": "伊藤大士",
-              "odds": 7.9,
-              "popularity": 4,
+              "age": 2,
+              "weight": 55,
+              "jockey": "武藤雅",
+              "trainer": "武藤善則",
               "pace_type": [
                 "B"
               ]
@@ -1610,74 +1402,129 @@
             {
               "num": 4,
               "draw": 4,
-              "name": "メイショウヨゾラ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "吉田豊",
-              "trainer": "高柳瑞樹",
-              "odds": 4.8,
-              "popularity": 3,
+              "name": "ヤマメライズ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "戸崎圭太",
+              "trainer": "田島俊明",
               "pace_type": [
-                "B"
+                "C"
               ]
             },
             {
               "num": 5,
-              "draw": 5,
-              "name": "ロムネヤ",
+              "draw": 4,
+              "name": "プリティーミズホ",
               "sex": "牝",
-              "age": 6,
-              "weight": 560,
-              "jockey": "吉田隼人",
-              "trainer": "国枝栄",
-              "odds": 37.2,
-              "popularity": 8,
+              "age": 2,
+              "weight": 55,
+              "jockey": "三浦皇成",
+              "trainer": "菊川正達",
               "pace_type": [
                 "B"
               ]
             },
             {
               "num": 6,
-              "draw": 6,
-              "name": "ネーヴェフレスカ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "荻野極",
-              "trainer": "石坂公一",
-              "odds": 9.6,
-              "popularity": 5,
+              "draw": 5,
+              "name": "ウチュウノセカイ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "原優介",
+              "trainer": "青木孝文",
               "pace_type": [
-                "C"
+                "B"
               ]
             },
             {
               "num": 7,
-              "draw": 7,
-              "name": "スマートミストラル",
+              "draw": 5,
+              "name": "エンヴィーミー",
               "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "菅原明良",
-              "trainer": "大久保龍",
-              "odds": 3.1,
-              "popularity": 1,
+              "age": 2,
+              "weight": 55,
+              "jockey": "丹内祐次",
+              "trainer": "森秀行",
               "pace_type": [
                 "B"
               ]
             },
             {
               "num": 8,
-              "draw": 8,
-              "name": "ケイデンシーマーク",
+              "draw": 6,
+              "name": "フレンドモナコ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "内田博幸",
+              "trainer": "南田美知",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 9,
+              "draw": 6,
+              "name": "シーグルロス",
               "sex": "牝",
-              "age": 5,
-              "weight": 560,
-              "jockey": "津村明秀",
-              "trainer": "福永祐一",
-              "odds": 10.5,
-              "popularity": 6,
+              "age": 2,
+              "weight": 55,
+              "jockey": "吉田隼人",
+              "trainer": "尾形和幸",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 10,
+              "draw": 7,
+              "name": "ミスバレンシア",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "モレイラ",
+              "trainer": "武井亮",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 11,
+              "draw": 7,
+              "name": "ランドスター",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "丸田恭介",
+              "trainer": "柄崎将寿",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 12,
+              "draw": 8,
+              "name": "ジュジュドール",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菅原明良",
+              "trainer": "西園翔太",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 13,
+              "draw": 8,
+              "name": "クリエープキー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "木幡巧也",
+              "trainer": "牧光二",
               "pace_type": [
                 "B"
               ]
@@ -1686,643 +1533,463 @@
         },
         {
           "no": 10,
-          "name": "3歳以上1勝クラス",
-          "distance_m": 2000,
+          "name": "九十九里特別",
+          "distance_m": 2500,
           "ground": "芝",
-          "start_time": "14:50",
-          "pace_score": 6,
+          "start_time": "15:05",
+          "pace_score": -0.5,
+          "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ブラックシールド",
+              "name": "マイユニバース",
               "sex": "牡",
-              "age": 6,
-              "weight": 540,
-              "jockey": "内田博幸",
-              "trainer": "小栗実",
-              "odds": 9.6,
-              "popularity": 4
+              "age": 3,
+              "weight": 55,
+              "jockey": "横山典弘",
+              "trainer": "武幸四郎"
             },
             {
               "num": 2,
               "draw": 2,
-              "name": "ミカッテヨンデイイ",
-              "sex": "牝",
-              "age": 5,
-              "weight": 510,
-              "jockey": "小林脩斗",
-              "trainer": "堀内岳志",
-              "odds": 16.5,
-              "popularity": 7
+              "name": "エコロレイズ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "菅原明良",
+              "trainer": "岩戸孝樹"
             },
             {
               "num": 3,
               "draw": 3,
-              "name": "ホークフィールド",
+              "name": "レイデラティエラ",
               "sex": "牡",
-              "age": 4,
-              "weight": 550,
-              "jockey": "石川裕紀",
-              "trainer": "武英智",
-              "odds": 47.8,
-              "popularity": 13,
+              "age": 3,
+              "weight": 55,
+              "jockey": "戸崎圭太",
+              "trainer": "小崎憲",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 4,
-              "draw": 3,
-              "name": "マイネルニコラス",
+              "draw": 4,
+              "name": "ミントマーク",
               "sex": "牡",
-              "age": 6,
-              "weight": 540,
-              "jockey": "柴田大知",
-              "trainer": "畠山吉宏",
-              "odds": 48.7,
-              "popularity": 14
+              "age": 5,
+              "weight": 58,
+              "jockey": "佐々木大",
+              "trainer": "高橋一哉",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 5,
-              "draw": 4,
-              "name": "モズマーヴェリック",
+              "draw": 5,
+              "name": "ネイサン",
               "sex": "牡",
               "age": 4,
-              "weight": 550,
-              "jockey": "三浦皇成",
-              "trainer": "牧浦充徳",
-              "odds": 19.1,
-              "popularity": 8
+              "weight": 58,
+              "jockey": "柴田大知",
+              "trainer": "粕谷昌央",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 6,
-              "draw": 4,
-              "name": "ソリダリティ",
-              "sex": "牡",
-              "age": 6,
-              "weight": 560,
-              "jockey": "荻野極",
-              "trainer": "西園翔太",
-              "odds": 8.3,
-              "popularity": 3,
+              "draw": 6,
+              "name": "ソワドリヨン",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "丹内祐次",
+              "trainer": "古賀慎明",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 7,
-              "draw": 5,
-              "name": "ダニーデン",
-              "sex": "牡",
+              "draw": 7,
+              "name": "ワイズゴールド",
+              "sex": "牝",
               "age": 5,
-              "weight": 540,
-              "jockey": "武藤雅",
-              "trainer": "辻哲英",
-              "odds": 21.9,
-              "popularity": 9,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 56,
+              "jockey": "菅原隆一",
+              "trainer": "蛯名利弘"
             },
             {
               "num": 8,
-              "draw": 5,
-              "name": "ココクレーター",
+              "draw": 8,
+              "name": "コスモマルーン",
               "sex": "牝",
               "age": 5,
-              "weight": 540,
-              "jockey": "津村明秀",
-              "trainer": "浅利英明",
-              "odds": 11.5,
-              "popularity": 5
+              "weight": 56,
+              "jockey": "菊沢一樹",
+              "trainer": "土田稔"
             },
             {
               "num": 9,
-              "draw": 6,
-              "name": "ホウオウムサシ",
-              "sex": "牡",
-              "age": 5,
-              "weight": 560,
-              "jockey": "菅原明良",
-              "trainer": "蛯名正義",
-              "odds": 4.8,
-              "popularity": 2
-            },
-            {
-              "num": 10,
-              "draw": 6,
-              "name": "イヤサカ",
-              "sex": "牝",
-              "age": 7,
-              "weight": 520,
-              "jockey": "江田照男",
-              "trainer": "天間昭一",
-              "odds": 23,
-              "popularity": 10,
-              "pace_type": [
-                "A",
-                "B"
-              ]
-            },
-            {
-              "num": 11,
-              "draw": 7,
-              "name": "フェミナフォルテ",
-              "sex": "牝",
-              "age": 5,
-              "weight": 520,
-              "jockey": "横山琉人",
-              "trainer": "小島茂之",
-              "odds": 31.7,
-              "popularity": 12
-            },
-            {
-              "num": 12,
-              "draw": 7,
-              "name": "アマイ",
-              "sex": "牝",
-              "age": 5,
-              "weight": 550,
-              "jockey": "丸田恭介",
-              "trainer": "伊藤大士",
-              "odds": 13.5,
-              "popularity": 6,
-              "pace_type": [
-                "A",
-                "B"
-              ]
-            },
-            {
-              "num": 13,
               "draw": 8,
-              "name": "アスクナイスショー",
-              "sex": "牡",
-              "age": 4,
-              "weight": 570,
-              "jockey": "戸崎圭太",
-              "trainer": "中舘英二",
-              "odds": 2.8,
-              "popularity": 1,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 14,
-              "draw": 8,
-              "name": "レッドヴェロシティ",
-              "sex": "牡",
+              "name": "バニシングポイント",
+              "sex": "セ",
               "age": 7,
-              "weight": 550,
+              "weight": 58,
               "jockey": "杉原誠人",
-              "trainer": "木村哲也",
-              "odds": 30.1,
-              "popularity": 11
+              "trainer": "古賀慎明"
             }
           ]
         },
         {
           "no": 11,
-          "name": "3歳以上オープン",
-          "distance_m": 1200,
+          "name": "バーレーン王国イサ・ビン・サルマン・アルカリファ殿下来場記念",
+          "distance_m": 1800,
           "ground": "ダ",
-          "start_time": "15:30",
-          "pace_score": 8,
-          "horses": [
-            {
-              "num": 1,
-              "draw": 1,
-              "name": "ルクスメテオール",
-              "sex": "牡",
-              "age": 5,
-              "weight": 570,
-              "jockey": "斎藤新",
-              "trainer": "小林真也",
-              "odds": 51.6,
-              "popularity": 15
-            },
-            {
-              "num": 2,
-              "draw": 1,
-              "name": "ジャスパーゴールド",
-              "sex": "セ",
-              "age": 7,
-              "weight": 580,
-              "jockey": "松岡正海",
-              "trainer": "森秀行",
-              "odds": 25.5,
-              "popularity": 10,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 3,
-              "draw": 2,
-              "name": "ポッドベイダー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "荻野極",
-              "trainer": "上原佑紀",
-              "odds": 13.3,
-              "popularity": 5,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 4,
-              "draw": 2,
-              "name": "サウザンサニー",
-              "sex": "牡",
-              "age": 5,
-              "weight": 570,
-              "jockey": "木幡巧也",
-              "trainer": "岩戸孝樹",
-              "odds": 13.7,
-              "popularity": 6
-            },
-            {
-              "num": 5,
-              "draw": 3,
-              "name": "ジョーローリット",
-              "sex": "牝",
-              "age": 4,
-              "weight": 550,
-              "jockey": "内田博幸",
-              "trainer": "中竹和也",
-              "odds": 34.4,
-              "popularity": 14,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 6,
-              "draw": 3,
-              "name": "フルム",
-              "sex": "牡",
-              "age": 6,
-              "weight": 580,
-              "jockey": "佐々木大",
-              "trainer": "浜田多実",
-              "odds": 27.3,
-              "popularity": 11,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 7,
-              "draw": 4,
-              "name": "ロードエクレール",
-              "sex": "牡",
-              "age": 7,
-              "weight": 580,
-              "jockey": "横山琉人",
-              "trainer": "斎藤誠",
-              "odds": 21.1,
-              "popularity": 9,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 8,
-              "draw": 4,
-              "name": "エティエンヌ",
-              "sex": "セ",
-              "age": 6,
-              "weight": 570,
-              "jockey": "津村明秀",
-              "trainer": "吉田直弘",
-              "odds": 19,
-              "popularity": 8
-            },
-            {
-              "num": 9,
-              "draw": 5,
-              "name": "エコロガイア",
-              "sex": "牡",
-              "age": 4,
-              "weight": 570,
-              "jockey": "丸山元気",
-              "trainer": "森秀行",
-              "odds": 28.4,
-              "popularity": 13,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 10,
-              "draw": 5,
-              "name": "エミサキホコル",
-              "sex": "牡",
-              "age": 5,
-              "weight": 570,
-              "jockey": "菅原明良",
-              "trainer": "杉山佳明",
-              "odds": 9.3,
-              "popularity": 4,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 11,
-              "draw": 6,
-              "name": "エスカル",
-              "sex": "牡",
-              "age": 4,
-              "weight": 570,
-              "jockey": "三浦皇成",
-              "trainer": "森秀行",
-              "odds": 7.2,
-              "popularity": 3,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 12,
-              "draw": 6,
-              "name": "イスラアネーロ",
-              "sex": "牡",
-              "age": 6,
-              "weight": 580,
-              "jockey": "川又賢治",
-              "trainer": "吉村圭司",
-              "odds": 28.3,
-              "popularity": 12,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 13,
-              "draw": 7,
-              "name": "バグラダス",
-              "sex": "牡",
-              "age": 5,
-              "weight": 570,
-              "jockey": "横山和生",
-              "trainer": "嘉藤貴行",
-              "odds": 15.3,
-              "popularity": 7
-            },
-            {
-              "num": 14,
-              "draw": 7,
-              "name": "ファロロジー",
-              "sex": "牝",
-              "age": 6,
-              "weight": 550,
-              "jockey": "吉田豊",
-              "trainer": "安達昭夫",
-              "odds": 97.5,
-              "popularity": 16,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 15,
-              "draw": 8,
-              "name": "ロードフォアエース",
-              "sex": "牡",
-              "age": 4,
-              "weight": 570,
-              "jockey": "戸崎圭太",
-              "trainer": "友道康夫",
-              "odds": 3.8,
-              "popularity": 1,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 16,
-              "draw": 8,
-              "name": "ブシン",
-              "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "吉田隼人",
-              "trainer": "森秀行",
-              "odds": 4.3,
-              "popularity": 2,
-              "pace_type": [
-                "B"
-              ]
-            }
-          ]
-        },
-        {
-          "no": 12,
-          "name": "3歳以上未勝利",
-          "distance_m": 1600,
-          "ground": "芝",
-          "start_time": "16:10",
+          "start_time": "15:45",
           "pace_score": 3.5,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "エンペラーズソード",
-              "sex": "セ",
-              "age": 3,
-              "weight": 560,
-              "jockey": "菅原明良",
-              "trainer": "高木登",
-              "odds": 4.3,
-              "popularity": 1,
+              "name": "ワールドタキオン",
+              "sex": "牡",
+              "age": 7,
+              "weight": 59,
+              "jockey": "丹内祐次",
+              "trainer": "斎藤誠",
               "pace_type": [
-                "B"
+                "C"
               ]
             },
             {
               "num": 2,
-              "draw": 1,
-              "name": "ポッドロルフ",
+              "draw": 2,
+              "name": "ノーブルゲイル",
               "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "荻野極",
-              "trainer": "小野次郎",
-              "odds": 39.2,
-              "popularity": 12
+              "age": 4,
+              "weight": 57,
+              "jockey": "木幡巧也",
+              "trainer": "中川公成",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 3,
               "draw": 2,
-              "name": "エナジーショット",
-              "sex": "牝",
-              "age": 3,
-              "weight": 510,
-              "jockey": "小林美駒",
-              "trainer": "矢嶋大樹",
-              "odds": 5.6,
-              "popularity": 2,
-              "pace_type": [
-                "B"
-              ]
+              "name": "カンピオーネ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 57,
+              "jockey": "横山和生",
+              "trainer": "栗田徹"
             },
             {
               "num": 4,
-              "draw": 2,
-              "name": "メイリー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "佐々木大",
-              "trainer": "鈴木慎太",
-              "odds": 21,
-              "popularity": 9
+              "draw": 3,
+              "name": "ジャスパーロブスト",
+              "sex": "セ",
+              "age": 4,
+              "weight": 58,
+              "jockey": "丸山元気",
+              "trainer": "森秀行",
+              "pace_type": [
+                "A",
+                "B"
+              ]
             },
             {
               "num": 5,
               "draw": 3,
-              "name": "アセンブリールーム",
+              "name": "キョウエイブリッサ",
               "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "杉原誠人",
-              "trainer": "中川公成",
-              "odds": 10.4,
-              "popularity": 5
+              "age": 5,
+              "weight": 57,
+              "jockey": "原優介",
+              "trainer": "武市康男"
             },
             {
               "num": 6,
-              "draw": 3,
-              "name": "ニシノヒナアラレ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "野中悠太",
-              "trainer": "根本康広",
-              "odds": 54,
-              "popularity": 14
+              "draw": 4,
+              "name": "ヒューゴ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 57,
+              "jockey": "石川裕紀",
+              "trainer": "加藤征弘"
             },
             {
               "num": 7,
               "draw": 4,
-              "name": "マジカルワード",
-              "sex": "牝",
+              "name": "ゼットリアン",
+              "sex": "牡",
               "age": 5,
-              "weight": 560,
-              "jockey": "嶋田純次",
-              "trainer": "大竹正博",
-              "odds": 128,
-              "popularity": 16
+              "weight": 57,
+              "jockey": "戸崎圭太",
+              "trainer": "吉田直弘"
             },
             {
               "num": 8,
-              "draw": 4,
-              "name": "ザカート",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "三浦皇成",
-              "trainer": "高柳瑞樹",
-              "odds": 43.9,
-              "popularity": 13,
-              "pace_type": [
-                "C"
-              ]
+              "draw": 5,
+              "name": "キタノリューオー",
+              "sex": "牡",
+              "age": 7,
+              "weight": 58,
+              "jockey": "横山琉人",
+              "trainer": "萱野浩二"
             },
             {
               "num": 9,
               "draw": 5,
-              "name": "マニス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 510,
-              "jockey": "石神深道",
-              "trainer": "畠山吉宏",
-              "odds": 31.5,
-              "popularity": 10
+              "name": "フタイテンロック",
+              "sex": "牡",
+              "age": 6,
+              "weight": 57,
+              "jockey": "内田博幸",
+              "trainer": "佐藤吉勝"
             },
             {
               "num": 10,
-              "draw": 5,
-              "name": "アサクサヴィーナス",
-              "sex": "牝",
-              "age": 5,
-              "weight": 560,
-              "jockey": "石川裕紀",
-              "trainer": "高柳瑞樹",
-              "odds": 6.2,
-              "popularity": 4,
+              "draw": 6,
+              "name": "ハビレ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 57,
+              "jockey": "モレイラ",
+              "trainer": "武井亮"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "ムルソー",
+              "sex": "牡",
+              "age": 4,
+              "weight": 57,
+              "jockey": "ルメール",
+              "trainer": "池江泰寿",
               "pace_type": [
                 "B"
               ]
             },
             {
-              "num": 11,
-              "draw": 6,
-              "name": "ミエノブラボー",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "柴田善臣",
-              "trainer": "田中勝春",
-              "odds": 12.4,
-              "popularity": 7
+              "num": 12,
+              "draw": 7,
+              "name": "サンマルパトロール",
+              "sex": "牡",
+              "age": 5,
+              "weight": 57,
+              "jockey": "石橋脩",
+              "trainer": "大橋勇樹"
             },
             {
-              "num": 12,
-              "draw": 6,
-              "name": "モティスフォント",
+              "num": 13,
+              "draw": 7,
+              "name": "マンマリアーレ",
+              "sex": "牝",
+              "age": 5,
+              "weight": 55,
+              "jockey": "荻野極",
+              "trainer": "高木登"
+            },
+            {
+              "num": 14,
+              "draw": 8,
+              "name": "ブレイクフォース",
               "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "戸崎圭太",
-              "trainer": "田村康仁",
-              "odds": 6,
-              "popularity": 3,
+              "age": 6,
+              "weight": 58,
+              "jockey": "菅原明良",
+              "trainer": "中舘英二"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "アピーリングルック",
+              "sex": "牝",
+              "age": 4,
+              "weight": 55,
+              "jockey": "佐々木大",
+              "trainer": "辻哲英"
+            }
+          ]
+        },
+        {
+          "no": 12,
+          "name": "3歳以上1勝クラス",
+          "distance_m": 1200,
+          "ground": "ダ",
+          "start_time": "16:30",
+          "pace_score": 4.5,
+          "horses": [
+            {
+              "num": 1,
+              "draw": 1,
+              "name": "ビヨンドザシーン",
+              "sex": "牡",
+              "age": 7,
+              "weight": 58,
+              "jockey": "黛弘人",
+              "trainer": "南田美知"
+            },
+            {
+              "num": 2,
+              "draw": 1,
+              "name": "サニーサフラン",
+              "sex": "牡",
+              "age": 5,
+              "weight": 55,
+              "jockey": "遠藤汰月",
+              "trainer": "菊川正達",
               "pace_type": [
                 "C"
               ]
             },
             {
-              "num": 13,
-              "draw": 7,
-              "name": "チョングク",
+              "num": 3,
+              "draw": 2,
+              "name": "ヴェルトラウム",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "武藤雅",
+              "trainer": "西田雄一"
+            },
+            {
+              "num": 4,
+              "draw": 2,
+              "name": "タマモヴェナトル",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "菊沢一樹",
+              "trainer": "菊沢隆徳",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "メイデンタワー",
+              "sex": "牝",
+              "age": 5,
+              "weight": 53,
+              "jockey": "小林美駒",
+              "trainer": "稲垣幸雄",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "イルザ",
+              "sex": "牝",
+              "age": 6,
+              "weight": 56,
+              "jockey": "原優介",
+              "trainer": "小手川準"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "メモリーグラス",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "木幡巧也",
+              "trainer": "松永康利"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "ザウリ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "丸山元気",
+              "trainer": "森田直行"
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "スーパーマン",
+              "sex": "牡",
+              "age": 5,
+              "weight": 55,
+              "jockey": "石田拓郎",
+              "trainer": "岩戸孝樹"
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "グランオルカ",
+              "sex": "セ",
+              "age": 4,
+              "weight": 58,
+              "jockey": "佐々木大",
+              "trainer": "武井亮"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "エコロエイト",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "丹内祐次",
+              "trainer": "田村康仁",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "ヤマメキング",
               "sex": "牡",
               "age": 3,
-              "weight": 560,
-              "jockey": "丸田恭介",
-              "trainer": "南田美知",
-              "odds": 33.1,
-              "popularity": 11
+              "weight": 56,
+              "jockey": "戸崎圭太",
+              "trainer": "田島俊明"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "クリスタルウエイ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "吉田豊",
+              "trainer": "高橋文雅"
             },
             {
               "num": 14,
               "draw": 7,
-              "name": "レイククレセント",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "横山和生",
-              "trainer": "大竹正博",
-              "odds": 10.6,
-              "popularity": 6
+              "name": "ミヤビクライ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "柴田善臣",
+              "trainer": "小島茂之",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 15,
               "draw": 8,
-              "name": "オーケースマイル",
+              "name": "シュヴァルボヌール",
               "sex": "牝",
               "age": 3,
-              "weight": 540,
-              "jockey": "横山琉人",
-              "trainer": "相沢郁",
-              "odds": 96,
-              "popularity": 15,
+              "weight": 54,
+              "jockey": "三浦皇成",
+              "trainer": "加藤征弘",
               "pace_type": [
                 "B"
               ]
@@ -2330,14 +1997,15 @@
             {
               "num": 16,
               "draw": 8,
-              "name": "サザンティスプーン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "津村明秀",
-              "trainer": "鈴木伸尋",
-              "odds": 17.4,
-              "popularity": 8
+              "name": "ヘルメース",
+              "sex": "牡",
+              "age": 4,
+              "weight": 55,
+              "jockey": "佐藤翔馬",
+              "trainer": "伊藤圭三",
+              "pace_type": [
+                "B"
+              ]
             }
           ]
         }
@@ -2346,805 +2014,444 @@
     {
       "track": "阪神",
       "kaiji": 4,
-      "nichiji": 4,
+      "nichiji": 6,
       "races": [
         {
           "no": 1,
-          "name": "2歳未勝利",
-          "distance_m": 1400,
-          "ground": "ダ",
-          "start_time": "10:00",
-          "pace_score": 1,
-          "pace_mark": "★",
-          "horses": [
-            {
-              "num": 1,
-              "draw": 1,
-              "name": "アロハマウロア",
-              "sex": "牝",
-              "age": 2,
-              "weight": 530,
-              "jockey": "永島まな",
-              "trainer": "藤野健太",
-              "odds": 93.9,
-              "popularity": 12
-            },
-            {
-              "num": 2,
-              "draw": 2,
-              "name": "レザーアンドレース",
-              "sex": "牝",
-              "age": 2,
-              "weight": 540,
-              "jockey": "吉村誠之",
-              "trainer": "平田修",
-              "odds": 77.5,
-              "popularity": 11
-            },
-            {
-              "num": 3,
-              "draw": 3,
-              "name": "ウイッチボニータ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "松山弘平",
-              "trainer": "石坂公一",
-              "odds": 12.7,
-              "popularity": 5,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 4,
-              "draw": 4,
-              "name": "アンジュプロミス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 520,
-              "jockey": "古川奈穂",
-              "trainer": "矢作芳人",
-              "odds": 5.6,
-              "popularity": 3,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 5,
-              "draw": 4,
-              "name": "アメジストブルー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "和田竜二",
-              "trainer": "浜田多実",
-              "odds": 71.4,
-              "popularity": 10
-            },
-            {
-              "num": 6,
-              "draw": 5,
-              "name": "サンタカリス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "太宰啓介",
-              "trainer": "秋山真一",
-              "odds": 49.9,
-              "popularity": 9
-            },
-            {
-              "num": 7,
-              "draw": 5,
-              "name": "エボニードール",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "岩田望来",
-              "trainer": "寺島良",
-              "odds": 10,
-              "popularity": 4,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 8,
-              "draw": 6,
-              "name": "サンタクローチェ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "城戸義政",
-              "trainer": "西村真幸",
-              "odds": 31.4,
-              "popularity": 8,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 9,
-              "draw": 6,
-              "name": "フェスティヴドレス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "菱田裕二",
-              "trainer": "岡田稲男",
-              "odds": 12.9,
-              "popularity": 6
-            },
-            {
-              "num": 10,
-              "draw": 7,
-              "name": "ラブルラウザー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "川田将雅",
-              "trainer": "大久保龍",
-              "odds": 2.8,
-              "popularity": 1,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 11,
-              "draw": 7,
-              "name": "ファインブルー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "松若風馬",
-              "trainer": "藤野健太",
-              "odds": 109.6,
-              "popularity": 13
-            },
-            {
-              "num": 12,
-              "draw": 8,
-              "name": "ツーエムボヌール",
-              "sex": "牝",
-              "age": 2,
-              "weight": 520,
-              "jockey": "和田陽希",
-              "trainer": "本田優",
-              "odds": 17.7,
-              "popularity": 7
-            },
-            {
-              "num": 13,
-              "draw": 8,
-              "name": "ビタールート",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "モレイラ",
-              "trainer": "奥村豊",
-              "odds": 3.2,
-              "popularity": 2,
-              "pace_type": [
-                "C"
-              ]
-            }
-          ]
-        },
-        {
-          "no": 2,
           "name": "2歳1勝クラス",
-          "distance_m": 1400,
-          "ground": "芝",
-          "start_time": "10:35",
-          "pace_score": 2.5,
-          "pace_mark": "★",
-          "horses": [
-            {
-              "num": 1,
-              "draw": 1,
-              "name": "シャローアロス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "松山弘平",
-              "trainer": "安達昭夫",
-              "odds": 5.7,
-              "popularity": 4,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 2,
-              "draw": 2,
-              "name": "ケンヴォイジャー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "中井裕二",
-              "trainer": "本田優",
-              "odds": 70.7,
-              "popularity": 10
-            },
-            {
-              "num": 3,
-              "draw": 3,
-              "name": "ナムラヒナギク",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "田口貫太",
-              "trainer": "大橋勇樹",
-              "odds": 8.1,
-              "popularity": 5,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 4,
-              "draw": 4,
-              "name": "コスモファーブロス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "丹内祐次",
-              "trainer": "吉田直弘",
-              "odds": 25.1,
-              "popularity": 7,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 5,
-              "draw": 5,
-              "name": "ダイヤモンドノット",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "川田将雅",
-              "trainer": "福永祐一",
-              "odds": 4.6,
-              "popularity": 2,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 6,
-              "draw": 6,
-              "name": "ルビーエクリプス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 530,
-              "jockey": "永島まな",
-              "trainer": "高野友和",
-              "odds": 51.2,
-              "popularity": 9,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 7,
-              "draw": 7,
-              "name": "ジョーカー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "岩田望来",
-              "trainer": "友道康夫",
-              "odds": 5.1,
-              "popularity": 3
-            },
-            {
-              "num": 8,
-              "draw": 7,
-              "name": "テーオーアルアイン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "渡辺竜也",
-              "trainer": "奥村豊",
-              "odds": 19.9,
-              "popularity": 6,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 9,
-              "draw": 8,
-              "name": "プレセピオ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "浜中俊",
-              "trainer": "笹田和秀",
-              "odds": 28.1,
-              "popularity": 8,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 10,
-              "draw": 8,
-              "name": "フォーゲル",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "モレイラ",
-              "trainer": "斉藤崇史",
-              "odds": 2.6,
-              "popularity": 1,
-              "pace_type": [
-                "C"
-              ]
-            }
-          ]
-        },
-        {
-          "no": 3,
-          "name": "3歳以上1勝クラス",
           "distance_m": 1800,
           "ground": "ダ",
-          "start_time": "11:05",
-          "pace_score": 7.5,
+          "start_time": "09:45",
+          "pace_score": 1.5,
+          "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "オブラマエストラ",
+              "name": "エコロレーヴ",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "亀田温心",
-              "trainer": "池添学",
-              "odds": 28.2,
-              "popularity": 11,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 2,
-              "draw": 1,
-              "name": "マジックローズ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "小沢大仁",
-              "trainer": "中内田充",
-              "odds": 16.9,
-              "popularity": 5,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 3,
-              "draw": 2,
-              "name": "ミライエイゴウ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 540,
-              "jockey": "田山旺佑",
-              "trainer": "四位洋文",
-              "odds": 50.7,
-              "popularity": 13,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 4,
-              "draw": 2,
-              "name": "ラテライト",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "西村淳也",
-              "trainer": "松下武士",
-              "odds": 5,
-              "popularity": 2
-            },
-            {
-              "num": 5,
-              "draw": 3,
-              "name": "ブルーセルリアン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 540,
-              "jockey": "橋木太希",
-              "trainer": "宮徹",
-              "odds": 350.8,
-              "popularity": 16,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 6,
-              "draw": 3,
-              "name": "ヌーヴェルソール",
-              "sex": "牝",
-              "age": 3,
-              "weight": 510,
-              "jockey": "河原田菜",
-              "trainer": "吉村圭司",
-              "odds": 21.7,
-              "popularity": 7
-            },
-            {
-              "num": 7,
-              "draw": 4,
-              "name": "クインズマカロン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "藤懸貴志",
-              "trainer": "小林真也",
-              "odds": 25.4,
-              "popularity": 9
-            },
-            {
-              "num": 8,
-              "draw": 4,
-              "name": "メイショウカジボウ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "西塚洸二",
-              "trainer": "笹田和秀",
-              "odds": 11.2,
-              "popularity": 4,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 9,
-              "draw": 5,
-              "name": "メイショウヨンク",
-              "sex": "牡",
-              "age": 3,
-              "weight": 540,
-              "jockey": "柴田裕一",
-              "trainer": "秋山真一",
-              "odds": 21.8,
-              "popularity": 8
-            },
-            {
-              "num": 10,
-              "draw": 5,
-              "name": "フランキーバローズ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
+              "age": 2,
+              "weight": 55,
               "jockey": "川田将雅",
-              "trainer": "池江泰寿",
-              "odds": 2.1,
-              "popularity": 1,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 11,
-              "draw": 6,
-              "name": "ザンクトガレン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 530,
-              "jockey": "永島まな",
-              "trainer": "宮本博",
-              "odds": 25.7,
-              "popularity": 10
-            },
-            {
-              "num": 12,
-              "draw": 6,
-              "name": "エーピーポエティス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "秋山稔樹",
-              "trainer": "杉山佳明",
-              "odds": 150.9,
-              "popularity": 15
-            },
-            {
-              "num": 13,
-              "draw": 7,
-              "name": "モズシューター",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "和田竜二",
-              "trainer": "飯田祐史",
-              "odds": 35.4,
-              "popularity": 12
-            },
-            {
-              "num": 14,
-              "draw": 7,
-              "name": "アルデフォックス",
-              "sex": "セ",
-              "age": 3,
-              "weight": 570,
-              "jockey": "田口貫太",
-              "trainer": "藤岡健一",
-              "odds": 18.8,
-              "popularity": 6,
+              "trainer": "森秀行",
               "pace_type": [
                 "A",
                 "B"
               ]
             },
             {
-              "num": 15,
-              "draw": 8,
-              "name": "サラサラヘアー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 530,
-              "jockey": "鷲頭虎太",
-              "trainer": "前川恭子",
-              "odds": 135.2,
-              "popularity": 14,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 16,
-              "draw": 8,
-              "name": "タヴァネスタン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "高杉吏麒",
-              "trainer": "藤岡健一",
-              "odds": 8,
-              "popularity": 3,
-              "pace_type": [
-                "B"
-              ]
-            }
-          ]
-        },
-        {
-          "no": 4,
-          "name": "3歳以上未勝利",
-          "distance_m": 1200,
-          "ground": "ダ",
-          "start_time": "11:35",
-          "pace_score": 5.5,
-          "horses": [
-            {
-              "num": 1,
-              "draw": 1,
-              "name": "オーウェンズバレー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "松山弘平",
-              "trainer": "宮徹",
-              "odds": 16,
-              "popularity": 9,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
               "num": 2,
-              "draw": 1,
-              "name": "テーオーヴァルナイ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "岩田望来",
-              "trainer": "浜田多実",
-              "odds": 13.8,
-              "popularity": 7,
+              "draw": 2,
+              "name": "カレイジャスビート",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "北村友一",
+              "trainer": "高野友和",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 3,
-              "draw": 2,
-              "name": "ニネンエフグミ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "長岡禎仁",
-              "trainer": "茶木太樹",
-              "odds": 13.7,
-              "popularity": 6,
-              "pace_type": [
-                "B"
-              ]
+              "draw": 3,
+              "name": "レッドラージャ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "岩田望来",
+              "trainer": "友道康夫"
             },
             {
               "num": 4,
-              "draw": 2,
-              "name": "テーオーテバルディ",
+              "draw": 4,
+              "name": "クリソプテロン",
               "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "鮫島克駿",
-              "trainer": "藤野健太",
-              "odds": 36.8,
-              "popularity": 13
+              "age": 2,
+              "weight": 55,
+              "jockey": "小沢大仁",
+              "trainer": "浜田多実"
             },
             {
               "num": 5,
-              "draw": 3,
-              "name": "ニーナバイリッカ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "田口貫太",
-              "trainer": "松下武士",
-              "odds": 75.8,
-              "popularity": 14
+              "draw": 5,
+              "name": "シャローファースト",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "岩田康誠",
+              "trainer": "安田翔伍"
             },
             {
               "num": 6,
-              "draw": 3,
-              "name": "オオデンタ",
+              "draw": 6,
+              "name": "ジーティースティア",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "菱田裕二",
-              "trainer": "大根田裕",
-              "odds": 4.3,
-              "popularity": 2
+              "age": 2,
+              "weight": 55,
+              "jockey": "鮫島克駿",
+              "trainer": "藤野健太"
             },
             {
               "num": 7,
-              "draw": 4,
-              "name": "ヴァルドグラース",
+              "draw": 7,
+              "name": "カフジクロミエ",
               "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "酒井学",
-              "trainer": "吉岡辰弥",
-              "odds": 77.8,
-              "popularity": 15
+              "age": 2,
+              "weight": 55,
+              "jockey": "和田竜二",
+              "trainer": "中竹和也"
             },
             {
               "num": 8,
-              "draw": 4,
-              "name": "リリードリーマー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "和田竜二",
-              "trainer": "平田修",
-              "odds": 16.7,
-              "popularity": 10,
+              "draw": 7,
+              "name": "ナウオアネヴァー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "小崎綾也",
+              "trainer": "寺島良",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 9,
-              "draw": 5,
-              "name": "ヴィヴァシャス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "高杉吏麒",
-              "trainer": "笹田和秀",
-              "odds": 7,
-              "popularity": 3
+              "draw": 8,
+              "name": "エヴァラック",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菱田裕二",
+              "trainer": "前川恭子",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 10,
+              "draw": 8,
+              "name": "ロードベルファスト",
+              "sex": "牡",
+              "age": 2,
+              "weight": 54,
+              "jockey": "高杉吏麒",
+              "trainer": "畑端省吾"
+            }
+          ]
+        },
+        {
+          "no": 2,
+          "name": "2歳1勝クラス",
+          "distance_m": 2000,
+          "ground": "芝",
+          "start_time": "10:15",
+          "pace_score": -1.5,
+          "pace_mark": "★",
+          "horses": [
+            {
+              "num": 1,
+              "draw": 1,
+              "name": "シャインヴィーラ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 54,
+              "jockey": "松本大輝",
+              "trainer": "本田優"
+            },
+            {
+              "num": 2,
+              "draw": 2,
+              "name": "タイセイパルス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "富田暁",
+              "trainer": "宮地貴稔"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "エチゴドラゴン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "松若風馬",
+              "trainer": "宮本博",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "ライツェントライゼ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "和田竜二",
+              "trainer": "梅田智之"
+            },
+            {
+              "num": 5,
               "draw": 5,
-              "name": "ラヴィングユー",
+              "name": "ネッタイヤライ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 52,
+              "jockey": "古川奈穂",
+              "trainer": "矢作芳人"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ティアーズクィーン",
               "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "古川吉洋",
-              "trainer": "谷潔",
-              "odds": 101.3,
-              "popularity": 16,
-              "pace_type": [
-                "B"
-              ]
+              "age": 2,
+              "weight": 55,
+              "jockey": "田口貫太",
+              "trainer": "平田修"
             },
             {
-              "num": 11,
-              "draw": 6,
-              "name": "テイエムタワードン",
-              "sex": "セ",
-              "age": 3,
-              "weight": 570,
-              "jockey": "川須栄彦",
-              "trainer": "畑端省吾",
-              "odds": 25.7,
-              "popularity": 11,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 12,
-              "draw": 6,
-              "name": "メイショウアイク",
-              "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "国分優作",
-              "trainer": "石橋守",
-              "odds": 32,
-              "popularity": 12
-            },
-            {
-              "num": 13,
+              "num": 7,
               "draw": 7,
-              "name": "ムギトルナ",
+              "name": "シンゼンイセ",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
-              "jockey": "団野大成",
-              "trainer": "高橋義忠",
-              "odds": 13.8,
-              "popularity": 7,
-              "pace_type": [
-                "C"
-              ]
+              "age": 2,
+              "weight": 54,
+              "jockey": "高杉吏麒",
+              "trainer": "荒川義之"
+            }
+          ]
+        },
+        {
+          "no": 3,
+          "name": "2歳1勝クラス",
+          "distance_m": 1200,
+          "ground": "ダ",
+          "start_time": "10:45",
+          "pace_score": -3.5,
+          "horses": [
+            {
+              "num": 1,
+              "draw": 1,
+              "name": "ネメス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "北村友一",
+              "trainer": "坂口智康"
             },
             {
-              "num": 14,
-              "draw": 7,
-              "name": "ステラノヴァ",
+              "num": 2,
+              "draw": 2,
+              "name": "メイショウテンジン",
               "sex": "牡",
-              "age": 3,
-              "weight": 570,
+              "age": 2,
+              "weight": 55,
+              "jockey": "池添謙一",
+              "trainer": "高橋亮"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "キタノファーンヒル",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "和田陽希",
+              "trainer": "加藤公太"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "タカスタカスタカス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "坂井瑠星",
+              "trainer": "藤原英昭"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "ソウルオンファイア",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "富田暁",
+              "trainer": "野中賢二"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ライトオブヌカタ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "岩田康誠",
+              "trainer": "上村洋行"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "カッタッパ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "川田将雅",
+              "trainer": "森秀行"
+            },
+            {
+              "num": 8,
+              "draw": 7,
+              "name": "イクヒロ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
               "jockey": "武豊",
-              "trainer": "千田輝彦",
-              "odds": 4,
-              "popularity": 1,
+              "trainer": "小椋研介"
+            },
+            {
+              "num": 9,
+              "draw": 8,
+              "name": "ジョーヴェスタ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菱田裕二",
+              "trainer": "松下武士"
+            },
+            {
+              "num": 10,
+              "draw": 8,
+              "name": "グランディマージュ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "松山弘平",
+              "trainer": "鈴木孝志"
+            }
+          ]
+        },
+        {
+          "no": 4,
+          "name": "阪神ジャンプステークス",
+          "distance_m": 3140,
+          "ground": "障",
+          "start_time": "11:20",
+          "pace_score": 8,
+          "horses": [
+            {
+              "num": 1,
+              "draw": 1,
+              "name": "ポリトナリティー",
+              "sex": "牝",
+              "age": 4,
+              "weight": 58,
+              "jockey": "上野翔",
+              "trainer": "和田雄二"
+            },
+            {
+              "num": 2,
+              "draw": 2,
+              "name": "サンマルグレイト",
+              "sex": "牡",
+              "age": 5,
+              "weight": 60,
+              "jockey": "大江原圭",
+              "trainer": "佐藤吉勝",
               "pace_type": [
                 "C"
               ]
             },
             {
-              "num": 15,
-              "draw": 8,
-              "name": "モズアカトンボ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "吉村誠之",
-              "trainer": "牧田和弥",
-              "odds": 12.4,
-              "popularity": 5,
+              "num": 3,
+              "draw": 3,
+              "name": "ジーククローネ",
+              "sex": "セ",
+              "age": 5,
+              "weight": 60,
+              "jockey": "草野太郎",
+              "trainer": "宮田敬介",
               "pace_type": [
-                "C"
+                "B"
               ]
             },
             {
-              "num": 16,
-              "draw": 8,
-              "name": "トップレディー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "秋山稔樹",
-              "trainer": "北出成人",
-              "odds": 11.7,
-              "popularity": 4,
+              "num": 4,
+              "draw": 4,
+              "name": "ナリノモンターニュ",
+              "sex": "牡",
+              "age": 8,
+              "weight": 60,
+              "jockey": "五十嵐雄",
+              "trainer": "上原博之",
               "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "ジューンベロシティ",
+              "sex": "牡",
+              "age": 7,
+              "weight": 61,
+              "jockey": "高田潤",
+              "trainer": "武英智",
+              "pace_type": [
+                "A",
+                "B"
+              ]
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ネビーイーム",
+              "sex": "牡",
+              "age": 7,
+              "weight": 60,
+              "jockey": "小牧加矢",
+              "trainer": "佐々木晶",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "テイエムマジック",
+              "sex": "牡",
+              "age": 7,
+              "weight": 60,
+              "jockey": "難波剛健",
+              "trainer": "鈴木孝志",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 8,
+              "draw": 8,
+              "name": "トゥラッタッタ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 60,
+              "jockey": "石神深一",
+              "trainer": "新開幸一"
+            },
+            {
+              "num": 9,
+              "draw": 8,
+              "name": "マテンロウジョイ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 60,
+              "jockey": "西谷誠",
+              "trainer": "四位洋文",
+              "pace_type": [
+                "A",
                 "B"
               ]
             }
@@ -3153,624 +2460,624 @@
         {
           "no": 5,
           "name": "2歳1勝クラス",
-          "distance_m": 2000,
+          "distance_m": 1600,
           "ground": "芝",
-          "start_time": "12:25",
-          "pace_score": -3.5,
+          "start_time": "12:10",
+          "pace_score": -2,
+          "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "プレイザリード",
-              "sex": "牡",
+              "name": "アトリ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "モレイラ",
-              "trainer": "加藤士津",
-              "odds": 2.6,
-              "popularity": 2
+              "weight": 54,
+              "jockey": "吉村誠之",
+              "trainer": "清水久詞"
             },
             {
               "num": 2,
               "draw": 2,
-              "name": "アンコンケラブル",
-              "sex": "牡",
+              "name": "ハクサンテドリガワ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "松山弘平",
-              "trainer": "牧光二",
-              "odds": 23.9,
-              "popularity": 5
+              "weight": 55,
+              "jockey": "小崎綾也",
+              "trainer": "小崎憲"
             },
             {
               "num": 3,
               "draw": 3,
-              "name": "ナムラヴンダー",
-              "sex": "牡",
+              "name": "ベストバラディア",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "岩田康誠",
-              "trainer": "河嶋宏樹",
-              "odds": 16.4,
-              "popularity": 4
+              "weight": 55,
+              "jockey": "角田大和",
+              "trainer": "西園正都"
             },
             {
               "num": 4,
-              "draw": 4,
-              "name": "ジャスティンルマン",
-              "sex": "牡",
+              "draw": 3,
+              "name": "マリノエステーラ",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "ルメール",
-              "trainer": "杉山晴紀",
-              "odds": 2.3,
-              "popularity": 1
+              "weight": 55,
+              "jockey": "池添謙一",
+              "trainer": "中竹和也"
             },
             {
               "num": 5,
-              "draw": 5,
-              "name": "ブルースカイブルー",
-              "sex": "牡",
+              "draw": 4,
+              "name": "メイプルハッピー",
+              "sex": "牝",
               "age": 2,
-              "weight": 550,
-              "jockey": "和田竜二",
-              "trainer": "平田修",
-              "odds": 3.2,
-              "popularity": 3
+              "weight": 55,
+              "jockey": "亀田温心",
+              "trainer": "北出成人"
             },
             {
               "num": 6,
-              "draw": 6,
-              "name": "テイエムプレミラン",
+              "draw": 4,
+              "name": "グッドピース",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
-              "jockey": "鮫島克駿",
-              "trainer": "宮地貴稔",
-              "odds": 44.6,
-              "popularity": 6
+              "weight": 55,
+              "jockey": "西村淳也",
+              "trainer": "高野友和"
             },
             {
               "num": 7,
-              "draw": 7,
-              "name": "クーレスト",
+              "draw": 5,
+              "name": "テーオーレックス",
               "sex": "牡",
               "age": 2,
-              "weight": 550,
+              "weight": 55,
+              "jockey": "菱田裕二",
+              "trainer": "岡田稲男",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 8,
+              "draw": 5,
+              "name": "ベジョータ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "岩田望来",
+              "trainer": "野中賢二"
+            },
+            {
+              "num": 9,
+              "draw": 6,
+              "name": "マカナアネラ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "北村友一",
+              "trainer": "角田晃一"
+            },
+            {
+              "num": 10,
+              "draw": 6,
+              "name": "ヴェロシア",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "坂井瑠星",
+              "trainer": "安田翔伍"
+            },
+            {
+              "num": 11,
+              "draw": 7,
+              "name": "ニュートラ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
               "jockey": "古川吉洋",
-              "trainer": "大根田裕",
-              "odds": 55.1,
-              "popularity": 7
+              "trainer": "畑端省吾"
+            },
+            {
+              "num": 12,
+              "draw": 7,
+              "name": "デルニエジョイ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "和田竜二",
+              "trainer": "鈴木孝志"
+            },
+            {
+              "num": 13,
+              "draw": 8,
+              "name": "タイセイグローバル",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "松山弘平",
+              "trainer": "小林真也"
+            },
+            {
+              "num": 14,
+              "draw": 8,
+              "name": "カルロット",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "武豊",
+              "trainer": "武幸四郎"
             }
           ]
         },
         {
           "no": 6,
-          "name": "2歳1勝クラス",
+          "name": "3歳以上1勝クラス",
           "distance_m": 1800,
           "ground": "ダ",
-          "start_time": "12:55",
-          "pace_score": -3.5,
+          "start_time": "12:40",
+          "pace_score": 5.5,
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "シャンドラファール",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "モレイラ",
-              "trainer": "斉藤崇史",
-              "odds": 5.1,
-              "popularity": 3
+              "name": "ソングコレクター",
+              "sex": "牝",
+              "age": 3,
+              "weight": 53,
+              "jockey": "小沢大仁",
+              "trainer": "小林真也",
+              "pace_type": [
+                "A",
+                "B"
+              ]
             },
             {
               "num": 2,
-              "draw": 2,
-              "name": "クリコバロー",
+              "draw": 1,
+              "name": "ココデイック",
               "sex": "牡",
-              "age": 2,
-              "weight": 510,
-              "jockey": "河原田菜",
-              "trainer": "渡辺薫彦",
-              "odds": 86.1,
-              "popularity": 12
+              "age": 3,
+              "weight": 55,
+              "jockey": "西村淳也",
+              "trainer": "藤岡健一",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 3,
-              "draw": 3,
-              "name": "ウンナターシャ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "松山弘平",
-              "trainer": "高柳大輔",
-              "odds": 7.6,
-              "popularity": 4
+              "draw": 2,
+              "name": "ゴールドダイアー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 55,
+              "jockey": "和田竜二",
+              "trainer": "平田修"
             },
             {
               "num": 4,
-              "draw": 4,
-              "name": "メイショウシンガン",
+              "draw": 2,
+              "name": "ピエナクレスコ",
               "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "岩田望来",
-              "trainer": "高橋義忠",
-              "odds": 18.8,
-              "popularity": 5
+              "age": 4,
+              "weight": 54,
+              "jockey": "河原田菜",
+              "trainer": "谷潔"
             },
             {
               "num": 5,
-              "draw": 5,
-              "name": "ケンフィールド",
+              "draw": 3,
+              "name": "ギュルヴィ",
               "sex": "牡",
-              "age": 2,
-              "weight": 540,
-              "jockey": "吉村誠之",
-              "trainer": "大根田裕",
-              "odds": 56.5,
-              "popularity": 10
+              "age": 3,
+              "weight": 55,
+              "jockey": "武豊",
+              "trainer": "大久保龍"
             },
             {
               "num": 6,
-              "draw": 5,
-              "name": "ベベペッパー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 550,
-              "jockey": "国分優作",
-              "trainer": "東田明士",
-              "odds": 19.1,
-              "popularity": 6
+              "draw": 3,
+              "name": "ハナウマビーチ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 55,
+              "jockey": "松山弘平",
+              "trainer": "西園翔太",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 7,
-              "draw": 6,
-              "name": "メイショウバンサン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "酒井学",
-              "trainer": "西園正都",
-              "odds": 26.9,
-              "popularity": 8
+              "draw": 4,
+              "name": "ガーデンカメリア",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "長岡禎仁",
+              "trainer": "佐藤悠太",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 8,
-              "draw": 6,
-              "name": "ウェイニースー",
+              "draw": 4,
+              "name": "ロードシュヴァリエ",
               "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "川田将雅",
-              "trainer": "中内田充",
-              "odds": 3.7,
-              "popularity": 2
+              "age": 3,
+              "weight": 55,
+              "jockey": "中井裕二",
+              "trainer": "森田直行"
             },
             {
               "num": 9,
-              "draw": 7,
-              "name": "ヒロノスカイ",
+              "draw": 5,
+              "name": "マンオブザマッチ",
               "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "松若風馬",
-              "trainer": "宮本博",
-              "odds": 51,
-              "popularity": 9
+              "age": 3,
+              "weight": 54,
+              "jockey": "吉村誠之",
+              "trainer": "高橋義忠"
             },
             {
               "num": 10,
-              "draw": 7,
-              "name": "サニーサイドラガー",
+              "draw": 5,
+              "name": "ベルエアフォース",
               "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "鮫島克駿",
-              "trainer": "牧田和弥",
-              "odds": 82.3,
-              "popularity": 11
+              "age": 3,
+              "weight": 55,
+              "jockey": "富田暁",
+              "trainer": "野中賢二"
             },
             {
               "num": 11,
-              "draw": 8,
-              "name": "ピードモント",
+              "draw": 6,
+              "name": "ナムラブーニン",
               "sex": "牡",
-              "age": 2,
-              "weight": 550,
-              "jockey": "ルメール",
-              "trainer": "武井亮",
-              "odds": 2.4,
-              "popularity": 1
+              "age": 4,
+              "weight": 57,
+              "jockey": "高杉吏麒",
+              "trainer": "高橋一哉"
             },
             {
               "num": 12,
-              "draw": 8,
-              "name": "テーオータウンズ",
+              "draw": 6,
+              "name": "ダノンケイツー",
               "sex": "牡",
-              "age": 2,
-              "weight": 540,
-              "jockey": "高杉吏麒",
-              "trainer": "藤岡健一",
-              "odds": 26.4,
-              "popularity": 7
+              "age": 4,
+              "weight": 58,
+              "jockey": "小崎綾也",
+              "trainer": "寺島良"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "ショウナンアトレ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 52,
+              "jockey": "和田陽希",
+              "trainer": "梅田智之",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "オーレアミスト",
+              "sex": "牡",
+              "age": 3,
+              "weight": 55,
+              "jockey": "岩田望来",
+              "trainer": "友道康夫",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "クレスコドルフィン",
+              "sex": "牡",
+              "age": 3,
+              "weight": 55,
+              "jockey": "角田大和",
+              "trainer": "長谷川浩",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "タガノヘラクレス",
+              "sex": "牡",
+              "age": 4,
+              "weight": 55,
+              "jockey": "森田誠也",
+              "trainer": "千田輝彦"
             }
           ]
         },
         {
           "no": 7,
-          "name": "3歳以上未勝利",
+          "name": "3歳以上1勝クラス",
           "distance_m": 1600,
           "ground": "芝",
-          "start_time": "13:25",
-          "pace_score": 2,
+          "start_time": "13:10",
+          "pace_score": 3,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ロンドボス",
-              "sex": "牝",
+              "name": "ニホンピロマーベル",
+              "sex": "牡",
               "age": 3,
-              "weight": 540,
-              "jockey": "横山武史",
-              "trainer": "藤原英昭",
-              "odds": 3,
-              "popularity": 2,
+              "weight": 56,
+              "jockey": "川須栄彦",
+              "trainer": "中尾秀正",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 2,
-              "draw": 2,
-              "name": "フェルシナ",
+              "draw": 1,
+              "name": "マイエレメント",
               "sex": "牝",
               "age": 3,
-              "weight": 540,
-              "jockey": "武豊",
-              "trainer": "西園翔太",
-              "odds": 8.3,
-              "popularity": 4,
-              "pace_type": [
-                "C"
-              ]
+              "weight": 54,
+              "jockey": "岩田望来",
+              "trainer": "福永祐一"
             },
             {
               "num": 3,
-              "draw": 3,
-              "name": "ナムライリス",
+              "draw": 2,
+              "name": "メイショウタザワコ",
               "sex": "牝",
-              "age": 4,
-              "weight": 530,
-              "jockey": "柴田裕一",
-              "trainer": "中竹和也",
-              "odds": 107.9,
-              "popularity": 14
+              "age": 3,
+              "weight": 54,
+              "jockey": "太宰啓介",
+              "trainer": "石橋守"
             },
             {
               "num": 4,
-              "draw": 3,
-              "name": "ジェルブロア",
-              "sex": "牝",
+              "draw": 2,
+              "name": "ロールザダイス",
+              "sex": "セ",
               "age": 3,
-              "weight": 540,
-              "jockey": "松山弘平",
-              "trainer": "矢作芳人",
-              "odds": 26.2,
-              "popularity": 9,
+              "weight": 56,
+              "jockey": "田口貫太",
+              "trainer": "池江泰寿",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 5,
-              "draw": 4,
-              "name": "ルージュラメンテ",
+              "draw": 3,
+              "name": "ホウオウペトリュス",
               "sex": "牝",
               "age": 4,
-              "weight": 560,
-              "jockey": "角田大和",
-              "trainer": "高橋一哉",
-              "odds": 92.2,
-              "popularity": 13
+              "weight": 53,
+              "jockey": "大久保友",
+              "trainer": "須貝尚介"
             },
             {
               "num": 6,
-              "draw": 4,
-              "name": "オリバナム",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "西村淳也",
-              "trainer": "斉藤崇史",
-              "odds": 7.4,
-              "popularity": 3,
+              "draw": 3,
+              "name": "ゴールドブレス",
+              "sex": "セ",
+              "age": 4,
+              "weight": 58,
+              "jockey": "国分恭介",
+              "trainer": "西園翔太",
               "pace_type": [
-                "B"
+                "C"
               ]
             },
             {
               "num": 7,
+              "draw": 4,
+              "name": "ユメシバイ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 51,
+              "jockey": "田山旺佑",
+              "trainer": "松永幹夫",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "トウカイフルーレ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "富田暁",
+              "trainer": "野中賢二"
+            },
+            {
+              "num": 9,
               "draw": 5,
-              "name": "パシフィックハイ",
+              "name": "ユウトザユウト",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "鮫島克駿",
+              "trainer": "小崎憲",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "アートフォーム",
               "sex": "牝",
               "age": 4,
-              "weight": 560,
-              "jockey": "鮫島克駿",
-              "trainer": "杉山佳明",
-              "odds": 19.1,
-              "popularity": 6,
+              "weight": 53,
+              "jockey": "和田陽希",
+              "trainer": "畑端省吾"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "サトノクロシェット",
+              "sex": "牝",
+              "age": 4,
+              "weight": 54,
+              "jockey": "永島まな",
+              "trainer": "平田修",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "グランデスフィーダ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "岩田康誠",
+              "trainer": "佐藤悠太",
               "pace_type": [
                 "B"
               ]
             },
             {
-              "num": 8,
-              "draw": 5,
-              "name": "オリーボーレン",
-              "sex": "牝",
-              "age": 4,
-              "weight": 550,
+              "num": 13,
+              "draw": 7,
+              "name": "リアルフォルゴーレ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 55,
               "jockey": "高杉吏麒",
-              "trainer": "藤岡健一",
-              "odds": 25,
-              "popularity": 7
-            },
-            {
-              "num": 9,
-              "draw": 6,
-              "name": "メイショウピリカ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "古川吉洋",
-              "trainer": "本田優",
-              "odds": 63.8,
-              "popularity": 12
-            },
-            {
-              "num": 10,
-              "draw": 6,
-              "name": "ニシノイツキムスメ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "和田竜二",
-              "trainer": "北出成人",
-              "odds": 25.6,
-              "popularity": 8,
+              "trainer": "大橋勇樹",
               "pace_type": [
                 "C"
               ]
-            },
-            {
-              "num": 11,
-              "draw": 7,
-              "name": "ジャンヌローサ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 550,
-              "jockey": "吉村誠之",
-              "trainer": "井上智史",
-              "odds": 26.9,
-              "popularity": 10
-            },
-            {
-              "num": 12,
-              "draw": 7,
-              "name": "モアニ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 540,
-              "jockey": "永島まな",
-              "trainer": "高橋康之",
-              "odds": 41.4,
-              "popularity": 11
-            },
-            {
-              "num": 13,
-              "draw": 8,
-              "name": "ジーティードレス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "岩田望来",
-              "trainer": "辻野泰之",
-              "odds": 17.6,
-              "popularity": 5
             },
             {
               "num": 14,
-              "draw": 8,
-              "name": "マディソンガール",
+              "draw": 7,
+              "name": "フィングステン",
               "sex": "牝",
               "age": 3,
-              "weight": 540,
-              "jockey": "川田将雅",
-              "trainer": "中内田充",
-              "odds": 2.9,
-              "popularity": 1,
+              "weight": 54,
+              "jockey": "亀田温心",
+              "trainer": "西園正都",
               "pace_type": [
                 "C"
               ]
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "オベイユアマスター",
+              "sex": "セ",
+              "age": 4,
+              "weight": 58,
+              "jockey": "古川吉洋",
+              "trainer": "昆貢",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "アンジョルラス",
+              "sex": "セ",
+              "age": 4,
+              "weight": 57,
+              "jockey": "吉村誠之",
+              "trainer": "藤野健太"
             }
           ]
         },
         {
           "no": 8,
-          "name": "3歳以上1勝クラス",
-          "distance_m": 2000,
-          "ground": "ダ",
-          "start_time": "13:55",
-          "pace_score": 0,
+          "name": "野路菊ステークス",
+          "distance_m": 1600,
+          "ground": "芝",
+          "start_time": "13:40",
+          "pace_score": -1,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "サンライズシュガー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
+              "name": "ラエトゥス",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
               "jockey": "松山弘平",
-              "trainer": "新谷功一",
-              "odds": 15.4,
-              "popularity": 5
+              "trainer": "池添学"
             },
             {
               "num": 2,
               "draw": 2,
-              "name": "シャンパンポップ",
+              "name": "ブライトフレア",
               "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "モレイラ",
-              "trainer": "武幸四郎",
-              "odds": 1.8,
-              "popularity": 1
+              "age": 2,
+              "weight": 55,
+              "jockey": "浜中俊",
+              "trainer": "佐藤悠太"
             },
             {
               "num": 3,
               "draw": 3,
-              "name": "チムニートップス",
+              "name": "アルスマグナ",
               "sex": "牡",
-              "age": 3,
-              "weight": 540,
-              "jockey": "吉村誠之",
-              "trainer": "杉山晴紀",
-              "odds": 9.9,
-              "popularity": 3
+              "age": 2,
+              "weight": 55,
+              "jockey": "高杉吏麒",
+              "trainer": "池上昌和",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 4,
               "draw": 4,
-              "name": "ダノンウィルヘルム",
-              "sex": "牡",
-              "age": 4,
-              "weight": 570,
-              "jockey": "西塚洸二",
-              "trainer": "池江泰寿",
-              "odds": 63.1,
-              "popularity": 11,
-              "pace_type": [
-                "C"
-              ]
+              "name": "アランカール",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "北村友一",
+              "trainer": "斉藤崇史"
             },
             {
               "num": 5,
-              "draw": 4,
-              "name": "ヤングアメリカンズ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "渡辺竜也",
-              "trainer": "奥村豊",
-              "odds": 66,
-              "popularity": 12
-            },
-            {
-              "num": 6,
               "draw": 5,
-              "name": "ブルーワール",
-              "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "松若風馬",
-              "trainer": "高柳大輔",
-              "odds": 20.5,
-              "popularity": 6
-            },
-            {
-              "num": 7,
-              "draw": 5,
-              "name": "ニヒトツーゼーア",
-              "sex": "牡",
-              "age": 3,
-              "weight": 520,
-              "jockey": "柴田裕一",
-              "trainer": "中竹和也",
-              "odds": 46.9,
-              "popularity": 10
-            },
-            {
-              "num": 8,
-              "draw": 6,
-              "name": "レッドボブ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "ルメール",
-              "trainer": "田中克典",
-              "odds": 5.1,
-              "popularity": 2,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 9,
-              "draw": 6,
-              "name": "メリトーリアス",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "小沢大仁",
-              "trainer": "東田明士",
-              "odds": 25.8,
-              "popularity": 9
-            },
-            {
-              "num": 10,
-              "draw": 7,
-              "name": "スコーピオンイメル",
-              "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "武豊",
-              "trainer": "武英智",
-              "odds": 10.2,
-              "popularity": 4,
+              "name": "ローザレイア",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "岩田望来",
+              "trainer": "西園翔太",
               "pace_type": [
                 "C"
               ]
             },
             {
-              "num": 11,
-              "draw": 7,
-              "name": "ワーキングアセット",
-              "sex": "牡",
-              "age": 4,
-              "weight": 560,
-              "jockey": "鷲頭虎太",
-              "trainer": "井上智史",
-              "odds": 24.6,
-              "popularity": 8
-            },
-            {
-              "num": 12,
-              "draw": 8,
-              "name": "ヴァリージア",
-              "sex": "牡",
-              "age": 5,
-              "weight": 580,
-              "jockey": "池添謙一",
-              "trainer": "斉藤崇史",
-              "odds": 20.8,
-              "popularity": 7
-            },
-            {
-              "num": 13,
-              "draw": 8,
-              "name": "ジーティーララバイ",
+              "num": 6,
+              "draw": 6,
+              "name": "スウィッチインラヴ",
               "sex": "牝",
-              "age": 3,
-              "weight": 500,
-              "jockey": "田山旺佑",
+              "age": 2,
+              "weight": 55,
+              "jockey": "坂井瑠星",
               "trainer": "矢作芳人",
-              "odds": 90.5,
-              "popularity": 13,
               "pace_type": [
                 "C"
               ]
@@ -3779,129 +3086,199 @@
         },
         {
           "no": 9,
-          "name": "3歳以上2勝クラス",
-          "distance_m": 2000,
-          "ground": "芝",
-          "start_time": "14:30",
-          "pace_score": 0.5,
+          "name": "3歳以上未勝利",
+          "distance_m": 1400,
+          "ground": "ダ",
+          "start_time": "14:15",
+          "pace_score": 3.5,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "プチプラージュ",
+              "name": "レジポッセ",
               "sex": "牝",
               "age": 3,
-              "weight": 530,
-              "jockey": "渡辺竜也",
-              "trainer": "笹野博司",
-              "odds": 73,
-              "popularity": 8,
-              "pace_type": [
-                "B"
-              ]
+              "weight": 54,
+              "jockey": "角田大和",
+              "trainer": "角田晃一"
             },
             {
               "num": 2,
-              "draw": 2,
-              "name": "ハッピーアズラリー",
-              "sex": "牝",
-              "age": 5,
-              "weight": 560,
-              "jockey": "富田暁",
-              "trainer": "安田翔伍",
-              "odds": 31.9,
-              "popularity": 5
+              "draw": 1,
+              "name": "トラヴェリンバンド",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "鮫島克駿",
+              "trainer": "西村真幸",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 3,
-              "draw": 3,
-              "name": "パーサヴィアランス",
+              "draw": 2,
+              "name": "タイセイレグノ",
               "sex": "牡",
-              "age": 6,
-              "weight": 580,
-              "jockey": "鮫島克駿",
-              "trainer": "西村真幸",
-              "odds": 38.9,
-              "popularity": 6
+              "age": 3,
+              "weight": 55,
+              "jockey": "高杉吏麒",
+              "trainer": "浜田多実",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 4,
-              "draw": 4,
-              "name": "ヤマニンループ",
+              "draw": 2,
+              "name": "モズタチアガレ",
               "sex": "牡",
-              "age": 6,
-              "weight": 580,
-              "jockey": "横山典弘",
-              "trainer": "松永幹夫",
-              "odds": 6.2,
-              "popularity": 2
+              "age": 3,
+              "weight": 55,
+              "jockey": "西塚洸二",
+              "trainer": "中尾秀正",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 5,
-              "draw": 5,
-              "name": "エコロディノス",
+              "draw": 3,
+              "name": "トレチーメ",
               "sex": "牡",
-              "age": 3,
-              "weight": 550,
-              "jockey": "モレイラ",
-              "trainer": "大久保龍",
-              "odds": 1.3,
-              "popularity": 1,
+              "age": 5,
+              "weight": 58,
+              "jockey": "小沢大仁",
+              "trainer": "中内田充",
               "pace_type": [
                 "B"
               ]
             },
             {
               "num": 6,
-              "draw": 6,
-              "name": "アレナリア",
-              "sex": "牝",
-              "age": 6,
-              "weight": 560,
-              "jockey": "国分恭介",
-              "trainer": "西園翔太",
-              "odds": 12.4,
-              "popularity": 4,
+              "draw": 3,
+              "name": "アシャカブラン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "秋山稔樹",
+              "trainer": "大根田裕"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "サンライズアレス",
+              "sex": "牡",
+              "age": 3,
+              "weight": 54,
+              "jockey": "鷲頭虎太",
+              "trainer": "前川恭子"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "ハクサンアイリス",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "小崎綾也",
+              "trainer": "高橋一哉",
               "pace_type": [
                 "C"
               ]
             },
             {
-              "num": 7,
-              "draw": 7,
-              "name": "イーサンアイ",
-              "sex": "牡",
-              "age": 6,
-              "weight": 580,
-              "jockey": "鮫島良太",
-              "trainer": "河嶋宏樹",
-              "odds": 78.2,
-              "popularity": 9
-            },
-            {
-              "num": 8,
-              "draw": 8,
-              "name": "カリーニョ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "ルメール",
-              "trainer": "杉山晴紀",
-              "odds": 6.5,
-              "popularity": 3
-            },
-            {
               "num": 9,
+              "draw": 5,
+              "name": "メイケイレイン",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "岩田康誠",
+              "trainer": "中竹和也",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "テーオーノーベル",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "菱田裕二",
+              "trainer": "岡田稲男",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "サンライズジュピタ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "藤懸貴志",
+              "trainer": "石坂公一",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "バルミーウェザー",
+              "sex": "セ",
+              "age": 4,
+              "weight": 58,
+              "jockey": "岩田望来",
+              "trainer": "佐藤悠太"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "ジェミート",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "富田暁",
+              "trainer": "四位洋文"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "ブラックサンライズ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "松若風馬",
+              "trainer": "井上智史",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 15,
               "draw": 8,
-              "name": "ドンアチェカ",
+              "name": "マイネルサンテ",
               "sex": "牡",
               "age": 5,
-              "weight": 580,
-              "jockey": "岩田望来",
-              "trainer": "千田輝彦",
-              "odds": 40.6,
-              "popularity": 7,
+              "weight": 58,
+              "jockey": "国分優作",
+              "trainer": "緒方努"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "サンマルノヴェル",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "田口貫太",
+              "trainer": "大橋勇樹",
               "pace_type": [
                 "C"
               ]
@@ -3910,36 +3287,32 @@
         },
         {
           "no": 10,
-          "name": "3歳以上2勝クラス",
-          "distance_m": 1600,
+          "name": "夕月特別",
+          "distance_m": 2000,
           "ground": "芝",
-          "start_time": "15:05",
-          "pace_score": 3,
+          "start_time": "14:50",
+          "pace_score": 0,
           "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ハワイアンティアレ",
+              "name": "グローリーリンク",
               "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "川田将雅",
-              "trainer": "松永幹夫",
-              "odds": 5,
-              "popularity": 3
+              "age": 3,
+              "weight": 53,
+              "jockey": "北村友一",
+              "trainer": "吉岡辰弥"
             },
             {
               "num": 2,
               "draw": 2,
-              "name": "アロマデローサ",
+              "name": "ヴォワラクテ",
               "sex": "牝",
-              "age": 5,
-              "weight": 560,
-              "jockey": "亀田温心",
-              "trainer": "池添学",
-              "odds": 25.7,
-              "popularity": 9,
+              "age": 3,
+              "weight": 53,
+              "jockey": "吉村誠之",
+              "trainer": "田中克典",
               "pace_type": [
                 "B"
               ]
@@ -3947,26 +3320,22 @@
             {
               "num": 3,
               "draw": 3,
-              "name": "プッシュオン",
-              "sex": "牡",
+              "name": "ハッピーアズラリー",
+              "sex": "牝",
               "age": 5,
-              "weight": 580,
-              "jockey": "武豊",
-              "trainer": "西村真幸",
-              "odds": 9.6,
-              "popularity": 5
+              "weight": 56,
+              "jockey": "富田暁",
+              "trainer": "安田翔伍"
             },
             {
               "num": 4,
               "draw": 4,
-              "name": "モンテシート",
-              "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "モレイラ",
-              "trainer": "牧田和弥",
-              "odds": 4.2,
-              "popularity": 2,
+              "name": "ファミリーツリー",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "坂井瑠星",
+              "trainer": "河嶋宏樹",
               "pace_type": [
                 "B"
               ]
@@ -3974,14 +3343,12 @@
             {
               "num": 5,
               "draw": 5,
-              "name": "メルトユアハート",
+              "name": "ウィルサヴァイブ",
               "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "西村淳也",
-              "trainer": "長谷川浩",
-              "odds": 24.9,
-              "popularity": 8,
+              "age": 3,
+              "weight": 53,
+              "jockey": "川田将雅",
+              "trainer": "須貝尚介",
               "pace_type": [
                 "C"
               ]
@@ -3989,370 +3356,198 @@
             {
               "num": 6,
               "draw": 6,
-              "name": "サクセスアイ",
+              "name": "イトカワサクラ",
               "sex": "牝",
               "age": 5,
-              "weight": 560,
+              "weight": 56,
               "jockey": "松若風馬",
-              "trainer": "北出成人",
-              "odds": 40.7,
-              "popularity": 10,
-              "pace_type": [
-                "C"
-              ]
+              "trainer": "牧田和弥"
             },
             {
               "num": 7,
-              "draw": 6,
-              "name": "ダズリングブレイヴ",
-              "sex": "セ",
-              "age": 5,
-              "weight": 580,
-              "jockey": "ルメール",
-              "trainer": "斉藤崇史",
-              "odds": 14.1,
-              "popularity": 6
-            },
-            {
-              "num": 8,
               "draw": 7,
-              "name": "ラヴァンダ",
+              "name": "スターリングアップ",
               "sex": "牝",
               "age": 4,
-              "weight": 560,
-              "jockey": "岩田望来",
-              "trainer": "中村直也",
-              "odds": 3,
-              "popularity": 1,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 9,
-              "draw": 7,
-              "name": "アジアミッション",
-              "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "小沢大仁",
-              "trainer": "緒方努",
-              "odds": 164.3,
-              "popularity": 11,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 10,
-              "draw": 8,
-              "name": "マイネルチケット",
-              "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "横山武史",
-              "trainer": "宮徹",
-              "odds": 6.7,
-              "popularity": 4
-            },
-            {
-              "num": 11,
-              "draw": 8,
-              "name": "アルトゥーム",
-              "sex": "牡",
-              "age": 4,
-              "weight": 580,
-              "jockey": "高杉吏麒",
-              "trainer": "藤岡健一",
-              "odds": 20,
-              "popularity": 7
+              "weight": 56,
+              "jockey": "池添謙一",
+              "trainer": "松永幹夫"
             }
           ]
         },
         {
           "no": 11,
-          "name": "関西ＴＶローズＳ",
-          "distance_m": 1800,
-          "ground": "芝",
-          "start_time": "15:45",
-          "pace_score": 8,
+          "name": "大阪スポーツ杯",
+          "distance_m": 1400,
+          "ground": "ダ",
+          "start_time": "15:30",
+          "pace_score": 1,
+          "pace_mark": "★",
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "ルージュソリテール",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "横山武史",
-              "trainer": "藤原英昭",
-              "odds": 8.4,
-              "popularity": 5,
+              "name": "プロミシングスター",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "川田将雅",
+              "trainer": "高橋義忠",
               "pace_type": [
-                "B"
+                "C"
               ]
             },
             {
               "num": 2,
-              "draw": 1,
-              "name": "ミッキーマドンナ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "モレイラ",
-              "trainer": "堀宣行",
-              "odds": 7,
-              "popularity": 3,
-              "pace_type": [
-                "C"
-              ]
+              "draw": 2,
+              "name": "タイゲン",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "和田竜二",
+              "trainer": "平田修"
             },
             {
               "num": 3,
-              "draw": 2,
-              "name": "ダンツエラン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "団野大成",
-              "trainer": "本田優",
-              "odds": 160.5,
-              "popularity": 18
+              "draw": 3,
+              "name": "メイショウタイゲイ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "高杉吏麒",
+              "trainer": "荒川義之"
             },
             {
               "num": 4,
-              "draw": 2,
-              "name": "フェアリーライク",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
+              "draw": 4,
+              "name": "キャピタルサックス",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
               "jockey": "武豊",
-              "trainer": "笹田和秀",
-              "odds": 30.8,
-              "popularity": 11,
-              "pace_type": [
-                "C"
-              ]
+              "trainer": "杉山晴紀"
             },
             {
               "num": 5,
-              "draw": 3,
-              "name": "パラディレーヌ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "丹内祐次",
-              "trainer": "千田輝彦",
-              "odds": 8.5,
-              "popularity": 6,
+              "draw": 4,
+              "name": "キャプテンシー",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "西村淳也",
+              "trainer": "松永幹夫",
               "pace_type": [
                 "C"
               ]
             },
             {
               "num": 6,
-              "draw": 3,
-              "name": "ヴーレヴー",
+              "draw": 5,
+              "name": "ランスオブサターン",
               "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "浜中俊",
-              "trainer": "武幸四郎",
-              "odds": 85.3,
-              "popularity": 15,
-              "pace_type": [
-                "B"
-              ]
+              "age": 5,
+              "weight": 56,
+              "jockey": "松本大輝",
+              "trainer": "本田優"
             },
             {
               "num": 7,
-              "draw": 4,
-              "name": "ミッキージュエリー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "岩田望来",
-              "trainer": "中内田充",
-              "odds": 7.6,
-              "popularity": 4,
+              "draw": 5,
+              "name": "プルートマスター",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "松山弘平",
+              "trainer": "今野貞一",
               "pace_type": [
                 "B"
               ]
             },
             {
               "num": 8,
-              "draw": 4,
-              "name": "チェルビアット",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "ルメール",
-              "trainer": "高野友和",
-              "odds": 6.5,
-              "popularity": 2
+              "draw": 6,
+              "name": "セミマル",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "鮫島克駿",
+              "trainer": "西村真幸"
             },
             {
               "num": 9,
-              "draw": 5,
-              "name": "タガノアビー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "藤岡佑介",
-              "trainer": "千田輝彦",
-              "odds": 12.6,
-              "popularity": 7
+              "draw": 6,
+              "name": "フェルヴェンテ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "秋山稔樹",
+              "trainer": "宮徹"
             },
             {
               "num": 10,
-              "draw": 5,
-              "name": "テレサ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "松山弘平",
-              "trainer": "杉山晴紀",
-              "odds": 20.6,
-              "popularity": 9,
-              "pace_type": [
-                "B"
-              ]
+              "draw": 7,
+              "name": "ジャーヴィス",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "岩田望来",
+              "trainer": "千田輝彦"
             },
             {
               "num": 11,
-              "draw": 6,
-              "name": "カムニャック",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "川田将雅",
-              "trainer": "友道康夫",
-              "odds": 4,
-              "popularity": 1
+              "draw": 7,
+              "name": "テイエムランウェイ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "鮫島良太",
+              "trainer": "河嶋宏樹",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 12,
-              "draw": 6,
-              "name": "マトラコーニッシュ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "池添謙一",
-              "trainer": "池添学",
-              "odds": 61.3,
-              "popularity": 13
+              "draw": 8,
+              "name": "ダノンスウィッチ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "松若風馬",
+              "trainer": "東田明士",
+              "pace_type": [
+                "B"
+              ]
             },
             {
               "num": 13,
-              "draw": 7,
-              "name": "アイサンサン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "田山旺佑",
-              "trainer": "佐々木晶",
-              "odds": 90.3,
-              "popularity": 16,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 14,
-              "draw": 7,
-              "name": "セナスタイル",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "岩田康誠",
-              "trainer": "安田翔伍",
-              "odds": 26.9,
-              "popularity": 10,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 15,
-              "draw": 7,
-              "name": "タイセイプランセス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "石橋脩",
-              "trainer": "池上昌和",
-              "odds": 16.8,
-              "popularity": 8,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 16,
               "draw": 8,
-              "name": "コンドゥイア",
+              "name": "スターペスカオリ",
               "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "鷲頭虎太",
-              "trainer": "井上智史",
-              "odds": 96.7,
-              "popularity": 17,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 17,
-              "draw": 8,
-              "name": "ランフォーヴァウ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "横山典弘",
-              "trainer": "福永祐一",
-              "odds": 69.7,
-              "popularity": 14,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 18,
-              "draw": 8,
-              "name": "ビップデイジー",
-              "sex": "牝",
-              "age": 3,
-              "weight": 550,
-              "jockey": "西村淳也",
-              "trainer": "松下武士",
-              "odds": 54.4,
-              "popularity": 12,
-              "pace_type": [
-                "C"
-              ]
+              "age": 5,
+              "weight": 56,
+              "jockey": "角田大和",
+              "trainer": "石橋守"
             }
           ]
         },
         {
           "no": 12,
-          "name": "3歳以上未勝利",
-          "distance_m": 1200,
+          "name": "3歳以上1勝クラス",
+          "distance_m": 1800,
           "ground": "ダ",
-          "start_time": "16:30",
-          "pace_score": 8,
+          "start_time": "16:10",
+          "pace_score": 10,
           "horses": [
             {
               "num": 1,
               "draw": 1,
-              "name": "リードプリンシパル",
-              "sex": "牝",
+              "name": "カミノレアル",
+              "sex": "牡",
               "age": 3,
-              "weight": 540,
-              "jockey": "菱田裕二",
-              "trainer": "秋山真一",
-              "odds": 12.3,
-              "popularity": 5,
+              "weight": 55,
+              "jockey": "田口貫太",
+              "trainer": "今野貞一",
               "pace_type": [
                 "B"
               ]
@@ -4360,14 +3555,12 @@
             {
               "num": 2,
               "draw": 1,
-              "name": "コパノマロン",
-              "sex": "牝",
+              "name": "ゴッドエスパーダ",
+              "sex": "牡",
               "age": 3,
-              "weight": 540,
-              "jockey": "小崎綾也",
-              "trainer": "加藤公太",
-              "odds": 32,
-              "popularity": 11,
+              "weight": 55,
+              "jockey": "川田将雅",
+              "trainer": "角田晃一",
               "pace_type": [
                 "C"
               ]
@@ -4375,195 +3568,171 @@
             {
               "num": 3,
               "draw": 2,
-              "name": "ロードヴァルカン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "渡辺竜也",
-              "trainer": "中村直也",
-              "odds": 23.5,
-              "popularity": 8,
+              "name": "テーオールビー",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "秋山稔樹",
+              "trainer": "宮徹",
               "pace_type": [
-                "B"
+                "C"
               ]
             },
             {
               "num": 4,
               "draw": 2,
-              "name": "メイショウホウセン",
-              "sex": "牡",
-              "age": 5,
-              "weight": 580,
-              "jockey": "富田暁",
-              "trainer": "千田輝彦",
-              "odds": 21.4,
-              "popularity": 7
+              "name": "トゥルブレンシア",
+              "sex": "セ",
+              "age": 8,
+              "weight": 58,
+              "jockey": "西村淳也",
+              "trainer": "東田明士"
             },
             {
               "num": 5,
               "draw": 3,
-              "name": "キョラムン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "小沢大仁",
-              "trainer": "石橋守",
-              "odds": 4.2,
-              "popularity": 2
+              "name": "ウォーターハウス",
+              "sex": "セ",
+              "age": 5,
+              "weight": 56,
+              "jockey": "鷲頭虎太",
+              "trainer": "井上智史",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 6,
               "draw": 3,
-              "name": "サマーナイト",
+              "name": "ロイガヴェーグル",
               "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "岩田望来",
-              "trainer": "寺島良",
-              "odds": 35.8,
-              "popularity": 12
+              "age": 5,
+              "weight": 58,
+              "jockey": "鮫島克駿",
+              "trainer": "浜田多実"
             },
             {
               "num": 7,
               "draw": 4,
-              "name": "アイスリンディ",
+              "name": "ハリウッドパーク",
               "sex": "牝",
               "age": 4,
-              "weight": 560,
-              "jockey": "亀田温心",
-              "trainer": "高柳大輔",
-              "odds": 75,
-              "popularity": 16
+              "weight": 55,
+              "jockey": "吉村誠之",
+              "trainer": "長谷川浩",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 8,
               "draw": 4,
-              "name": "ヴェントインコーダ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "田口貫太",
-              "trainer": "角田晃一",
-              "odds": 27.8,
-              "popularity": 9,
-              "pace_type": [
-                "C"
-              ]
+              "name": "ケイアイメキラ",
+              "sex": "セ",
+              "age": 5,
+              "weight": 58,
+              "jockey": "荻野琢真",
+              "trainer": "秋山真一"
             },
             {
               "num": 9,
               "draw": 5,
-              "name": "キープライジング",
-              "sex": "牝",
-              "age": 4,
-              "weight": 560,
-              "jockey": "井上敏樹",
-              "trainer": "吉田直弘",
-              "odds": 43.4,
-              "popularity": 13,
-              "pace_type": [
-                "B"
-              ]
+              "name": "メイショウマントル",
+              "sex": "牡",
+              "age": 7,
+              "weight": 58,
+              "jockey": "川須栄彦",
+              "trainer": "安達昭夫"
             },
             {
               "num": 10,
               "draw": 5,
-              "name": "スレッドザニードル",
-              "sex": "牡",
-              "age": 3,
-              "weight": 530,
-              "jockey": "田山旺佑",
-              "trainer": "佐々木晶",
-              "odds": 30.7,
-              "popularity": 10
+              "name": "スカンジナビア",
+              "sex": "牝",
+              "age": 6,
+              "weight": 56,
+              "jockey": "中井裕二",
+              "trainer": "安達昭夫",
+              "pace_type": [
+                "A",
+                "C"
+              ]
             },
             {
               "num": 11,
               "draw": 6,
-              "name": "エブライト",
-              "sex": "牝",
-              "age": 4,
-              "weight": 550,
-              "jockey": "吉村誠之",
-              "trainer": "橋口慎介",
-              "odds": 10.8,
-              "popularity": 3
-            },
-            {
-              "num": 12,
-              "draw": 6,
-              "name": "ワイルドブッター",
+              "name": "グランキングオー",
               "sex": "牡",
               "age": 3,
-              "weight": 560,
-              "jockey": "高倉稜",
-              "trainer": "武英智",
-              "odds": 17,
-              "popularity": 6,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 13,
-              "draw": 7,
-              "name": "ナゲットモンスター",
-              "sex": "牡",
-              "age": 5,
-              "weight": 580,
-              "jockey": "鮫島克駿",
-              "trainer": "西村真幸",
-              "odds": 52,
-              "popularity": 15,
-              "pace_type": [
-                "C"
-              ]
-            },
-            {
-              "num": 14,
-              "draw": 7,
-              "name": "ドナポンド",
-              "sex": "牝",
-              "age": 3,
-              "weight": 540,
-              "jockey": "長岡禎仁",
-              "trainer": "小林真也",
-              "odds": 11.5,
-              "popularity": 4,
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 15,
-              "draw": 8,
-              "name": "ヨシノサプライズ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 520,
+              "weight": 53,
               "jockey": "永島まな",
-              "trainer": "中竹和也",
-              "odds": 46.9,
-              "popularity": 14,
+              "trainer": "高橋康之",
               "pace_type": [
                 "A",
                 "B"
               ]
             },
             {
-              "num": 16,
-              "draw": 8,
-              "name": "ゼットエール",
+              "num": 12,
+              "draw": 6,
+              "name": "リジン",
               "sex": "牡",
-              "age": 3,
-              "weight": 560,
-              "jockey": "団野大成",
-              "trainer": "吉田直弘",
-              "odds": 2.4,
-              "popularity": 1,
+              "age": 6,
+              "weight": 58,
+              "jockey": "酒井学",
+              "trainer": "加藤公太",
               "pace_type": [
                 "B"
               ]
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "レイドデザート",
+              "sex": "牡",
+              "age": 4,
+              "weight": 55,
+              "jockey": "和田陽希",
+              "trainer": "大根田裕",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "オーシンハーフ",
+              "sex": "セ",
+              "age": 4,
+              "weight": 58,
+              "jockey": "池添謙一",
+              "trainer": "高橋一哉",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "タカサンフェイス",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "松山弘平",
+              "trainer": "森田直行",
+              "pace_type": [
+                "B"
+              ]
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "シンコーナホチャン",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "国分優作",
+              "trainer": "畑端省吾"
             }
           ]
         }
