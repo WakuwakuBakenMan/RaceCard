@@ -14,6 +14,29 @@ export async function getRaceList(yyyymmdd: string): Promise<RaceDayList> {
   const browser = await chromium.launch({ headless: true, args: ['--no-sandbox','--disable-dev-shm-usage'] });
   const page = await browser.newPage();
   await page.goto(url, { waitUntil: 'domcontentloaded' });
+  // 一部日でレースリンクが遅延描画され、11R等の注目レースしか取れないことがある。
+  // そこで少し待機し、レースリンクが十分に揃うのを待つ。
+  try {
+    await page.waitForLoadState('networkidle', { timeout: 8000 });
+  } catch {}
+  try {
+    // 少なくともいずれかのレースリンクが現れるまで待機
+    await page.waitForSelector('a[href*="race/shutuba.html?race_id="]', { timeout: 8000 });
+  } catch {}
+  // それでも少ない場合は短いポーリングで最大数秒観察
+  try {
+    const t0 = Date.now();
+    const maxWait = 6000;
+    let lastCount = 0;
+    while (Date.now() - t0 < maxWait) {
+      const cnt = await page.evaluate(() =>
+        Array.from(document.querySelectorAll('a[href*="race/shutuba.html?race_id="]')).length
+      ).catch(() => 0);
+      if (cnt >= 20 || cnt === lastCount) break; // 目安: 2会場×10R以上 or 変化が止まった
+      lastCount = cnt;
+      await page.waitForTimeout(300);
+    }
+  } catch {}
   const script = [
     '(function(){',
     'const TITLE_RE=/(\\d+)\\s*回\\s*([^\\s]+)\\s*(\\d+)\\s*日目/;',

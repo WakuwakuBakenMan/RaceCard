@@ -107,13 +107,13 @@ function computePaceScore(allTypes: Array<Array<'A'|'B'|'C'>>): number {
     else if (t.includes('C')) plcOnCnt += 0.5;
     if (t.includes('A')) nigeUma += 1;
   }
-  if (nigeUma === 0) plcOnCnt -= 1.5; else if (nigeUma >= 2) plcOnCnt += 1.5;
+  if (nigeUma === 0) plcOnCnt -= 2.5; else if (nigeUma >= 2) plcOnCnt += 1.5;
   if (target2 <= 2) plcOnCnt -= 1.0;
   return plcOnCnt;
 }
 
 async function getPool(dsn?: string) {
-  const conn = dsn || process.env.PG_DSN || 'postgres://pckeiba:Change_Me_Please@localhost:5432/pckeiba?sslmode=disable';
+  const conn = dsn || process.env.PG_DSN || 'postgres://postgre:postgre@localhost:5432/pckeiba?sslmode=disable';
   const pool = new Pool({ connectionString: conn });
   return pool;
 }
@@ -156,8 +156,9 @@ async function fetchRacesForDay(pool: Pool, yyyymmdd: string) {
   const sql = `
     SELECT ${selectList}
     FROM public.jvd_ra
-    WHERE kaisai_nen = $1 AND kaisai_tsukihi = $2
-    ORDER BY keibajo_code, CAST(race_bango AS INTEGER)
+    WHERE CAST(NULLIF(TRIM(kaisai_nen), '') AS INTEGER) = CAST($1 AS INTEGER)
+      AND CAST(NULLIF(TRIM(kaisai_tsukihi), '') AS INTEGER) = CAST($2 AS INTEGER)
+    ORDER BY CAST(keibajo_code AS INTEGER), CAST(race_bango AS INTEGER)
   `;
   const res = await pool.query(sql, [year, mmdd]);
   return res.rows as Array<any>;
@@ -173,8 +174,10 @@ async function fetchEntriesForRace(pool: Pool, row: any) {
       um.bamei, um.seibetsu_code, um.seinengappi
     FROM public.jvd_se se
     LEFT JOIN public.jvd_um um ON um.ketto_toroku_bango = se.ketto_toroku_bango
-    WHERE se.kaisai_nen = $1 AND se.kaisai_tsukihi = $2
-      AND se.keibajo_code = $3 AND se.race_bango = $4
+    WHERE CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER) = CAST($1 AS INTEGER)
+      AND CAST(NULLIF(TRIM(se.kaisai_tsukihi), '') AS INTEGER) = CAST($2 AS INTEGER)
+      AND CAST(NULLIF(TRIM(se.keibajo_code), '') AS INTEGER) = CAST($3 AS INTEGER)
+      AND CAST(NULLIF(TRIM(se.race_bango), '') AS INTEGER) = CAST($4 AS INTEGER)
     ORDER BY CAST(se.umaban AS INTEGER)
   `;
   const res = await pool.query(sql, [row.kaisai_nen, row.kaisai_tsukihi, row.keibajo_code, row.race_bango]);
@@ -278,7 +281,10 @@ async function buildRaceDay(pool: Pool, yyyymmdd: string): Promise<RaceDay> {
       name: (e.bamei || '').trim() || '',
       sex: sexFromCode(e.seibetsu_code),
       age: calcAge(yyyymmdd, e.seinengappi),
-      weight: ((): number => { const s=String(e.futan_juryo||'').trim(); const v=Number(s); return Number.isFinite(v) ? v : 0; })(),
+      weight: (() => {
+        const n = Number(e.futan_juryo);
+        return Number.isFinite(n) ? Math.round((n / 10) * 10) / 10 : 0; // 1桁小数に丸め
+      })(),
       jockey: (e.kishumei_ryakusho || '').trim() || (e.kishu_code || '') || '',
       trainer: (e.chokyoshimei_ryakusho || '').trim() || (e.chokyoshi_code || '') || '',
       odds: ((): number | undefined => {

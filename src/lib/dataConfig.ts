@@ -12,7 +12,6 @@ export const DATE_FILES = [
  */
 export function dataUrl(file: string): string {
   const base = (import.meta as any).env?.BASE_URL || '/';
-  // BASE_URL は常にスラッシュで始まり終わる（例: "/RaceCard/")
   const normalized = base.endsWith('/') ? base : base + '/';
   return `${normalized}data/${file}`;
 }

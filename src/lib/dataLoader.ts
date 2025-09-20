@@ -6,16 +6,22 @@ const fetchOpts: RequestInit = { cache: 'no-store' };
 
 export async function loadAllDays(): Promise<RaceDay[]> {
   const results: RaceDay[] = [];
+  const isDev = (import.meta as any).env?.DEV;
   for (const f of DATE_FILES) {
     try {
-      const res = await fetch(dataUrl(f), fetchOpts);
+      const url = dataUrl(f);
+      if (isDev) console.debug('[loadAllDays] fetching', url);
+      const res = await fetch(url, fetchOpts);
       if (!res.ok) continue;
       const json = (await res.json()) as RaceDay;
       if (json && typeof json.date === 'string') results.push(json);
+      if (isDev) console.debug('[loadAllDays] loaded', json?.date);
     } catch {
       // 存在しない/壊れているファイルはスキップ
+      if (isDev) console.warn('[loadAllDays] failed to load', f);
     }
   }
+  if (isDev) console.debug('[loadAllDays] total days', results.map((d) => d.date));
   return results;
 }
 
