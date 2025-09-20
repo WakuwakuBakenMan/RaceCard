@@ -13,7 +13,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "10:00",
-          "pace_score": -0.5,
+          "pace_score": -1.5,
           "pace_mark": "★",
           "horses": [
             {
@@ -229,7 +229,7 @@
           "ground": "芝",
           "condition": "良",
           "start_time": "10:35",
-          "pace_score": -0.5,
+          "pace_score": -1.5,
           "pace_mark": "★",
           "horses": [
             {
@@ -373,7 +373,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "11:05",
-          "pace_score": 3,
+          "pace_score": 2,
           "pace_mark": "★",
           "horses": [
             {
@@ -595,7 +595,7 @@
           "ground": "芝",
           "condition": "良",
           "start_time": "11:35",
-          "pace_score": 3.5,
+          "pace_score": 2.5,
           "pace_mark": "★",
           "horses": [
             {
@@ -1130,7 +1130,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "13:25",
-          "pace_score": 5.5,
+          "pace_score": 4.5,
           "horses": [
             {
               "num": 1,
@@ -1360,7 +1360,7 @@
           "ground": "芝",
           "condition": "良",
           "start_time": "13:55",
-          "pace_score": 2,
+          "pace_score": 1,
           "pace_mark": "★",
           "horses": [
             {
@@ -1561,7 +1561,8 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "14:30",
-          "pace_score": 4.5,
+          "pace_score": 3.5,
+          "pace_mark": "★",
           "horses": [
             {
               "num": 1,
@@ -1725,7 +1726,7 @@
           "ground": "芝",
           "condition": "良",
           "start_time": "15:05",
-          "pace_score": 2,
+          "pace_score": 1,
           "pace_mark": "★",
           "horses": [
             {
@@ -2050,7 +2051,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "16:30",
-          "pace_score": 6.5,
+          "pace_score": 5.5,
           "horses": [
             {
               "num": 1,
@@ -2286,7 +2287,7 @@
           "distance_m": 2970,
           "ground": "障",
           "start_time": "09:45",
-          "pace_score": -1,
+          "pace_score": -2,
           "pace_mark": "★",
           "horses": [
             {
@@ -2391,7 +2392,7 @@
           "ground": "芝",
           "condition": "良",
           "start_time": "10:20",
-          "pace_score": -1,
+          "pace_score": -2,
           "pace_mark": "★",
           "horses": [
             {
@@ -2508,7 +2509,7 @@
           "ground": "芝",
           "condition": "良",
           "start_time": "10:50",
-          "pace_score": -1.5,
+          "pace_score": -2.5,
           "pace_mark": "★",
           "horses": [
             {
@@ -3203,7 +3204,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "13:10",
-          "pace_score": 0,
+          "pace_score": -1,
           "pace_mark": "★",
           "horses": [
             {
@@ -3506,7 +3507,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "14:15",
-          "pace_score": 7,
+          "pace_score": 6,
           "horses": [
             {
               "num": 1,
@@ -4039,7 +4040,7 @@
           "ground": "ダ",
           "condition": "良",
           "start_time": "16:10",
-          "pace_score": 1.5,
+          "pace_score": 0.5,
           "pace_mark": "★",
           "horses": [
             {
