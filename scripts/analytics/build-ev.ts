@@ -18,20 +18,11 @@ type Race = {
   pace_mark?: string;
   horses: Horse[];
 };
-type PositionBiasForGround = {
-  pace: {
-    win_place?: { target: 'A'|'B'|'C'|null };
-    quinella?: { target: 'A'|'B'|'C'|null };
-    longshot?: { target: 'A'|'B'|'C'|null };
-  };
-  draw?: { target: 'inner'|'outer'|null };
-};
 type Meeting = {
   track: string;
   kaiji: number;
   nichiji: number;
   races: Race[];
-  position_bias?: Record<string, PositionBiasForGround>;
 };
 type RaceDay = { date: string; meetings: Meeting[] };
 
@@ -56,29 +47,30 @@ function impliedProb(odds?: number): number | undefined {
   return 1 / odds;
 }
 
-function drawKey(draw: number): 'inner'|'outer'|null {
-  if (draw >= 1 && draw <= 4) return 'inner';
-  if (draw >= 5 && draw <= 8) return 'outer';
-  return null;
+function favoredTypesByPace(r: Race): Array<'A'|'B'|'C'> {
+  const s = typeof r.pace_score === 'number' ? r.pace_score : undefined;
+  if (s == null) return [];
+  // ざっくり: 低ければ差し寄り(B/C)、高ければ先行(A)
+  if (s <= 2.0) return ['B','C'];
+  if (s >= 3.5) return ['A'];
+  // 中間帯は弱いバイアス
+  if (s < 2.5) return ['B'];
+  if (s > 3.0) return ['A'];
+  return [];
 }
 
-function pickPaceTarget(b?: PositionBiasForGround['pace']): 'A'|'B'|'C'|null {
-  if (!b) return null;
-  return (b.win_place?.target ?? b.quinella?.target ?? b.longshot?.target ?? null) as any;
-}
-
-function scoreHorse(r: Race, h: Horse, bias?: PositionBiasForGround): { score: number; reasons: string[] } {
+function scoreHorse(r: Race, h: Horse): { score: number; reasons: string[] } {
   let s = 0;
   const reasons: string[] = [];
-  // 1) 脚質バイアス一致
-  const t = pickPaceTarget(bias?.pace);
-  if (t && h.pace_type && h.pace_type.includes(t)) { s += 2; reasons.push(`脚質一致(${t})`); }
-  // 2) 枠バイアス一致
-  const dk = drawKey(h.draw);
-  if (bias?.draw?.target && dk && bias.draw.target === dk) { s += 1; reasons.push(`枠一致(${dk==='inner'?'内':'外'})`); }
-  // 3) 極端な展開カウント（低いほど波乱寄りと仮定）
+  const fav = favoredTypesByPace(r);
+  if (h.pace_type && fav.length) {
+    if (fav.includes('A') && h.pace_type.includes('A')) { s += 2; reasons.push('展開=先行追い風'); }
+    if (fav.includes('B') && h.pace_type.includes('B')) { s += 2; reasons.push('展開=差し追い風'); }
+    if (fav.includes('C') && h.pace_type.includes('C')) { s += 1; reasons.push('展開=その他追い風'); }
+  }
   if (typeof r.pace_score === 'number') {
     if (r.pace_score <= 2.0) { s += 0.5; reasons.push('展開カウント低め'); }
+    if (r.pace_score >= 3.5) { s += 0.25; reasons.push('展開カウント高め'); }
     if (r.pace_mark) { s += 0.5; reasons.push('展開★'); }
   }
   return { score: s, reasons };
@@ -89,9 +81,8 @@ function buildRecommendations(day: RaceDay): DayReco {
   for (const m of day.meetings) {
     for (const r of m.races) {
       if (!r.horses || r.horses.length === 0) continue;
-      const bias = m.position_bias?.[r.ground];
       const scored = r.horses.map((h) => {
-        const sc = scoreHorse(r, h, bias);
+        const sc = scoreHorse(r, h);
         const p = impliedProb(h.odds);
         const vi = typeof p === 'number' ? (sc.score > 0 ? sc.score / Math.max(p, 0.01) : 0) : 0;
         return { h, score: sc.score, reasons: sc.reasons, vi };
@@ -113,8 +104,9 @@ function buildRecommendations(day: RaceDay): DayReco {
       }
       // Quinella: 上位スコアから最大3頭ボックス
       const quinella_box = scored.filter(x=>x.score>=1.5).slice(0,3).map(x=>x.h.num);
-      if (bias?.pace?.win_place?.target) notes.push(`当日バイアス: 脚${bias.pace.win_place.target}`);
-      if (bias?.draw?.target) notes.push(`当日バイアス: ${bias.draw.target==='inner'?'内':'外'}`);
+      if (typeof r.pace_score === 'number') notes.push(`展開カウント: ${r.pace_score}${r.pace_mark ?? ''}`);
+      const fav = favoredTypesByPace(r);
+      if (fav.length) notes.push(`展開タイプ: ${fav.join('/')}`);
 
       out.push({ track: m.track, no: r.no, win: win.length?win:undefined, place: place.length?place:undefined, quinella_box: quinella_box.length>=2?quinella_box:undefined, notes: notes.length?notes:undefined });
     }
