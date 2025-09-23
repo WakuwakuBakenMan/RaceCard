@@ -1,6 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { loadDayByDate } from '@/lib/dataLoader';
 import type { RaceDay } from '@/lib/types';
+import BiasChips from '@/components/ui/BiasChips';
 import { Link, useParams } from 'react-router-dom';
 
 export default function DayGrid() {
@@ -28,8 +29,23 @@ export default function DayGrid() {
         <div className="space-y-6">
           {day.meetings.map((m) => (
             <section key={m.track} className="border rounded bg-white">
-              <header className="px-3 py-2 bg-cyan-50 border-b border-cyan-100 font-semibold">
-                {m.kaiji}回 {m.track} {m.nichiji}日目
+              <header className="px-3 py-2 bg-cyan-50 border-b border-cyan-100 font-semibold flex items-center justify-between gap-2">
+                <div>
+                  {m.kaiji}回 {m.track} {m.nichiji}日目
+                </div>
+                <div className="text-sm font-normal">
+                  {/* 芝/ダートのバイアスを並べる（強のみ表示） */}
+                  <span className="inline-flex items-center gap-2">
+                    <span className="inline-flex items-center gap-1">
+                      <span className="text-gray-600">芝</span>
+                      <BiasChips bias={m.position_bias?.['芝']} />
+                    </span>
+                    <span className="inline-flex items-center gap-1">
+                      <span className="text-gray-600">ダ</span>
+                      <BiasChips bias={m.position_bias?.['ダート'] || m.position_bias?.['ダ']} />
+                    </span>
+                  </span>
+                </div>
               </header>
               <div className="p-3 grid md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-3">
                 {Array.from({ length: maxR }).map((_, i) => {

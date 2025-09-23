@@ -4,6 +4,7 @@ import type { Horse, Race, RaceDay } from '@/lib/types';
 import { useParams, Link } from 'react-router-dom';
 import FrameBadge from '@/components/ui/FrameBadge';
 import { formatRaceHeader } from '@/lib/utils';
+import BiasChips from '@/components/ui/BiasChips';
 
 type SortKey = 'popularity' | 'odds' | 'num';
 
@@ -60,19 +61,32 @@ export default function RaceTable() {
         <div>読み込み中…</div>
       ) : (
         <>
-          <h1 className="text-lg font-bold">
-            {formatRaceHeader({
-              track,
-              no: race.no,
-              pace_score: race.pace_score,
-              pace_mark: race.pace_mark,
-              distance_m: race.distance_m,
-              ground: race.ground,
-              course_note: race.course_note,
-              condition: race.condition,
-              start_time: race.start_time,
-            })}
-          </h1>
+          <div className="flex items-center justify-between gap-3">
+            <h1 className="text-lg font-bold">
+              {formatRaceHeader({
+                track,
+                no: race.no,
+                pace_score: race.pace_score,
+                pace_mark: race.pace_mark,
+                distance_m: race.distance_m,
+                ground: race.ground,
+                course_note: race.course_note,
+                condition: race.condition,
+                start_time: race.start_time,
+              })}
+            </h1>
+            {/* レースの馬場に対応する開催バイアスを右側に表示（強のみ） */}
+            {(() => {
+              const meeting = day?.meetings.find((m) => m.track === track);
+              const groundKey = race.ground === '芝' ? '芝' : (race.ground === 'ダート' ? 'ダート' : race.ground);
+              const b = meeting?.position_bias?.[groundKey];
+              return b ? (
+                <div className="text-sm">
+                  <BiasChips bias={b} />
+                </div>
+              ) : null;
+            })()}
+          </div>
           <div className="overflow-x-auto">
             <table className="min-w-full table-sticky border-collapse">
               <thead>
