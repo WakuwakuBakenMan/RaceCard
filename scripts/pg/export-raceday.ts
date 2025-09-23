@@ -450,15 +450,18 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
       ra.keibajo_code, ra.kaisai_kai, ra.kaisai_nichime, ra.track_code, ra.race_bango,
       se.wakuban, se.umaban, se.tansho_ninkijun,
       ${finishCol ? `se.${finishCol} AS __finish,` : 'NULL AS __finish,'}
-      ${cornerCols.length ? cornerCols.map(c=>`se.${c}`).join(',') : 'NULL AS corner_1, NULL AS corner_2, NULL AS corner_3, NULL AS corner_4'}
+      ${cornerCols.length ? cornerCols.map(c=>`se.${c}`).join(',') : 'NULL AS corner_1, NULL AS corner_2, NULL AS corner_3, NULL AS corner_4'},
+      um.bamei
     FROM public.jvd_se se
     JOIN public.jvd_ra ra
       ON CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.kaisai_nen), '') AS INTEGER)
      AND CAST(NULLIF(TRIM(se.kaisai_tsukihi), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.kaisai_tsukihi), '') AS INTEGER)
      AND CAST(NULLIF(TRIM(se.keibajo_code), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.keibajo_code), '') AS INTEGER)
      AND CAST(NULLIF(TRIM(se.race_bango), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.race_bango), '') AS INTEGER)
+    LEFT JOIN public.jvd_um um ON um.ketto_toroku_bango = se.ketto_toroku_bango
     WHERE CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER) = CAST($1 AS INTEGER)
       AND CAST(NULLIF(TRIM(se.kaisai_tsukihi), '') AS INTEGER) = CAST($2 AS INTEGER)
+      AND COALESCE(NULLIF(TRIM(se.data_kubun), ''), '') IN ('6','7')
     ORDER BY CAST(ra.keibajo_code AS INTEGER), CAST(ra.race_bango AS INTEGER), CAST(se.umaban AS INTEGER)
   `;
   const res = await pool.query(sql, [year, mmdd]);
@@ -466,7 +469,7 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
   type Row = {
     keibajo_code: any; kaisai_kai: any; kaisai_nichime: any; track_code: any; race_bango: any;
     wakuban: any; umaban: any; tansho_ninkijun: any; __finish: any;
-    corner_1?: any; corner_2?: any; corner_3?: any; corner_4?: any;
+    corner_1?: any; corner_2?: any; corner_3?: any; corner_4?: any; bamei?: any;
   };
 
   // 2) meeting×ground ごとに集計コンテナを用意
@@ -505,16 +508,22 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
     const raceKey = `${String(r.keibajo_code)}:${String(r.kaisai_kai)}:${String(r.kaisai_nichime)}:${String(r.race_bango)}`;
     const headcount = raceHeadcount.get(raceKey) || 0;
 
-    const corners = [r.corner_1, r.corner_2, r.corner_3, r.corner_4].map((x:any)=>toInt(String(x||'').trim())).filter((n)=>Number.isFinite(n)) as number[];
+    const corners = extractCornerPositions([r.corner_1, r.corner_2, r.corner_3, r.corner_4]);
     const posType: 'A'|'B'|'C'|null = classifyPositionTypeForBias(corners);
     const drawKey: 'inner'|'outer'|null = wakubanNum>=1 && wakubanNum<=4 ? 'inner' : (wakubanNum>=5 && wakubanNum<=8 ? 'outer' : null);
     if (!posType) {
       // 角のデータが無い場合はスキップ
+      if (process.env.DEBUG_PB === '2' && finish && finish <= 3) {
+        console.log('[pb:detail:skip]', meetingKey, ground, 'R', String(r.race_bango).trim(), 'umaban', String(r.umaban).trim(), 'name', String(r.bamei||'').trim(), 'finish', finish, 'corners', [r.corner_1,r.corner_2,r.corner_3,r.corner_4].map(x=>String(x||'').trim()).join('|'), 'parsed', corners.join('-'));
+      }
     } else {
       if (Number.isFinite(finish) && finish! <= 3) {
         a.pace.wp[posType] += 1; a.pace.wp.total += 1;
         if (drawKey && headcount >= 14) { a.draw[drawKey] += 1; a.draw.total += 1; }
         if (pop && pop >= 4) { a.pace.ls[posType] += 1; a.pace.ls.total += 1; }
+        if (process.env.DEBUG_PB === '2') {
+          console.log('[pb:detail]', meetingKey, ground, 'R', String(r.race_bango).trim(), 'umaban', String(r.umaban).trim(), 'name', String(r.bamei||'').trim(), 'finish', finish, 'pop', pop, 'posType', posType, 'corners', [r.corner_1,r.corner_2,r.corner_3,r.corner_4].map(x=>String(x||'').trim()).join('|'), 'parsed', corners.join('-'));
+        }
       }
       if (Number.isFinite(finish) && finish! <= 2) {
         a.pace.q[posType] += 1; a.pace.q.total += 1;
@@ -562,14 +571,30 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
 }
 
 function toInt(s: string): number | undefined { const n = Number(s); return Number.isFinite(n) ? n : undefined; }
+function extractCornerPositions(cands: any[]): number[] {
+  // 角位置の表現ゆらぎに対応: "7", "07", " 7 ", "7-7", "7,7", などから数列を抽出
+  const out: number[] = [];
+  for (const v of cands) {
+    if (v == null) continue;
+    const s = String(v).trim();
+    if (!s) continue;
+    // まず単一数値として
+    if (/^\d+$/.test(s)) { const n = Number(s); if (Number.isFinite(n)) out.push(n); continue; }
+    // 区切り付き
+    const parts = s.split(/[^0-9]+/).filter(Boolean);
+    for (const p of parts) { const n = Number(p); if (Number.isFinite(n)) out.push(n); }
+  }
+  return out;
+}
 function classifyPositionTypeForBias(corners: number[]): 'A'|'B'|'C'|null {
-  // 仕様: 全コーナーで判定。信頼性のため最低3点以上の通過順が必要。
-  if (!corners.length || corners.length < 3) return null;
-  const all4 = corners.every((n)=>Number.isFinite(n) && n<=4);
-  const all5p = corners.every((n)=>Number.isFinite(n) && n>=5);
-  if (all4) return 'A';
-  if (all5p) return 'B';
-  return 'C';
+  // 仕様: 全コーナーで判定。最低2点以上の通過順が必要。
+  const seq = corners.filter((n)=>Number.isFinite(n));
+  if (seq.length < 2) return null;
+  const all4 = seq.every((n)=>n<=4);
+  const all5p = seq.every((n)=>n>=5);
+  if (all4) return 'A';          // 先行
+  if (all5p) return 'B';          // 差し
+  return 'C';                     // その他
 }
 function decidePaceBias(b: { A:number; B:number; C:number; total:number }, minN = 1): PaceBiasStat | undefined {
   const total = b.total;
