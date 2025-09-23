@@ -99,7 +99,7 @@ export default function RaceTable() {
                 <div className="text-sm flex flex-wrap gap-3">
                   {rr.win?.length ? <span>単勝: {rr.win.join(', ')}</span> : null}
                   {rr.place?.length ? <span>複勝: {rr.place.join(', ')}</span> : null}
-                  {rr.quinella_box?.length ? <span>枠連(BOX): {rr.quinella_box.join('-')}</span> : null}
+                  {rr.quinella_box?.length ? <span>馬連(BOX): {rr.quinella_box.join('-')}</span> : null}
                 </div>
                 {rr.notes?.length ? (
                   <div className="text-xs text-gray-600 mt-1">{rr.notes.join(' / ')}</div>
