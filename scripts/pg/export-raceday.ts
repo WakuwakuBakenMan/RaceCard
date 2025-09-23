@@ -438,7 +438,7 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
   // 閾値: 70%以上を“強”。穴好走は n_total>=6 のときのみ評価。枠は 14頭以上レースが ground ごとに2レース未満の場合は対象外。
   const result = new Map<string, Record<string, PositionBiasForGround>>();
 
-  // 1) 当日全レースの SE + RA を取得
+  // 1) 当日全レースの SE + RA を取得（当日のみ集計）
   const year = yyyymmdd.slice(0,4);
   const mmdd = yyyymmdd.slice(4,8);
   const seCols = await listSeColumns(pool);
@@ -522,7 +522,7 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
       }
     }
   }
-  // 5) groundごとに draw の raceCount をカウント（14頭以上のレース数）
+  // 5) groundごとに draw の raceCount をカウント（14頭以上のレース数）。当日のみ対象。
   for (const r of res.rows as Row[]) {
     const ground = groundFromTrack(String(r.track_code));
     if (!ground || ground === '障') continue;
@@ -548,6 +548,12 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
       if (pls) pace.longshot = pls;
       const draw: DrawBiasStat | undefined = decideDrawBias(a.draw);
       o[ground] = { pace, ...(draw ? { draw } : {}) } as PositionBiasForGround;
+      if (process.env.DEBUG_PB === '1') {
+        const show = (x?: PaceBiasStat) => x ? `${x.target ?? '-'}${typeof x.ratio==='number' ? `(${Math.round(x.ratio*100)}%)` : ''}${typeof x.n_total==='number' ? ` n=${x.n_total}` : ''}` : '-';
+        const showD = (d?: DrawBiasStat) => d ? `${d.target ?? '-'}${typeof d.ratio==='number' ? `(${Math.round(d.ratio*100)}%)` : ''}${typeof d.n_total==='number' ? ` n=${d.n_total}` : ''}${typeof d.race_count==='number' ? ` races=${d.race_count}` : ''}` : '-';
+        const pc=a.pace;
+        console.log(`[pb] ${meetingKey} ${ground} wp=${show(pace.win_place)} q=${show(pace.quinella)} ls=${show(pace.longshot)} draw=${showD(draw)} | wpCnt A:${pc.wp.A} B:${pc.wp.B} C:${pc.wp.C} total:${pc.wp.total} qCnt A:${pc.q.A} B:${pc.q.B} C:${pc.q.C} total:${pc.q.total} lsCnt A:${pc.ls.A} B:${pc.ls.B} C:${pc.ls.C} total:${pc.ls.total}`);
+      }
     }
     result.set(meetingKey, o);
   }
@@ -557,9 +563,10 @@ async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meet
 
 function toInt(s: string): number | undefined { const n = Number(s); return Number.isFinite(n) ? n : undefined; }
 function classifyPositionTypeForBias(corners: number[]): 'A'|'B'|'C'|null {
-  if (!corners.length) return null;
-  const all4 = corners.every((n)=>n<=4);
-  const all5p = corners.every((n)=>n>=5);
+  // 仕様: 全コーナーで判定。信頼性のため最低3点以上の通過順が必要。
+  if (!corners.length || corners.length < 3) return null;
+  const all4 = corners.every((n)=>Number.isFinite(n) && n<=4);
+  const all5p = corners.every((n)=>Number.isFinite(n) && n>=5);
   if (all4) return 'A';
   if (all5p) return 'B';
   return 'C';

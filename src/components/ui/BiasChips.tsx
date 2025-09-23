@@ -8,27 +8,21 @@ type Props = {
 export default function BiasChips({ bias }: Props) {
   if (!bias) return null;
 
-  const chips: Array<{ key: string; label: string; strong: boolean; title?: string }> = [];
+  const chips: Array<{ key: string; label: string; style: 'strong' | 'flat'; title?: string }> = [];
 
-  // 脚質（複勝/連対/穴）から、代表1つを要約（強いもののみ）
+  // 脚質（優先順位: 複勝 → 連対 → 穴）
   const p = bias.pace;
-  const parts: string[] = [];
-  if (p?.win_place?.target) parts.push(`脚${p.win_place.target}`);
-  if (p?.quinella?.target && !parts.includes(`脚${p.quinella.target}`)) parts.push(`脚${p.quinella.target}`);
-  if (p?.longshot?.target && !parts.includes(`脚${p.longshot.target}`)) parts.push(`脚${p.longshot.target}`);
-  if (parts.length > 0) {
-    const title = formatPaceTitle(p);
-    chips.push({ key: 'pace', label: parts.join('・'), strong: true, title });
-  }
+  const target = (p?.win_place?.target ?? p?.quinella?.target ?? p?.longshot?.target) ?? null;
+  const paceLabel = target === 'A' ? '先行' : target === 'B' ? '差し' : target === 'C' ? 'その他' : 'フラット';
+  const paceStyle: 'strong' | 'flat' = target ? 'strong' : 'flat';
+  chips.push({ key: 'pace', label: paceLabel, style: paceStyle, title: formatPaceTitle(p) });
 
   // 枠（内/外）
-  if (bias.draw?.target) {
-    const label = bias.draw.target === 'inner' ? '内' : '外';
-    const title = formatDrawTitle(bias.draw);
-    chips.push({ key: 'draw', label, strong: true, title });
-  }
-
-  if (chips.length === 0) return null;
+  const d = bias.draw;
+  const drawTarget = d?.target ?? null;
+  const drawLabel = drawTarget === 'inner' ? '内枠' : drawTarget === 'outer' ? '外枠' : 'フラット';
+  const drawStyle: 'strong' | 'flat' = drawTarget ? 'strong' : 'flat';
+  chips.push({ key: 'draw', label: drawLabel, style: drawStyle, title: formatDrawTitle(d) });
 
   return (
     <div className="inline-flex items-center gap-1 align-middle">
@@ -36,7 +30,11 @@ export default function BiasChips({ bias }: Props) {
         <span
           key={c.key}
           title={c.title}
-          className={`text-xs px-1.5 py-0.5 rounded font-semibold ${c.strong ? 'bg-emerald-600 text-white' : 'border border-emerald-600 text-emerald-700'}`}
+          className={
+            c.style === 'strong'
+              ? 'text-xs px-1.5 py-0.5 rounded font-semibold bg-emerald-600 text-white'
+              : 'text-xs px-1.5 py-0.5 rounded font-semibold bg-gray-300 text-gray-800'
+          }
         >
           {c.label}
         </span>
