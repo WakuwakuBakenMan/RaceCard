@@ -1,3 +1,4 @@
+/// <reference path="./shims-pg.d.ts" />
 /*
   PostgreSQL → RaceDay(JSON) エクスポート
 
@@ -46,7 +47,12 @@ type Race = {
   pace_mark?: string;
   horses: Horse[];
 };
-type Meeting = { track: string; kaiji: number; nichiji: number; races: Race[] };
+type PaceBiasTarget = 'A'|'B'|'C'|null;
+type DrawBiasTarget = 'inner'|'outer'|null;
+type PaceBiasStat = { target: PaceBiasTarget; ratio?: number; n_total?: number };
+type DrawBiasStat = { target: DrawBiasTarget; ratio?: number; n_total?: number; race_count?: number };
+type PositionBiasForGround = { pace: { win_place?: PaceBiasStat; quinella?: PaceBiasStat; longshot?: PaceBiasStat; }; draw?: DrawBiasStat };
+type Meeting = { track: string; kaiji: number; nichiji: number; races: Race[]; position_bias?: Record<string, PositionBiasForGround> };
 type RaceDay = { date: string; meetings: Meeting[] };
 
 function ensureDir(p: string) { fs.mkdirSync(p, { recursive: true }); }
@@ -77,6 +83,20 @@ function conditionFromCodes(ground: string, shiba?: string | null, dirt?: string
   const pick = ground === '芝' ? (shiba || '') : ground === 'ダ' ? (dirt || '') : '';
   const m: Record<string,string> = { '1':'良','2':'稍重','3':'重','4':'不良' };
   return m[pick] || undefined;
+}
+
+async function listSeColumns(pool: Pool): Promise<Set<string>> {
+  const sql = `
+    SELECT column_name
+    FROM information_schema.columns
+    WHERE table_schema = 'public' AND table_name = 'jvd_se'
+  `;
+  try {
+    const res = await pool.query(sql);
+    return new Set(res.rows.map((r: any) => String(r.column_name)));
+  } catch {
+    return new Set<string>();
+  }
 }
 function sexFromCode(code?: string | null): string { const m: Record<string,string> = { '1':'牡','2':'牝','3':'セ' }; return m[String(code||'').trim()] || ''; }
 function calcAge(yyyymmdd: string, seinengappi?: string | null): number {
@@ -165,13 +185,21 @@ async function fetchRacesForDay(pool: Pool, yyyymmdd: string) {
 }
 
 async function fetchEntriesForRace(pool: Pool, row: any) {
+  const seCols = await listSeColumns(pool);
+  const finishCandidates = ['kakutei_juni','kakuteijuni','kakutei_jyuni','kettei_juni','chakujun','kakutei_chakujun'];
+  const finishCol = finishCandidates.find((c) => seCols.has(c));
+  const cornerCols = ['corner_1','corner_2','corner_3','corner_4'].filter(c => seCols.has(c));
+  const selectList = [
+    'se.wakuban', 'se.umaban', 'se.ketto_toroku_bango',
+    'se.futan_juryo', 'se.kishumei_ryakusho', 'se.chokyoshimei_ryakusho',
+    'se.kishu_code', 'se.chokyoshi_code',
+    'se.tansho_odds', 'se.tansho_ninkijun',
+    finishCol ? `se.${finishCol} AS __finish` : null,
+    ...cornerCols.map(c => `se.${c}`),
+    'um.bamei', 'um.seibetsu_code', 'um.seinengappi'
+  ].filter(Boolean).join(', ');
   const sql = `
-    SELECT 
-      se.wakuban, se.umaban, se.ketto_toroku_bango,
-      se.futan_juryo, se.kishumei_ryakusho, se.chokyoshimei_ryakusho,
-      se.kishu_code, se.chokyoshi_code,
-      se.tansho_odds, se.tansho_ninkijun,
-      um.bamei, um.seibetsu_code, um.seinengappi
+    SELECT ${selectList}
     FROM public.jvd_se se
     LEFT JOIN public.jvd_um um ON um.ketto_toroku_bango = se.ketto_toroku_bango
     WHERE CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER) = CAST($1 AS INTEGER)
@@ -395,7 +423,162 @@ async function buildRaceDay(pool: Pool, yyyymmdd: string): Promise<RaceDay> {
 
   const meetings = Array.from(meetingsMap.values()).map((m) => ({ ...m, races: m.races.sort((a,b)=>a.no-b.no) }))
     .sort((a,b)=> a.track===b.track ? (a.kaiji===b.kaiji ? a.nichiji-b.nichiji : a.kaiji-b.kaiji) : a.track.localeCompare(b.track));
-  return { date: toIso(yyyymmdd), meetings };
+  // ポジションバイアス集計（当日までのDBから、開催×馬場ごとに集計）
+  const biasByMeeting = await computePositionBiasForMeetings(pool, yyyymmdd, meetings);
+  const meetingsWithBias = meetings.map((m) => ({ ...m, position_bias: biasByMeeting.get(meetingKeyOf(m)) }));
+  return { date: toIso(yyyymmdd), meetings: meetingsWithBias };
+}
+
+function meetingKeyOf(m: { track: string; kaiji: number; nichiji: number }): string {
+  return `${m.track}:${m.kaiji}:${m.nichiji}`;
+}
+
+async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meetings: Array<{ track: string; kaiji: number; nichiji: number; races: Race[] }>): Promise<Map<string, Record<string, PositionBiasForGround>>> {
+  // 当日の各開催について、当日のレース結果（着順）と通過順/枠を用いて集計する。
+  // 閾値: 70%以上を“強”。穴好走は n_total>=6 のときのみ評価。枠は 14頭以上レースが ground ごとに2レース未満の場合は対象外。
+  const result = new Map<string, Record<string, PositionBiasForGround>>();
+
+  // 1) 当日全レースの SE + RA を取得
+  const year = yyyymmdd.slice(0,4);
+  const mmdd = yyyymmdd.slice(4,8);
+  const seCols = await listSeColumns(pool);
+  const finishCandidates = ['kakutei_juni','kakuteijuni','kakutei_jyuni','kettei_juni','chakujun','kakutei_chakujun'];
+  const finishCol = finishCandidates.find((c) => seCols.has(c));
+  const cornerCols = ['corner_1','corner_2','corner_3','corner_4'].filter(c => seCols.has(c));
+  const sql = `
+    SELECT 
+      ra.keibajo_code, ra.kaisai_kai, ra.kaisai_nichime, ra.track_code, ra.race_bango,
+      se.wakuban, se.umaban, se.tansho_ninkijun,
+      ${finishCol ? `se.${finishCol} AS __finish,` : 'NULL AS __finish,'}
+      ${cornerCols.length ? cornerCols.map(c=>`se.${c}`).join(',') : 'NULL AS corner_1, NULL AS corner_2, NULL AS corner_3, NULL AS corner_4'}
+    FROM public.jvd_se se
+    JOIN public.jvd_ra ra
+      ON CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.kaisai_nen), '') AS INTEGER)
+     AND CAST(NULLIF(TRIM(se.kaisai_tsukihi), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.kaisai_tsukihi), '') AS INTEGER)
+     AND CAST(NULLIF(TRIM(se.keibajo_code), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.keibajo_code), '') AS INTEGER)
+     AND CAST(NULLIF(TRIM(se.race_bango), '') AS INTEGER) = CAST(NULLIF(TRIM(ra.race_bango), '') AS INTEGER)
+    WHERE CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER) = CAST($1 AS INTEGER)
+      AND CAST(NULLIF(TRIM(se.kaisai_tsukihi), '') AS INTEGER) = CAST($2 AS INTEGER)
+    ORDER BY CAST(ra.keibajo_code AS INTEGER), CAST(ra.race_bango AS INTEGER), CAST(se.umaban AS INTEGER)
+  `;
+  const res = await pool.query(sql, [year, mmdd]);
+
+  type Row = {
+    keibajo_code: any; kaisai_kai: any; kaisai_nichime: any; track_code: any; race_bango: any;
+    wakuban: any; umaban: any; tansho_ninkijun: any; __finish: any;
+    corner_1?: any; corner_2?: any; corner_3?: any; corner_4?: any;
+  };
+
+  // 2) meeting×ground ごとに集計コンテナを用意
+  type PaceBucket = { A: number; B: number; C: number; total: number };
+  type PaceAgg = { wp: PaceBucket; q: PaceBucket; ls: PaceBucket };
+  type DrawAgg = { inner: number; outer: number; total: number; raceCount: number };
+  const agg = new Map<string, Map<string, { pace: PaceAgg; draw: DrawAgg }>>(); // meetingKey -> ground -> agg
+
+  function ensureAgg(meetingKey: string, ground: string) {
+    if (!agg.has(meetingKey)) agg.set(meetingKey, new Map());
+    const m = agg.get(meetingKey)!;
+    if (!m.has(ground)) m.set(ground, {
+      pace: { wp: { A:0,B:0,C:0,total:0 }, q: { A:0,B:0,C:0,total:0 }, ls: { A:0,B:0,C:0,total:0 } },
+      draw: { inner: 0, outer: 0, total: 0, raceCount: 0 },
+    });
+  }
+
+  // 3) レース単位の頭数を把握（draw用のレース数条件チェックに使用）
+  const raceHeadcount = new Map<string, number>(); // key: jyo:kaiji:nichiji:race
+  for (const r of res.rows as Row[]) {
+    const k = `${String(r.keibajo_code)}:${String(r.kaisai_kai)}:${String(r.kaisai_nichime)}:${String(r.race_bango)}`;
+    raceHeadcount.set(k, (raceHeadcount.get(k) || 0) + 1);
+  }
+  // 4) 明細を走査して集計
+  for (const r of res.rows as Row[]) {
+    const track = JYOCD_TO_TRACK[String(r.keibajo_code).padStart(2,'0')] || String(r.keibajo_code);
+    const meetingKey = `${track}:${Number(r.kaisai_kai)||0}:${Number(r.kaisai_nichime)||0}`;
+    const ground = groundFromTrack(String(r.track_code));
+    if (!ground || ground === '障') continue; // 障害は対象外
+    ensureAgg(meetingKey, ground);
+    const a = agg.get(meetingKey)!.get(ground)!;
+
+    const finish = toInt(String(r.__finish||'').trim());
+    const pop = toInt(String(r.tansho_ninkijun||'').trim());
+    const wakubanNum = toInt(String(r.wakuban||'').trim()) ?? 0;
+    const raceKey = `${String(r.keibajo_code)}:${String(r.kaisai_kai)}:${String(r.kaisai_nichime)}:${String(r.race_bango)}`;
+    const headcount = raceHeadcount.get(raceKey) || 0;
+
+    const corners = [r.corner_1, r.corner_2, r.corner_3, r.corner_4].map((x:any)=>toInt(String(x||'').trim())).filter((n)=>Number.isFinite(n)) as number[];
+    const posType: 'A'|'B'|'C'|null = classifyPositionTypeForBias(corners);
+    const drawKey: 'inner'|'outer'|null = wakubanNum>=1 && wakubanNum<=4 ? 'inner' : (wakubanNum>=5 && wakubanNum<=8 ? 'outer' : null);
+    if (!posType) {
+      // 角のデータが無い場合はスキップ
+    } else {
+      if (Number.isFinite(finish) && finish! <= 3) {
+        a.pace.wp[posType] += 1; a.pace.wp.total += 1;
+        if (drawKey && headcount >= 14) { a.draw[drawKey] += 1; a.draw.total += 1; }
+        if (pop && pop >= 4) { a.pace.ls[posType] += 1; a.pace.ls.total += 1; }
+      }
+      if (Number.isFinite(finish) && finish! <= 2) {
+        a.pace.q[posType] += 1; a.pace.q.total += 1;
+        if (drawKey && headcount >= 14) { /* 連対でも枠を見る？ → WPに限定: 二重加算防止のためここでは加算しない */ }
+      }
+    }
+  }
+  // 5) groundごとに draw の raceCount をカウント（14頭以上のレース数）
+  for (const r of res.rows as Row[]) {
+    const ground = groundFromTrack(String(r.track_code));
+    if (!ground || ground === '障') continue;
+    const track = JYOCD_TO_TRACK[String(r.keibajo_code).padStart(2,'0')] || String(r.keibajo_code);
+    const meetingKey = `${track}:${Number(r.kaisai_kai)||0}:${Number(r.kaisai_nichime)||0}`;
+    const a = agg.get(meetingKey)?.get(ground);
+    if (!a) continue;
+    const raceKey = `${String(r.keibajo_code)}:${String(r.kaisai_kai)}:${String(r.kaisai_nichime)}:${String(r.race_bango)}`;
+    const headcount = raceHeadcount.get(raceKey) || 0;
+    if (headcount >= 14) a.draw.raceCount += 1;
+  }
+
+  // 6) 判定し、resultに詰める
+  for (const [meetingKey, gMap] of agg) {
+    const o: Record<string, PositionBiasForGround> = {};
+    for (const [ground, a] of gMap) {
+      const pace: PositionBiasForGround['pace'] = {};
+      const pwp = decidePaceBias(a.pace.wp);
+      if (pwp) pace.win_place = pwp;
+      const pq = decidePaceBias(a.pace.q);
+      if (pq) pace.quinella = pq;
+      const pls = decidePaceBias(a.pace.ls, /*minN*/6);
+      if (pls) pace.longshot = pls;
+      const draw: DrawBiasStat | undefined = decideDrawBias(a.draw);
+      o[ground] = { pace, ...(draw ? { draw } : {}) } as PositionBiasForGround;
+    }
+    result.set(meetingKey, o);
+  }
+
+  return result;
+}
+
+function toInt(s: string): number | undefined { const n = Number(s); return Number.isFinite(n) ? n : undefined; }
+function classifyPositionTypeForBias(corners: number[]): 'A'|'B'|'C'|null {
+  if (!corners.length) return null;
+  const all4 = corners.every((n)=>n<=4);
+  const all5p = corners.every((n)=>n>=5);
+  if (all4) return 'A';
+  if (all5p) return 'B';
+  return 'C';
+}
+function decidePaceBias(b: { A:number; B:number; C:number; total:number }, minN = 1): PaceBiasStat | undefined {
+  const total = b.total;
+  if (total < minN || total === 0) return { target: null, n_total: total };
+  const maxKey = (['A','B','C'] as const).reduce((best, k) => (b[k] > b[best] ? k : best), 'A' as 'A'|'B'|'C');
+  const maxVal = b[maxKey];
+  const ratio = total > 0 ? maxVal / total : 0;
+  if (ratio >= 0.7) return { target: maxKey, ratio, n_total: total };
+  return { target: null, ratio, n_total: total };
+}
+function decideDrawBias(d: { inner:number; outer:number; total:number; raceCount:number }): DrawBiasStat | undefined {
+  if (d.raceCount < 2 || d.total === 0) return { target: null, n_total: d.total, race_count: d.raceCount };
+  const target = d.inner >= d.outer ? 'inner' : 'outer';
+  const ratio = (d.inner + d.outer) > 0 ? (target==='inner'? d.inner : d.outer) / (d.inner + d.outer) : 0;
+  if (ratio >= 0.7) return { target, ratio, n_total: d.inner + d.outer, race_count: d.raceCount };
+  return { target: null, ratio, n_total: d.inner + d.outer, race_count: d.raceCount };
 }
 
 function writeRaceDay(day: RaceDay) {

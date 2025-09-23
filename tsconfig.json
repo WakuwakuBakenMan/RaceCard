@@ -4,6 +4,7 @@
     "jsx": "react-jsx",
     "jsxImportSource": "react",
     "baseUrl": ".",
+    "typeRoots": ["./scripts/pg", "./node_modules/@types"],
     "paths": {
       "@/lib/*": ["src/lib/*"],
       "@/components/*": ["src/components/*"]
