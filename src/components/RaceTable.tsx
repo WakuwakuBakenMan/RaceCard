@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { loadDayByDate } from '@/lib/dataLoader';
+import { loadDayByDate, loadRecoByDate, type DayReco } from '@/lib/dataLoader';
 import type { Horse, Race, RaceDay } from '@/lib/types';
 import { useParams, Link } from 'react-router-dom';
 import FrameBadge from '@/components/ui/FrameBadge';
@@ -11,12 +11,14 @@ type SortKey = 'popularity' | 'odds' | 'num';
 export default function RaceTable() {
   const { date, track, no } = useParams();
   const [day, setDay] = useState<RaceDay | undefined>();
+  const [reco, setReco] = useState<DayReco | undefined>();
   const [sortKey, setSortKey] = useState<SortKey>('num');
   const [asc, setAsc] = useState<boolean>(true);
 
   useEffect(() => {
     if (!date) return;
     loadDayByDate(date).then(setDay);
+    loadRecoByDate(date).then(setReco);
   }, [date]);
 
   const race: Race | undefined = useMemo(() => {
@@ -87,6 +89,25 @@ export default function RaceTable() {
               ) : null;
             })()}
           </div>
+          {/* 推奨買い目（簡易） */}
+          {(() => {
+            const rr = reco?.races.find((x) => x.track === track && x.no === race.no);
+            if (!rr) return null;
+            return (
+              <div className="rounded border p-2 bg-white/70">
+                <div className="text-sm font-semibold">推奨</div>
+                <div className="text-sm flex flex-wrap gap-3">
+                  {rr.win?.length ? <span>単勝: {rr.win.join(', ')}</span> : null}
+                  {rr.place?.length ? <span>複勝: {rr.place.join(', ')}</span> : null}
+                  {rr.quinella_box?.length ? <span>枠連(BOX): {rr.quinella_box.join('-')}</span> : null}
+                </div>
+                {rr.notes?.length ? (
+                  <div className="text-xs text-gray-600 mt-1">{rr.notes.join(' / ')}</div>
+                ) : null}
+              </div>
+            );
+          })()}
+
           <div className="overflow-x-auto">
             <table className="min-w-full table-sticky border-collapse">
               <thead>

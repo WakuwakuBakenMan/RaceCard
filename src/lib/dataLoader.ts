@@ -31,3 +31,15 @@ export async function loadDayByDate(
   const days = await loadAllDays();
   return days.find((d) => d.date === date);
 }
+
+export type RaceReco = { track: string; no: number; win?: number[]; place?: number[]; quinella_box?: number[]; notes?: string[] };
+export type DayReco = { date: string; races: RaceReco[] };
+
+export async function loadRecoByDate(date: string): Promise<DayReco | undefined> {
+  try {
+    const url = dataUrl(`reco-${date}.json`);
+    const res = await fetch(url, fetchOpts);
+    if (!res.ok) return undefined;
+    return (await res.json()) as DayReco;
+  } catch { return undefined; }
+}
