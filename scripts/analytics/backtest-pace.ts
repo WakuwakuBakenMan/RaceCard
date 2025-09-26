@@ -31,6 +31,19 @@ async function findPayoutTable(pool: Pool): Promise<string> {
   return 'jvd_hr';
 }
 
+async function findHrKeyColumns(pool: Pool, table: string): Promise<{ y: string; md: string; jyo: string; race: string }> {
+  const cols = Array.from(await listColumns(pool, table)).map(c=>c.toLowerCase());
+  function pick(cands: string[], def: string) {
+    for (const c of cands) { if (cols.includes(c.toLowerCase())) return c; }
+    return def;
+  }
+  const y = pick(['kaisai_nen','kaisaienen','year'], 'kaisai_nen');
+  const md = pick(['kaisai_tsukihi','kaisaitsukihi','tsukihi','mmdd'], 'kaisai_tsukihi');
+  const jyo = pick(['keibajo_code','keibajo_cd','jyo_cd','jyo','keibajo'], 'keibajo_code');
+  const race = pick(['race_bango','race_no','raceno','race'], 'race_bango');
+  return { y, md, jyo, race };
+}
+
 function extractCorners(row: any, colNames: string[]): number[] {
   const out: number[] = [];
   for (const c of colNames) {
@@ -71,12 +84,17 @@ async function main() {
     const finishCandidates = ['kakutei_juni','kakuteijuni','kakutei_jyuni','kettei_juni','chakujun','kakutei_chakujun'];
     const finishCol = finishCandidates.find(c=>seCols.has(c)) || 'chakujun';
 
-    const hrTable = await findPayoutTable(pool);
+    const hrTable = 'jvd_hr';
     const hrCols = await listColumns(pool, hrTable);
-    const winUmCols = Array.from(hrCols).filter(c=>/tansho.*umaban/i.test(c));
-    const winPayCols = Array.from(hrCols).filter(c=>/tansho.*pay|tansho.*haraimodoshi/i.test(c));
-    const fukuUmCols = Array.from(hrCols).filter(c=>/fukusho.*umaban/i.test(c)).sort();
-    const fukuPayCols = Array.from(hrCols).filter(c=>/fukusho.*pay|fukusho.*haraimodoshi/i.test(c)).sort();
+    // 明示指定（ユーザー指定）
+    const hrKeys = { y: 'kaisai_nen', md: 'kaisai_tsukihi', jyo: 'keibajo_code', race: 'race_bango' } as const;
+    // 払戻スキーマ（定義書準拠）
+    // 単勝: haraimodoshi_tansho_1a(馬番) / _1b(払戻) / _1c(人気) ... 1..3
+    // 複勝: haraimodoshi_fukusho_1a(馬番) / _1b(払戻) / _1c(人気) ... 1..5
+    const winUmCols = ['haraimodoshi_tansho_1a','haraimodoshi_tansho_2a','haraimodoshi_tansho_3a'].filter(c=>hrCols.has(c));
+    const winPayCols = ['haraimodoshi_tansho_1b','haraimodoshi_tansho_2b','haraimodoshi_tansho_3b'].filter(c=>hrCols.has(c));
+    const fukuUmCols = ['haraimodoshi_fukusho_1a','haraimodoshi_fukusho_2a','haraimodoshi_fukusho_3a','haraimodoshi_fukusho_4a','haraimodoshi_fukusho_5a'].filter(c=>hrCols.has(c));
+    const fukuPayCols = ['haraimodoshi_fukusho_1b','haraimodoshi_fukusho_2b','haraimodoshi_fukusho_3b','haraimodoshi_fukusho_4b','haraimodoshi_fukusho_5b'].filter(c=>hrCols.has(c));
 
     const sql = `
       SELECT ra.keibajo_code, ra.track_code, ra.race_bango,
@@ -84,32 +102,57 @@ async function main() {
              se.umaban, se.wakuban, se.${finishCol} AS __finish,
              ${cornerCols.length ? cornerCols.map(c=>`se.${c}`).join(',') : 'NULL AS corner_1'}
       FROM public.jvd_se se
-      JOIN public.jvd_ra ra ON CAST(se.kaisai_nen AS INTEGER)=CAST(ra.kaisai_nen AS INTEGER)
-        AND CAST(se.kaisai_tsukihi AS INTEGER)=CAST(ra.kaisai_tsukihi AS INTEGER)
-        AND CAST(se.keibajo_code AS INTEGER)=CAST(ra.keibajo_code AS INTEGER)
-        AND CAST(se.race_bango AS INTEGER)=CAST(ra.race_bango AS INTEGER)
-      WHERE (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) BETWEEN $1 AND $2
+      JOIN public.jvd_ra ra
+        ON TRIM(se.kaisai_nen) = TRIM(ra.kaisai_nen)
+       AND TRIM(se.kaisai_tsukihi) = TRIM(ra.kaisai_tsukihi)
+       AND TRIM(se.keibajo_code) = TRIM(ra.keibajo_code)
+       AND TRIM(se.race_bango) = TRIM(ra.race_bango)
+      WHERE se.kaisai_nen ~ '^\\d{4}$' AND ra.kaisai_nen ~ '^\\d{4}$'
+        AND se.kaisai_tsukihi ~ '^\\d{4}$'
+        AND ra.kaisai_tsukihi ~ '^\\d{4}$'
+        AND se.keibajo_code ~ '^\\d+$' AND ra.keibajo_code ~ '^\\d+$'
+        AND se.race_bango ~ '^\\d+$' AND ra.race_bango ~ '^\\d+$'
+        AND se.umaban ~ '^\\d+$'
+        AND (CAST(NULLIF(TRIM(se.kaisai_nen), '') AS INTEGER)*10000 + CAST(NULLIF(TRIM(se.kaisai_tsukihi), '') AS INTEGER)) BETWEEN $1 AND $2
         AND COALESCE(NULLIF(TRIM(se.data_kubun),''),'') IN ('6','7')
-      ORDER BY CAST(ra.keibajo_code AS INTEGER), CAST(ra.race_bango AS INTEGER), CAST(se.umaban AS INTEGER)
+      ORDER BY 
+        CAST(NULLIF(REGEXP_REPLACE(ra.keibajo_code,'\\D','','g'),'') AS INTEGER),
+        CAST(NULLIF(REGEXP_REPLACE(ra.race_bango,'\\D','','g'),'') AS INTEGER),
+        CAST(NULLIF(REGEXP_REPLACE(se.umaban,'\\D','','g'),'') AS INTEGER)
     `;
     const res = await pool.query(sql, [Number(fromYmd), Number(toYmd)]);
 
     // Payouts per race
-    const payoutSql = `
-      SELECT ${winUmCols.concat(winPayCols).concat(fukuUmCols).concat(fukuPayCols).map(c=>`hr.${c}`).join(',')},
-             hr.kaisai_nen, hr.kaisai_tsukihi, hr.keibajo_code, hr.race_bango
-      FROM public.${hrTable} hr
-      WHERE (CAST(hr.kaisai_nen AS INTEGER)*10000 + CAST(hr.kaisai_tsukihi AS INTEGER)) BETWEEN $1 AND $2
-    `;
-    const hrRes = await pool.query(payoutSql, [Number(fromYmd), Number(toYmd)]);
+    const payoutColsAll = winUmCols.concat(winPayCols).concat(fukuUmCols).concat(fukuPayCols);
+    function makeKey(y:any, md:any, j:any, r:any) {
+      const yv = String(y).trim();
+      const mdv = String(md).trim();
+      const jv = String(j).replace(/\D/g, '');
+      const rv = String(r).replace(/\D/g, '');
+      return `${yv}:${mdv}:${jv}:${rv}`;
+    }
     const hrMap = new Map<string, any>();
-    for (const r of hrRes.rows as any[]) {
-      const k = `${r.kaisai_nen}:${r.kaisai_tsukihi}:${r.keibajo_code}:${r.race_bango}`;
-      hrMap.set(k, r);
+    if (payoutColsAll.length > 0) {
+      const payoutSql = `
+        SELECT ${payoutColsAll.map(c=>`hr.${c}`).join(', ')},
+               hr.${hrKeys.y} AS k_y, hr.${hrKeys.md} AS k_md, hr.${hrKeys.jyo} AS k_jyo, hr.${hrKeys.race} AS k_r
+        FROM public.${hrTable} hr
+        WHERE hr.${hrKeys.y} ~ '^\\d{4}$' AND hr.${hrKeys.md} ~ '^\\d{4}$'
+          AND (${hrKeys.jyo} IS NOT NULL) AND (${hrKeys.race} IS NOT NULL)
+          AND (CAST(NULLIF(TRIM(hr.${hrKeys.y}), '') AS INTEGER)*10000 + CAST(NULLIF(TRIM(hr.${hrKeys.md}), '') AS INTEGER)) BETWEEN $1 AND $2
+      `;
+      const hrRes = await pool.query(payoutSql, [Number(fromYmd), Number(toYmd)]);
+      for (const r of hrRes.rows as any[]) {
+        const k = makeKey(r.k_y, r.k_md, r.k_jyo, r.k_r);
+        hrMap.set(k, r);
+      }
     }
 
     // Aggregate by track+ground+type
     const agg = new Map<string, Agg>();
+    let statTotalStarters = 0;
+    let statHrJoinHits = 0;
+    let statHrJoinMiss = 0;
     function key(trackCode: string, ground: string, t: 'A'|'B'|'C') { return `${trackCode}:${ground}:${t}`; }
     function groundFromTrackCode(tc: string) {
       const s = (tc||'').trim(); const n=Number(s);
@@ -134,40 +177,44 @@ async function main() {
       const k = key(String(r.keibajo_code).padStart(2,'0'), ground, type);
       const a = agg.get(k) || { starters:0,wins:0,places:0,winStake:0,winReturn:0,placeStake:0,placeReturn:0 };
       a.starters += 1;
+      statTotalStarters += 1;
       if (finish === 1) a.wins += 1;
       if (finish <= 3) a.places += 1;
 
       // payout lookup with exact date
-      const dkey = `${String(r.kaisai_nen)}:${String(r.kaisai_tsukihi)}:${r.keibajo_code}:${r.race_bango}`;
+      const dkey = makeKey(r.kaisai_nen, r.kaisai_tsukihi, r.keibajo_code, r.race_bango);
       const hr = hrMap.get(dkey);
       if (hr) {
+        statHrJoinHits += 1;
         // stake only when payout data exists
         a.winStake += 100;
         a.placeStake += 100;
         // tansho
         const pairs = (cols: string[], payCols: string[]) => {
-          // pair by numeric suffix; default '1' for no suffix
-          function idxOf(c: string) { const m=c.match(/(\d+)$/); return m? m[1]: '1'; }
-          const um = cols.map(c=>({ c, i: idxOf(c) }));
-          const py = payCols.map(c=>({ c, i: idxOf(c) }));
+          // pair by head index before alpha suffix (e.g., _1a ↔ _1b)
+          function headIdx(c: string) { const m=c.match(/_(\d+)[a-z]$/i); return m? m[1]: '1'; }
+          const um = cols.map(c=>({ c, i: headIdx(c) }));
+          const py = payCols.map(c=>({ c, i: headIdx(c) }));
           return um.map(u=>({ u: u.c, p: (py.find(x=>x.i===u.i)||py[0])?.c })).filter(x=>x.p);
         };
         const winPairs = pairs(winUmCols, winPayCols);
         for (const pr of winPairs) {
-          const u = Number(hr[pr.u]);
-          const pay = Number(hr[pr.p]);
+          const u = Number(String(hr[pr.u]).replace(/\D/g,''));
+          const pay = Number(String(hr[pr.p]).replace(/\D/g,''));
           if (Number.isFinite(u) && Number.isFinite(pay) && u === Number(r.umaban)) {
             a.winReturn += pay;
           }
         }
         const fukuPairs = pairs(fukuUmCols, fukuPayCols);
         for (const pr of fukuPairs) {
-          const u = Number(hr[pr.u]);
-          const pay = Number(hr[pr.p]);
+          const u = Number(String(hr[pr.u]).replace(/\D/g,''));
+          const pay = Number(String(hr[pr.p]).replace(/\D/g,''));
           if (Number.isFinite(u) && Number.isFinite(pay) && u === Number(r.umaban)) {
             a.placeReturn += pay;
           }
         }
+      } else {
+        statHrJoinMiss += 1;
       }
       agg.set(k, a);
     }
@@ -179,7 +226,8 @@ async function main() {
     }
     const outDir = path.join(process.cwd(), 'data', 'analytics'); fs.mkdirSync(outDir, { recursive: true });
     const file = path.join(outDir, `pace-backtest-${toIso(anchorYmd)}.json`);
-    fs.writeFileSync(file, JSON.stringify({ from: toIso(fromYmd), to: toIso(toYmd), by: 'track*ground*type', rows: out }, null, 2));
+    const stats = { starters: statTotalStarters, hr_join_hit: statHrJoinHits, hr_join_miss: statHrJoinMiss };
+    fs.writeFileSync(file, JSON.stringify({ from: toIso(fromYmd), to: toIso(toYmd), by: 'track*ground*type', stats, rows: out }, null, 2));
     console.log(`wrote ${file}`);
   } finally {
     await pool.end();
