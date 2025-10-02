@@ -79,6 +79,11 @@
     {
       "track": "中山",
       "no": 10,
+      "quinella_box": [
+        2,
+        3,
+        9
+      ],
       "notes": [
         "推奨: 馬連 BB A1/B2 cap∞ ROI1.16 n=660"
       ]

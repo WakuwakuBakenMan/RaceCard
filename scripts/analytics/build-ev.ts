@@ -200,7 +200,8 @@ function buildRecommendations(day: RaceDay): DayReco {
       const finalWin = winOk ? win : undefined;
       const finalPlace = placeOk ? place : undefined;
       const showAny = (finalWin && finalWin.length>0) || (finalPlace && finalPlace.length>0);
-      const finalBox = showAny ? (quinella_box.length>=2 ? quinella_box : undefined) : undefined;
+      // 馬連BOXは ROI>1.00 の推奨がある場合のみ表示
+      let finalBox: number[] | undefined = undefined;
 
       // 三連単は非表示
       const finalTrifectaSummary = undefined;
@@ -214,18 +215,14 @@ function buildRecommendations(day: RaceDay): DayReco {
       const aCount = r.horses.filter(h=>h.pace_type?.includes('A')).length;
       const bCount = r.horses.filter(h=>h.pace_type?.includes('B')).length;
       const feasible = cand.filter(row=>isPairFeasible(row, aCount, bCount));
-      const bestReco = feasible.find(row=>row.roi >= 1.0);
-      const bestSemi = feasible.find(row=>row.roi >= 0.90 && row.roi < 1.0);
+      const bestReco = feasible.find(row=>row.roi > 1.0);
       if (bestReco) {
         const roiStr = bestReco.roi.toFixed(2);
         const aTag = bestReco.A ? `${bestReco.A}/` : '';
         notes.push(`推奨: 馬連 ${bestReco.pair} ${aTag}${bestReco.B} ${bestReco.cap} ROI${roiStr} n=${bestReco.races}`);
+        if (quinella_box.length>=2) finalBox = quinella_box;
       }
-      if (bestSemi) {
-        const roiStr = bestSemi.roi.toFixed(2);
-        const aTag = bestSemi.A ? `${bestSemi.A}/` : '';
-        notes.push(`準推奨: 馬連 ${bestSemi.pair} ${aTag}${bestSemi.B} ${bestSemi.cap} ROI${roiStr} n=${bestSemi.races}`);
-      }
+      // 準推奨・参考BOXは出さない（bestRecoが無い場合はBOX非表示）
 
       if (showAny) {
         if (typeof r.pace_score === 'number') notes.push(`展開カウント: ${r.pace_score}${r.pace_mark ?? ''}`);
