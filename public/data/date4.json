@@ -5,6 +5,14 @@
       "track": "中山",
       "kaiji": 4,
       "nichiji": 9,
+      "position_bias": {
+        "ダ": {
+          "pace": {}
+        },
+        "芝": {
+          "pace": {}
+        }
+      },
       "races": [
         {
           "no": 1,
@@ -2513,6 +2521,9 @@
       "kaiji": 4,
       "nichiji": 9,
       "position_bias": {
+        "芝": {
+          "pace": {}
+        },
         "ダ": {
           "pace": {
             "win_place": {

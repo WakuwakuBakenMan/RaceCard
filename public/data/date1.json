@@ -14,6 +14,9 @@
               "n_total": 7
             }
           }
+        },
+        "ダ": {
+          "pace": {}
         }
       },
       "races": [
@@ -2380,6 +2383,14 @@
       "track": "阪神",
       "kaiji": 4,
       "nichiji": 7,
+      "position_bias": {
+        "芝": {
+          "pace": {}
+        },
+        "ダ": {
+          "pace": {}
+        }
+      },
       "races": [
         {
           "no": 1,
