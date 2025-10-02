@@ -57,17 +57,11 @@ export default function DayGrid() {
                     const xt = (x.track ?? '').trim();
                     const mt = (m.track ?? '').trim();
                     if (xt !== mt || Number(x.no) !== (i + 1)) return false;
-                    // 単勝/複勝/馬連BOX の明示推奨
-                    const explicit = (Array.isArray(x.win) && x.win.length>0)
-                      || (Array.isArray(x.place) && x.place.length>0)
-                      || (Array.isArray(x.quinella_box) && x.quinella_box.length>0);
-                    const notes = Array.isArray(x.notes) ? x.notes : [];
-                    const noteReco = notes.some((n) => {
-                      if (typeof n !== 'string') return false;
-                      const s = n.trim();
-                      return /^(推奨|準推奨)\s*[:：]?/.test(s) || s.includes('推奨') || (s.includes('ROI') && s.includes('馬連'));
-                    });
-                    return explicit || noteReco;
+                    // 買い目（単/複/馬連BOX）のいずれかが存在 -> 推奨
+                    if (Array.isArray(x.win) && x.win.length>0) return true;
+                    if (Array.isArray(x.place) && x.place.length>0) return true;
+                    if (Array.isArray(x.quinella_box) && x.quinella_box.length>0) return true;
+                    return false;
                   });
                   return (
                     <Link

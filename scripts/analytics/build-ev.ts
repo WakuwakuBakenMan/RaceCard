@@ -194,9 +194,9 @@ function buildRecommendations(day: RaceDay): DayReco {
       // Quinella: 上位スコアから最大3頭ボックス
       const quinella_box = scored.filter(x=>x.score>=1.5).slice(0,3).map(x=>x.h.num);
 
-      // ROIしきい値による推奨ゲーティング（満たさない場合は完全に無表示）
-      const winOk = roi ? roi.win >= ROI_WIN_MIN : false;
-      const placeOk = roi ? roi.place >= ROI_PLACE_MIN : false;
+      // ROIしきい値による推奨ゲーティング（>1.00厳格）。フォールバックは行わない。
+      const winOk = roi ? roi.win > Math.max(1.0, ROI_WIN_MIN) : false;
+      const placeOk = roi ? roi.place > Math.max(1.0, ROI_PLACE_MIN) : false;
       const finalWin = winOk ? win : undefined;
       const finalPlace = placeOk ? place : undefined;
       const showAny = (finalWin && finalWin.length>0) || (finalPlace && finalPlace.length>0);
