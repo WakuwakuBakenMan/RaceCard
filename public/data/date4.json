@@ -2512,6 +2512,22 @@
       "track": "阪神",
       "kaiji": 4,
       "nichiji": 9,
+      "position_bias": {
+        "ダ": {
+          "pace": {
+            "win_place": {
+              "target": "A",
+              "ratio": 0.7333333333333333,
+              "n_total": 15
+            },
+            "quinella": {
+              "target": "A",
+              "ratio": 0.8,
+              "n_total": 10
+            }
+          }
+        }
+      },
       "races": [
         {
           "no": 1,

@@ -5,6 +5,17 @@
       "track": "中山",
       "kaiji": 4,
       "nichiji": 7,
+      "position_bias": {
+        "芝": {
+          "pace": {
+            "longshot": {
+              "target": "A",
+              "ratio": 0.7142857142857143,
+              "n_total": 7
+            }
+          }
+        }
+      },
       "races": [
         {
           "no": 1,

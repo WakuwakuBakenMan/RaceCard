@@ -5,6 +5,16 @@
       "track": "中山",
       "kaiji": 4,
       "nichiji": 8,
+      "position_bias": {
+        "芝": {
+          "pace": {},
+          "draw": {
+            "target": "inner",
+            "ratio": 0.7333333333333333,
+            "n_total": 15
+          }
+        }
+      },
       "races": [
         {
           "no": 1,
@@ -2566,6 +2576,16 @@
       "track": "阪神",
       "kaiji": 4,
       "nichiji": 8,
+      "position_bias": {
+        "ダ": {
+          "pace": {},
+          "draw": {
+            "target": "outer",
+            "ratio": 0.7,
+            "n_total": 10
+          }
+        }
+      },
       "races": [
         {
           "no": 1,
