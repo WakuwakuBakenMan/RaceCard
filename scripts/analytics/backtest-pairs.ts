@@ -11,20 +11,57 @@ async function listColumns(pool: Pool, table: string): Promise<Set<string>> {
   return new Set(res.rows.map((r:any)=>String(r.column_name)));
 }
 
-function extractCorners(row: any, cols: string[]): number[] {
-  const out: number[] = [];
-  for (const c of cols) {
-    const v = row[c]; if (v==null) continue; const s=String(v).trim(); if (!s) continue;
-    if (/^\d+$/.test(s)) { const n=Number(s); if (Number.isFinite(n)) out.push(n); continue; }
-    const parts = s.split(/[^0-9]+/).filter(Boolean); for (const p of parts) { const n=Number(p); if (Number.isFinite(n)) out.push(n); }
+function classifyTypesFromPassages(passages: string[]): Array<'A'|'B'|'C'> {
+  let all4 = 0, nige = 0;
+  for (const p of passages) {
+    const parts = String(p).split('-').map((s)=>Number(s)).filter((n)=>Number.isFinite(n));
+    if (!parts.length) continue;
+    if (Math.max(...parts) <= 4) all4 += 1;
+    if (parts[0] === 1) nige += 1;
   }
-  return out;
+  const t: Array<'A'|'B'|'C'> = [];
+  if (nige >= 2) t.push('A');
+  if (all4 >= 2) t.push('B');
+  else if (all4 === 1) t.push('C');
+  return t;
 }
 
-function classifyType(corners: number[]): 'A'|'B'|'C'|null {
-  const seq = corners.filter(n=>Number.isFinite(n)); if (seq.length<2) return null;
-  const all4 = seq.every(n=>n<=4); const all5p = seq.every(n=>n>=5);
-  if (all4) return 'A'; if (all5p) return 'B'; return 'C';
+async function fetchPassagesForHorsesBefore(pool: Pool, horseIds: string[], yyyymmdd: string) {
+  if (horseIds.length === 0) return new Map<string, string[]>();
+  const targetNum = Number(`${yyyymmdd.slice(0,4)}${yyyymmdd.slice(4,8)}`);
+  const sql = `
+    WITH target_ids AS (
+      SELECT unnest($1::text[]) AS ketto_toroku_bango
+    ), se_all AS (
+      SELECT 'J' AS src, se.ketto_toroku_bango, se.kaisai_nen, se.kaisai_tsukihi,
+             se.corner_1, se.corner_2, se.corner_3, se.corner_4
+      FROM public.jvd_se se
+      JOIN target_ids t USING (ketto_toroku_bango)
+      WHERE (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) < $2
+    )
+    SELECT * FROM se_all
+    ORDER BY ketto_toroku_bango,
+             CAST(kaisai_nen AS INTEGER) DESC,
+             CAST(kaisai_tsukihi AS INTEGER) DESC
+  `;
+  const res = await pool.query(sql, [horseIds, targetNum]);
+  const map = new Map<string, { d: number; pass: string }[]>();
+  for (const r of res.rows as any[]) {
+    const id = String(r.ketto_toroku_bango);
+    const c = [r.corner_1, r.corner_2, r.corner_3, r.corner_4].map((x: any) => (x==null? '': String(x).trim()));
+    const present = c.filter((x) => x && /^\d+$/.test(x)).map((x) => Number(x));
+    if (!present.length) continue;
+    const arr = map.get(id) || [];
+    const d = Number(String(r.kaisai_nen).padStart(4,'0') + String(r.kaisai_tsukihi).padStart(4,'0'));
+    arr.push({ d, pass: present.join('-') });
+    map.set(id, arr);
+  }
+  const out = new Map<string, string[]>();
+  for (const [id, list] of map) {
+    list.sort((a,b)=>b.d-a.d);
+    out.set(id, list.slice(0,3).map(x=>x.pass));
+  }
+  return out;
 }
 
 function groundFromTrackCode(tc: string): string { const s=(tc||'').trim(); const n=Number(s); if (s.startsWith('1')) return '芝'; if ((n>=23&&n<=29)||s.startsWith('2')) return 'ダ'; if (n>=51) return '障'; return ''; }
@@ -32,18 +69,18 @@ function groundFromTrackCode(tc: string): string { const s=(tc||'').trim(); cons
 function pad2(n: number){ return String(n).padStart(2,'0'); }
 function makePairCode(i:number,j:number){ const a=Math.min(i,j), b=Math.max(i,j); return `${pad2(a)}${pad2(b)}`; }
 
-type PairType = 'BB'|'BC'|'CC';
+type PairType = 'AA'|'AB'|'BB';
 
-function generatePairs(kind: PairType, B: number[], C: number[], bN: number, cN: number): string[] {
+function generatePairs(kind: PairType, A: number[], B: number[], _C: number[], aN: number, bN: number, _cN: number): string[] {
+  const pickA = A.slice(0, aN);
   const pickB = B.slice(0, bN);
-  const pickC = C.slice(0, cN);
   const out: string[] = [];
-  if (kind==='BB') {
+  if (kind==='AA') {
+    for (let i=0;i<pickA.length;i++) for (let j=i+1;j<pickA.length;j++) out.push(makePairCode(pickA[i], pickA[j]));
+  } else if (kind==='AB') {
+    for (const i of pickA) for (const j of pickB) out.push(makePairCode(i,j));
+  } else if (kind==='BB') {
     for (let i=0;i<pickB.length;i++) for (let j=i+1;j<pickB.length;j++) out.push(makePairCode(pickB[i], pickB[j]));
-  } else if (kind==='BC') {
-    for (const i of pickB) for (const j of pickC) out.push(makePairCode(i,j));
-  } else if (kind==='CC') {
-    for (let i=0;i<pickC.length;i++) for (let j=i+1;j<pickC.length;j++) out.push(makePairCode(pickC[i], pickC[j]));
   }
   return Array.from(new Set(out));
 }
@@ -63,6 +100,7 @@ async function main(){
     const sql = `
       SELECT ra.keibajo_code, ra.track_code, ra.race_bango,
              se.kaisai_nen, se.kaisai_tsukihi,
+             se.ketto_toroku_bango,
              se.umaban, ${cornerCols.length? cornerCols.map(c=>`se.${c}`).join(',') : 'NULL AS corner_1'},
              se.${finishCol} AS __finish
       FROM public.jvd_se se
@@ -74,7 +112,11 @@ async function main(){
       WHERE se.kaisai_nen ~ '^\\d{4}$' AND se.kaisai_tsukihi ~ '^\\d{4}$'
         AND (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) BETWEEN $1 AND $2
         AND COALESCE(NULLIF(TRIM(se.data_kubun),''),'') IN ('6','7')
-      ORDER BY CAST(se.kaisai_nen AS INTEGER), CAST(se.kaisai_tsukihi AS INTEGER), CAST(ra.keibajo_code AS INTEGER), CAST(ra.race_bango AS INTEGER), CAST(se.umaban AS INTEGER)
+        AND ra.keibajo_code ~ '^\\d+$' AND ra.race_bango ~ '^\\d+$'
+      ORDER BY CAST(se.kaisai_nen AS INTEGER), CAST(se.kaisai_tsukihi AS INTEGER),
+               CAST(REGEXP_REPLACE(ra.keibajo_code, '\\D+', '', 'g') AS INTEGER),
+               CAST(REGEXP_REPLACE(ra.race_bango, '\\D+', '', 'g') AS INTEGER),
+               CAST(REGEXP_REPLACE(se.umaban::text, '\\D+', '', 'g') AS INTEGER)
     `;
     const res = await pool.query(sql, [Number(fromYmd), Number(toYmd)]);
 
@@ -101,11 +143,39 @@ async function main(){
     const hrRes = await pool.query(payoutSql, [Number(fromYmd), Number(toYmd)]);
     const hrMap = new Map<string, { umaren: Map<string,number>, wide: Map<string,number> }>();
     const norm=(s:any)=>String(s||'').replace(/\D/g,'');
+    const toUmarenCode = (raw:any): string | undefined => {
+      const s = String(raw||'').trim();
+      if (!s) return undefined;
+      // パターン1: 区切り文字あり（例: 1-2, 01=02, 1 / 2）
+      const m = s.match(/(\d{1,2})\D+(\d{1,2})/);
+      if (m) {
+        const a = Number(m[1]); const b = Number(m[2]);
+        if (a>0 && b>0) return makePairCode(a,b);
+      }
+      // パターン2: 数字のみ（例: 0102, 1203 など2桁+2桁）
+      const digits = s.replace(/\D/g,'');
+      if (digits.length === 4) {
+        const a = Number(digits.slice(0,2));
+        const b = Number(digits.slice(2,4));
+        if (a>0 && b>0) return makePairCode(a,b);
+      }
+      // パターン3: 3桁（例: 112 → 1と12 とみなす）
+      if (digits.length === 3) {
+        const a = Number(digits.slice(0,1));
+        const b = Number(digits.slice(1,3));
+        if (a>0 && b>0) return makePairCode(a,b);
+      }
+      return undefined;
+    };
     const kf=(y:any,md:any,j:any,rc:any)=>`${String(y).trim()}:${String(md).trim()}:${String(j).replace(/\D/g,'')}:${String(rc).replace(/\D/g,'')}`;
     for (const r of hrRes.rows as any[]) {
       const key = kf(r.y, r.md, r.jyo, r.rc);
       const um = new Map<string, number>();
-      for (const p of umarenPairs) { const a=norm(r[p.a]); const b=Number(norm(r[p.b])); if (a && b>0) um.set(a.padStart(4,'0'), b); }
+      for (const p of umarenPairs) {
+        const code = toUmarenCode(r[p.a]);
+        const pay = Number(norm(r[p.b]));
+        if (code && pay>0) um.set(code, pay);
+      }
       const wd = new Map<string, number>();
       for (const p of widePairs) { const a=norm(r[p.a]); const b=Number(norm(r[p.b])); if (a && b>0) wd.set(a.padStart(4,'0'), b); }
       hrMap.set(key, { umaren: um, wide: wd });
@@ -116,16 +186,15 @@ async function main(){
     const aggWide = new Map<string, Agg>();
 
     let curKey='';
-    const raceHorses: Record<number, { type:'A'|'B'|'C'|null }>= {};
+    const raceHorseIds: Record<number, string> = {};
     const rowsAny = res.rows as any[];
     for (let i=0; i<rowsAny.length; i++) {
       const row = rowsAny[i];
       const raceKey = `${row.kaisai_nen}:${row.kaisai_tsukihi}:${row.keibajo_code}:${row.race_bango}`;
       const next = rowsAny[i+1];
       const nextKey = next ? `${next.kaisai_nen}:${next.kaisai_tsukihi}:${next.keibajo_code}:${next.race_bango}` : '';
-      if (raceKey !== curKey) { curKey = raceKey; for (const k of Object.keys(raceHorses)) delete raceHorses[Number(k)]; }
-      const corners = extractCorners(row, cornerCols.length?cornerCols:['corner_1']);
-      raceHorses[Number(row.umaban)] = { type: classifyType(corners) };
+      if (raceKey !== curKey) { curKey = raceKey; for (const k of Object.keys(raceHorseIds)) delete raceHorseIds[Number(k)]; }
+      raceHorseIds[Number(row.umaban)] = String(row.ketto_toroku_bango||'');
 
       const isLastInRace = raceKey !== nextKey;
       if (!isLastInRace) continue;
@@ -133,36 +202,62 @@ async function main(){
       const y=row.kaisai_nen, md=row.kaisai_tsukihi, jyo=row.keibajo_code, rc=row.race_bango;
       const hk = kf(y,md,jyo,rc);
       const payout = hrMap.get(hk);
-      const A = Object.entries(raceHorses).filter(([,v])=>v.type==='A').map(([n])=>Number(n)).sort((a,b)=>a-b);
-      if (A.length>0) continue; // A不在レースのみ対象
-      const B = Object.entries(raceHorses).filter(([,v])=>v.type==='B').map(([n])=>Number(n)).sort((a,b)=>a-b);
-      const C = Object.entries(raceHorses).filter(([,v])=>v.type==='C'||v.type===null).map(([n])=>Number(n)).sort((a,b)=>a-b);
+      const ymd = String(y).padStart(4,'0') + String(md).padStart(4,'0');
+      const idList = Object.values(raceHorseIds).filter(Boolean);
+      const passMap = await fetchPassagesForHorsesBefore(pool, idList, ymd);
+      const A: number[] = []; const B: number[] = []; const C: number[] = [];
+      for (const [umastr, id] of Object.entries(raceHorseIds)) {
+        const passages = passMap.get(id) || [];
+        const types = classifyTypesFromPassages(passages);
+        const uma = Number(umastr);
+        if (types.includes('A')) A.push(uma);
+        if (types.includes('B')) B.push(uma);
+        if (types.includes('C')) C.push(uma);
+      }
+      A.sort((a,b)=>a-b); B.sort((a,b)=>a-b); C.sort((a,b)=>a-b);
+      // ここではA不在フィルタを外し、ABC全組み合わせを評価
 
+      const gridA = [1,2,3];
       const gridB = [1,2,3,4];
       const gridC = [1,2,3,4];
-      const caps = [3,5,10];
-      const kinds: PairType[] = ['BB','BC','CC'];
+      const caps = [Number.POSITIVE_INFINITY];
+      // 条件: Aがいる場合 → A軸（AA/AB/AC）。Aが不在 → B軸（BB/BC）。Cのみは対象外。
+      const kinds: PairType[] = A.length>0 ? ['AA','AB'] : (B.length>0 ? ['BB'] : []);
+      if (kinds.length===0) continue; // Cのみのレースは対象外
+      // 層別キー: 競馬場コード、馬場、展開バイアス
+      const jyoCode = String(jyo).replace(/\D/g,'');
+      const ground = groundFromTrackCode(String(row.track_code||''));
+      // 展開バイアス指標: C:+0.5, B:+1.0, A不在:-2.5, A≥2:+1.5, B≤2:-1.0
+      const paceScore = (C.length * 0.5) + (B.length * 1.0)
+        + (A.length===0 ? -2.5 : 0) + (A.length>=2 ? 1.5 : 0) + (B.length<=2 ? -1.0 : 0);
+      const biasFlag = (paceScore <= 4.0) && (paceScore !== -3.5);
       for (const kind of kinds){
-        for (const bN of gridB){
-          for (const cN of gridC){
-            for (const cap of caps){
-              const pairs = generatePairs(kind, B, C, bN, cN).slice(0, cap);
-              if (pairs.length===0) continue;
-              const key = `${kind}|B${bN}|C${cN}|cap${cap}`;
-              const target = (m:Map<string,Agg>)=>{ const a=m.get(key)||{stake:0,ret:0,hit:0,races:0}; a.stake += pairs.length*100; a.races += 1; return a; };
-              if (payout){
-                // 馬連
-                let a = target(aggUmaren);
-                let returned = 0; for (const cb of pairs){ const pay=payout.umaren.get(cb); if (pay){ returned += pay; a.hit += 1; break; } }
-                a.ret += returned; aggUmaren.set(key,a);
-                // ワイド（複数的中もあるが代表的に最初のヒットのみ加算に留める）
-                a = target(aggWide);
-                let returnedW = 0; for (const cb of pairs){ const pay=payout.wide.get(cb); if (pay){ returnedW += pay; a.hit += 1; /*break;*/ } }
-                a.ret += returnedW; aggWide.set(key,a);
-              } else {
-                // payoutなしでも races/stake はカウント
-                aggUmaren.set(key, target(aggUmaren));
-                aggWide.set(key, target(aggWide));
+        for (const aN of gridA){
+          for (const bN of gridB){
+            for (const cN of gridC){
+              for (const cap of caps){
+                if (kind.includes('A') && A.length < (kind==='AA'?2:aN)) continue;
+                if (kind.includes('B') && B.length < (kind==='BB'?2:bN)) continue;
+                // C軸は扱わない
+                const pairs = generatePairs(kind, A, B, C, aN, bN, cN).slice(0, cap);
+                if (pairs.length===0) continue;
+                const capTag = 'cap∞';
+                const key = `${kind}|A${aN}|B${bN}|${capTag}|j:${jyoCode}|g:${ground}|b:${biasFlag ? '1' : '0'}`;
+                const target = (m:Map<string,Agg>)=>{ const a=m.get(key)||{stake:0,ret:0,hit:0,races:0}; a.stake += pairs.length*100; a.races += 1; return a; };
+                if (payout){
+                  // 馬連
+                  let a = target(aggUmaren);
+                  let returned = 0; for (const cb of pairs){ const pay=payout.umaren.get(cb); if (pay){ returned += pay; a.hit += 1; break; } }
+                  a.ret += returned; aggUmaren.set(key,a);
+                  // ワイド（複数的中もあるが代表的に最初のヒットのみ加算に留める）
+                  a = target(aggWide);
+                  let returnedW = 0; for (const cb of pairs){ const pay=payout.wide.get(cb); if (pay){ returnedW += pay; a.hit += 1; } }
+                  a.ret += returnedW; aggWide.set(key,a);
+                } else {
+                  // payoutなしでも races/stake はカウント
+                  aggUmaren.set(key, target(aggUmaren));
+                  aggWide.set(key, target(aggWide));
+                }
               }
             }
           }
@@ -171,15 +266,35 @@ async function main(){
     }
 
     const rows = (m:Map<string, Agg>, market:'umaren'|'wide') => Array.from(m.entries()).map(([key,a])=>{
-      const [kind, Bkey, Ckey, capKey] = key.split('|');
+      const parts = key.split('|');
+      const kind = parts[0] as PairType;
+      // 期待フォーマット: kind|A#|B#|cap#
+      let Akey = '';
+      let Bkey = '';
+      let capKey = '';
+      let jyoOut = '';
+      let groundOut = '';
+      let biasOut: string | undefined = undefined;
+      for (const p of parts.slice(1)) {
+        if (p.startsWith('A')) Akey = p;
+        else if (p.startsWith('B')) Bkey = p;
+        else if (p.startsWith('cap')) capKey = p;
+        else if (p.startsWith('j:')) jyoOut = p.slice(2);
+        else if (p.startsWith('g:')) groundOut = p.slice(2);
+        else if (p.startsWith('b:')) biasOut = p.slice(2);
+      }
       const points = Math.round(a.stake/100);
-      return { market, pair: kind, B: Bkey, C: Ckey, cap: capKey, points, stake: a.stake, ret: a.ret, roi: a.stake>0? a.ret/a.stake:0, hit: a.hit, races: a.races };
+      return { market, pair: kind, A: Akey || undefined, B: Bkey, C: '', cap: capKey, points, stake: a.stake, ret: a.ret, roi: a.stake>0? a.ret/a.stake:0, hit: a.hit, races: a.races, jyo: jyoOut, ground: groundOut, bias_flag: biasOut ? (biasOut==='1') : undefined } as any;
     }).sort((x,y)=> y.roi - x.roi || y.ret - x.ret);
 
     const outPath = path.join(process.cwd(),'data','analytics',`pairs-backtest-${toIso(anchorYmd)}.json`);
     fs.mkdirSync(path.dirname(outPath), { recursive: true });
-    fs.writeFileSync(outPath, JSON.stringify({ from: toIso(fromYmd), to: toIso(toYmd), rows: [...rows(aggUmaren,'umaren'), ...rows(aggWide,'wide')] }, null, 2));
+    // 馬連のみを出力（ワイドは現状不採用）
+    fs.writeFileSync(outPath, JSON.stringify({ from: toIso(fromYmd), to: toIso(toYmd), rows: rows(aggUmaren,'umaren') }, null, 2));
     console.log(`wrote ${outPath}`);
+  } catch (err) {
+    console.error(err);
+    throw err;
   } finally { await pool.end(); }
 }
 

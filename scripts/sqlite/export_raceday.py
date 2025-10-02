@@ -214,6 +214,30 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
 
     # meetingごとにまとめる
     meetings_dict: Dict[Tuple[str, int, int], List[Race]] = defaultdict(list)
+    # ポジション/枠順バイアス集計（当日・開催×馬場）
+    # 形式: agg[(jyo,kaiji,nichiji)][ground] = {
+    #   "pace": { "wp": {A,B,C,total}, "q": {...}, "ls": {...} },
+    #   "draw": { "inner":0, "outer":0, "total":0, "race_count":0 }
+    # }
+    def empty_pace():
+        return {"A": 0, "B": 0, "C": 0, "total": 0}
+    bias_agg: Dict[Tuple[str,int,int], Dict[str, Dict[str, dict]]] = defaultdict(lambda: defaultdict(lambda: {"pace": {"wp": empty_pace(), "q": empty_pace(), "ls": empty_pace()}, "draw": {"inner": 0, "outer": 0, "total": 0, "race_count": 0}}))
+    def to_pos_type(c1, c2, c3, c4) -> str | None:
+        def cnv(x):
+            try:
+                v = int(str(x).strip())
+                return v if v > 0 else None
+            except Exception:
+                return None
+        vals = [cnv(c1), cnv(c2), cnv(c3), cnv(c4)]
+        pres = [v for v in vals if v is not None]
+        if not pres:
+            return None
+        if all(v <= 4 for v in pres):
+            return 'A'  # 先行
+        if all(v >= 5 for v in pres):
+            return 'B'  # 差し（後方）
+        return 'C'
 
     for r in races:
         (
@@ -249,7 +273,8 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
                 ELSE um.Ninki
               END AS Ninki,
               um.Jyuni1c, um.Jyuni2c, um.Jyuni3c, um.Jyuni4c,
-              um.KettoNum
+              um.KettoNum,
+              um.KakuteiJyuni
             FROM N_UMA_RACE AS um
             LEFT JOIN S_ODDS_TANPUKU AS so
               ON um.Year = so.Year
@@ -283,6 +308,7 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
             Jyuni3c,
             Jyuni4c,
             KettoNum,
+            KakuteiJyuni,
         ) in cur.fetchall():
             num = to_int_or_none(Umaban) or 0
             draw = to_int_or_none(Wakuban) or 0
@@ -380,6 +406,61 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
                     pace_type=pace_type,
                 )
             )
+        # バイアス集計（当日・開催×馬場）。障害は除外、新潟芝1000m除外
+        ground = ground_from_trackcd(TrackCD)
+        is_valid_ground = ground in ("芝","ダ")
+        dist_m = to_int_or_none(Kyori) or 0
+        jyo_key = str(JyoCD).zfill(2)
+        skip_course = (jyo_key == "04" and ground == "芝" and dist_m == 1000)
+        if is_valid_ground and not skip_course:
+            # 再取得（同一SQLで再ループする代わりに、上のfetchをやり直す）
+            cur.execute(
+                """
+                SELECT Umaban, Wakuban, Ninki, KakuteiJyuni, Jyuni1c, Jyuni2c, Jyuni3c, Jyuni4c
+                FROM N_UMA_RACE
+                WHERE Year=? AND MonthDay=? AND JyoCD=? AND Kaiji=? AND Nichiji=? AND RaceNum=?
+                  AND DataKubun IN ('5','7')
+                ORDER BY CAST(Umaban AS INTEGER)
+                """,
+                key_cols,
+            )
+            entries = cur.fetchall()
+            headcount = len(entries)
+            agg_entry = bias_agg[(jyo_key, to_int_or_none(Kaiji) or 0, to_int_or_none(Nichiji) or 0)][ground]
+            for (u,w,pop_,fin,c1,c2,c3,c4) in entries:
+                # 着順・人気
+                try:
+                    fin_i = int(str(fin).strip())
+                except Exception:
+                    fin_i = None
+                try:
+                    pop_i = int(str(pop_).strip())
+                except Exception:
+                    pop_i = None
+                pos = to_pos_type(c1,c2,c3,c4)
+                if fin_i is not None and fin_i <= 3 and pos in ('A','B','C'):
+                    agg_entry["pace"]["wp"][pos] += 1
+                    agg_entry["pace"]["wp"]["total"] += 1
+                    # 枠は頭数14以上かつ内外判定可能時に加算
+                    try:
+                        wak = int(str(w).strip())
+                    except Exception:
+                        wak = None
+                    if headcount >= 14 and wak is not None:
+                        if 1 <= wak <= 4:
+                            agg_entry["draw"]["inner"] += 1
+                            agg_entry["draw"]["total"] += 1
+                        elif 5 <= wak <= 8:
+                            agg_entry["draw"]["outer"] += 1
+                            agg_entry["draw"]["total"] += 1
+                    if pop_i is not None and pop_i >= 4:
+                        agg_entry["pace"]["ls"][pos] += 1
+                        agg_entry["pace"]["ls"]["total"] += 1
+                if fin_i is not None and fin_i <= 2 and pos in ('A','B','C'):
+                    agg_entry["pace"]["q"][pos] += 1
+                    agg_entry["pace"]["q"]["total"] += 1
+            if headcount >= 14:
+                agg_entry["draw"]["race_count"] += 1
 
         ground = ground_from_trackcd(TrackCD)
         # 馬場状態の選択（芝/ダで使い分け）
@@ -496,6 +577,56 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
     # 開催順でソート: 競馬場→回→日→レース
     meetings.sort(key=lambda m: (m.track, m.kaiji, m.nichiji))
 
+    # 判定ロジック
+    def decide_pace(stat: dict, min_n: int = 1):
+        total = stat.get("total", 0)
+        if total is None or total < min_n or total == 0:
+            return None
+        best = max((('A', stat.get('A',0)), ('B', stat.get('B',0)), ('C', stat.get('C',0))), key=lambda kv: kv[1])
+        label, cnt = best
+        ratio = (cnt / total) if total > 0 else 0.0
+        if ratio >= 0.7:
+            return {"target": label, "ratio": ratio, "n_total": total}
+        return None
+    def decide_draw(stat: dict):
+        races = stat.get("race_count", 0)
+        total = stat.get("total", 0)
+        if races is None or races < 2 or total == 0:
+            return None
+        best = max((('inner', stat.get('inner',0)), ('outer', stat.get('outer',0))), key=lambda kv: kv[1])
+        label, cnt = best
+        ratio = (cnt / total) if total > 0 else 0.0
+        if ratio >= 0.7:
+            return {"target": label, "ratio": ratio, "n_total": total}
+        return None
+
+    # Meetingへ position_bias を付与
+    pos_map: Dict[Tuple[str,int,int], Dict[str, dict]] = {}
+    for key, gmap in bias_agg.items():
+        out_g: Dict[str, dict] = {}
+        for ground, stat in gmap.items():
+            pace = {
+                **({"win_place": decide_pace(stat["pace"]["wp"]) } if decide_pace(stat["pace"]["wp"]) else {}),
+                **({"quinella": decide_pace(stat["pace"]["q"]) } if decide_pace(stat["pace"]["q"]) else {}),
+                **({"longshot": decide_pace(stat["pace"]["ls"], min_n=6) } if decide_pace(stat["pace"]["ls"], min_n=6) else {}),
+            }
+            draw = decide_draw(stat["draw"]) or None
+            out = {"pace": pace}
+            if draw:
+                out["draw"] = draw
+            # フラットも表示するため、閾値未達でも ground を必ず出力
+            out_g[ground] = out
+        if out_g:
+            pos_map[key] = out_g
+
+    # Meeting オブジェクトに動的属性として付与
+    for m in meetings:
+        jyo = [k for k,v in JYOCD_TO_TRACK.items() if v == m.track]
+        if jyo:
+            key = (jyo[0], m.kaiji, m.nichiji)
+            if key in pos_map:
+                setattr(m, 'position_bias', pos_map[key])
+
     return RaceDay(date=date_iso, meetings=meetings)
 
 
@@ -509,6 +640,7 @@ def write_raceday_json(rd: RaceDay, outdir: str) -> str:
                     "track": m.track,
                     "kaiji": m.kaiji,
                     "nichiji": m.nichiji,
+                    **({"position_bias": getattr(m, 'position_bias')} if hasattr(m, 'position_bias') else {}),
                     "races": [
                         {
                             "no": r.no,

@@ -3,9 +3,10 @@ import path from 'node:path';
 
 type Row = {
   market: 'umaren'|'wide';
-  pair: 'BB'|'BC'|'CC';
-  B: string; // e.g., B2
-  C: string; // e.g., C3
+  pair: 'AA'|'AB'|'AC'|'BB'|'BC'|'CC';
+  A?: string; // e.g., A2
+  B: string;  // e.g., B3
+  C: string;  // e.g., C3
   cap: string; // capN
   points: number;
   stake: number;
@@ -13,6 +14,9 @@ type Row = {
   roi: number;
   hit: number;
   races: number;
+  jyo?: string;
+  ground?: string;
+  bias_flag?: boolean;
 };
 
 function findLatestFile(dir: string, prefix: string): string | null {
@@ -27,12 +31,13 @@ function formatNumber(n: number): string { return n.toLocaleString('ja-JP'); }
 function formatRoi(n: number): string { return (Math.round(n * 1000) / 1000).toFixed(3); }
 
 function toMarkdown(rows: Row[]): string {
-  const header = ['market','pair','B','C','cap','points','stake','ret','roi','hit','races'];
+  const header = ['market','pair','A','B','C','cap','jyo','ground','bias','points','stake','ret','roi','hit','races'];
   const lines: string[] = [];
   lines.push(`| ${header.join(' | ')} |`);
   lines.push(`| ${header.map(()=>'-').join(' | ')} |`);
   for (const r of rows) {
-    lines.push(`| ${r.market} | ${r.pair} | ${r.B} | ${r.C} | ${r.cap} | ${formatNumber(r.points)} | ${formatNumber(r.stake)} | ${formatNumber(r.ret)} | ${formatRoi(r.roi)} | ${formatNumber(r.hit)} | ${formatNumber(r.races)} |`);
+    const bias = typeof r.bias_flag === 'boolean' ? (r.bias_flag ? '1' : '0') : '';
+    lines.push(`| ${r.market} | ${r.pair} | ${r.A??''} | ${r.B} | ${r.C} | ${r.cap} | ${r.jyo??''} | ${r.ground??''} | ${bias} | ${formatNumber(r.points)} | ${formatNumber(r.stake)} | ${formatNumber(r.ret)} | ${formatRoi(r.roi)} | ${formatNumber(r.hit)} | ${formatNumber(r.races)} |`);
   }
   return lines.join('\n');
 }

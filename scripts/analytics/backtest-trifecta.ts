@@ -11,20 +11,58 @@ async function listColumns(pool: Pool, table: string): Promise<Set<string>> {
   return new Set(res.rows.map((r:any)=>String(r.column_name)));
 }
 
-function extractCorners(row: any, cols: string[]): number[] {
-  const out: number[] = [];
-  for (const c of cols) {
-    const v = row[c]; if (v==null) continue; const s=String(v).trim(); if (!s) continue;
-    if (/^\d+$/.test(s)) { const n=Number(s); if (Number.isFinite(n)) out.push(n); continue; }
-    const parts = s.split(/[^0-9]+/).filter(Boolean); for (const p of parts) { const n=Number(p); if (Number.isFinite(n)) out.push(n); }
+// 展開タイプ（過去3走）判定に必要なユーティリティ
+function classifyTypesFromPassages(passages: string[]): Array<'A'|'B'|'C'> {
+  let all4 = 0, nige = 0;
+  for (const p of passages) {
+    const parts = String(p).split('-').map((s)=>Number(s)).filter((n)=>Number.isFinite(n));
+    if (!parts.length) continue;
+    if (Math.max(...parts) <= 4) all4 += 1;
+    if (parts[0] === 1) nige += 1;
   }
-  return out;
+  const t: Array<'A'|'B'|'C'> = [];
+  if (nige >= 2) t.push('A');
+  if (all4 >= 2) t.push('B');
+  else if (all4 === 1) t.push('C');
+  return t;
 }
 
-function classifyType(corners: number[]): 'A'|'B'|'C'|null {
-  const seq = corners.filter(n=>Number.isFinite(n)); if (seq.length<2) return null;
-  const all4 = seq.every(n=>n<=4); const all5p = seq.every(n=>n>=5);
-  if (all4) return 'A'; if (all5p) return 'B'; return 'C';
+async function fetchPassagesForHorsesBefore(pool: Pool, horseIds: string[], yyyymmdd: string) {
+  if (horseIds.length === 0) return new Map<string, string[]>();
+  const targetNum = Number(`${yyyymmdd.slice(0,4)}${yyyymmdd.slice(4,8)}`);
+  const sql = `
+    WITH target_ids AS (
+      SELECT unnest($1::text[]) AS ketto_toroku_bango
+    ), se_all AS (
+      SELECT 'J' AS src, se.ketto_toroku_bango, se.kaisai_nen, se.kaisai_tsukihi,
+             se.corner_1, se.corner_2, se.corner_3, se.corner_4
+      FROM public.jvd_se se
+      JOIN target_ids t USING (ketto_toroku_bango)
+      WHERE (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) < $2
+    )
+    SELECT * FROM se_all
+    ORDER BY ketto_toroku_bango,
+             CAST(kaisai_nen AS INTEGER) DESC,
+             CAST(kaisai_tsukihi AS INTEGER) DESC
+  `;
+  const res = await pool.query(sql, [horseIds, targetNum]);
+  const map = new Map<string, { d: number; pass: string }[]>();
+  for (const r of res.rows as any[]) {
+    const id = String(r.ketto_toroku_bango);
+    const c = [r.corner_1, r.corner_2, r.corner_3, r.corner_4].map((x: any) => (x==null? '': String(x).trim()));
+    const present = c.filter((x) => x && /^\d+$/.test(x)).map((x) => Number(x));
+    if (!present.length) continue;
+    const arr = map.get(id) || [];
+    const d = Number(String(r.kaisai_nen).padStart(4,'0') + String(r.kaisai_tsukihi).padStart(4,'0'));
+    arr.push({ d, pass: present.join('-') });
+    map.set(id, arr);
+  }
+  const out = new Map<string, string[]>();
+  for (const [id, list] of map) {
+    list.sort((a,b)=>b.d-a.d);
+    out.set(id, list.slice(0,3).map(x=>x.pass));
+  }
+  return out;
 }
 
 function groundFromTrackCode(tc: string): string { const s=(tc||'').trim(); const n=Number(s); if (s.startsWith('1')) return '芝'; if ((n>=23&&n<=29)||s.startsWith('2')) return 'ダ'; if (n>=51) return '障'; return ''; }
@@ -74,6 +112,7 @@ async function main(){
     const sql = `
       SELECT ra.keibajo_code, ra.track_code, ra.race_bango,
              se.kaisai_nen, se.kaisai_tsukihi,
+             se.ketto_toroku_bango,
              se.umaban, ${cornerCols.length? cornerCols.map(c=>`se.${c}`).join(',') : 'NULL AS corner_1'},
              se.${finishCol} AS __finish
       FROM public.jvd_se se
@@ -84,7 +123,11 @@ async function main(){
        AND TRIM(se.race_bango)=TRIM(ra.race_bango)
       WHERE se.kaisai_nen ~ '^\\d{4}$' AND se.kaisai_tsukihi ~ '^\\d{4}$'
         AND (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) BETWEEN $1 AND $2
-      ORDER BY CAST(se.kaisai_nen AS INTEGER), CAST(se.kaisai_tsukihi AS INTEGER), CAST(ra.keibajo_code AS INTEGER), CAST(ra.race_bango AS INTEGER), CAST(se.umaban AS INTEGER)
+        AND ra.keibajo_code ~ '^\\d+$' AND ra.race_bango ~ '^\\d+$'
+      ORDER BY CAST(se.kaisai_nen AS INTEGER), CAST(se.kaisai_tsukihi AS INTEGER),
+               CAST(REGEXP_REPLACE(ra.keibajo_code, '\\D+', '', 'g') AS INTEGER),
+               CAST(REGEXP_REPLACE(ra.race_bango, '\\D+', '', 'g') AS INTEGER),
+               CAST(REGEXP_REPLACE(se.umaban::text, '\\D+', '', 'g') AS INTEGER)
     `;
     const res = await pool.query(sql, [Number(fromYmd), Number(toYmd)]);
 
@@ -115,7 +158,7 @@ async function main(){
     const stat = { races:0 };
 
     let curKey='';
-    const raceHorses: Record<number, { type:'A'|'B'|'C'|null }>= {};
+    const raceHorseIds: Record<number, string> = {};
     const rowsAny = res.rows as any[];
     for (let i=0; i<rowsAny.length; i++) {
       const row = rowsAny[i];
@@ -125,11 +168,10 @@ async function main(){
 
       if (raceKey !== curKey) {
         curKey = raceKey;
-        for (const k of Object.keys(raceHorses)) delete raceHorses[Number(k)];
+        for (const k of Object.keys(raceHorseIds)) delete raceHorseIds[Number(k)];
       }
-
-      const corners = extractCorners(row, cornerCols.length?cornerCols:['corner_1']);
-      raceHorses[Number(row.umaban)] = { type: classifyType(corners) };
+      // 馬IDを保持
+      raceHorseIds[Number(row.umaban)] = String(row.ketto_toroku_bango||'');
 
       const isLastInRace = raceKey !== nextKey;
       if (!isLastInRace) continue;
@@ -139,9 +181,19 @@ async function main(){
       const y=row.kaisai_nen, md=row.kaisai_tsukihi, jyo=row.keibajo_code, rc=row.race_bango;
       const hk = kf(y,md,jyo,rc);
       const payout = hrMap.get(hk);
-      const A = Object.entries(raceHorses).filter(([,v])=>v.type==='A').map(([n])=>Number(n)).sort((a,b)=>a-b);
-      const B = Object.entries(raceHorses).filter(([,v])=>v.type==='B').map(([n])=>Number(n)).sort((a,b)=>a-b);
-      const C = Object.entries(raceHorses).filter(([,v])=>(v.type==='C'||v.type===null)).map(([n])=>Number(n)).sort((a,b)=>a-b);
+      const ymd = String(y).padStart(4,'0') + String(md).padStart(4,'0');
+      const idList = Object.values(raceHorseIds).filter(Boolean);
+      const passMap = await fetchPassagesForHorsesBefore(pool, idList, ymd);
+      const A: number[] = []; const B: number[] = []; const C: number[] = [];
+      for (const [umastr, id] of Object.entries(raceHorseIds)) {
+        const passages = passMap.get(id) || [];
+        const types = classifyTypesFromPassages(passages);
+        const uma = Number(umastr);
+        if (types.includes('A')) A.push(uma);
+        if (types.includes('B')) B.push(uma);
+        if (types.includes('C')) C.push(uma);
+      }
+      A.sort((a,b)=>a-b); B.sort((a,b)=>a-b); C.sort((a,b)=>a-b);
       const patterns: PatternKey[] = A.length>0 ? ['A-A-BC','A-BC-ABC','BC-A-BC'] : (B.length>0 ? ['B-B-BC','B-BC-BC','BC-B-BC'] : []);
       const gridA = [1,2];
       const gridB = [1,2];

@@ -5,13 +5,20 @@ set -euo pipefail
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
 cd "$ROOT_DIR"
 
-if [[ ! -f .env ]]; then
-  echo "[ERROR] .env がありません。PG_DSN を設定してください (.env.example を参照)。" >&2
-  exit 1
+# 環境変数を読み込む（EDB_PATH / PG_DSN など）
+if [[ -f .env ]]; then
+  set -a; . ./.env; set +a
+else
+  echo "[WARN] .env が見つかりません。環境変数はシェルから引き継ぎます。" >&2
 fi
 
-echo "[1/2] 最新4日分をエクスポート（PG→data）"
-npm run -s pg:export -- latest 4
+if [[ -n "${EDB_PATH:-}" && -f "$EDB_PATH" ]]; then
+  echo "[1/2] 最新4日分をエクスポート（SQLite→data）"
+  python3 scripts/sqlite/export_raceday.py --db "$EDB_PATH" --latest 4 --publish-latest
+else
+  echo "[1/2] 最新4日分をエクスポート（PG→data）"
+  npm run -s pg:export -- latest 4
+fi
 
 echo "[+] 推奨（EV）を生成（最新4日分）"
 # ROI_WIN_MIN / ROI_PLACE_MIN は .env で指定可能

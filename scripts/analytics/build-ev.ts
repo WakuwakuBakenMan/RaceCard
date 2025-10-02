@@ -33,8 +33,9 @@ type RaceReco = {
   win?: number[];
   place?: number[];
   quinella_box?: number[]; // 2-3頭
-  trifecta_summary?: Array<{ pattern: string; points: number }>; // 三連単の要約
-  trifecta_picks?: { A?: number[]; B?: number[]; C?: number[] }; // 採用馬要約
+  // trifecta は現状非表示
+  trifecta_summary?: undefined;
+  trifecta_picks?: undefined;
   notes?: string[];
 };
 type DayReco = { date: string; races: RaceReco[] };
@@ -43,6 +44,19 @@ function ensureDir(p: string) { fs.mkdirSync(p, { recursive: true }); }
 type PaceBackRow = { track_code: string; ground: string; type: 'A'|'B'|'C'; win_roi: number; place_roi: number };
 type PaceBack = { rows: PaceBackRow[] };
 type TriRow = { pattern: string; A: string; B: string; C: string; cap: string; roi: number };
+
+type PairRow = {
+  market: 'umaren'|'wide';
+  pair: 'AA'|'AB'|'BB';
+  A?: string;
+  B: string;
+  cap: string;
+  roi: number;
+  races: number;
+  jyo?: string;
+  ground?: string;
+  bias_flag?: boolean;
+};
 
 function loadBacktest(): Map<string, { win: number; place: number }> {
   // 最新の pace-backtest-*.json を読み込み、キー: jyo-ground-type で ROI を返す
@@ -59,19 +73,44 @@ function loadBacktest(): Map<string, { win: number; place: number }> {
   return m;
 }
 
-function loadTrifectaBacktest(minRoi = 1.0): Array<{ pattern: 'A-A-BC'|'A-BC-ABC'|'BC-A-BC'|'B-B-BC'|'B-BC-BC'|'BC-B-BC'|'C-C-C'; aN: number; bN: number; cN: number; cap: number }> {
+// trifecta backtest は未使用（非表示）
+function loadTrifectaBacktest(_minRoi = 1.0) { return [] as any[]; }
+
+function findLatestAnalytics(prefix: string): string | null {
   const dir = path.join(process.cwd(), 'data', 'analytics');
-  const files = fs.existsSync(dir) ? fs.readdirSync(dir).filter(f=>/^trifecta-backtest-\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort() : [];
-  if (files.length === 0) return [];
-  const j = JSON.parse(fs.readFileSync(path.join(dir, files[files.length-1]), 'utf8')) as { rows: TriRow[] };
-  const out: Array<{ pattern: any; aN: number; bN: number; cN: number; cap: number }> = [];
-  for (const r of (j.rows||[])) {
-    if (typeof r.roi !== 'number' || r.roi < minRoi) continue;
-    const parseN = (s: string) => Number(String(s||'').replace(/^[A-C]/i,'').trim()) || 0;
-    const parseCap = (s: string) => Number(String(s||'').replace(/^cap/i,'').trim()) || 0;
-    out.push({ pattern: r.pattern as any, aN: parseN(r.A), bN: parseN(r.B), cN: parseN(r.C), cap: parseCap(r.cap) });
-  }
+  if (!fs.existsSync(dir)) return null;
+  const files = fs.readdirSync(dir).filter(f=>new RegExp(`^${prefix}-\\d{4}-\\d{2}-\\d{2}\\.json$`).test(f)).sort();
+  if (files.length === 0) return null;
+  return path.join(dir, files[files.length-1]);
+}
+
+function loadPairsBacktestAll(): Map<string, PairRow[]> {
+  const latest = findLatestAnalytics('pairs-backtest');
+  const out = new Map<string, PairRow[]>();
+  if (!latest) return out;
+  try{
+    const j = JSON.parse(fs.readFileSync(latest, 'utf8')) as { rows: PairRow[] };
+    const rows = (j.rows||[]).filter(r=>r.market==='umaren' && typeof r.roi==='number');
+    for (const r of rows) {
+      const key = `${r.jyo??''}:${r.ground??''}:${r.bias_flag ? '1' : '0'}`;
+      const arr = out.get(key) || [];
+      arr.push(r);
+      out.set(key, arr);
+    }
+    for (const [k, arr] of out) arr.sort((a,b)=> (b.roi - a.roi) || (b.races - a.races));
+  } catch {}
   return out;
+}
+
+function parseN(tag?: string): number { return Number(String(tag||'').replace(/^[A-Z]/i,'').trim()) || 0; }
+
+function isPairFeasible(row: PairRow, aCount: number, bCount: number): boolean {
+  const aN = parseN(row.A);
+  const bN = parseN(row.B);
+  if (row.pair === 'AA') return aCount >= 2;
+  if (row.pair === 'AB') return aCount >= aN && bCount >= bN;
+  if (row.pair === 'BB') return bCount >= 2 && bCount >= bN;
+  return false;
 }
 
 
@@ -124,6 +163,7 @@ function buildRecommendations(day: RaceDay): DayReco {
   const ROI_WIN_MIN = Number(process.env.ROI_WIN_MIN ?? '1.0');
   const ROI_PLACE_MIN = Number(process.env.ROI_PLACE_MIN ?? '1.0');
   const bt = loadBacktest();
+  const pairsMap = loadPairsBacktestAll();
   for (const m of day.meetings) {
     for (const r of m.races) {
       if (!r.horses || r.horses.length === 0) continue;
@@ -162,32 +202,30 @@ function buildRecommendations(day: RaceDay): DayReco {
       const showAny = (finalWin && finalWin.length>0) || (finalPlace && finalPlace.length>0);
       const finalBox = showAny ? (quinella_box.length>=2 ? quinella_box : undefined) : undefined;
 
-      // 三連単は「Aが不在のときは空欄」。Aが1頭以上いる時だけ計算・表示
-      const allowed = loadTrifectaBacktest(1.0);
-      const tfCounts = new Map<string, number>();
-      const A = scored.filter(x=>x.h.pace_type?.includes('A')).sort((a,b)=>b.score-a.score).slice(0,3).map(x=>x.h.num);
-      const B = scored.filter(x=>x.h.pace_type?.includes('B')).sort((a,b)=>b.score-a.score).slice(0,4).map(x=>x.h.num);
-      const C = scored.filter(x=>x.h.pace_type?.includes('C') || !x.h.pace_type).sort((a,b)=>b.score-a.score).slice(0,4).map(x=>x.h.num);
-      const hasA = A.length > 0;
-      if (hasA) {
-        const BC = Array.from(new Set([...B, ...C]));
-        const ABC = Array.from(new Set([...A, ...B, ...C]));
-        const addCount = (tag: string, i:number,j:number,k:number) => { if (i!==j && j!==k && i!==k) tfCounts.set(tag, (tfCounts.get(tag)||0)+1); };
-        const capTag = (tag: string, max=100) => { const v=tfCounts.get(tag)||0; if (v>max) tfCounts.set(tag, max); };
-        for (const row of allowed) {
-          if (A.length < row.aN && /A/.test(row.pattern)) continue;
-          if (B.length < row.bN && /B/.test(row.pattern)) continue;
-          if (C.length < row.cN && /C/.test(row.pattern)) continue;
-          const tag = `${row.pattern}`;
-          const cap = row.cap || 100;
-          if (row.pattern==='A-A-BC') { for (let x of A.slice(0,row.aN)) for (let y of A.slice(0,row.aN)) if (y!==x) for (let z of BC.slice(0,row.cN)) addCount(tag,x,y,z); capTag(tag,cap); }
-          else if (row.pattern==='A-BC-ABC') { for (let x of A.slice(0,row.aN)) for (let y of BC.slice(0,row.bN)) for (let z of ABC.slice(0, Math.max(row.aN,row.bN,row.cN))) addCount(tag,x,y,z); capTag(tag,cap); }
-          else if (row.pattern==='BC-A-BC') { for (let x of BC.slice(0,row.bN)) for (let y of A.slice(0,row.aN)) for (let z of BC.slice(0,row.cN)) addCount(tag,x,y,z); capTag(tag,cap); }
-          // B系やC系は推奨しない方針のため集計しない
-        }
+      // 三連単は非表示
+      const finalTrifectaSummary = undefined;
+
+      // 馬連（ペア）推奨メモ: (jyo, ground, bias) 層別の最上位を適用
+      const jyoCode = trackCodeOf(m.track);
+      const ground = r.ground;
+      const biasFlag = (typeof r.pace_score === 'number') && (r.pace_score <= 4.0) && (r.pace_score !== -3.5);
+      const key = `${jyoCode}:${ground}:${biasFlag ? '1' : '0'}`;
+      const cand = pairsMap.get(key) || [];
+      const aCount = r.horses.filter(h=>h.pace_type?.includes('A')).length;
+      const bCount = r.horses.filter(h=>h.pace_type?.includes('B')).length;
+      const feasible = cand.filter(row=>isPairFeasible(row, aCount, bCount));
+      const bestReco = feasible.find(row=>row.roi >= 1.0);
+      const bestSemi = feasible.find(row=>row.roi >= 0.90 && row.roi < 1.0);
+      if (bestReco) {
+        const roiStr = bestReco.roi.toFixed(2);
+        const aTag = bestReco.A ? `${bestReco.A}/` : '';
+        notes.push(`推奨: 馬連 ${bestReco.pair} ${aTag}${bestReco.B} ${bestReco.cap} ROI${roiStr} n=${bestReco.races}`);
       }
-      const trifecta_summary = Array.from(tfCounts.entries()).filter(([,v])=>v>0).map(([pattern,points])=>({pattern,points}));
-      const finalTrifectaSummary = hasA && trifecta_summary.length>0 ? trifecta_summary : undefined;
+      if (bestSemi) {
+        const roiStr = bestSemi.roi.toFixed(2);
+        const aTag = bestSemi.A ? `${bestSemi.A}/` : '';
+        notes.push(`準推奨: 馬連 ${bestSemi.pair} ${aTag}${bestSemi.B} ${bestSemi.cap} ROI${roiStr} n=${bestSemi.races}`);
+      }
 
       if (showAny) {
         if (typeof r.pace_score === 'number') notes.push(`展開カウント: ${r.pace_score}${r.pace_mark ?? ''}`);
@@ -195,8 +233,8 @@ function buildRecommendations(day: RaceDay): DayReco {
         if (roi && favType) notes.push(`過去3年ROI(${m.track}/${r.ground}/${favType}): 単${roi.win.toFixed(2)} 複${roi.place.toFixed(2)}`);
       }
 
-      const trifecta_picks = hasA && finalTrifectaSummary ? { A: A.length?A:undefined, B: B.length?B:undefined, C: C.length?C:undefined } : undefined;
-      out.push({ track: m.track, no: r.no, win: finalWin && finalWin.length?finalWin:undefined, place: finalPlace && finalPlace.length?finalPlace:undefined, quinella_box: finalBox, trifecta_summary: finalTrifectaSummary, trifecta_picks, notes: showAny && notes.length?notes:undefined });
+      const trifecta_picks = undefined;
+      out.push({ track: m.track, no: r.no, win: finalWin && finalWin.length?finalWin:undefined, place: finalPlace && finalPlace.length?finalPlace:undefined, quinella_box: finalBox, trifecta_summary: finalTrifectaSummary, trifecta_picks, notes: (notes.length?notes:undefined) });
     }
   }
   return { date: day.date, races: out };
