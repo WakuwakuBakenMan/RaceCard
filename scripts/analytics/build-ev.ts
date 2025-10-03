@@ -164,6 +164,10 @@ function buildRecommendations(day: RaceDay): DayReco {
   const ROI_PLACE_MIN = Number(process.env.ROI_PLACE_MIN ?? '1.0');
   const bt = loadBacktest();
   const pairsMap = loadPairsBacktestAll();
+  // Win odds band configuration
+  const WIN_ODDS_MIN = Number(process.env.ROI_WIN_ODDS_MIN ?? '2.0');
+  const WIN_ODDS_MAX = Number(process.env.ROI_WIN_ODDS_MAX ?? '25');
+  const NO_WIN_ODDS_CUT = process.env.WIN_ODDS_NO_CUT === '1';
   for (const m of day.meetings) {
     for (const r of m.races) {
       if (!r.horses || r.horses.length === 0) continue;
@@ -186,7 +190,11 @@ function buildRecommendations(day: RaceDay): DayReco {
       const top = scored.slice(0, 5);
       for (const x of top) {
         if (x.score >= 2) {
-          const oddsOk = typeof x.h.odds === 'number' ? (x.h.odds >= 2.0 && x.h.odds <= 25) : false;
+          const oddsOk = ((): boolean => {
+            if (typeof x.h.odds !== 'number') return false;
+            if (NO_WIN_ODDS_CUT) return true; // no band cut
+            return x.h.odds >= WIN_ODDS_MIN && x.h.odds <= WIN_ODDS_MAX;
+          })();
           if (oddsOk && win.length < 2) win.push(x.h.num);
         }
         if (x.score >= 1.5 && place.length < 3) place.push(x.h.num);
