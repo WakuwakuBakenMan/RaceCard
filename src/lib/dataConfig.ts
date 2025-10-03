@@ -6,6 +6,13 @@ export const DATE_FILES = [
   'date4.json',
 ] as const;
 
+export const RECO_FILES = [
+  'reco1.json',
+  'reco2.json',
+  'reco3.json',
+  'reco4.json',
+] as const;
+
 /**
  * public/data 以下の相対URLを組み立てる。
  * `import.meta.env.BASE_URL` を考慮して、/RaceCard でも動作。

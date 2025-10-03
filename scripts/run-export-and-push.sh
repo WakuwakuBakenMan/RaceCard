@@ -17,6 +17,12 @@ fi
 
 # 3) Stage outputs
 git add public/data/date*.json || true
+git add public/data/reco*.json || true
+
+# 3.1) Remove old per-day reco files in public (now deprecated)
+if compgen -G "public/data/reco-*.json" > /dev/null; then
+  git rm -f public/data/reco-*.json || true
+fi
 
 # Optionally include data snapshots (ignored by .gitignore). Enable via COMMIT_DAYS=1
 if [[ "${COMMIT_DAYS:-0}" == "1" ]]; then

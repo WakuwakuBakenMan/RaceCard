@@ -238,15 +238,12 @@ function buildRecommendations(day: RaceDay): DayReco {
 }
 
 function writeReco(day: DayReco) {
-  const outDir = path.join(process.cwd(), 'data', 'reco');
+  // 要件: 出馬表と同様に data/days 配下へ reco-YYYY-MM-DD.json として保存
+  const outDir = path.join(process.cwd(), 'data', 'days');
   ensureDir(outDir);
-  const file = path.join(outDir, `${day.date}.json`);
+  const file = path.join(outDir, `reco-${day.date}.json`);
   fs.writeFileSync(file, JSON.stringify(day, null, 2));
-  // 公開用にも反映
-  const pubDir = path.join(process.cwd(), 'public', 'data');
-  ensureDir(pubDir);
-  fs.copyFileSync(file, path.join(pubDir, `reco-${day.date}.json`));
-  console.log(`wrote ${file} and public/data/reco-${day.date}.json`);
+  console.log(`wrote ${file}`);
 }
 
 function readDay(isoDate: string): RaceDay {
