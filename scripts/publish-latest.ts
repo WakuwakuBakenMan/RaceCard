@@ -36,7 +36,8 @@ function main() {
     process.exit(1);
   }
 
-  const files = fs.readdirSync(inDir).filter((f) => f.endsWith('.json'));
+  // RaceDayのみ対象（reco-*.json を除外）
+  const files = fs.readdirSync(inDir).filter((f) => /\d{4}-\d{2}-\d{2}\.json$/.test(f));
   const items: { date: string; full: string }[] = [];
   for (const f of files) {
     try {

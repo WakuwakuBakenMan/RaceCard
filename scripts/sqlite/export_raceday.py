@@ -26,6 +26,7 @@ import sqlite3
 from collections import defaultdict
 from dataclasses import dataclass, asdict
 from typing import Dict, List, Optional, Tuple
+import re
 
 
 # --- Static mappings (最小限) ---
@@ -684,7 +685,8 @@ def write_raceday_json(rd: RaceDay, outdir: str) -> str:
 def publish_latest(days_dir: str, public_dir: str, latest_n: int = 4) -> List[str]:
     ensure_dir(public_dir)
     # YYYY-MM-DD.json を日付でソート
-    files = [f for f in os.listdir(days_dir) if f.endswith(".json")]
+    # 日次出馬表のみ対象（reco-*.json は除外）
+    files = [f for f in os.listdir(days_dir) if re.match(r"^\d{4}-\d{2}-\d{2}\.json$", f)]
     files.sort()  # 文字列ソートで日付順
     selected = files[-latest_n:]
     if not selected:
