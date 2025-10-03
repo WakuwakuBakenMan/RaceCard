@@ -277,9 +277,13 @@ async function main() {
     // 最新N件（data/daysから）
     const n = Math.max(1, Number(args[1]||'1')||1);
     const daysDir = path.join(process.cwd(), 'data', 'days');
-    const files = fs.readdirSync(daysDir).filter(f=>/\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort().slice(-n);
+    const files = fs.readdirSync(daysDir).filter(f=>/^\d{4}-\d{2}-\d{2}\.json$/.test(f)).sort().slice(-n);
     for (const f of files) {
       const day = readDay(path.basename(f, '.json'));
+      if (!day || !Array.isArray((day as any).meetings)) {
+        // 予期しない構造（念のため保険）
+        continue;
+      }
       const reco = buildRecommendations(day);
       writeReco(reco);
     }
