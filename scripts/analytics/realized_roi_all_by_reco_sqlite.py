@@ -127,6 +127,8 @@ def main():
             if a in cols and b in cols:
                 pairs.append((a,b))
         return pairs
+    # WIN (tansyo), PLACE (fukusyo), UMAREN (umaren)
+    tan_pairs = numbered_pairs('PayTansyoUmaban', 'PayTansyoPay', 3)
     fuku_pairs = numbered_pairs('PayFukusyoUmaban', 'PayFukusyoPay', 5)
     uma_pairs = numbered_pairs('PayUmarenKumi', 'PayUmarenPay', 3)
 
@@ -158,30 +160,23 @@ def main():
             desc = [d[0] for d in cur.description] if cur.description else []
             row_map = { desc[i]: row[i] for i in range(len(desc)) } if row else {}
 
-            # WIN: use odds-based return (as earlier)
-            for umaban in (r.get('win') or []):
+            # WIN: stake from reco picks, ret from N_HARAI tansyo payouts
+            win_list = r.get('win') or []
+            for _ in win_list:
                 sums['win']['stake'] += 100
-                # finish+odds
-                cur.execute(
-                    """
-                    SELECT um.KakuteiJyuni, um.Odds, so.TanOdds
-                    FROM N_UMA_RACE AS um
-                    LEFT JOIN S_ODDS_TANPUKU AS so
-                      ON um.Year = so.Year AND um.MonthDay = so.MonthDay
-                     AND um.JyoCD = so.JyoCD AND um.RaceNum = so.RaceNum AND um.Umaban = so.Umaban
-                    WHERE CAST(um.Year AS INTEGER) = ? AND CAST(um.MonthDay AS INTEGER) = ?
-                      AND um.JyoCD = ? AND CAST(um.RaceNum AS INTEGER) = ? AND CAST(um.Umaban AS INTEGER) = ?
-                      AND um.DataKubun IN ('5','7')
-                    LIMIT 1
-                    """,
-                    (y, int(f"{mm:02d}{dd:02d}"), jyo, int(no), int(umaban)),
-                )
-                rw = cur.fetchone()
-                if rw:
-                    fin = to_int_or_none(rw[0])
-                    odds = to_odds_decimal(rw[1], rw[2])
-                    if fin == 1 and odds is not None:
-                        sums['win']['ret'] += odds * 100.0
+            if row_map and win_list:
+                tan_pay_map: Dict[int,int] = {}
+                for a,b in tan_pairs:
+                    ua = row_map.get(a)
+                    pb = row_map.get(b)
+                    u = digits_int(ua)
+                    p = digits_int(pb)
+                    if u and p:
+                        tan_pay_map[u] = p
+                for umaban in win_list:
+                    p = tan_pay_map.get(int(umaban))
+                    if p:
+                        sums['win']['ret'] += float(p)
 
             # PLACE: stake from reco picks, ret from N_HARAI when available
             pl = r.get('place') or []
@@ -210,23 +205,23 @@ def main():
                 pairs = list(itertools.combinations([int(x) for x in box], 2))
                 # stake increments for all pairs
                 sums['umaren']['stake'] += 100 * len(pairs)
+                # build payout map if row exists
+                uma_pay_map: Dict[str,int] = {}
                 if row_map:
-                    # payout codes map
-                    uma_pay_map: Dict[str,int] = {}
-                for a,b in uma_pairs:
-                    ra = row_map.get(a)
-                    rb = row_map.get(b)
-                    code = normalize_umaren_code(ra)
-                    pay = digits_int(rb)
-                    if code and pay:
-                        uma_pay_map[code] = pay
-                    # add returns for hit pairs
-                    for a,b in pairs:
-                        x,y = sorted([a,b])
-                        code = f"{x:02d}{y:02d}"
-                        pay = uma_pay_map.get(code)
-                        if pay:
-                            sums['umaren']['ret'] += float(pay)
+                    for a,b in uma_pairs:
+                        ra = row_map.get(a)
+                        rb = row_map.get(b)
+                        code = normalize_umaren_code(ra)
+                        pay = digits_int(rb)
+                        if code and pay:
+                            uma_pay_map[code] = pay
+                # add returns for hit pairs (map may be empty)
+                for a,b in pairs:
+                    x,y = sorted([a,b])
+                    code = f"{x:02d}{y:02d}"
+                    pay = uma_pay_map.get(code)
+                    if pay:
+                        sums['umaren']['ret'] += float(pay)
 
         for mk in ['win','place','umaren']:
             total[mk]['stake'] += sums[mk]['stake']
