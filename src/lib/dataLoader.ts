@@ -14,15 +14,28 @@ export async function loadAllDays(): Promise<RaceDay[]> {
       const res = await fetch(url, fetchOpts);
       if (!res.ok) continue;
       const json = (await res.json()) as RaceDay;
-      if (json && typeof json.date === 'string') results.push(json);
+      if (!json || typeof json.date !== 'string') continue;
+      // meetings の簡易バリデーション/ガード
+      const meetings = Array.isArray(json.meetings)
+        ? json.meetings.filter((m) => m && Array.isArray((m as any).races) && (m as any).races.length > 0)
+        : [];
+      if (meetings.length === 0) {
+        if (isDev) console.warn('[loadAllDays] skip due to empty meetings', json.date);
+        continue;
+      }
+      results.push({ ...json, meetings });
       if (isDev) console.debug('[loadAllDays] loaded', json?.date);
     } catch {
       // 存在しない/壊れているファイルはスキップ
       if (isDev) console.warn('[loadAllDays] failed to load', f);
     }
   }
-  if (isDev) console.debug('[loadAllDays] total days', results.map((d) => d.date));
-  return results;
+  // 重複日付の除去（最後に現れたものを優先）
+  const map = new Map<string, RaceDay>();
+  for (const d of results) map.set(d.date, d);
+  const deduped = Array.from(map.values()).sort((a, b) => (a.date < b.date ? -1 : 1));
+  if (isDev) console.debug('[loadAllDays] total days', deduped.map((d) => d.date));
+  return deduped;
 }
 
 export async function loadDayByDate(

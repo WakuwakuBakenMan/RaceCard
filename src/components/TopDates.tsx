@@ -5,15 +5,37 @@ import { Link } from 'react-router-dom';
 
 export default function TopDates() {
   const [days, setDays] = useState<RaceDay[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    loadAllDays().then(setDays);
+    loadAllDays()
+      .then((ds) => {
+        // 重複除去（dateユニーク）と空meetingsガードはloader側でも実施済みだが、念のためUI側でも最小限ガード
+        const seen = new Set<string>();
+        const uniq = ds.filter((d) => {
+          if (!d || typeof d.date !== 'string') return false;
+          if (seen.has(d.date)) return false;
+          seen.add(d.date);
+          return Array.isArray(d.meetings) && d.meetings.length > 0;
+        });
+        setDays(uniq);
+        setError(null);
+      })
+      .catch(() => setError('データの読み込みに失敗しました。'));
   }, []);
 
   return (
     <div className="space-y-4">
       <h1 className="text-xl font-bold">出馬表（4日分）</h1>
-      <ul className="space-y-3">
+      {error && (
+        <div className="text-red-600 text-sm" role="alert">
+          {error}
+        </div>
+      )}
+      {days.length === 0 ? (
+        <div className="text-gray-600">表示できる開催がありません。しばらくして再読み込みしてください。</div>
+      ) : (
+        <ul className="space-y-3">
         {days.map((d) => (
           <li key={d.date} className="border rounded p-3 bg-white">
             <div className="flex items-center justify-between gap-3 flex-wrap">
@@ -38,7 +60,8 @@ export default function TopDates() {
             </div>
           </li>
         ))}
-      </ul>
+        </ul>
+      )}
     </div>
   );
 }

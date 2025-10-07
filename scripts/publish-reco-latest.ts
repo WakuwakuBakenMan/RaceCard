@@ -50,8 +50,25 @@ function main() {
     }
   }
 
-  const sorted = items.sort((a, b) => (a.date < b.date ? -1 : 1)).slice(-4);
-  sorted.forEach((it, i) => {
+  const sorted = items.sort((a, b) => (a.date < b.date ? -1 : 1));
+  const uniqRev: { date: string; full: string }[] = [];
+  const seen = new Set<string>();
+  for (let i = sorted.length - 1; i >= 0 && uniqRev.length < 4; i--) {
+    const it = sorted[i];
+    if (seen.has(it.date)) continue;
+    seen.add(it.date);
+    uniqRev.push(it);
+  }
+  const uniq = uniqRev.reverse();
+
+  // 既存の reco*.json を一旦削除
+  for (let i = 1; i <= 4; i++) {
+    const p = path.join(outDir, `reco${i}.json`);
+    if (fs.existsSync(p)) fs.unlinkSync(p);
+  }
+
+  // 存在する件数のみを出力
+  uniq.forEach((it, i) => {
     const out = path.join(outDir, `reco${i + 1}.json`);
     fs.copyFileSync(it.full, out);
     console.log(`copied ${it.full} -> ${out}`);

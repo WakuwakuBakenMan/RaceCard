@@ -14,11 +14,15 @@ fi
 
 if [[ -n "${EDB_PATH:-}" && -f "$EDB_PATH" ]]; then
   echo "[1/2] 最新4日分をエクスポート（SQLite→data）"
-  python3 scripts/sqlite/export_raceday.py --db "$EDB_PATH" --latest 4 --publish-latest
+  python3 scripts/sqlite/export_raceday.py --db "$EDB_PATH" --latest 4
 else
   echo "[1/2] 最新4日分をエクスポート（PG→data）"
   npm run -s pg:export -- latest 4
 fi
+
+echo "[+] 脚質付与（PG過去成績）"
+# N_UMA_RACEのkettoを使ってPG(jvd_se+nvd_se,6/7,当日前)から直近3走でA/B/C付与
+npm run -s hybrid:augment:pace || true
 
 echo "[+] 推奨（EV）を生成（最新4日分）"
 # ROI_WIN_MIN / ROI_PLACE_MIN は .env で指定可能
@@ -26,9 +30,14 @@ echo "[+] 推奨（EV）を生成（最新4日分）"
 WIN_ODDS_NO_CUT="${WIN_ODDS_NO_CUT:-1}" npm run -s reco:latest -- 4 || true
 
 echo "[2/2] public/data へ反映（date1..4.json / reco1..4.json）"
+# 脚質付与後の day を再発行して date1..4.json に反映
+npm run -s data:publish || true
 ls -1 public/data/date*.json 2>/dev/null || echo "public/data に date*.json が見つかりません"
 tsx scripts/publish-reco-latest.ts || true
 ls -1 public/data/reco*.json 2>/dev/null || echo "public/data に reco*.json が見つかりません"
+
+echo "[✓] 公開ファイルの検証 (date/reco の整合性)"
+npm run -s data:validate || { echo "[ERROR] public/data の検証に失敗"; exit 1; }
 
 echo "完了"
 

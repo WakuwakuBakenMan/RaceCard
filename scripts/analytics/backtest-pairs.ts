@@ -14,10 +14,13 @@ async function listColumns(pool: Pool, table: string): Promise<Set<string>> {
 function classifyTypesFromPassages(passages: string[]): Array<'A'|'B'|'C'> {
   let all4 = 0, nige = 0;
   for (const p of passages) {
-    const parts = String(p).split('-').map((s)=>Number(s)).filter((n)=>Number.isFinite(n));
+    const raw = String(p).split('-').map((s)=>Number(s)).filter((n)=>Number.isFinite(n));
+    const parts = raw.filter((n)=> n > 0); // 0は未計測扱いとして除外
     if (!parts.length) continue;
     if (Math.max(...parts) <= 4) all4 += 1;
-    if (parts[0] === 1) nige += 1;
+    const first = parts[0];
+    const second = parts[1];
+    if (first === 1 || (first === 2 && second === 1)) nige += 1;
   }
   const t: Array<'A'|'B'|'C'> = [];
   if (nige >= 2) t.push('A');
@@ -38,6 +41,12 @@ async function fetchPassagesForHorsesBefore(pool: Pool, horseIds: string[], yyyy
       FROM public.jvd_se se
       JOIN target_ids t USING (ketto_toroku_bango)
       WHERE (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) < $2
+      UNION ALL
+      SELECT 'N' AS src, se.ketto_toroku_bango, se.kaisai_nen, se.kaisai_tsukihi,
+             se.corner_1, se.corner_2, se.corner_3, se.corner_4
+      FROM public.nvd_se se
+      JOIN target_ids t USING (ketto_toroku_bango)
+      WHERE (CAST(se.kaisai_nen AS INTEGER)*10000 + CAST(se.kaisai_tsukihi AS INTEGER)) < $2
     )
     SELECT * FROM se_all
     ORDER BY ketto_toroku_bango,
@@ -49,7 +58,7 @@ async function fetchPassagesForHorsesBefore(pool: Pool, horseIds: string[], yyyy
   for (const r of res.rows as any[]) {
     const id = String(r.ketto_toroku_bango);
     const c = [r.corner_1, r.corner_2, r.corner_3, r.corner_4].map((x: any) => (x==null? '': String(x).trim()));
-    const present = c.filter((x) => x && /^\d+$/.test(x)).map((x) => Number(x));
+    const present = c.filter((x) => x && /^\d+$/.test(x)).map((x) => Number(x)).filter((n)=>n>0);
     if (!present.length) continue;
     const arr = map.get(id) || [];
     const d = Number(String(r.kaisai_nen).padStart(4,'0') + String(r.kaisai_tsukihi).padStart(4,'0'));

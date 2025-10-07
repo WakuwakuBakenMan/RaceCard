@@ -147,6 +147,7 @@ class Horse:
     odds: Optional[float] = None
     popularity: Optional[int] = None
     pace_type: Optional[List[str]] = None
+    ketto: Optional[str] = None
 
 
 @dataclass
@@ -405,6 +406,7 @@ def build_raceday(cur: sqlite3.Cursor, ymd: str) -> RaceDay:
                     odds=odds,
                     popularity=pop,
                     pace_type=pace_type,
+                    ketto=str(KettoNum) if KettoNum else None,
                 )
             )
         # バイアス集計（当日・開催×馬場）。障害は除外、新潟芝1000m除外
@@ -666,6 +668,7 @@ def write_raceday_json(rd: RaceDay, outdir: str) -> str:
                                     **({"odds": h.odds} if h.odds is not None else {}),
                                     **({"popularity": h.popularity} if h.popularity is not None else {}),
                                     **({"pace_type": h.pace_type} if h.pace_type else {}),
+                                    **({"ketto": h.ketto} if getattr(h, 'ketto', None) else {}),
                                 }
                                 for h in r.horses
                             ],

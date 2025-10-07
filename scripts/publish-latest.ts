@@ -37,7 +37,7 @@ function main() {
   }
 
   // RaceDayのみ対象（reco-*.json を除外）
-  const files = fs.readdirSync(inDir).filter((f) => /\d{4}-\d{2}-\d{2}\.json$/.test(f));
+  const files = fs.readdirSync(inDir).filter((f) => /\d{4}-\d{2}-\d{2}\.json$/.test(f) && !f.startsWith('reco-'));
   const items: { date: string; full: string }[] = [];
   for (const f of files) {
     try {
@@ -51,11 +51,40 @@ function main() {
     }
   }
 
-  const sorted = items.sort((a, b) => (a.date < b.date ? -1 : 1)).slice(-4);
-  sorted.forEach((it, i) => {
+  const sorted = items.sort((a, b) => (a.date < b.date ? -1 : 1));
+  console.log(`Found ${sorted.length} day files:`, sorted.map(s => s.date));
+  
+  // 後ろ（新しい日付側）からユニークに最大4件取得
+  const uniqRev: { date: string; full: string }[] = [];
+  const seen = new Set<string>();
+  for (let i = sorted.length - 1; i >= 0 && uniqRev.length < 4; i--) {
+    const it = sorted[i];
+    if (seen.has(it.date)) continue;
+    seen.add(it.date);
+    uniqRev.push(it);
+  }
+  const uniq = uniqRev.reverse();
+  console.log(`Selected ${uniq.length} unique days:`, uniq.map(u => u.date));
+
+  // 既存の date*.json を一旦削除（古い日の残骸で重複が見えるのを防ぐ）
+  for (let i = 1; i <= 4; i++) {
+    const p = path.join(outDir, `date${i}.json`);
+    if (fs.existsSync(p)) fs.unlinkSync(p);
+  }
+
+  // 最新から順に詰めて出力（存在する件数のみ）
+  uniq.forEach((it, i) => {
     const out = path.join(outDir, `date${i + 1}.json`);
+    // ファイル内容を検証
+    const content = fs.readFileSync(it.full, 'utf8');
+    const json = JSON.parse(content);
+    if (!json.meetings || !Array.isArray(json.meetings)) {
+      console.error(`ERROR: ${it.full} is not a valid RaceDay (missing meetings)`);
+      console.error(`Content preview:`, JSON.stringify(json, null, 2).substring(0, 200));
+      process.exit(1);
+    }
     fs.copyFileSync(it.full, out);
-    console.log(`copied ${it.full} -> ${out}`);
+    console.log(`copied ${it.full} -> ${out} (${json.meetings.length} meetings)`);
   });
 }
 

@@ -20,6 +20,7 @@ import 'dotenv/config';
 import fs from 'node:fs';
 import { execFileSync } from 'node:child_process';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { Pool } from 'pg';
 
 type Horse = {
@@ -109,10 +110,13 @@ function calcAge(yyyymmdd: string, seinengappi?: string | null): number {
 function classifyTypes(passages: string[]): Array<'A'|'B'|'C'> {
   let all4 = 0, nige = 0;
   for (const p of passages) {
-    const parts = p.split('-').map((s) => Number(s)).filter((n) => Number.isFinite(n));
+    const partsRaw = p.split('-').map((s) => Number(s)).filter((n) => Number.isFinite(n));
+    const parts = partsRaw.filter((n) => n > 0); // 0 は未計測扱いとして除外
     if (!parts.length) continue;
     if (Math.max(...parts) <= 4) all4 += 1;
-    if (parts[0] === 1) nige += 1;
+    const first = parts[0];
+    const second = parts[1];
+    if (first === 1 || (first === 2 && second === 1)) nige += 1;
   }
   const t: Array<'A'|'B'|'C'> = [];
   if (nige >= 2) t.push('A');
@@ -271,7 +275,10 @@ async function fetchPassagesForHorsesBefore(pool: Pool, horseIds: string[], yyyy
   for (const r of res.rows as any[]) {
     const id = String(r.ketto_toroku_bango);
     const c = [r.corner_1, r.corner_2, r.corner_3, r.corner_4].map((x: any) => (x==null? '': String(x).trim()));
-    const present = c.filter((x) => x && /^\d+$/.test(x)).map((x) => Number(x));
+    const present = c
+      .filter((x) => x && /^\d+$/.test(x))
+      .map((x) => Number(x))
+      .filter((n) => n > 0); // 0 は無視
     if (!present.length) continue;
     const arr = map.get(id) || [];
     const d = Number(String(r.kaisai_nen).padStart(4,'0') + String(r.kaisai_tsukihi).padStart(4,'0'));
@@ -429,11 +436,11 @@ async function buildRaceDay(pool: Pool, yyyymmdd: string): Promise<RaceDay> {
   return { date: toIso(yyyymmdd), meetings: meetingsWithBias };
 }
 
-function meetingKeyOf(m: { track: string; kaiji: number; nichiji: number }): string {
+export function meetingKeyOf(m: { track: string; kaiji: number; nichiji: number }): string {
   return `${m.track}:${m.kaiji}:${m.nichiji}`;
 }
 
-async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meetings: Array<{ track: string; kaiji: number; nichiji: number; races: Race[] }>): Promise<Map<string, Record<string, PositionBiasForGround>>> {
+export async function computePositionBiasForMeetings(pool: Pool, yyyymmdd: string, meetings: Array<{ track: string; kaiji: number; nichiji: number; races: Race[] }>): Promise<Map<string, Record<string, PositionBiasForGround>>> {
   // 当日の各開催について、当日のレース結果（着順）と通過順/枠を用いて集計する。
   // 閾値: 70%以上を“強”。穴好走は n_total>=6 のときのみ評価。枠は 14頭以上レースが ground ごとに2レース未満の場合は対象外。
   const result = new Map<string, Record<string, PositionBiasForGround>>();
@@ -690,4 +697,15 @@ async function main() {
   }
 }
 
-main().catch((e) => { console.error(e); process.exit(1); });
+// Run main only when executed directly (not when imported)
+try {
+  if (import.meta.url === pathToFileURL(process.argv[1] || '').href) {
+    // executed as entrypoint
+    // eslint-disable-next-line @typescript-eslint/no-floating-promises
+    main().catch((e) => { console.error(e); process.exit(1); });
+  }
+} catch {
+  // Fallback: if detection fails, run as entrypoint
+  // eslint-disable-next-line @typescript-eslint/no-floating-promises
+  main().catch((e) => { console.error(e); process.exit(1); });
+}
