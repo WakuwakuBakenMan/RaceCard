@@ -1245,7 +1245,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 9.5,
+          "pace_score": 13.5,
           "condition": "重",
           "start_time": "13:10",
           "horses": [
@@ -1293,6 +1293,7 @@
               "odds": 18.9,
               "popularity": 8,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2022102465"
@@ -1492,6 +1493,7 @@
               "odds": 8.4,
               "popularity": 3,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2022110112"
@@ -1727,7 +1729,7 @@
           "name": "りんどう賞",
           "distance_m": 1400,
           "ground": "芝",
-          "pace_score": 0,
+          "pace_score": 2.5,
           "pace_mark": "★",
           "condition": "重",
           "start_time": "14:15",
@@ -1818,6 +1820,7 @@
               "odds": 18.8,
               "popularity": 7,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2023103293"
@@ -1858,7 +1861,7 @@
           "name": "大山崎ステークス",
           "distance_m": 1200,
           "ground": "ダ",
-          "pace_score": 5.5,
+          "pace_score": 8,
           "condition": "不良",
           "start_time": "14:50",
           "horses": [
@@ -1935,6 +1938,7 @@
               "odds": 4,
               "popularity": 2,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2021106658"
@@ -2104,7 +2108,7 @@
           "name": "オパールステークス",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 9,
+          "pace_score": 10.5,
           "condition": "重",
           "start_time": "15:30",
           "horses": [
@@ -2178,7 +2182,7 @@
               "odds": 25,
               "popularity": 9,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2019110001"
             },
@@ -2210,6 +2214,7 @@
               "odds": 6.4,
               "popularity": 3,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2022106394"
@@ -2258,7 +2263,7 @@
               "odds": 29.8,
               "popularity": 11,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2020101419"
             },
@@ -3889,7 +3894,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 2000,
           "ground": "芝",
-          "pace_score": 3.5,
+          "pace_score": 3,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "13:25",
@@ -3932,7 +3937,7 @@
               "odds": 7.4,
               "popularity": 4,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2021105486"
             },
@@ -4296,7 +4301,7 @@
           "name": "八ヶ岳特別",
           "distance_m": 1800,
           "ground": "芝",
-          "pace_score": 2.5,
+          "pace_score": 5,
           "condition": "良",
           "start_time": "14:31",
           "horses": [
@@ -4367,6 +4372,7 @@
               "odds": 12,
               "popularity": 5,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2021104899"
@@ -4474,15 +4480,14 @@
               "popularity": 12,
               "ketto": "2021101322"
             }
-          ],
-          "pace_mark": "★"
+          ]
         },
         {
           "no": 10,
           "name": "白秋ステークス",
           "distance_m": 1400,
           "ground": "芝",
-          "pace_score": 5,
+          "pace_score": 4.5,
           "condition": "良",
           "start_time": "15:05",
           "horses": [
@@ -4613,10 +4618,7 @@
               "trainer": "蛯名　正義",
               "odds": 149.3,
               "popularity": 15,
-              "ketto": "2020104088",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2020104088"
             },
             {
               "num": 10,
