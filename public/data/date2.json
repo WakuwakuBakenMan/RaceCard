@@ -24,161 +24,8 @@
           "start_time": "09:50",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "サンリナリア",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "中井　裕二",
-              "trainer": "緒方　努",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023100841"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "リアルアルバ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "田口　貫太",
-              "trainer": "大橋　勇樹",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2023101065"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ハルイチバン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "岩田　望来",
-              "trainer": "西園　正都",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023101130"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "テリオスヒナ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 52,
-              "jockey": "和田　陽希",
-              "trainer": "小椋　研介",
-              "ketto": "2023102859"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "グラスゴー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "高杉　吏麒",
-              "trainer": "浜田　多実雄",
-              "ketto": "2023103218"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "リーガルスプレンダ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "加藤　祥太",
-              "trainer": "庄野　靖志",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023103685"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ミヤラティーニ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "秋山　稔樹",
-              "trainer": "東田　明士",
-              "ketto": "2023103862"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "フレンズプラス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 54,
-              "jockey": "吉村　誠之助",
-              "trainer": "宮本　博",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023104539"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ランスオブキング",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "松山　弘平",
-              "trainer": "本田　優",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2023104798"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "クイーンズステート",
-              "sex": "牝",
-              "age": 2,
-              "weight": 51,
-              "jockey": "河原田　菜々",
-              "trainer": "新谷　功一",
-              "ketto": "2023105219"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "マジックアロマ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "西村　淳也",
-              "trainer": "小栗　実",
-              "ketto": "2023105265"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ナムラマフィン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "和田　竜二",
-              "trainer": "鈴木　孝志",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023106234"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ワイドカクゲン",
               "sex": "牡",
               "age": 2,
@@ -191,8 +38,125 @@
               "ketto": "2023106320"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
+              "name": "フレンズプラス",
+              "sex": "牝",
+              "age": 2,
+              "weight": 54,
+              "jockey": "吉村　誠之助",
+              "trainer": "宮本　博",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023104539"
+            },
+            {
+              "num": 3,
+              "draw": 2,
+              "name": "サンリナリア",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "中井　裕二",
+              "trainer": "緒方　努",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023100841"
+            },
+            {
+              "num": 4,
+              "draw": 2,
+              "name": "クイーンズステート",
+              "sex": "牝",
+              "age": 2,
+              "weight": 51,
+              "jockey": "河原田　菜々",
+              "trainer": "新谷　功一",
+              "ketto": "2023105219"
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "ナムラマフィン",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "和田　竜二",
+              "trainer": "鈴木　孝志",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023106234"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "テーオーエリーナ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "橋木　太希",
+              "trainer": "宮　徹",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023106634"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "リーガルスプレンダ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "加藤　祥太",
+              "trainer": "庄野　靖志",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023103685"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "マジックアロマ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "西村　淳也",
+              "trainer": "小栗　実",
+              "ketto": "2023105265"
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "ミヤラティーニ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "秋山　稔樹",
+              "trainer": "東田　明士",
+              "ketto": "2023103862"
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "ハルイチバン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "岩田　望来",
+              "trainer": "西園　正都",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023101130"
+            },
+            {
+              "num": 11,
+              "draw": 6,
               "name": "ワイドアルバ",
               "sex": "牡",
               "age": 2,
@@ -205,8 +169,19 @@
               "ketto": "2023106359"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 12,
+              "draw": 6,
+              "name": "グラスゴー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "高杉　吏麒",
+              "trainer": "浜田　多実雄",
+              "ketto": "2023103218"
+            },
+            {
+              "num": 13,
+              "draw": 7,
               "name": "メイショウボンテン",
               "sex": "牡",
               "age": 2,
@@ -216,18 +191,43 @@
               "ketto": "2023106572"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "テーオーエリーナ",
+              "num": 14,
+              "draw": 7,
+              "name": "ランスオブキング",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "松山　弘平",
+              "trainer": "本田　優",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2023104798"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "リアルアルバ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "田口　貫太",
+              "trainer": "大橋　勇樹",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2023101065"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "テリオスヒナ",
               "sex": "牝",
               "age": 2,
               "weight": 52,
-              "jockey": "橋木　太希",
-              "trainer": "宮　徹",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023106634"
+              "jockey": "和田　陽希",
+              "trainer": "小椋　研介",
+              "ketto": "2023102859"
             }
           ]
         },
@@ -241,55 +241,8 @@
           "start_time": "10:20",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ゴールドアイリーン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "斎藤　新",
-              "trainer": "小栗　実",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023102021"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "スナークホクサイ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "富田　暁",
-              "trainer": "野中　賢二",
-              "ketto": "2023102903"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ヴォーカライズ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 55,
-              "jockey": "吉村　誠之助",
-              "trainer": "高野　友和",
-              "ketto": "2023103783"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サトノリシャール",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "古川　吉洋",
-              "trainer": "福永　祐一",
-              "ketto": "2023103894"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "カムアップローゼス",
               "sex": "牡",
               "age": 2,
@@ -302,19 +255,22 @@
               "ketto": "2023104386"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "コパノルーカス",
-              "sex": "牡",
+              "num": 2,
+              "draw": 2,
+              "name": "ゴールドアイリーン",
+              "sex": "牝",
               "age": 2,
-              "weight": 53,
-              "jockey": "和田　陽希",
-              "trainer": "梅田　智之",
-              "ketto": "2023104972"
+              "weight": 55,
+              "jockey": "斎藤　新",
+              "trainer": "小栗　実",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023102021"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
               "name": "バトゥカーダ",
               "sex": "牡",
               "age": 2,
@@ -324,8 +280,19 @@
               "ketto": "2023105708"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 4,
+              "name": "スナークホクサイ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "富田　暁",
+              "trainer": "野中　賢二",
+              "ketto": "2023102903"
+            },
+            {
+              "num": 5,
+              "draw": 5,
               "name": "テーオールーラー",
               "sex": "牡",
               "age": 2,
@@ -333,6 +300,39 @@
               "jockey": "河原田　菜々",
               "trainer": "清水　久詞",
               "ketto": "2023109125"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ヴォーカライズ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "吉村　誠之助",
+              "trainer": "高野　友和",
+              "ketto": "2023103783"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "サトノリシャール",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "古川　吉洋",
+              "trainer": "福永　祐一",
+              "ketto": "2023103894"
+            },
+            {
+              "num": 8,
+              "draw": 8,
+              "name": "コパノルーカス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 53,
+              "jockey": "和田　陽希",
+              "trainer": "梅田　智之",
+              "ketto": "2023104972"
             }
           ]
         },
@@ -346,8 +346,8 @@
           "start_time": "10:50",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ソルトハッピー",
               "sex": "牡",
               "age": 2,
@@ -357,19 +357,8 @@
               "ketto": "2023100217"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "テーオーレックス",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "菱田　裕二",
-              "trainer": "岡田　稲男",
-              "ketto": "2023101580"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "シーミハットク",
               "sex": "牡",
               "age": 2,
@@ -379,8 +368,30 @@
               "ketto": "2023103532"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
+              "name": "テーオーレックス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "菱田　裕二",
+              "trainer": "岡田　稲男",
+              "ketto": "2023101580"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "イノリ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 53,
+              "jockey": "永島　まなみ",
+              "trainer": "高橋　康之",
+              "ketto": "2023106508"
+            },
+            {
+              "num": 5,
+              "draw": 5,
               "name": "テーオーアルアイン",
               "sex": "牡",
               "age": 2,
@@ -393,19 +404,8 @@
               "ketto": "2023105241"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "イノリ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 53,
-              "jockey": "永島　まなみ",
-              "trainer": "高橋　康之",
-              "ketto": "2023106508"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 6,
               "name": "イルミナジーティー",
               "sex": "牝",
               "age": 2,
@@ -426,19 +426,8 @@
           "start_time": "11:20",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ワールドスケール",
-              "sex": "牡",
-              "age": 8,
-              "weight": 61,
-              "jockey": "黒岩　悠",
-              "trainer": "加藤　公太",
-              "ketto": "2017106372"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "テイエムエメラルド",
               "sex": "牝",
               "age": 7,
@@ -448,8 +437,55 @@
               "ketto": "2018102822"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
+              "name": "ビーンスターク",
+              "sex": "牡",
+              "age": 4,
+              "weight": 60,
+              "jockey": "田村　太雅",
+              "trainer": "森田　直行",
+              "ketto": "2021103578"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "ポリトナリティー",
+              "sex": "牝",
+              "age": 4,
+              "weight": 58,
+              "jockey": "草野　太郎",
+              "trainer": "和田　雄二",
+              "ketto": "2021100016"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "アルマーザアミール",
+              "sex": "牡",
+              "age": 4,
+              "weight": 60,
+              "jockey": "小牧　加矢太",
+              "trainer": "斉藤　崇史",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021105455"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "ディナースタ",
+              "sex": "牡",
+              "age": 6,
+              "weight": 61,
+              "jockey": "高田　潤",
+              "trainer": "辻野　泰之",
+              "ketto": "2019101507"
+            },
+            {
+              "num": 6,
+              "draw": 6,
               "name": "テイエムマジック",
               "sex": "牡",
               "age": 7,
@@ -462,19 +498,22 @@
               "ketto": "2018103005"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "レディステディゴー",
+              "num": 7,
+              "draw": 6,
+              "name": "ヘザルフェン",
               "sex": "牡",
-              "age": 7,
-              "weight": 60,
-              "jockey": "中村　将之",
-              "trainer": "中村　直也",
-              "ketto": "2018104865"
+              "age": 4,
+              "weight": 61,
+              "jockey": "森　一馬",
+              "trainer": "昆　貢",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021110022"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 8,
+              "draw": 7,
               "name": "マイネルメサイア",
               "sex": "牡",
               "age": 6,
@@ -487,41 +526,8 @@
               "ketto": "2019100788"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ディナースタ",
-              "sex": "牡",
-              "age": 6,
-              "weight": 61,
-              "jockey": "高田　潤",
-              "trainer": "辻野　泰之",
-              "ketto": "2019101507"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ポリトナリティー",
-              "sex": "牝",
-              "age": 4,
-              "weight": 58,
-              "jockey": "草野　太郎",
-              "trainer": "和田　雄二",
-              "ketto": "2021100016"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ビーンスターク",
-              "sex": "牡",
-              "age": 4,
-              "weight": 60,
-              "jockey": "田村　太雅",
-              "trainer": "森田　直行",
-              "ketto": "2021103578"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 9,
+              "draw": 7,
               "name": "コンテナワールド",
               "sex": "牡",
               "age": 4,
@@ -535,32 +541,26 @@
               "ketto": "2021104924"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "アルマーザアミール",
+              "num": 10,
+              "draw": 8,
+              "name": "レディステディゴー",
               "sex": "牡",
-              "age": 4,
+              "age": 7,
               "weight": 60,
-              "jockey": "小牧　加矢太",
-              "trainer": "斉藤　崇史",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021105455"
+              "jockey": "中村　将之",
+              "trainer": "中村　直也",
+              "ketto": "2018104865"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ヘザルフェン",
+              "num": 11,
+              "draw": 8,
+              "name": "ワールドスケール",
               "sex": "牡",
-              "age": 4,
+              "age": 8,
               "weight": 61,
-              "jockey": "森　一馬",
-              "trainer": "昆　貢",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021110022"
+              "jockey": "黒岩　悠",
+              "trainer": "加藤　公太",
+              "ketto": "2017106372"
             }
           ]
         },
@@ -573,8 +573,8 @@
           "start_time": "12:10",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "テイエムアイラン",
               "sex": "牝",
               "age": 2,
@@ -584,74 +584,8 @@
               "ketto": "2023100448"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "シェイプオブユー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "川又　賢治",
-              "trainer": "吉村　圭司",
-              "ketto": "2023100544"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "モノノケ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 52,
-              "jockey": "田山　旺佑",
-              "trainer": "宮地　貴稔",
-              "ketto": "2023100695"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サリー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 54,
-              "jockey": "西塚　洸二",
-              "trainer": "前川　恭子",
-              "ketto": "2023101217"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "リアルナイスガール",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "鮫島　良太",
-              "trainer": "畑端　省吾",
-              "ketto": "2023101254"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ベルシュヴァル",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "岩田　望来",
-              "trainer": "中村　直也",
-              "ketto": "2023102376"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アスターシャウルス",
-              "sex": "牝",
-              "age": 2,
-              "weight": 52,
-              "jockey": "柴田　裕一郎",
-              "trainer": "中竹　和也",
-              "ketto": "2023102795"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
               "name": "ファイネクローネ",
               "sex": "牝",
               "age": 2,
@@ -661,74 +595,30 @@
               "ketto": "2023103354"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "サマーバンク",
+              "num": 3,
+              "draw": 2,
+              "name": "ルージュビバーチェ",
               "sex": "牝",
               "age": 2,
               "weight": 55,
-              "jockey": "団野　大成",
-              "trainer": "森田　直行",
-              "ketto": "2023103448"
+              "jockey": "松山　弘平",
+              "trainer": "橋口　慎介",
+              "ketto": "2023107337"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ライトオブジアース",
+              "num": 4,
+              "draw": 2,
+              "name": "サリー",
               "sex": "牝",
               "age": 2,
-              "weight": 55,
-              "jockey": "武　豊",
-              "trainer": "松永　幹夫",
-              "ketto": "2023103478"
+              "weight": 54,
+              "jockey": "西塚　洸二",
+              "trainer": "前川　恭子",
+              "ketto": "2023101217"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "マーゴットラヴミー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "池添　謙一",
-              "trainer": "小林　真也",
-              "ketto": "2023103889"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "メルメラーダ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "西村　淳也",
-              "trainer": "高橋　一哉",
-              "ketto": "2023103892"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "マティンデ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "松若　風馬",
-              "trainer": "清水　久詞",
-              "ketto": "2023104867"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ユナダイヤ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "菱田　裕二",
-              "trainer": "岡田　稲男",
-              "ketto": "2023106105"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 5,
+              "draw": 3,
               "name": "ビップアリス",
               "sex": "牝",
               "age": 2,
@@ -738,8 +628,41 @@
               "ketto": "2023106975"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 3,
+              "name": "マーゴットラヴミー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "池添　謙一",
+              "trainer": "小林　真也",
+              "ketto": "2023103889"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "マティンデ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "松若　風馬",
+              "trainer": "清水　久詞",
+              "ketto": "2023104867"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "リアルナイスガール",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "鮫島　良太",
+              "trainer": "畑端　省吾",
+              "ketto": "2023101254"
+            },
+            {
+              "num": 9,
+              "draw": 5,
               "name": "ナオミニオールイン",
               "sex": "牝",
               "age": 2,
@@ -749,8 +672,63 @@
               "ketto": "2023107052"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 5,
+              "name": "ライトオブジアース",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "武　豊",
+              "trainer": "松永　幹夫",
+              "ketto": "2023103478"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "モノノケ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "田山　旺佑",
+              "trainer": "宮地　貴稔",
+              "ketto": "2023100695"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "メルメラーダ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "西村　淳也",
+              "trainer": "高橋　一哉",
+              "ketto": "2023103892"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "シェイプオブユー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "川又　賢治",
+              "trainer": "吉村　圭司",
+              "ketto": "2023100544"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "アスターシャウルス",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "柴田　裕一郎",
+              "trainer": "中竹　和也",
+              "ketto": "2023102795"
+            },
+            {
+              "num": 15,
+              "draw": 7,
               "name": "グランビスタ",
               "sex": "牝",
               "age": 2,
@@ -760,15 +738,37 @@
               "ketto": "2023107190"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ルージュビバーチェ",
+              "num": 16,
+              "draw": 8,
+              "name": "ユナダイヤ",
               "sex": "牝",
               "age": 2,
               "weight": 55,
-              "jockey": "松山　弘平",
-              "trainer": "橋口　慎介",
-              "ketto": "2023107337"
+              "jockey": "菱田　裕二",
+              "trainer": "岡田　稲男",
+              "ketto": "2023106105"
+            },
+            {
+              "num": 17,
+              "draw": 8,
+              "name": "ベルシュヴァル",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "岩田　望来",
+              "trainer": "中村　直也",
+              "ketto": "2023102376"
+            },
+            {
+              "num": 18,
+              "draw": 8,
+              "name": "サマーバンク",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "団野　大成",
+              "trainer": "森田　直行",
+              "ketto": "2023103448"
             }
           ]
         },
@@ -781,63 +781,8 @@
           "start_time": "12:40",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "スマートイデアル",
-              "sex": "牝",
-              "age": 2,
-              "weight": 53,
-              "jockey": "永島　まなみ",
-              "trainer": "角田　晃一",
-              "ketto": "2023101236"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "クロカミジョウ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "菱田　裕二",
-              "trainer": "岡田　稲男",
-              "ketto": "2023101500"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "チョウギャル",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "加藤　祥太",
-              "trainer": "羽月　友彦",
-              "ketto": "2023102154"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "メイショウテリオス",
-              "sex": "牡",
-              "age": 2,
-              "weight": 55,
-              "jockey": "吉村　誠之助",
-              "trainer": "高橋　亮",
-              "ketto": "2023102241"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "スラッシュ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "田口　貫太",
-              "trainer": "安達　昭夫",
-              "ketto": "2023103189"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "サクライロマウコロ",
               "sex": "牝",
               "age": 2,
@@ -847,8 +792,30 @@
               "ketto": "2023103406"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
+              "name": "ライクシュガー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "秋山　稔樹",
+              "trainer": "坂口　智康",
+              "ketto": "2023107438"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "スラッシュ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "田口　貫太",
+              "trainer": "安達　昭夫",
+              "ketto": "2023103189"
+            },
+            {
+              "num": 4,
+              "draw": 4,
               "name": "テルヴィセクス",
               "sex": "牡",
               "age": 2,
@@ -858,30 +825,19 @@
               "ketto": "2023104355"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "タイニーワンダー",
+              "num": 5,
+              "draw": 5,
+              "name": "スマートイデアル",
               "sex": "牝",
               "age": 2,
-              "weight": 55,
-              "jockey": "角田　大和",
-              "trainer": "四位　洋文",
-              "ketto": "2023105027"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ゲキシン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "高杉　吏麒",
+              "weight": 53,
+              "jockey": "永島　まなみ",
               "trainer": "角田　晃一",
-              "ketto": "2023105463"
+              "ketto": "2023101236"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 6,
               "name": "マメタンク",
               "sex": "牡",
               "age": 2,
@@ -891,15 +847,59 @@
               "ketto": "2023105591"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ライクシュガー",
+              "num": 7,
+              "draw": 6,
+              "name": "チョウギャル",
               "sex": "牝",
               "age": 2,
               "weight": 55,
-              "jockey": "秋山　稔樹",
-              "trainer": "坂口　智康",
-              "ketto": "2023107438"
+              "jockey": "加藤　祥太",
+              "trainer": "羽月　友彦",
+              "ketto": "2023102154"
+            },
+            {
+              "num": 8,
+              "draw": 7,
+              "name": "メイショウテリオス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 55,
+              "jockey": "吉村　誠之助",
+              "trainer": "高橋　亮",
+              "ketto": "2023102241"
+            },
+            {
+              "num": 9,
+              "draw": 7,
+              "name": "クロカミジョウ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菱田　裕二",
+              "trainer": "岡田　稲男",
+              "ketto": "2023101500"
+            },
+            {
+              "num": 10,
+              "draw": 8,
+              "name": "タイニーワンダー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "角田　大和",
+              "trainer": "四位　洋文",
+              "ketto": "2023105027"
+            },
+            {
+              "num": 11,
+              "draw": 8,
+              "name": "ゲキシン",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "高杉　吏麒",
+              "trainer": "角田　晃一",
+              "ketto": "2023105463"
             }
           ]
         },
@@ -913,33 +913,8 @@
           "start_time": "13:10",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ダイシンビヨンド",
-              "sex": "牝",
-              "age": 6,
-              "weight": 56,
-              "jockey": "国分　優作",
-              "trainer": "梅田　智之",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2019101985"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ベランジェール",
-              "sex": "牝",
-              "age": 4,
-              "weight": 53,
-              "jockey": "森田　誠也",
-              "trainer": "武　幸四郎",
-              "ketto": "2021105484"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "オリーボーレン",
               "sex": "牝",
               "age": 4,
@@ -952,8 +927,8 @@
               "ketto": "2021105739"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "アラベラ",
               "sex": "牝",
               "age": 3,
@@ -963,8 +938,44 @@
               "ketto": "2022104638"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
+              "name": "ザラタン",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "池添　謙一",
+              "trainer": "中竹　和也",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022107342"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "ジーティードレス",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "岩田　望来",
+              "trainer": "辻野　泰之",
+              "ketto": "2022105988"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "ベランジェール",
+              "sex": "牝",
+              "age": 4,
+              "weight": 53,
+              "jockey": "森田　誠也",
+              "trainer": "武　幸四郎",
+              "ketto": "2021105484"
+            },
+            {
+              "num": 6,
+              "draw": 6,
               "name": "ムーンライトラガー",
               "sex": "牝",
               "age": 3,
@@ -974,22 +985,33 @@
               "ketto": "2022104710"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "マディソンガール",
+              "num": 7,
+              "draw": 6,
+              "name": "ダイシンビヨンド",
               "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "川田　将雅",
-              "trainer": "中内田　充正",
+              "age": 6,
+              "weight": 56,
+              "jockey": "国分　優作",
+              "trainer": "梅田　智之",
               "pace_type": [
                 "C"
               ],
-              "ketto": "2022105098"
+              "ketto": "2019101985"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 8,
+              "draw": 7,
+              "name": "アンビアンス",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "酒井　学",
+              "trainer": "清水　久詞",
+              "ketto": "2022106634"
+            },
+            {
+              "num": 9,
+              "draw": 7,
               "name": "ブルーミングローズ",
               "sex": "牝",
               "age": 3,
@@ -1002,8 +1024,22 @@
               "ketto": "2022105190"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 8,
+              "name": "マディソンガール",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "川田　将雅",
+              "trainer": "中内田　充正",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022105098"
+            },
+            {
+              "num": 11,
+              "draw": 8,
               "name": "エアビッグマム",
               "sex": "牝",
               "age": 3,
@@ -1014,42 +1050,6 @@
                 "C"
               ],
               "ketto": "2022105250"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ジーティードレス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "岩田　望来",
-              "trainer": "辻野　泰之",
-              "ketto": "2022105988"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アンビアンス",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "酒井　学",
-              "trainer": "清水　久詞",
-              "ketto": "2022106634"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ザラタン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "池添　謙一",
-              "trainer": "中竹　和也",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022107342"
             }
           ]
         },
@@ -1063,44 +1063,8 @@
           "start_time": "13:40",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "オッハッピー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "鷲頭　虎太",
-              "trainer": "西村　真幸",
-              "ketto": "2023102457"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ファインマン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "高倉　稜",
-              "trainer": "前川　恭子",
-              "ketto": "2023104662"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サトノアイボリー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "団野　大成",
-              "trainer": "杉山　晴紀",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023105380"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ロードラヴォール",
               "sex": "牡",
               "age": 2,
@@ -1113,19 +1077,8 @@
               "ketto": "2023105796"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "セイカンサンラン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "古川　吉洋",
-              "trainer": "大根田　裕之",
-              "ketto": "2023106169"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "ユメシルベ",
               "sex": "牝",
               "age": 2,
@@ -1135,8 +1088,19 @@
               "ketto": "2023106412"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
+              "name": "オッハッピー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "鷲頭　虎太",
+              "trainer": "西村　真幸",
+              "ketto": "2023102457"
+            },
+            {
+              "num": 4,
+              "draw": 4,
               "name": "ブルースカイブルー",
               "sex": "牡",
               "age": 2,
@@ -1147,6 +1111,42 @@
                 "C"
               ],
               "ketto": "2023106921"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "セイカンサンラン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "古川　吉洋",
+              "trainer": "大根田　裕之",
+              "ketto": "2023106169"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ファインマン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "高倉　稜",
+              "trainer": "前川　恭子",
+              "ketto": "2023104662"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "サトノアイボリー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "団野　大成",
+              "trainer": "杉山　晴紀",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023105380"
             }
           ]
         },
@@ -1160,52 +1160,8 @@
           "start_time": "14:15",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "サーティファイド",
-              "sex": "セ",
-              "age": 6,
-              "weight": 58,
-              "jockey": "田口　貫太",
-              "trainer": "佐藤　悠太",
-              "ketto": "2019105857"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ウイングスオブラヴ",
-              "sex": "セ",
-              "age": 6,
-              "weight": 54,
-              "jockey": "河原田　菜々",
-              "trainer": "笹田　和秀",
-              "ketto": "2019106615"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "イエスウィズキャン",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "菱田　裕二",
-              "trainer": "羽月　友彦",
-              "ketto": "2020100472"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ナムラブーニン",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "鮫島　克駿",
-              "trainer": "高橋　一哉",
-              "ketto": "2021102420"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "サンダーユニバンス",
               "sex": "牡",
               "age": 4,
@@ -1215,33 +1171,8 @@
               "ketto": "2021105839"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "テーオーニコラス",
-              "sex": "セ",
-              "age": 4,
-              "weight": 55,
-              "jockey": "和田　陽希",
-              "trainer": "奥村　豊",
-              "ketto": "2021106368",
-              "pace_type": [
-                "B"
-              ]
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サンピノン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 52,
-              "jockey": "鷲頭　虎太",
-              "trainer": "谷　潔",
-              "ketto": "2022101330"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "ドゥラエテルノ",
               "sex": "牡",
               "age": 3,
@@ -1251,8 +1182,19 @@
               "ketto": "2022102722"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
+              "name": "ゴールドダイアー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "和田　竜二",
+              "trainer": "平田　修",
+              "ketto": "2022103538"
+            },
+            {
+              "num": 4,
+              "draw": 4,
               "name": "スマートカイロス",
               "sex": "牡",
               "age": 3,
@@ -1265,19 +1207,41 @@
               "ketto": "2022102735"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ゴールドダイアー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "和田　竜二",
-              "trainer": "平田　修",
-              "ketto": "2022103538"
+              "num": 5,
+              "draw": 5,
+              "name": "ウイングスオブラヴ",
+              "sex": "セ",
+              "age": 6,
+              "weight": 54,
+              "jockey": "河原田　菜々",
+              "trainer": "笹田　和秀",
+              "ketto": "2019106615"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 5,
+              "name": "イエスウィズキャン",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "菱田　裕二",
+              "trainer": "羽月　友彦",
+              "ketto": "2020100472"
+            },
+            {
+              "num": 7,
+              "draw": 6,
+              "name": "サーティファイド",
+              "sex": "セ",
+              "age": 6,
+              "weight": 58,
+              "jockey": "田口　貫太",
+              "trainer": "佐藤　悠太",
+              "ketto": "2019105857"
+            },
+            {
+              "num": 8,
+              "draw": 6,
               "name": "スコーピオンイメル",
               "sex": "牡",
               "age": 3,
@@ -1287,8 +1251,8 @@
               "ketto": "2022104496"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 9,
+              "draw": 7,
               "name": "ドラゴン",
               "sex": "牡",
               "age": 3,
@@ -1296,6 +1260,42 @@
               "jockey": "武　豊",
               "trainer": "松永　幹夫",
               "ketto": "2022105439"
+            },
+            {
+              "num": 10,
+              "draw": 7,
+              "name": "ナムラブーニン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "鮫島　克駿",
+              "trainer": "高橋　一哉",
+              "ketto": "2021102420"
+            },
+            {
+              "num": 11,
+              "draw": 8,
+              "name": "サンピノン",
+              "sex": "牝",
+              "age": 3,
+              "weight": 52,
+              "jockey": "鷲頭　虎太",
+              "trainer": "谷　潔",
+              "ketto": "2022101330"
+            },
+            {
+              "num": 12,
+              "draw": 8,
+              "name": "テーオーニコラス",
+              "sex": "セ",
+              "age": 4,
+              "weight": 55,
+              "jockey": "和田　陽希",
+              "trainer": "奥村　豊",
+              "ketto": "2021106368",
+              "pace_type": [
+                "B"
+              ]
             }
           ]
         },
@@ -1309,130 +1309,8 @@
           "start_time": "14:50",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ホウオウサンデー",
-              "sex": "牡",
-              "age": 7,
-              "weight": 58,
-              "jockey": "団野　大成",
-              "trainer": "井上　智史",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2018105047"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ルヴァンノワール",
-              "sex": "牝",
-              "age": 7,
-              "weight": 56,
-              "jockey": "鮫島　克駿",
-              "trainer": "庄野　靖志",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2018106701"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "エールトゥヘヴン",
-              "sex": "牡",
-              "age": 6,
-              "weight": 58,
-              "jockey": "池添　謙一",
-              "trainer": "戸田　博文",
-              "ketto": "2019101416"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アップストローク",
-              "sex": "セ",
-              "age": 6,
-              "weight": 58,
-              "jockey": "松山　弘平",
-              "trainer": "杉浦　宏昭",
-              "ketto": "2019104675"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アスクドリームモア",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "西塚　洸二",
-              "trainer": "藤原　英昭",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2020101217"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ジオパーククラウン",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "吉村　誠之助",
-              "trainer": "長谷川　浩大",
-              "ketto": "2020106131"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ホークマン",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "柴田　大知",
-              "trainer": "粕谷　昌央",
-              "ketto": "2021100008"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "エイムフォーエース",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "酒井　学",
-              "trainer": "武井　亮",
-              "ketto": "2021104167"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "クイックバイオ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "田口　貫太",
-              "trainer": "畑端　省吾",
-              "ketto": "2021105374"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サロニコス",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "西村　淳也",
-              "trainer": "松下　武士",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021105540"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ホーリーブラッサム",
               "sex": "牝",
               "age": 3,
@@ -1446,8 +1324,8 @@
               "ketto": "2022103060"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "ミストレス",
               "sex": "牝",
               "age": 3,
@@ -1460,8 +1338,72 @@
               "ketto": "2022103754"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
+              "name": "サロニコス",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "西村　淳也",
+              "trainer": "松下　武士",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021105540"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "アップストローク",
+              "sex": "セ",
+              "age": 6,
+              "weight": 58,
+              "jockey": "松山　弘平",
+              "trainer": "杉浦　宏昭",
+              "ketto": "2019104675"
+            },
+            {
+              "num": 5,
+              "draw": 4,
+              "name": "ルヴァンノワール",
+              "sex": "牝",
+              "age": 7,
+              "weight": 56,
+              "jockey": "鮫島　克駿",
+              "trainer": "庄野　靖志",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2018106701"
+            },
+            {
+              "num": 6,
+              "draw": 5,
+              "name": "ホウオウサンデー",
+              "sex": "牡",
+              "age": 7,
+              "weight": 58,
+              "jockey": "団野　大成",
+              "trainer": "井上　智史",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2018105047"
+            },
+            {
+              "num": 7,
+              "draw": 5,
+              "name": "ホークマン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "柴田　大知",
+              "trainer": "粕谷　昌央",
+              "ketto": "2021100008"
+            },
+            {
+              "num": 8,
+              "draw": 6,
               "name": "リリーフィールド",
               "sex": "牝",
               "age": 3,
@@ -1472,6 +1414,64 @@
                 "B"
               ],
               "ketto": "2022105718"
+            },
+            {
+              "num": 9,
+              "draw": 6,
+              "name": "エールトゥヘヴン",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "池添　謙一",
+              "trainer": "戸田　博文",
+              "ketto": "2019101416"
+            },
+            {
+              "num": 10,
+              "draw": 7,
+              "name": "クイックバイオ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "田口　貫太",
+              "trainer": "畑端　省吾",
+              "ketto": "2021105374"
+            },
+            {
+              "num": 11,
+              "draw": 7,
+              "name": "ジオパーククラウン",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "吉村　誠之助",
+              "trainer": "長谷川　浩大",
+              "ketto": "2020106131"
+            },
+            {
+              "num": 12,
+              "draw": 8,
+              "name": "エイムフォーエース",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "酒井　学",
+              "trainer": "武井　亮",
+              "ketto": "2021104167"
+            },
+            {
+              "num": 13,
+              "draw": 8,
+              "name": "アスクドリームモア",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "西塚　洸二",
+              "trainer": "藤原　英昭",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2020101217"
             }
           ]
         },
@@ -1485,19 +1485,8 @@
           "start_time": "15:30",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "キュールエフウジン",
-              "sex": "牡",
-              "age": 6,
-              "weight": 56,
-              "jockey": "藤岡　佑介",
-              "trainer": "中尾　秀正",
-              "ketto": "2019102983"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "デコラシオン",
               "sex": "牡",
               "age": 6,
@@ -1507,19 +1496,8 @@
               "ketto": "2019104805"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "スズノテレサ",
-              "sex": "牝",
-              "age": 6,
-              "weight": 51,
-              "jockey": "柴田　大知",
-              "trainer": "深山　雅史",
-              "ketto": "2019104861"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
               "name": "ダイメイセブン",
               "sex": "牡",
               "age": 5,
@@ -1532,30 +1510,8 @@
               "ketto": "2020101919"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "オメガタキシード",
-              "sex": "セ",
-              "age": 5,
-              "weight": 56,
-              "jockey": "高杉　吏麒",
-              "trainer": "井上　智史",
-              "ketto": "2020102988"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サンライズグルーヴ",
-              "sex": "牡",
-              "age": 5,
-              "weight": 55,
-              "jockey": "団野　大成",
-              "trainer": "前川　恭子",
-              "ketto": "2020104793"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 2,
               "name": "スマートリアファル",
               "sex": "牡",
               "age": 4,
@@ -1568,8 +1524,33 @@
               "ketto": "2021102083"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 2,
+              "name": "スズノテレサ",
+              "sex": "牝",
+              "age": 6,
+              "weight": 51,
+              "jockey": "柴田　大知",
+              "trainer": "深山　雅史",
+              "ketto": "2019104861"
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "シンビリーブ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 54,
+              "jockey": "松若　風馬",
+              "trainer": "森　秀行",
+              "ketto": "2022110115",
+              "pace_type": [
+                "C"
+              ]
+            },
+            {
+              "num": 6,
+              "draw": 3,
               "name": "ホルトバージ",
               "sex": "牡",
               "age": 4,
@@ -1579,72 +1560,8 @@
               "ketto": "2021102905"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "イデアイゴッソウ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 56,
-              "jockey": "横山　典弘",
-              "trainer": "小野　次郎",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021103096"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ペンナヴェローチェ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 57,
-              "jockey": "川田　将雅",
-              "trainer": "須貝　尚介",
-              "ketto": "2021104092"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "タンゴバイラリン",
-              "sex": "牡",
-              "age": 4,
-              "weight": 55,
-              "jockey": "吉村　誠之助",
-              "trainer": "栗田　徹",
-              "ketto": "2021105272"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ハーバーライト",
-              "sex": "牡",
-              "age": 4,
-              "weight": 54,
-              "jockey": "岩田　望来",
-              "trainer": "高橋　義忠",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021105477"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "メイショウズイウン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "武　豊",
-              "trainer": "本田　優",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022100154"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 7,
+              "draw": 4,
               "name": "シャルクハフト",
               "sex": "牡",
               "age": 3,
@@ -1657,8 +1574,83 @@
               "ketto": "2022104745"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 8,
+              "draw": 4,
+              "name": "メイショウズイウン",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "武　豊",
+              "trainer": "本田　優",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022100154"
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "タンゴバイラリン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 55,
+              "jockey": "吉村　誠之助",
+              "trainer": "栗田　徹",
+              "ketto": "2021105272"
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "ハーバーライト",
+              "sex": "牡",
+              "age": 4,
+              "weight": 54,
+              "jockey": "岩田　望来",
+              "trainer": "高橋　義忠",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021105477"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "サンライズグルーヴ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 55,
+              "jockey": "団野　大成",
+              "trainer": "前川　恭子",
+              "ketto": "2020104793"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "キュールエフウジン",
+              "sex": "牡",
+              "age": 6,
+              "weight": 56,
+              "jockey": "藤岡　佑介",
+              "trainer": "中尾　秀正",
+              "ketto": "2019102983"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "イデアイゴッソウ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 56,
+              "jockey": "横山　典弘",
+              "trainer": "小野　次郎",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021103096"
+            },
+            {
+              "num": 14,
+              "draw": 7,
               "name": "タガノバビロン",
               "sex": "牡",
               "age": 3,
@@ -1668,18 +1660,26 @@
               "ketto": "2022106553"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "シンビリーブ",
+              "num": 15,
+              "draw": 8,
+              "name": "オメガタキシード",
+              "sex": "セ",
+              "age": 5,
+              "weight": 56,
+              "jockey": "高杉　吏麒",
+              "trainer": "井上　智史",
+              "ketto": "2020102988"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "ペンナヴェローチェ",
               "sex": "牡",
-              "age": 3,
-              "weight": 54,
-              "jockey": "松若　風馬",
-              "trainer": "森　秀行",
-              "ketto": "2022110115",
-              "pace_type": [
-                "C"
-              ]
+              "age": 4,
+              "weight": 57,
+              "jockey": "川田　将雅",
+              "trainer": "須貝　尚介",
+              "ketto": "2021104092"
             }
           ]
         },
@@ -1692,8 +1692,36 @@
           "start_time": "16:10",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
+              "name": "ジャスパーノベル",
+              "sex": "牝",
+              "age": 3,
+              "weight": 51,
+              "jockey": "和田　陽希",
+              "trainer": "森　秀行",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022110113"
+            },
+            {
+              "num": 2,
+              "draw": 1,
+              "name": "ゴールデンカイト",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "川田　将雅",
+              "trainer": "中内田　充正",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022110129"
+            },
+            {
+              "num": 3,
+              "draw": 2,
               "name": "ガウラスパーク",
               "sex": "セ",
               "age": 4,
@@ -1707,33 +1735,8 @@
               "ketto": "2021103586"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ゼットスパンキー",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "高杉　吏麒",
-              "trainer": "宮　徹",
-              "ketto": "2021107255"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アメリカンチーフ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "団野　大成",
-              "trainer": "東田　明士",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2021110123"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 2,
               "name": "ピカリ",
               "sex": "牝",
               "age": 4,
@@ -1746,83 +1749,33 @@
               "ketto": "2021110137"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "サンライズブレイク",
+              "num": 5,
+              "draw": 3,
+              "name": "ゼットスパンキー",
               "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "鮫島　克駿",
-              "trainer": "浜田　多実雄",
+              "age": 4,
+              "weight": 58,
+              "jockey": "高杉　吏麒",
+              "trainer": "宮　徹",
+              "ketto": "2021107255"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "アメリカンチーフ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "団野　大成",
+              "trainer": "東田　明士",
               "pace_type": [
                 "B"
               ],
-              "ketto": "2022101396"
+              "ketto": "2021110123"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "テイオームサシ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "国分　優作",
-              "trainer": "秋山　真一郎",
-              "ketto": "2022101936"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サンマルノヴェル",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "田口　貫太",
-              "trainer": "大橋　勇樹",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022102716"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "クロユキ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "武　豊",
-              "trainer": "松永　幹夫",
-              "ketto": "2022104900"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "リアライズオーラム",
-              "sex": "牡",
-              "age": 3,
-              "weight": 53,
-              "jockey": "大久保　友雅",
-              "trainer": "須貝　尚介",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022105773"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ステイクオール",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "松山　弘平",
-              "trainer": "上村　洋行",
-              "ketto": "2022105848"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 7,
+              "draw": 4,
               "name": "モズタチアガレ",
               "sex": "牡",
               "age": 3,
@@ -1835,50 +1788,30 @@
               "ketto": "2022106010"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ジャスパーノベル",
+              "num": 8,
+              "draw": 4,
+              "name": "ステイクオール",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "松山　弘平",
+              "trainer": "上村　洋行",
+              "ketto": "2022105848"
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "クロユキ",
               "sex": "牝",
               "age": 3,
-              "weight": 51,
-              "jockey": "和田　陽希",
-              "trainer": "森　秀行",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022110113"
+              "weight": 54,
+              "jockey": "武　豊",
+              "trainer": "松永　幹夫",
+              "ketto": "2022104900"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "チュウワチーフ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "和田　竜二",
-              "trainer": "小崎　憲",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022110117"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ゴールデンカイト",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "川田　将雅",
-              "trainer": "中内田　充正",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022110129"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 5,
               "name": "レーティッシュ",
               "sex": "牡",
               "age": 3,
@@ -1891,8 +1824,75 @@
               "ketto": "2022110152"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 11,
+              "draw": 6,
+              "name": "リアライズオーラム",
+              "sex": "牡",
+              "age": 3,
+              "weight": 53,
+              "jockey": "大久保　友雅",
+              "trainer": "須貝　尚介",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022105773"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "チュウワチーフ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "和田　竜二",
+              "trainer": "小崎　憲",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022110117"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "サンライズブレイク",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "鮫島　克駿",
+              "trainer": "浜田　多実雄",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022101396"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "テイオームサシ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "国分　優作",
+              "trainer": "秋山　真一郎",
+              "ketto": "2022101936"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "サンマルノヴェル",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "田口　貫太",
+              "trainer": "大橋　勇樹",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022102716"
+            },
+            {
+              "num": 16,
+              "draw": 8,
               "name": "レーヴドアンジュ",
               "sex": "牝",
               "age": 3,
@@ -1932,94 +1932,8 @@
           "start_time": "10:05",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ニシノマーレ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "津村　明秀",
-              "trainer": "伊藤　大士",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023100179"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ルージュブリッツ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "横山　和生",
-              "trainer": "古賀　慎明",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023101558"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "レースクイーン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "江田　照男",
-              "trainer": "蛯名　利弘",
-              "ketto": "2023101563"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "クイーンオブハート",
-              "sex": "牝",
-              "age": 2,
-              "weight": 53,
-              "jockey": "長浜　鴻緒",
-              "trainer": "根本　康広",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023102152"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "セルリア",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "横山　琉人",
-              "trainer": "大和田　成",
-              "ketto": "2023103843"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ルサフィール",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "菊沢　一樹",
-              "trainer": "矢野　英一",
-              "ketto": "2023104052"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ダイユウヴェンティ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "内田　博幸",
-              "trainer": "松永　康利",
-              "ketto": "2023105102"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ジャストマイウェイ",
               "sex": "牝",
               "age": 2,
@@ -2032,8 +1946,80 @@
               "ketto": "2023105362"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
+              "name": "レースクイーン",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "江田　照男",
+              "trainer": "蛯名　利弘",
+              "ketto": "2023101563"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "モルニケ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "戸崎　圭太",
+              "trainer": "金成　貴史",
+              "ketto": "2023106844"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "ルージュブリッツ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "横山　和生",
+              "trainer": "古賀　慎明",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023101558"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "クイーンオブハート",
+              "sex": "牝",
+              "age": 2,
+              "weight": 53,
+              "jockey": "長浜　鴻緒",
+              "trainer": "根本　康広",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023102152"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ルサフィール",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菊沢　一樹",
+              "trainer": "矢野　英一",
+              "ketto": "2023104052"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "ダイユウヴェンティ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "内田　博幸",
+              "trainer": "松永　康利",
+              "ketto": "2023105102"
+            },
+            {
+              "num": 8,
+              "draw": 7,
               "name": "ブルーエ",
               "sex": "牝",
               "age": 2,
@@ -2043,15 +2029,29 @@
               "ketto": "2023105952"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "モルニケ",
+              "num": 9,
+              "draw": 8,
+              "name": "セルリア",
               "sex": "牝",
               "age": 2,
               "weight": 55,
-              "jockey": "戸崎　圭太",
-              "trainer": "金成　貴史",
-              "ketto": "2023106844"
+              "jockey": "横山　琉人",
+              "trainer": "大和田　成",
+              "ketto": "2023103843"
+            },
+            {
+              "num": 10,
+              "draw": 8,
+              "name": "ニシノマーレ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "津村　明秀",
+              "trainer": "伊藤　大士",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023100179"
             }
           ]
         },
@@ -2065,47 +2065,8 @@
           "start_time": "10:35",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "アイファーローレル",
-              "sex": "牝",
-              "age": 2,
-              "weight": 52,
-              "jockey": "石田　拓郎",
-              "trainer": "根本　康広",
-              "ketto": "2023100075"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ビップムーラン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "戸崎　圭太",
-              "trainer": "田島　俊明",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2023100095"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ファストワーカー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "丹内　祐次",
-              "trainer": "伊藤　大士",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023100239"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "クールフィールド",
               "sex": "牝",
               "age": 2,
@@ -2115,44 +2076,41 @@
               "ketto": "2023100280"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "イーアンベ",
+              "num": 2,
+              "draw": 1,
+              "name": "ラブデウザ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "水沼　元輝",
+              "trainer": "加藤　和宏",
+              "ketto": "2023109094"
+            },
+            {
+              "num": 3,
+              "draw": 2,
+              "name": "フロリスタン",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "原田　和真",
+              "trainer": "松山　将樹",
+              "ketto": "2023109013"
+            },
+            {
+              "num": 4,
+              "draw": 2,
+              "name": "ルーナディサングエ",
               "sex": "牡",
               "age": 2,
               "weight": 56,
-              "jockey": "吉田　隼人",
-              "trainer": "和田　雄二",
-              "ketto": "2023100461"
+              "jockey": "菅原　隆一",
+              "trainer": "天間　昭一",
+              "ketto": "2023103013"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "カンタベリービーム",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "小林　凌大",
-              "trainer": "石栗　龍彦",
-              "ketto": "2023101471"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "マリンディーゼル",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "岩部　純二",
-              "trainer": "南田　美知雄",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023102158"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 5,
+              "draw": 3,
               "name": "コパノカーター",
               "sex": "牡",
               "age": 2,
@@ -2165,55 +2123,36 @@
               "ketto": "2023102321"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ルーナディサングエ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "菅原　隆一",
-              "trainer": "天間　昭一",
-              "ketto": "2023103013"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "サトミノアカリ",
+              "num": 6,
+              "draw": 3,
+              "name": "ファストワーカー",
               "sex": "牝",
               "age": 2,
-              "weight": 52,
-              "jockey": "小林　美駒",
-              "trainer": "鈴木　伸尋",
+              "weight": 55,
+              "jockey": "丹内　祐次",
+              "trainer": "伊藤　大士",
               "pace_type": [
                 "C"
               ],
-              "ketto": "2023103139"
+              "ketto": "2023100239"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "マジッククッキー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "上里　直汰",
-              "trainer": "加藤　士津八",
-              "ketto": "2023105092"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "トモエナゲ",
+              "num": 7,
+              "draw": 4,
+              "name": "マリンディーゼル",
               "sex": "牡",
               "age": 2,
               "weight": 56,
-              "jockey": "小林　脩斗",
-              "trainer": "青木　孝文",
-              "ketto": "2023105542"
+              "jockey": "岩部　純二",
+              "trainer": "南田　美知雄",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023102158"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 8,
+              "draw": 4,
               "name": "ツァレヴナ",
               "sex": "牝",
               "age": 2,
@@ -2226,19 +2165,80 @@
               "ketto": "2023105677"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "フロリスタン",
+              "num": 9,
+              "draw": 5,
+              "name": "サトミノアカリ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "小林　美駒",
+              "trainer": "鈴木　伸尋",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023103139"
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "イーアンベ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "吉田　隼人",
+              "trainer": "和田　雄二",
+              "ketto": "2023100461"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "ビップムーラン",
               "sex": "牝",
               "age": 2,
               "weight": 55,
-              "jockey": "原田　和真",
-              "trainer": "松山　将樹",
-              "ketto": "2023109013"
+              "jockey": "戸崎　圭太",
+              "trainer": "田島　俊明",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2023100095"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 12,
+              "draw": 6,
+              "name": "カンタベリービーム",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "小林　凌大",
+              "trainer": "石栗　龍彦",
+              "ketto": "2023101471"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "トモエナゲ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "小林　脩斗",
+              "trainer": "青木　孝文",
+              "ketto": "2023105542"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "アイファーローレル",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "石田　拓郎",
+              "trainer": "根本　康広",
+              "ketto": "2023100075"
+            },
+            {
+              "num": 15,
+              "draw": 8,
               "name": "シーキングザバース",
               "sex": "牝",
               "age": 2,
@@ -2251,15 +2251,15 @@
               "ketto": "2023109091"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ラブデウザ",
-              "sex": "牝",
+              "num": 16,
+              "draw": 8,
+              "name": "マジッククッキー",
+              "sex": "牡",
               "age": 2,
-              "weight": 52,
-              "jockey": "水沼　元輝",
-              "trainer": "加藤　和宏",
-              "ketto": "2023109094"
+              "weight": 53,
+              "jockey": "上里　直汰",
+              "trainer": "加藤　士津八",
+              "ketto": "2023105092"
             }
           ]
         },
@@ -2273,19 +2273,8 @@
           "start_time": "11:05",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "エミフルソウタ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "野中　悠太郎",
-              "trainer": "根本　康広",
-              "ketto": "2023100428"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ラストスマイル",
               "sex": "牡",
               "age": 2,
@@ -2298,85 +2287,8 @@
               "ketto": "2023100940"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "タイセイカラーズ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "石川　裕紀人",
-              "trainer": "奥村　武",
-              "ketto": "2023101186"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ケンブリッジサクラ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "丸田　恭介",
-              "trainer": "石栗　龍彦",
-              "ketto": "2023101689"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ナデシコ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 52,
-              "jockey": "遠藤　汰月",
-              "trainer": "村田　一誠",
-              "ketto": "2023102431"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ゴールドパレード",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "横山　琉人",
-              "trainer": "天間　昭一",
-              "ketto": "2023104505"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ビップルーク",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "小林　美駒",
-              "trainer": "嘉藤　貴行",
-              "ketto": "2023105995"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ファインブライト",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "大野　拓弥",
-              "trainer": "佐藤　吉勝",
-              "ketto": "2023106627"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ベアサナエチャン",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "松岡　正海",
-              "trainer": "杉浦　宏昭",
-              "ketto": "2023106829"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "リスレジャンデール",
               "sex": "牝",
               "age": 2,
@@ -2387,6 +2299,94 @@
                 "C"
               ],
               "ketto": "2023107320"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "ファインブライト",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "大野　拓弥",
+              "trainer": "佐藤　吉勝",
+              "ketto": "2023106627"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "ゴールドパレード",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "横山　琉人",
+              "trainer": "天間　昭一",
+              "ketto": "2023104505"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "ケンブリッジサクラ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "丸田　恭介",
+              "trainer": "石栗　龍彦",
+              "ketto": "2023101689"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "ナデシコ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 52,
+              "jockey": "遠藤　汰月",
+              "trainer": "村田　一誠",
+              "ketto": "2023102431"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "ベアサナエチャン",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "松岡　正海",
+              "trainer": "杉浦　宏昭",
+              "ketto": "2023106829"
+            },
+            {
+              "num": 8,
+              "draw": 7,
+              "name": "タイセイカラーズ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "石川　裕紀人",
+              "trainer": "奥村　武",
+              "ketto": "2023101186"
+            },
+            {
+              "num": 9,
+              "draw": 8,
+              "name": "エミフルソウタ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "野中　悠太郎",
+              "trainer": "根本　康広",
+              "ketto": "2023100428"
+            },
+            {
+              "num": 10,
+              "draw": 8,
+              "name": "ビップルーク",
+              "sex": "牡",
+              "age": 2,
+              "weight": 53,
+              "jockey": "小林　美駒",
+              "trainer": "嘉藤　貴行",
+              "ketto": "2023105995"
             }
           ]
         },
@@ -2399,96 +2399,8 @@
           "start_time": "11:35",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ネオアカジョウ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "横山　和生",
-              "trainer": "小西　一男",
-              "ketto": "2023100027"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アイアンナックル",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "小林　美駒",
-              "trainer": "尾形　和幸",
-              "ketto": "2023100633"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アレキサンダーサン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "上里　直汰",
-              "trainer": "伊坂　重信",
-              "ketto": "2023100810"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "カーリキュー",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "坂井　瑠星",
-              "trainer": "高橋　一哉",
-              "ketto": "2023101115"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ファイアリービート",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "大野　拓弥",
-              "trainer": "鈴木　慎太郎",
-              "ketto": "2023101135"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ウィッキドピケット",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "津村　明秀",
-              "trainer": "林　徹",
-              "ketto": "2023101397"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ワルキューレキング",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "菊沢　一樹",
-              "trainer": "伊藤　大士",
-              "ketto": "2023101524"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アイアムアヒーロー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "木幡　巧也",
-              "trainer": "奥平　雅士",
-              "ketto": "2023102209"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ルクソンライト",
               "sex": "牡",
               "age": 2,
@@ -2498,19 +2410,8 @@
               "ketto": "2023102782"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ストロボエッジ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "岩部　純二",
-              "trainer": "萱野　浩二",
-              "ketto": "2023103270"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
               "name": "ポッドシャンク",
               "sex": "牡",
               "age": 2,
@@ -2520,19 +2421,8 @@
               "ketto": "2023105592"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "カフェオリーブ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "内田　博幸",
-              "trainer": "古賀　慎明",
-              "ketto": "2023106252"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 2,
               "name": "ニシノオトムスメ",
               "sex": "牝",
               "age": 2,
@@ -2542,8 +2432,19 @@
               "ketto": "2023106273"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 2,
+              "name": "フライデイゼーン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "丹内　祐次",
+              "trainer": "岩戸　孝樹",
+              "ketto": "2023109074"
+            },
+            {
+              "num": 5,
+              "draw": 3,
               "name": "ジーティーニッツァ",
               "sex": "牡",
               "age": 2,
@@ -2553,8 +2454,107 @@
               "ketto": "2023106331"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 3,
+              "name": "カフェオリーブ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "内田　博幸",
+              "trainer": "古賀　慎明",
+              "ketto": "2023106252"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "ワルキューレキング",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "菊沢　一樹",
+              "trainer": "伊藤　大士",
+              "ketto": "2023101524"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "ファイアリービート",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "大野　拓弥",
+              "trainer": "鈴木　慎太郎",
+              "ketto": "2023101135"
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "ウィッキドピケット",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "津村　明秀",
+              "trainer": "林　徹",
+              "ketto": "2023101397"
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "カーリキュー",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "坂井　瑠星",
+              "trainer": "高橋　一哉",
+              "ketto": "2023101115"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "ネオアカジョウ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "横山　和生",
+              "trainer": "小西　一男",
+              "ketto": "2023100027"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "ストロボエッジ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "岩部　純二",
+              "trainer": "萱野　浩二",
+              "ketto": "2023103270"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "アイアムアヒーロー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "木幡　巧也",
+              "trainer": "奥平　雅士",
+              "ketto": "2023102209"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "アレキサンダーサン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 53,
+              "jockey": "上里　直汰",
+              "trainer": "伊坂　重信",
+              "ketto": "2023100810"
+            },
+            {
+              "num": 15,
+              "draw": 8,
               "name": "マイネルオランチア",
               "sex": "牡",
               "age": 2,
@@ -2564,15 +2564,15 @@
               "ketto": "2023106406"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "フライデイゼーン",
+              "num": 16,
+              "draw": 8,
+              "name": "アイアンナックル",
               "sex": "牡",
               "age": 2,
-              "weight": 56,
-              "jockey": "丹内　祐次",
-              "trainer": "岩戸　孝樹",
-              "ketto": "2023109074"
+              "weight": 53,
+              "jockey": "小林　美駒",
+              "trainer": "尾形　和幸",
+              "ketto": "2023100633"
             }
           ]
         },
@@ -2585,63 +2585,8 @@
           "start_time": "12:25",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "フォワードマーチ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 53,
-              "jockey": "長浜　鴻緒",
-              "trainer": "矢嶋　大樹",
-              "ketto": "2023100943"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "テーオーカイザー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "横山　武史",
-              "trainer": "高柳　大輔",
-              "ketto": "2023101592"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ヨドノサファイア",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "横山　和生",
-              "trainer": "稲垣　幸雄",
-              "ketto": "2023101825"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "バディーズライズ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "小林　美駒",
-              "trainer": "小手川　準",
-              "ketto": "2023102072"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ストライプブルー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "木幡　巧也",
-              "trainer": "中川　公成",
-              "ketto": "2023102397"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ベネファクター",
               "sex": "牡",
               "age": 2,
@@ -2651,52 +2596,8 @@
               "ketto": "2023102797"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ブラーヴジャン",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "佐々木　大輔",
-              "trainer": "和田　勇介",
-              "ketto": "2023103238"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "レアリゼソンレーヴ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "三浦　皇成",
-              "trainer": "萩原　清",
-              "ketto": "2023104401"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "シュペルリング",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "津村　明秀",
-              "trainer": "嘉藤　貴行",
-              "ketto": "2023104450"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ジャンプストリート",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "遠藤　汰月",
-              "trainer": "伊藤　伸一",
-              "ketto": "2023104691"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "エコロラヴァー",
               "sex": "牝",
               "age": 2,
@@ -2706,19 +2607,41 @@
               "ketto": "2023105384"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ミッキースワン",
-              "sex": "牝",
+              "num": 3,
+              "draw": 3,
+              "name": "レアリゼソンレーヴ",
+              "sex": "牡",
               "age": 2,
-              "weight": 55,
-              "jockey": "菊沢　一樹",
-              "trainer": "菊沢　隆徳",
-              "ketto": "2023106279"
+              "weight": 56,
+              "jockey": "三浦　皇成",
+              "trainer": "萩原　清",
+              "ketto": "2023104401"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 3,
+              "name": "ジャンプストリート",
+              "sex": "牡",
+              "age": 2,
+              "weight": 53,
+              "jockey": "遠藤　汰月",
+              "trainer": "伊藤　伸一",
+              "ketto": "2023104691"
+            },
+            {
+              "num": 5,
+              "draw": 4,
+              "name": "ブラーヴジャン",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "佐々木　大輔",
+              "trainer": "和田　勇介",
+              "ketto": "2023103238"
+            },
+            {
+              "num": 6,
+              "draw": 4,
               "name": "サントマーレ",
               "sex": "牡",
               "age": 2,
@@ -2728,8 +2651,8 @@
               "ketto": "2023107313"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 7,
+              "draw": 5,
               "name": "ボニープリンス",
               "sex": "牡",
               "age": 2,
@@ -2737,6 +2660,83 @@
               "jockey": "Ｃ．ルメール",
               "trainer": "大竹　正博",
               "ketto": "2023107329"
+            },
+            {
+              "num": 8,
+              "draw": 5,
+              "name": "テーオーカイザー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "横山　武史",
+              "trainer": "高柳　大輔",
+              "ketto": "2023101592"
+            },
+            {
+              "num": 9,
+              "draw": 6,
+              "name": "ストライプブルー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "木幡　巧也",
+              "trainer": "中川　公成",
+              "ketto": "2023102397"
+            },
+            {
+              "num": 10,
+              "draw": 6,
+              "name": "ミッキースワン",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "菊沢　一樹",
+              "trainer": "菊沢　隆徳",
+              "ketto": "2023106279"
+            },
+            {
+              "num": 11,
+              "draw": 7,
+              "name": "フォワードマーチ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 53,
+              "jockey": "長浜　鴻緒",
+              "trainer": "矢嶋　大樹",
+              "ketto": "2023100943"
+            },
+            {
+              "num": 12,
+              "draw": 7,
+              "name": "シュペルリング",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "津村　明秀",
+              "trainer": "嘉藤　貴行",
+              "ketto": "2023104450"
+            },
+            {
+              "num": 13,
+              "draw": 8,
+              "name": "ヨドノサファイア",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "横山　和生",
+              "trainer": "稲垣　幸雄",
+              "ketto": "2023101825"
+            },
+            {
+              "num": 14,
+              "draw": 8,
+              "name": "バディーズライズ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 53,
+              "jockey": "小林　美駒",
+              "trainer": "小手川　準",
+              "ketto": "2023102072"
             }
           ]
         },
@@ -2749,8 +2749,8 @@
           "start_time": "12:55",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "タイセイギガース",
               "sex": "牡",
               "age": 2,
@@ -2760,107 +2760,19 @@
               "ketto": "2023100703"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ツイスティドシルク",
+              "num": 2,
+              "draw": 1,
+              "name": "ブロンザイト",
               "sex": "牡",
               "age": 2,
               "weight": 56,
-              "jockey": "津村　明秀",
-              "trainer": "武藤　善則",
-              "ketto": "2023101125"
+              "jockey": "北村　友一",
+              "trainer": "福永　祐一",
+              "ketto": "2023106979"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "セイントエルモズ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "菅原　明良",
-              "trainer": "小島　茂之",
-              "ketto": "2023101132"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "スウィートラキ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 53,
-              "jockey": "長浜　鴻緒",
-              "trainer": "堀内　岳志",
-              "ketto": "2023101489"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アオイミズホ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "三浦　皇成",
-              "trainer": "古賀　慎明",
-              "ketto": "2023101814"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "トモジャユニベール",
-              "sex": "牡",
-              "age": 2,
-              "weight": 53,
-              "jockey": "小林　美駒",
-              "trainer": "小笠　倫弘",
-              "ketto": "2023102575"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ディレクティオ",
-              "sex": "牝",
-              "age": 2,
-              "weight": 55,
-              "jockey": "伊藤　工真",
-              "trainer": "金成　貴史",
-              "ketto": "2023102796"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ウリズンベー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "岩田　康誠",
-              "trainer": "萩原　清",
-              "ketto": "2023103709"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "カナタコナタ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "杉原　誠人",
-              "trainer": "高橋　一哉",
-              "ketto": "2023104700"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ロードストラダーレ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "横山　琉人",
-              "trainer": "本間　忍",
-              "ketto": "2023104886"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 2,
               "name": "ブルースパーダ",
               "sex": "牡",
               "age": 2,
@@ -2870,19 +2782,63 @@
               "ketto": "2023105413"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ユイノディスタンス",
+              "num": 4,
+              "draw": 2,
+              "name": "カナタコナタ",
               "sex": "牡",
               "age": 2,
               "weight": 56,
-              "jockey": "木幡　初也",
-              "trainer": "深山　雅史",
-              "ketto": "2023106061"
+              "jockey": "杉原　誠人",
+              "trainer": "高橋　一哉",
+              "ketto": "2023104700"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 5,
+              "draw": 3,
+              "name": "ウリズンベー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "岩田　康誠",
+              "trainer": "萩原　清",
+              "ketto": "2023103709"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "アオイミズホ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "三浦　皇成",
+              "trainer": "古賀　慎明",
+              "ketto": "2023101814"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "ディレクティオ",
+              "sex": "牝",
+              "age": 2,
+              "weight": 55,
+              "jockey": "伊藤　工真",
+              "trainer": "金成　貴史",
+              "ketto": "2023102796"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "ツイスティドシルク",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "津村　明秀",
+              "trainer": "武藤　善則",
+              "ketto": "2023101125"
+            },
+            {
+              "num": 9,
+              "draw": 5,
               "name": "ノーブルティアラ",
               "sex": "牝",
               "age": 2,
@@ -2892,8 +2848,19 @@
               "ketto": "2023106709"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 5,
+              "name": "ロードストラダーレ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "横山　琉人",
+              "trainer": "本間　忍",
+              "ketto": "2023104886"
+            },
+            {
+              "num": 11,
+              "draw": 6,
               "name": "アドマイヤウルトラ",
               "sex": "牡",
               "age": 2,
@@ -2903,8 +2870,41 @@
               "ketto": "2023106836"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 12,
+              "draw": 6,
+              "name": "トモジャユニベール",
+              "sex": "牡",
+              "age": 2,
+              "weight": 53,
+              "jockey": "小林　美駒",
+              "trainer": "小笠　倫弘",
+              "ketto": "2023102575"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "セイントエルモズ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "菅原　明良",
+              "trainer": "小島　茂之",
+              "ketto": "2023101132"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "ユイノディスタンス",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "木幡　初也",
+              "trainer": "深山　雅史",
+              "ketto": "2023106061"
+            },
+            {
+              "num": 15,
+              "draw": 8,
               "name": "ヴェイルドハート",
               "sex": "牡",
               "age": 2,
@@ -2914,15 +2914,15 @@
               "ketto": "2023106944"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ブロンザイト",
-              "sex": "牡",
+              "num": 16,
+              "draw": 8,
+              "name": "スウィートラキ",
+              "sex": "牝",
               "age": 2,
-              "weight": 56,
-              "jockey": "北村　友一",
-              "trainer": "福永　祐一",
-              "ketto": "2023106979"
+              "weight": 53,
+              "jockey": "長浜　鴻緒",
+              "trainer": "堀内　岳志",
+              "ketto": "2023101489"
             }
           ]
         },
@@ -2936,63 +2936,8 @@
           "start_time": "13:25",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "オルソビアンコ",
-              "sex": "牝",
-              "age": 5,
-              "weight": 54,
-              "jockey": "今村　聖奈",
-              "trainer": "田村　康仁",
-              "ketto": "2020102918"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "レリッシュ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "菅原　隆一",
-              "trainer": "天間　昭一",
-              "ketto": "2021101385"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "メアヴィア",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "丹内　祐次",
-              "trainer": "金成　貴史",
-              "ketto": "2021104820"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "シンドリームシン",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "津村　明秀",
-              "trainer": "武　幸四郎",
-              "ketto": "2021105382"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "エバーステイ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "菅原　明良",
-              "trainer": "久保田　貴士",
-              "ketto": "2022104686"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ボウウィンドウ",
               "sex": "牝",
               "age": 3,
@@ -3002,8 +2947,85 @@
               "ketto": "2022105002"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
+              "name": "シンドリームシン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "津村　明秀",
+              "trainer": "武　幸四郎",
+              "ketto": "2021105382"
+            },
+            {
+              "num": 3,
+              "draw": 3,
+              "name": "メアヴィア",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "丹内　祐次",
+              "trainer": "金成　貴史",
+              "ketto": "2021104820"
+            },
+            {
+              "num": 4,
+              "draw": 4,
+              "name": "レリッシュ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "菅原　隆一",
+              "trainer": "天間　昭一",
+              "ketto": "2021101385"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "スワローシチー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "石川　裕紀人",
+              "trainer": "相沢　郁",
+              "ketto": "2022106150"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "エバーステイ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "菅原　明良",
+              "trainer": "久保田　貴士",
+              "ketto": "2022104686"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "エテルニータ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "荻野　極",
+              "trainer": "稲垣　幸雄",
+              "ketto": "2022106344"
+            },
+            {
+              "num": 8,
+              "draw": 7,
+              "name": "オルソビアンコ",
+              "sex": "牝",
+              "age": 5,
+              "weight": 54,
+              "jockey": "今村　聖奈",
+              "trainer": "田村　康仁",
+              "ketto": "2020102918"
+            },
+            {
+              "num": 9,
+              "draw": 8,
               "name": "タイセイプランセス",
               "sex": "牝",
               "age": 3,
@@ -3013,8 +3035,8 @@
               "ketto": "2022105014"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 8,
               "name": "シドニーホバート",
               "sex": "牡",
               "age": 3,
@@ -3025,28 +3047,6 @@
                 "C"
               ],
               "ketto": "2022105506"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "スワローシチー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "石川　裕紀人",
-              "trainer": "相沢　郁",
-              "ketto": "2022106150"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "エテルニータ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "荻野　極",
-              "trainer": "稲垣　幸雄",
-              "ketto": "2022106344"
             }
           ]
         },
@@ -3059,164 +3059,8 @@
           "start_time": "13:55",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "スペシャリスト",
-              "sex": "牝",
-              "age": 5,
-              "weight": 56,
-              "jockey": "横山　琉人",
-              "trainer": "高橋　文雅",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2020101572"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ミランカ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "菊沢　一樹",
-              "trainer": "岩戸　孝樹",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021101002"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "フイノマジワリ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "木幡　初也",
-              "trainer": "竹内　正洋",
-              "ketto": "2021101415"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "コルヴィル",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "黛　弘人",
-              "trainer": "柄崎　将寿",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021104511"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "グランコネクシオン",
-              "sex": "牝",
-              "age": 4,
-              "weight": 54,
-              "jockey": "長浜　鴻緒",
-              "trainer": "畠山　吉宏",
-              "ketto": "2021105123"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "エーデル",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "丹内　祐次",
-              "trainer": "金成　貴史",
-              "ketto": "2021105321"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "エポカスピーガ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "松岡　正海",
-              "trainer": "田中　剛",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022101532"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ラーナローザ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "荻野　極",
-              "trainer": "畠山　吉宏",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022102785"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "パイシャオピン",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "横山　武史",
-              "trainer": "鈴木　伸尋",
-              "ketto": "2022103371"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ノンスタンダルド",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "戸崎　圭太",
-              "trainer": "嘉藤　貴行",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022103511"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "タマモカンパネラ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 50,
-              "jockey": "谷原　柚希",
-              "trainer": "伊藤　圭三",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022104512"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ラヴアンドライク",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "原　優介",
-              "trainer": "稲垣　幸雄",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022104570"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "カーラデマドレ",
               "sex": "牝",
               "age": 3,
@@ -3229,8 +3073,94 @@
               "ketto": "2022104912"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
+              "name": "グランコネクシオン",
+              "sex": "牝",
+              "age": 4,
+              "weight": 54,
+              "jockey": "長浜　鴻緒",
+              "trainer": "畠山　吉宏",
+              "ketto": "2021105123"
+            },
+            {
+              "num": 3,
+              "draw": 2,
+              "name": "エーデル",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "丹内　祐次",
+              "trainer": "金成　貴史",
+              "ketto": "2021105321"
+            },
+            {
+              "num": 4,
+              "draw": 2,
+              "name": "ラヴアンドライク",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "原　優介",
+              "trainer": "稲垣　幸雄",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022104570"
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "ラルガメンテ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "内田　博幸",
+              "trainer": "尾関　知人",
+              "ketto": "2022105982"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "ミランカ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "菊沢　一樹",
+              "trainer": "岩戸　孝樹",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021101002"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "スペシャリスト",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "横山　琉人",
+              "trainer": "高橋　文雅",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2020101572"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "フイノマジワリ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "木幡　初也",
+              "trainer": "竹内　正洋",
+              "ketto": "2021101415"
+            },
+            {
+              "num": 9,
+              "draw": 5,
               "name": "メリーサウンド",
               "sex": "牝",
               "age": 3,
@@ -3243,19 +3173,22 @@
               "ketto": "2022105516"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ラルガメンテ",
+              "num": 10,
+              "draw": 5,
+              "name": "ノンスタンダルド",
               "sex": "牝",
               "age": 3,
               "weight": 54,
-              "jockey": "内田　博幸",
-              "trainer": "尾関　知人",
-              "ketto": "2022105982"
+              "jockey": "戸崎　圭太",
+              "trainer": "嘉藤　貴行",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022103511"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 11,
+              "draw": 6,
               "name": "ノーブルノワール",
               "sex": "牝",
               "age": 3,
@@ -3266,6 +3199,73 @@
                 "C"
               ],
               "ketto": "2022106542"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "タマモカンパネラ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 50,
+              "jockey": "谷原　柚希",
+              "trainer": "伊藤　圭三",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022104512"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "エポカスピーガ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "松岡　正海",
+              "trainer": "田中　剛",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022101532"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "コルヴィル",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "黛　弘人",
+              "trainer": "柄崎　将寿",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021104511"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "パイシャオピン",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "横山　武史",
+              "trainer": "鈴木　伸尋",
+              "ketto": "2022103371"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "ラーナローザ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "荻野　極",
+              "trainer": "畠山　吉宏",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022102785"
             }
           ]
         },
@@ -3279,33 +3279,22 @@
           "start_time": "14:30",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "セイウンパシュート",
+              "num": 1,
+              "draw": 1,
+              "name": "ホウオウアートマン",
               "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "杉原　誠人",
-              "trainer": "上原　博之",
+              "age": 3,
+              "weight": 55,
+              "jockey": "坂井　瑠星",
+              "trainer": "矢作　芳人",
               "pace_type": [
-                "C"
+                "B"
               ],
-              "ketto": "2020100233"
+              "ketto": "2022104845"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ソワドリヨン",
-              "sex": "牝",
-              "age": 5,
-              "weight": 56,
-              "jockey": "岩田　康誠",
-              "trainer": "古賀　慎明",
-              "ketto": "2020102725"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "ミントマーク",
               "sex": "牡",
               "age": 5,
@@ -3315,61 +3304,8 @@
               "ketto": "2020103731"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ズイウンゴサイ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "丸田　恭介",
-              "trainer": "武市　康男",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021100597"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "バレンタインガール",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "内田　博幸",
-              "trainer": "古賀　慎明",
-              "ketto": "2021102577"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ゴージョニーゴー",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "横山　和生",
-              "trainer": "四位　洋文",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2021105048"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ダノンホイットニー",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "佐々木　大輔",
-              "trainer": "大竹　正博",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021105639"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
               "name": "モルトマエストーソ",
               "sex": "牡",
               "age": 4,
@@ -3382,8 +3318,75 @@
               "ketto": "2021105838"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 4,
+              "name": "ズイウンゴサイ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "丸田　恭介",
+              "trainer": "武市　康男",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021100597"
+            },
+            {
+              "num": 5,
+              "draw": 5,
+              "name": "ゴージョニーゴー",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "横山　和生",
+              "trainer": "四位　洋文",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2021105048"
+            },
+            {
+              "num": 6,
+              "draw": 6,
+              "name": "バレンタインガール",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "内田　博幸",
+              "trainer": "古賀　慎明",
+              "ketto": "2021102577"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "セイウンパシュート",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "杉原　誠人",
+              "trainer": "上原　博之",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2020100233"
+            },
+            {
+              "num": 8,
+              "draw": 7,
+              "name": "ダノンホイットニー",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "佐々木　大輔",
+              "trainer": "大竹　正博",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021105639"
+            },
+            {
+              "num": 9,
+              "draw": 8,
               "name": "エーオーキング",
               "sex": "牡",
               "age": 3,
@@ -3396,18 +3399,15 @@
               "ketto": "2022102738"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ホウオウアートマン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 55,
-              "jockey": "坂井　瑠星",
-              "trainer": "矢作　芳人",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022104845"
+              "num": 10,
+              "draw": 8,
+              "name": "ソワドリヨン",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "岩田　康誠",
+              "trainer": "古賀　慎明",
+              "ketto": "2020102725"
             }
           ]
         },
@@ -3420,69 +3420,8 @@
           "start_time": "15:05",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "トクシースタローン",
-              "sex": "牡",
-              "age": 6,
-              "weight": 58,
-              "jockey": "菊沢　一樹",
-              "trainer": "辻　哲英",
-              "ketto": "2019103728"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "カムランベイ",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "木幡　巧也",
-              "trainer": "岩戸　孝樹",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2020101803"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "シゲルカミカゼ",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "大野　拓弥",
-              "trainer": "松山　将樹",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2020102077"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ルーラーリッチ",
-              "sex": "セ",
-              "age": 5,
-              "weight": 58,
-              "jockey": "菅原　明良",
-              "trainer": "小島　茂之",
-              "ketto": "2020102793"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ピュアグルーヴ",
-              "sex": "牝",
-              "age": 5,
-              "weight": 56,
-              "jockey": "横山　琉人",
-              "trainer": "藤岡　健一",
-              "ketto": "2020103444"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ジョウショーパワー",
               "sex": "牡",
               "age": 5,
@@ -3492,33 +3431,8 @@
               "ketto": "2020105228"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ライジンマル",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "津村　明秀",
-              "trainer": "竹内　正洋",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2021101449"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "レッドリベルタ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "戸崎　圭太",
-              "trainer": "庄野　靖志",
-              "ketto": "2021102436"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
               "name": "ラファールドール",
               "sex": "セ",
               "age": 4,
@@ -3531,50 +3445,22 @@
               "ketto": "2021104889"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "シャンパンポップ",
+              "num": 3,
+              "draw": 2,
+              "name": "カムランベイ",
               "sex": "牡",
-              "age": 4,
+              "age": 5,
               "weight": 58,
-              "jockey": "Ｃ．ルメール",
-              "trainer": "武　幸四郎",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021105562"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "タイセイアディクト",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "坂井　瑠星",
-              "trainer": "池上　昌和",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021106126"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "シグムンド",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "原　優介",
+              "jockey": "木幡　巧也",
               "trainer": "岩戸　孝樹",
               "pace_type": [
-                "B"
+                "C"
               ],
-              "ketto": "2021106353"
+              "ketto": "2020101803"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 2,
               "name": "ファイアトリック",
               "sex": "牡",
               "age": 3,
@@ -3587,22 +3473,22 @@
               "ketto": "2022101067"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ピコシー",
+              "num": 5,
+              "draw": 3,
+              "name": "ライジンマル",
               "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "岩田　康誠",
-              "trainer": "奥村　武",
+              "age": 4,
+              "weight": 58,
+              "jockey": "津村　明秀",
+              "trainer": "竹内　正洋",
               "pace_type": [
                 "B"
               ],
-              "ketto": "2022101716"
+              "ketto": "2021101449"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 3,
               "name": "キョウキランブ",
               "sex": "牡",
               "age": 3,
@@ -3615,8 +3501,44 @@
               "ketto": "2022103115"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 7,
+              "draw": 4,
+              "name": "レッドリベルタ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "戸崎　圭太",
+              "trainer": "庄野　靖志",
+              "ketto": "2021102436"
+            },
+            {
+              "num": 8,
+              "draw": 4,
+              "name": "トクシースタローン",
+              "sex": "牡",
+              "age": 6,
+              "weight": 58,
+              "jockey": "菊沢　一樹",
+              "trainer": "辻　哲英",
+              "ketto": "2019103728"
+            },
+            {
+              "num": 9,
+              "draw": 5,
+              "name": "タイセイアディクト",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "坂井　瑠星",
+              "trainer": "池上　昌和",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021106126"
+            },
+            {
+              "num": 10,
+              "draw": 5,
               "name": "プレシャスデイ",
               "sex": "牡",
               "age": 3,
@@ -3627,6 +3549,84 @@
                 "C"
               ],
               "ketto": "2022104859"
+            },
+            {
+              "num": 11,
+              "draw": 6,
+              "name": "シゲルカミカゼ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "大野　拓弥",
+              "trainer": "松山　将樹",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2020102077"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "ルーラーリッチ",
+              "sex": "セ",
+              "age": 5,
+              "weight": 58,
+              "jockey": "菅原　明良",
+              "trainer": "小島　茂之",
+              "ketto": "2020102793"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "ピコシー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "岩田　康誠",
+              "trainer": "奥村　武",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022101716"
+            },
+            {
+              "num": 14,
+              "draw": 7,
+              "name": "ピュアグルーヴ",
+              "sex": "牝",
+              "age": 5,
+              "weight": 56,
+              "jockey": "横山　琉人",
+              "trainer": "藤岡　健一",
+              "ketto": "2020103444"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "シグムンド",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "原　優介",
+              "trainer": "岩戸　孝樹",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2021106353"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "シャンパンポップ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "Ｃ．ルメール",
+              "trainer": "武　幸四郎",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021105562"
             }
           ]
         },
@@ -3640,8 +3640,8 @@
           "start_time": "15:45",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "ガリレア",
               "sex": "牡",
               "age": 2,
@@ -3654,33 +3654,8 @@
               "ketto": "2023100681"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "エコロアルバ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "坂井　瑠星",
-              "trainer": "田村　康仁",
-              "ketto": "2023103184"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "チュウワカーネギー",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "北村　友一",
-              "trainer": "大久保　龍志",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2023103895"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 2,
               "name": "マーゴットブロー",
               "sex": "牡",
               "age": 2,
@@ -3693,22 +3668,8 @@
               "ketto": "2023105356"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ニシノエースサマ",
-              "sex": "牡",
-              "age": 2,
-              "weight": 56,
-              "jockey": "三浦　皇成",
-              "trainer": "鹿戸　雄一",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2023106277"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 3,
               "name": "アスクエジンバラ",
               "sex": "牡",
               "age": 2,
@@ -3721,8 +3682,22 @@
               "ketto": "2023106400"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 4,
+              "name": "ユウファラオ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "丸山　元気",
+              "trainer": "森　秀行",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2023110065"
+            },
+            {
+              "num": 5,
+              "draw": 5,
               "name": "ゾロアストロ",
               "sex": "牡",
               "age": 2,
@@ -3735,18 +3710,43 @@
               "ketto": "2023106850"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ユウファラオ",
+              "num": 6,
+              "draw": 6,
+              "name": "エコロアルバ",
               "sex": "牡",
               "age": 2,
               "weight": 56,
-              "jockey": "丸山　元気",
-              "trainer": "森　秀行",
+              "jockey": "坂井　瑠星",
+              "trainer": "田村　康仁",
+              "ketto": "2023103184"
+            },
+            {
+              "num": 7,
+              "draw": 7,
+              "name": "ニシノエースサマ",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "三浦　皇成",
+              "trainer": "鹿戸　雄一",
               "pace_type": [
                 "B"
               ],
-              "ketto": "2023110065"
+              "ketto": "2023106277"
+            },
+            {
+              "num": 8,
+              "draw": 8,
+              "name": "チュウワカーネギー",
+              "sex": "牡",
+              "age": 2,
+              "weight": 56,
+              "jockey": "北村　友一",
+              "trainer": "大久保　龍志",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2023103895"
             }
           ]
         },
@@ -3759,8 +3759,8 @@
           "start_time": "16:25",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "フレイムジョーカー",
               "sex": "牡",
               "age": 6,
@@ -3770,41 +3770,8 @@
               "ketto": "2019105745"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "オブシディアン",
-              "sex": "牡",
-              "age": 5,
-              "weight": 55,
-              "jockey": "水沼　元輝",
-              "trainer": "石栗　龍彦",
-              "ketto": "2020100307"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "トルズイーガー",
-              "sex": "牡",
-              "age": 5,
-              "weight": 55,
-              "jockey": "佐藤　翔馬",
-              "trainer": "伊藤　圭三",
-              "ketto": "2020104135"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "セッカチドラゴン",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "菊沢　一樹",
-              "trainer": "本間　忍",
-              "ketto": "2021100759"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
               "name": "アンクエンチャブル",
               "sex": "セ",
               "age": 4,
@@ -3818,83 +3785,8 @@
               "ketto": "2021101660"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "タイセイブロウ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "荻野　極",
-              "trainer": "平田　修",
-              "ketto": "2021104101"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ガンハンマー",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "坂井　瑠星",
-              "trainer": "加藤　征弘",
-              "ketto": "2022100050"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "シルフレイ",
-              "sex": "牝",
-              "age": 3,
-              "weight": 54,
-              "jockey": "横山　武史",
-              "trainer": "千葉　直人",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2022100620"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ダイタエリュシオン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 53,
-              "jockey": "石神　深道",
-              "trainer": "土田　稔",
-              "ketto": "2022101733"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "マイネルブリオン",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "松岡　正海",
-              "trainer": "矢野　英一",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022102681"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "キョウエイスレーヴ",
-              "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "原　優介",
-              "trainer": "萱野　浩二",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022103472"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 2,
               "name": "トラヴェリンバンド",
               "sex": "牡",
               "age": 3,
@@ -3907,8 +3799,55 @@
               "ketto": "2022104009"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 4,
+              "draw": 2,
+              "name": "トルズイーガー",
+              "sex": "牡",
+              "age": 5,
+              "weight": 55,
+              "jockey": "佐藤　翔馬",
+              "trainer": "伊藤　圭三",
+              "ketto": "2020104135"
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "ガンハンマー",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "坂井　瑠星",
+              "trainer": "加藤　征弘",
+              "ketto": "2022100050"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "オブシディアン",
+              "sex": "牡",
+              "age": 5,
+              "weight": 55,
+              "jockey": "水沼　元輝",
+              "trainer": "石栗　龍彦",
+              "ketto": "2020100307"
+            },
+            {
+              "num": 7,
+              "draw": 4,
+              "name": "マイネルブリオン",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "松岡　正海",
+              "trainer": "矢野　英一",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022102681"
+            },
+            {
+              "num": 8,
+              "draw": 4,
               "name": "トニケンサンバ",
               "sex": "牡",
               "age": 3,
@@ -3921,8 +3860,33 @@
               "ketto": "2022104490"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 9,
+              "draw": 5,
+              "name": "シルフレイ",
+              "sex": "牝",
+              "age": 3,
+              "weight": 54,
+              "jockey": "横山　武史",
+              "trainer": "千葉　直人",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2022100620"
+            },
+            {
+              "num": 10,
+              "draw": 5,
+              "name": "ダイタエリュシオン",
+              "sex": "牡",
+              "age": 3,
+              "weight": 53,
+              "jockey": "石神　深道",
+              "trainer": "土田　稔",
+              "ketto": "2022101733"
+            },
+            {
+              "num": 11,
+              "draw": 6,
               "name": "リアルショット",
               "sex": "牡",
               "age": 3,
@@ -3932,8 +3896,22 @@
               "ketto": "2022105598"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 12,
+              "draw": 6,
+              "name": "キョウエイスレーヴ",
+              "sex": "牡",
+              "age": 3,
+              "weight": 56,
+              "jockey": "原　優介",
+              "trainer": "萱野　浩二",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022103472"
+            },
+            {
+              "num": 13,
+              "draw": 7,
               "name": "サヨノジャンボリー",
               "sex": "牡",
               "age": 3,
@@ -3946,8 +3924,19 @@
               "ketto": "2022106243"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 14,
+              "draw": 7,
+              "name": "タイセイブロウ",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "荻野　極",
+              "trainer": "平田　修",
+              "ketto": "2021104101"
+            },
+            {
+              "num": 15,
+              "draw": 8,
               "name": "ピコレッド",
               "sex": "牡",
               "age": 3,
@@ -3958,6 +3947,17 @@
                 "B"
               ],
               "ketto": "2022107272"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "セッカチドラゴン",
+              "sex": "牡",
+              "age": 4,
+              "weight": 58,
+              "jockey": "菊沢　一樹",
+              "trainer": "本間　忍",
+              "ketto": "2021100759"
             }
           ]
         }
