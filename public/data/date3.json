@@ -312,7 +312,7 @@
           "name": "2歳未勝利",
           "distance_m": 1600,
           "ground": "芝",
-          "pace_score": -2,
+          "pace_score": -1.5,
           "pace_mark": "★",
           "start_time": "10:55",
           "horses": [
@@ -328,7 +328,7 @@
               "odds": 34.2,
               "popularity": 7,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023104454"
             },
