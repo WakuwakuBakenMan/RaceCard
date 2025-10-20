@@ -2309,7 +2309,13 @@
           "pace": {}
         },
         "ダ": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "A",
+              "ratio": 0.7,
+              "n_total": 10
+            }
+          }
         }
       },
       "races": [
@@ -5179,7 +5185,12 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "outer",
+            "ratio": 0.8333333333333334,
+            "n_total": 6
+          }
         }
       },
       "races": [
