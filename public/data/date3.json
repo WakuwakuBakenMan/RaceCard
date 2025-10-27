@@ -7,10 +7,21 @@
       "nichiji": 8,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "outer",
+            "ratio": 0.7777777777777778,
+            "n_total": 9
+          }
         },
         "芝": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "A",
+              "ratio": 0.7,
+              "n_total": 10
+            }
+          }
         }
       },
       "races": [
@@ -2275,10 +2286,22 @@
       "nichiji": 3,
       "position_bias": {
         "芝": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "B",
+              "ratio": 0.7142857142857143,
+              "n_total": 7
+            }
+          }
         },
         "ダ": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "B",
+              "ratio": 0.8333333333333334,
+              "n_total": 6
+            }
+          }
         }
       },
       "races": [
@@ -2782,8 +2805,8 @@
               "weight": 52,
               "jockey": "石神　深道",
               "trainer": "金成　貴史",
-              "odds": 18.7,
-              "popularity": 7,
+              "odds": 11.3,
+              "popularity": 4,
               "pace_type": [
                 "C"
               ],
@@ -2811,8 +2834,8 @@
               "weight": 56,
               "jockey": "杉原　誠人",
               "trainer": "青木　孝文",
-              "odds": 9.2,
-              "popularity": 6,
+              "odds": 31.1,
+              "popularity": 7,
               "ketto": "2023107376"
             },
             {
@@ -2837,8 +2860,8 @@
               "weight": 55,
               "jockey": "丹内　祐次",
               "trainer": "菊川　正達",
-              "odds": 3.9,
-              "popularity": 2,
+              "odds": 3.7,
+              "popularity": 3,
               "ketto": "2023106411"
             },
             {
@@ -2863,8 +2886,8 @@
               "weight": 55,
               "jockey": "荻野　極",
               "trainer": "上原　佑紀",
-              "odds": 5.8,
-              "popularity": 3,
+              "odds": 3.6,
+              "popularity": 2,
               "ketto": "2023102985"
             },
             {
@@ -2928,7 +2951,7 @@
               "weight": 56,
               "jockey": "丸山　元気",
               "trainer": "森　一誠",
-              "odds": 3.4,
+              "odds": 2.5,
               "popularity": 1,
               "pace_type": [
                 "C"
@@ -5123,7 +5146,13 @@
       "nichiji": 8,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "A",
+              "ratio": 0.8333333333333334,
+              "n_total": 6
+            }
+          }
         },
         "芝": {
           "pace": {}
