@@ -5041,6 +5041,7 @@
           "distance_m": 1150,
           "ground": "ダ",
           "pace_score": 9,
+          "condition": "良",
           "start_time": "09:45",
           "horses": [
             {
@@ -5085,7 +5086,7 @@
               "weight": 55,
               "jockey": "丹内　祐次",
               "trainer": "嘉藤　貴行",
-              "odds": 3.1,
+              "odds": 2.6,
               "popularity": 1,
               "pace_type": [
                 "C"
@@ -5130,7 +5131,7 @@
               "weight": 55,
               "jockey": "斎藤　新",
               "trainer": "高橋　康之",
-              "odds": 21.9,
+              "odds": 20.5,
               "popularity": 8,
               "pace_type": [
                 "A",
@@ -5176,8 +5177,8 @@
               "weight": 53,
               "jockey": "佐藤　翔馬",
               "trainer": "武藤　善則",
-              "odds": 55.8,
-              "popularity": 11,
+              "odds": 113.7,
+              "popularity": 12,
               "ketto": "2023103216"
             },
             {
@@ -5215,7 +5216,7 @@
               "weight": 55,
               "jockey": "丸山　元気",
               "trainer": "西園　正都",
-              "odds": 3.8,
+              "odds": 4.1,
               "popularity": 2,
               "pace_type": [
                 "C"
@@ -5277,7 +5278,7 @@
               "weight": 52,
               "jockey": "石田　拓郎",
               "trainer": "伊藤　圭三",
-              "odds": 14.3,
+              "odds": 15.1,
               "popularity": 6,
               "pace_type": [
                 "B"
