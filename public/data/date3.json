@@ -5014,6 +5014,7 @@
           "ground": "ダ",
           "pace_score": -0.5,
           "pace_mark": "★",
+          "condition": "良",
           "start_time": "09:45",
           "horses": [
             {
@@ -5051,8 +5052,8 @@
               "weight": 56,
               "jockey": "荻野　極",
               "trainer": "上原　佑紀",
-              "odds": 5.4,
-              "popularity": 2,
+              "odds": 5.5,
+              "popularity": 3,
               "pace_type": [
                 "B"
               ],
@@ -5096,7 +5097,7 @@
               "weight": 56,
               "jockey": "丸山　元気",
               "trainer": "佐々木　晶三",
-              "odds": 6.6,
+              "odds": 7.6,
               "popularity": 4,
               "ketto": "2023105474"
             },
@@ -5148,8 +5149,8 @@
               "weight": 56,
               "jockey": "江田　照男",
               "trainer": "田中　剛",
-              "odds": 17.2,
-              "popularity": 6,
+              "odds": 25.3,
+              "popularity": 8,
               "pace_type": [
                 "C"
               ],
@@ -5193,8 +5194,8 @@
               "weight": 56,
               "jockey": "丹内　祐次",
               "trainer": "菊川　正達",
-              "odds": 2.8,
-              "popularity": 1,
+              "odds": 3.3,
+              "popularity": 2,
               "ketto": "2023100586"
             },
             {
@@ -5219,8 +5220,8 @@
               "weight": 56,
               "jockey": "菊沢　一樹",
               "trainer": "鈴木　慎太郎",
-              "odds": 18,
-              "popularity": 7,
+              "odds": 28.2,
+              "popularity": 9,
               "ketto": "2023103016"
             }
           ]
