@@ -7,7 +7,12 @@
       "nichiji": 6,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "outer",
+            "ratio": 0.75,
+            "n_total": 12
+          }
         },
         "芝": {
           "pace": {}
@@ -2615,7 +2620,13 @@
       "nichiji": 5,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "A",
+              "ratio": 0.75,
+              "n_total": 12
+            }
+          }
         },
         "芝": {
           "pace": {}
