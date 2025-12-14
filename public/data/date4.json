@@ -2560,6 +2560,7 @@
           "distance_m": 1200,
           "ground": "ダ",
           "pace_score": 4.5,
+          "condition": "稍重",
           "start_time": "09:45",
           "horses": [
             {
@@ -2600,8 +2601,8 @@
               "weight": 56,
               "jockey": "落合　玄太",
               "trainer": "松山　将樹",
-              "odds": 107.8,
-              "popularity": 13,
+              "odds": 271.6,
+              "popularity": 15,
               "ketto": "2023100344"
             },
             {
@@ -2642,7 +2643,7 @@
               "weight": 56,
               "jockey": "松岡　正海",
               "trainer": "杉浦　宏昭",
-              "odds": 27.1,
+              "odds": 38.9,
               "popularity": 7,
               "pace_type": [
                 "B"
@@ -2687,8 +2688,8 @@
               "weight": 56,
               "jockey": "江田　照男",
               "trainer": "田中　剛",
-              "odds": 75.8,
-              "popularity": 11,
+              "odds": 218.3,
+              "popularity": 13,
               "ketto": "2023100851"
             },
             {
@@ -2700,7 +2701,7 @@
               "weight": 56,
               "jockey": "石川　裕紀人",
               "trainer": "小笠　倫弘",
-              "odds": 4.9,
+              "odds": 3.7,
               "popularity": 2,
               "pace_type": [
                 "B"
@@ -2755,7 +2756,7 @@
               "weight": 56,
               "jockey": "丹内　祐次",
               "trainer": "伊藤　圭三",
-              "odds": 1.5,
+              "odds": 1.4,
               "popularity": 1,
               "pace_type": [
                 "A",
