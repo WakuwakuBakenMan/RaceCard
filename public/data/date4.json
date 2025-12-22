@@ -316,8 +316,8 @@
               "weight": 55,
               "jockey": "石神　深道",
               "trainer": "和田　雄二",
-              "odds": 4.7,
-              "popularity": 3,
+              "odds": 3.4,
+              "popularity": 1,
               "ketto": "2021100623"
             },
             {
@@ -423,8 +423,8 @@
               "weight": 56,
               "jockey": "荻野　極",
               "trainer": "上原　佑紀",
-              "odds": 8.4,
-              "popularity": 4,
+              "odds": 6.2,
+              "popularity": 5,
               "pace_type": [
                 "C"
               ],
@@ -452,8 +452,8 @@
               "weight": 58,
               "jockey": "丸山　元気",
               "trainer": "小西　一男",
-              "odds": 56.8,
-              "popularity": 12,
+              "odds": 97.4,
+              "popularity": 9,
               "pace_type": [
                 "B"
               ],
@@ -570,8 +570,8 @@
               "weight": 54,
               "jockey": "小林　美駒",
               "trainer": "黒岩　陽一",
-              "odds": 11.8,
-              "popularity": 6,
+              "odds": 20.5,
+              "popularity": 8,
               "ketto": "2022104419"
             },
             {
@@ -596,8 +596,8 @@
               "weight": 57,
               "jockey": "高杉　吏麒",
               "trainer": "高柳　瑞樹",
-              "odds": 7,
-              "popularity": 3,
+              "odds": 15.3,
+              "popularity": 6,
               "pace_type": [
                 "B"
               ],
@@ -642,8 +642,8 @@
               "weight": 54,
               "jockey": "古川　奈穂",
               "trainer": "矢作　芳人",
-              "odds": 6.2,
-              "popularity": 2,
+              "odds": 7.4,
+              "popularity": 4,
               "ketto": "2022105694"
             },
             {
@@ -655,7 +655,7 @@
               "weight": 57,
               "jockey": "横山　典弘",
               "trainer": "飯田　祐史",
-              "odds": 3.3,
+              "odds": 2.4,
               "popularity": 1,
               "pace_type": [
                 "B"
@@ -703,8 +703,8 @@
               "weight": 57,
               "jockey": "団野　大成",
               "trainer": "奥村　豊",
-              "odds": 10.2,
-              "popularity": 5,
+              "odds": 5.9,
+              "popularity": 3,
               "ketto": "2022102202"
             },
             {
@@ -2269,8 +2269,8 @@
               "weight": 57,
               "jockey": "菅原　明良",
               "trainer": "林　徹",
-              "odds": 6.7,
-              "popularity": 5,
+              "odds": 5.5,
+              "popularity": 4,
               "pace_type": [
                 "B"
               ],
@@ -2330,7 +2330,7 @@
               "weight": 57,
               "jockey": "丸山　元気",
               "trainer": "須貝　尚介",
-              "odds": 9.2,
+              "odds": 11.5,
               "popularity": 6,
               "pace_type": [
                 "C"
@@ -2394,7 +2394,7 @@
               "weight": 57,
               "jockey": "荻野　極",
               "trainer": "池江　泰寿",
-              "odds": 3.8,
+              "odds": 3.1,
               "popularity": 1,
               "pace_type": [
                 "C"
@@ -2945,7 +2945,13 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "A",
+              "ratio": 0.875,
+              "n_total": 8
+            }
+          }
         }
       },
       "races": [
@@ -2997,7 +3003,7 @@
               "weight": 56,
               "jockey": "戸崎　圭太",
               "trainer": "田島　俊明",
-              "odds": 2.3,
+              "odds": 2.2,
               "popularity": 1,
               "ketto": "2023102440"
             },
@@ -3010,7 +3016,7 @@
               "weight": 55,
               "jockey": "横山　武史",
               "trainer": "加藤　士津八",
-              "odds": 5.3,
+              "odds": 7.1,
               "popularity": 2,
               "pace_type": [
                 "C"
@@ -3058,8 +3064,8 @@
               "weight": 55,
               "jockey": "石橋　脩",
               "trainer": "矢野　英一",
-              "odds": 11.9,
-              "popularity": 6,
+              "odds": 8.6,
+              "popularity": 5,
               "pace_type": [
                 "C"
               ],
@@ -3090,8 +3096,8 @@
               "weight": 56,
               "jockey": "佐々木　大輔",
               "trainer": "松永　康利",
-              "odds": 8.1,
-              "popularity": 3,
+              "odds": 11.4,
+              "popularity": 6,
               "pace_type": [
                 "C"
               ],
@@ -3174,8 +3180,8 @@
               "weight": 55,
               "jockey": "原　優介",
               "trainer": "黒岩　陽一",
-              "odds": 18.2,
-              "popularity": 7,
+              "odds": 31.9,
+              "popularity": 9,
               "pace_type": [
                 "C"
               ],
@@ -3673,8 +3679,8 @@
               "weight": 60,
               "jockey": "小坂　忠士",
               "trainer": "柄崎　将寿",
-              "odds": 41.5,
-              "popularity": 12,
+              "odds": 61.9,
+              "popularity": 11,
               "pace_type": [
                 "B"
               ],
@@ -3721,8 +3727,8 @@
               "weight": 60,
               "jockey": "中村　将之",
               "trainer": "石坂　公一",
-              "odds": 30.4,
-              "popularity": 10,
+              "odds": 86.4,
+              "popularity": 12,
               "pace_type": [
                 "B"
               ],
@@ -3811,8 +3817,8 @@
               "weight": 60,
               "jockey": "難波　剛健",
               "trainer": "田中　勝春",
-              "odds": 37.5,
-              "popularity": 11,
+              "odds": 154.2,
+              "popularity": 13,
               "ketto": "2021104974"
             },
             {
@@ -3837,8 +3843,8 @@
               "weight": 60,
               "jockey": "五十嵐　雄祐",
               "trainer": "萩原　清",
-              "odds": 10.3,
-              "popularity": 5,
+              "odds": 3.8,
+              "popularity": 1,
               "pace_type": [
                 "C"
               ],
@@ -3853,8 +3859,8 @@
               "weight": 57,
               "jockey": "坂口　智康",
               "trainer": "中舘　英二",
-              "odds": 9.4,
-              "popularity": 4,
+              "odds": 4.7,
+              "popularity": 2,
               "pace_type": [
                 "B"
               ],
@@ -6179,8 +6185,8 @@
               "weight": 55,
               "jockey": "松山　弘平",
               "trainer": "坂口　智康",
-              "odds": 12.2,
-              "popularity": 6,
+              "odds": 17.9,
+              "popularity": 8,
               "ketto": "2023102996"
             },
             {
@@ -6192,8 +6198,8 @@
               "weight": 55,
               "jockey": "Ｃ．ルメール",
               "trainer": "藤原　英昭",
-              "odds": 16.1,
-              "popularity": 8,
+              "odds": 10.7,
+              "popularity": 5,
               "pace_type": [
                 "C"
               ],
@@ -6302,7 +6308,7 @@
               "weight": 55,
               "jockey": "坂井　瑠星",
               "trainer": "藤岡　健一",
-              "odds": 4.5,
+              "odds": 3.5,
               "popularity": 2,
               "ketto": "2023107366"
             },
@@ -6437,8 +6443,8 @@
               "weight": 56,
               "jockey": "Ｆ．ジェルー",
               "trainer": "吉村　圭司",
-              "odds": 3.3,
-              "popularity": 1,
+              "odds": 4.9,
+              "popularity": 3,
               "pace_type": [
                 "C"
               ],
@@ -6453,8 +6459,8 @@
               "weight": 56,
               "jockey": "岩田　望来",
               "trainer": "寺島　良",
-              "odds": 4.7,
-              "popularity": 3,
+              "odds": 4,
+              "popularity": 2,
               "pace_type": [
                 "C"
               ],
@@ -6469,7 +6475,7 @@
               "weight": 56,
               "jockey": "和田　竜二",
               "trainer": "今野　貞一",
-              "odds": 57.6,
+              "odds": 273.9,
               "popularity": 11,
               "ketto": "2023104282"
             },
@@ -6508,8 +6514,8 @@
               "weight": 56,
               "jockey": "藤懸　貴志",
               "trainer": "秋山　真一郎",
-              "odds": 33,
-              "popularity": 9,
+              "odds": 119.2,
+              "popularity": 8,
               "ketto": "2023105762"
             },
             {
@@ -6521,8 +6527,8 @@
               "weight": 56,
               "jockey": "Ｃ．デムーロ",
               "trainer": "高橋　義忠",
-              "odds": 3.7,
-              "popularity": 2,
+              "odds": 1.9,
+              "popularity": 1,
               "pace_type": [
                 "C"
               ],
