@@ -1984,48 +1984,36 @@
           "start_time": "15:40",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "アラタ",
+              "num": 1,
+              "draw": 1,
+              "name": "エキサイトバイオ",
               "sex": "牡",
-              "age": 8,
-              "weight": 58,
-              "jockey": "大野　拓弥",
-              "trainer": "和田　勇介",
+              "age": 3,
+              "weight": 56,
+              "jockey": "荻野　極",
+              "trainer": "今野　貞一",
               "pace_type": [
                 "C"
               ],
-              "ketto": "2017104756"
+              "ketto": "2022104614"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ミステリーウェイ",
-              "sex": "セ",
-              "age": 7,
-              "weight": 58,
-              "jockey": "松本　大輝",
-              "trainer": "小林　真也",
-              "pace_type": [
-                "A",
-                "B"
-              ],
-              "ketto": "2018104638"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "シュヴァリエローズ",
+              "num": 2,
+              "draw": 1,
+              "name": "シンエンペラー",
               "sex": "牡",
-              "age": 7,
+              "age": 4,
               "weight": 58,
-              "jockey": "北村　友一",
-              "trainer": "清水　久詞",
-              "ketto": "2018104942"
+              "jockey": "坂井　瑠星",
+              "trainer": "矢作　芳人",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021110048"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 3,
+              "draw": 2,
               "name": "ジャスティンパレス",
               "sex": "牡",
               "age": 6,
@@ -2035,47 +2023,30 @@
               "ketto": "2019105346"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "エルトンバローズ",
+              "num": 4,
+              "draw": 2,
+              "name": "ミュージアムマイル",
               "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "西村　淳也",
-              "trainer": "杉山　晴紀",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2020100680"
+              "age": 3,
+              "weight": 56,
+              "jockey": "Ｃ．デムーロ",
+              "trainer": "高柳　大輔",
+              "ketto": "2022105081"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "タスティエーラ",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "松山　弘平",
-              "trainer": "堀　宣行",
-              "ketto": "2020103532"
+              "num": 5,
+              "draw": 3,
+              "name": "レガレイラ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 56,
+              "jockey": "Ｃ．ルメール",
+              "trainer": "木村　哲也",
+              "ketto": "2021105898"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "マイネルエンペラー",
-              "sex": "牡",
-              "age": 5,
-              "weight": 58,
-              "jockey": "丹内　祐次",
-              "trainer": "清水　久詞",
-              "pace_type": [
-                "B"
-              ],
-              "ketto": "2020105786"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 6,
+              "draw": 3,
               "name": "メイショウタバル",
               "sex": "牡",
               "age": 4,
@@ -2089,8 +2060,8 @@
               "ketto": "2021103272"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 7,
+              "draw": 4,
               "name": "サンライズジパング",
               "sex": "牡",
               "age": 4,
@@ -2100,8 +2071,19 @@
               "ketto": "2021104756"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 8,
+              "draw": 4,
+              "name": "シュヴァリエローズ",
+              "sex": "牡",
+              "age": 7,
+              "weight": 58,
+              "jockey": "北村　友一",
+              "trainer": "清水　久詞",
+              "ketto": "2018104942"
+            },
+            {
+              "num": 9,
+              "draw": 5,
               "name": "ダノンデサイル",
               "sex": "牡",
               "age": 4,
@@ -2114,33 +2096,8 @@
               "ketto": "2021105143"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "アドマイヤテラ",
-              "sex": "牡",
-              "age": 4,
-              "weight": 58,
-              "jockey": "川田　将雅",
-              "trainer": "友道　康夫",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2021105369"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "レガレイラ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 56,
-              "jockey": "Ｃ．ルメール",
-              "trainer": "木村　哲也",
-              "ketto": "2021105898"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 5,
               "name": "コスモキュランダ",
               "sex": "牡",
               "age": 4,
@@ -2153,43 +2110,86 @@
               "ketto": "2021106787"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "シンエンペラー",
+              "num": 11,
+              "draw": 6,
+              "name": "ミステリーウェイ",
+              "sex": "セ",
+              "age": 7,
+              "weight": 58,
+              "jockey": "松本　大輝",
+              "trainer": "小林　真也",
+              "pace_type": [
+                "A",
+                "B"
+              ],
+              "ketto": "2018104638"
+            },
+            {
+              "num": 12,
+              "draw": 6,
+              "name": "マイネルエンペラー",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "丹内　祐次",
+              "trainer": "清水　久詞",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2020105786"
+            },
+            {
+              "num": 13,
+              "draw": 7,
+              "name": "アドマイヤテラ",
               "sex": "牡",
               "age": 4,
               "weight": 58,
-              "jockey": "坂井　瑠星",
-              "trainer": "矢作　芳人",
+              "jockey": "川田　将雅",
+              "trainer": "友道　康夫",
               "pace_type": [
                 "C"
               ],
-              "ketto": "2021110048"
+              "ketto": "2021105369"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "エキサイトバイオ",
+              "num": 14,
+              "draw": 7,
+              "name": "アラタ",
               "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "荻野　極",
-              "trainer": "今野　貞一",
+              "age": 8,
+              "weight": 58,
+              "jockey": "大野　拓弥",
+              "trainer": "和田　勇介",
               "pace_type": [
                 "C"
               ],
-              "ketto": "2022104614"
+              "ketto": "2017104756"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ミュージアムマイル",
+              "num": 15,
+              "draw": 8,
+              "name": "エルトンバローズ",
               "sex": "牡",
-              "age": 3,
-              "weight": 56,
-              "jockey": "Ｃ．デムーロ",
-              "trainer": "高柳　大輔",
-              "ketto": "2022105081"
+              "age": 5,
+              "weight": 58,
+              "jockey": "西村　淳也",
+              "trainer": "杉山　晴紀",
+              "pace_type": [
+                "B"
+              ],
+              "ketto": "2020100680"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "タスティエーラ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "松山　弘平",
+              "trainer": "堀　宣行",
+              "ketto": "2020103532"
             }
           ]
         },
