@@ -10,7 +10,12 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "inner",
+            "ratio": 0.7777777777777778,
+            "n_total": 9
+          }
         }
       },
       "races": [
@@ -2801,7 +2806,12 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "inner",
+            "ratio": 0.7777777777777778,
+            "n_total": 9
+          }
         }
       },
       "races": [
