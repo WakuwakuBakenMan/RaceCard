@@ -182,7 +182,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1200,
           "ground": "ダ",
-          "pace_score": 3,
+          "pace_score": 5,
           "start_time": "10:25",
           "horses": [
             {
@@ -250,7 +250,7 @@
               "jockey": "吉村　誠之助",
               "trainer": "高柳　大輔",
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2023102459"
             },
@@ -339,6 +339,7 @@
               "jockey": "横山　武史",
               "trainer": "森　秀行",
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2023107517"
@@ -371,15 +372,14 @@
               ],
               "ketto": "2023110026"
             }
-          ],
-          "pace_mark": "★"
+          ]
         },
         {
           "no": 3,
           "name": "3歳以上未勝利",
           "distance_m": 1900,
           "ground": "ダ",
-          "pace_score": -3,
+          "pace_score": -2.5,
           "pace_mark": "★",
           "start_time": "10:55",
           "horses": [
@@ -866,7 +866,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1400,
           "ground": "ダ",
-          "pace_score": 8,
+          "pace_score": 9,
           "start_time": "12:45",
           "horses": [
             {
@@ -904,7 +904,7 @@
               "jockey": "斎藤　新",
               "trainer": "浜田　多実雄",
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023103218"
             },
@@ -1089,7 +1089,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": -1.5,
+          "pace_score": -1,
           "pace_mark": "★",
           "start_time": "13:15",
           "horses": [
@@ -1138,10 +1138,7 @@
               "weight": 58,
               "jockey": "城戸　義政",
               "trainer": "荒川　義之",
-              "ketto": "2021106078",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2021106078"
             },
             {
               "num": 0,
@@ -1189,7 +1186,7 @@
               "jockey": "武　豊",
               "trainer": "松永　幹夫",
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2022105439"
             },
@@ -1211,7 +1208,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1400,
           "ground": "ダ",
-          "pace_score": 2.5,
+          "pace_score": 1,
           "pace_mark": "★",
           "start_time": "13:45",
           "horses": [
@@ -1317,7 +1314,7 @@
               "jockey": "吉村　誠之助",
               "trainer": "清水　久詞",
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2022100997"
             },
@@ -1367,7 +1364,7 @@
           "name": "衣笠特別",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": 0,
+          "pace_score": 3,
           "pace_mark": "★",
           "start_time": "14:15",
           "horses": [
@@ -1406,6 +1403,7 @@
               "jockey": "鮫島　良太",
               "trainer": "河嶋　宏樹",
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2020100771"
@@ -1632,7 +1630,7 @@
           "name": "シルクロードステークス",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 10,
+          "pace_score": 9.5,
           "start_time": "15:30",
           "horses": [
             {
@@ -1761,10 +1759,7 @@
               "weight": 55,
               "jockey": "菱田　裕二",
               "trainer": "長谷川　浩大",
-              "ketto": "2021102888",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2021102888"
             },
             {
               "num": 11,
@@ -2002,7 +1997,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1700,
           "ground": "ダ",
-          "pace_score": 2.5,
+          "pace_score": 3,
           "pace_mark": "★",
           "start_time": "09:45",
           "horses": [
@@ -2647,7 +2642,7 @@
           "name": "3歳以上障害未勝利",
           "distance_m": 2860,
           "ground": "障",
-          "pace_score": -0.5,
+          "pace_score": 0,
           "pace_mark": "★",
           "start_time": "11:15",
           "horses": [
@@ -3016,7 +3011,8 @@
           "name": "3歳以上未勝利",
           "distance_m": 2000,
           "ground": "芝",
-          "pace_score": 4.5,
+          "pace_score": 3.5,
+          "pace_mark": "★",
           "start_time": "12:35",
           "horses": [
             {
@@ -3078,10 +3074,7 @@
               "weight": 57,
               "jockey": "角田　大和",
               "trainer": "角田　晃一",
-              "ketto": "2023103875",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2023103875"
             },
             {
               "num": 0,
@@ -3143,7 +3136,6 @@
               "jockey": "水沼　元輝",
               "trainer": "天間　昭一",
               "pace_type": [
-                "A",
                 "B"
               ],
               "ketto": "2023105779"
@@ -3643,7 +3635,7 @@
           "name": "足立山特別",
           "distance_m": 2600,
           "ground": "芝",
-          "pace_score": 2,
+          "pace_score": 1.5,
           "pace_mark": "★",
           "start_time": "14:05",
           "horses": [
@@ -3983,10 +3975,7 @@
               "weight": 58,
               "jockey": "鮫島　克駿",
               "trainer": "小栗　実",
-              "ketto": "2022110056",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2022110056"
             }
           ]
         },
@@ -4466,7 +4455,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1400,
           "ground": "ダ",
-          "pace_score": -1,
+          "pace_score": 0,
           "pace_mark": "★",
           "start_time": "10:05",
           "horses": [
@@ -4671,7 +4660,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 2100,
           "ground": "ダ",
-          "pace_score": -2.5,
+          "pace_score": -2,
           "pace_mark": "★",
           "start_time": "10:35",
           "horses": [
@@ -5027,7 +5016,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1400,
           "ground": "ダ",
-          "pace_score": 4,
+          "pace_score": 3.5,
           "pace_mark": "★",
           "start_time": "11:35",
           "horses": [
@@ -5087,10 +5076,7 @@
               "weight": 58,
               "jockey": "田辺　裕信",
               "trainer": "小西　一男",
-              "ketto": "2021103283",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2021103283"
             },
             {
               "num": 0,
@@ -5625,7 +5611,7 @@
           "name": "3歳以上2勝クラス",
           "distance_m": 2000,
           "ground": "芝",
-          "pace_score": 0,
+          "pace_score": 0.5,
           "pace_mark": "★",
           "start_time": "13:25",
           "horses": [
@@ -5653,7 +5639,7 @@
               "jockey": "武藤　雅",
               "trainer": "戸田　博文",
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2021100104"
             },
@@ -6478,7 +6464,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1800,
           "ground": "芝",
-          "pace_score": -2.5,
+          "pace_score": -2,
           "pace_mark": "★",
           "start_time": "16:25",
           "horses": [
