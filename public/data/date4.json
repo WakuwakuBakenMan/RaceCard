@@ -5127,10 +5127,21 @@
       "nichiji": 2,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "B",
+              "ratio": 0.9,
+              "n_total": 10
+            }
+          }
         },
         "芝": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "inner",
+            "ratio": 0.7777777777777778,
+            "n_total": 9
+          }
         }
       },
       "races": [
@@ -5488,7 +5499,7 @@
               "weight": 55,
               "jockey": "松山　弘平",
               "trainer": "宮田　敬介",
-              "odds": 6.5,
+              "odds": 5.2,
               "popularity": 3,
               "ketto": "2023103427"
             },
@@ -5501,7 +5512,7 @@
               "weight": 57,
               "jockey": "戸崎　圭太",
               "trainer": "田中　博康",
-              "odds": 2,
+              "odds": 1.7,
               "popularity": 1,
               "pace_type": [
                 "C"
@@ -5543,8 +5554,8 @@
               "weight": 57,
               "jockey": "杉原　誠人",
               "trainer": "畠山　吉宏",
-              "odds": 47.3,
-              "popularity": 10,
+              "odds": 32.6,
+              "popularity": 6,
               "ketto": "2023102833"
             },
             {
@@ -5556,8 +5567,8 @@
               "weight": 57,
               "jockey": "柴田　大知",
               "trainer": "高木　登",
-              "odds": 54.3,
-              "popularity": 11,
+              "odds": 192.4,
+              "popularity": 12,
               "ketto": "2023106459"
             }
           ]
