@@ -5155,7 +5155,13 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "B",
+              "ratio": 0.75,
+              "n_total": 4
+            }
+          }
         }
       },
       "races": [

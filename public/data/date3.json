@@ -2,6 +2,157 @@
   "date": "2026-02-08",
   "meetings": [
     {
+      "track": "京都",
+      "kaiji": 2,
+      "nichiji": 4,
+      "position_bias": {
+        "ダ": {
+          "pace": {}
+        },
+        "芝": {
+          "pace": {}
+        }
+      },
+      "races": [
+        {
+          "no": 1,
+          "name": "ダ1200m",
+          "distance_m": 1200,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "09:55",
+          "horses": []
+        },
+        {
+          "no": 2,
+          "name": "ダ1800m",
+          "distance_m": 1800,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "10:25",
+          "horses": []
+        },
+        {
+          "no": 3,
+          "name": "ダ1400m",
+          "distance_m": 1400,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "10:55",
+          "horses": []
+        },
+        {
+          "no": 4,
+          "name": "ダ1800m",
+          "distance_m": 1800,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "11:25",
+          "horses": []
+        },
+        {
+          "no": 5,
+          "name": "芝1600m",
+          "distance_m": 1600,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "12:15",
+          "horses": []
+        },
+        {
+          "no": 6,
+          "name": "芝2400m",
+          "distance_m": 2400,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "12:45",
+          "horses": []
+        },
+        {
+          "no": 7,
+          "name": "ダ1800m",
+          "distance_m": 1800,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "13:15",
+          "horses": []
+        },
+        {
+          "no": 8,
+          "name": "芝1200m",
+          "distance_m": 1200,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "13:45",
+          "horses": []
+        },
+        {
+          "no": 9,
+          "name": "石清水ステークス",
+          "distance_m": 1600,
+          "ground": "芝",
+          "pace_score": -3,
+          "pace_mark": "★",
+          "condition": "良",
+          "start_time": "14:15",
+          "horses": [
+            {
+              "num": 0,
+              "draw": 0,
+              "name": "カズミクラーシュ",
+              "sex": "牡",
+              "age": 5,
+              "weight": 58,
+              "jockey": "荻野　極",
+              "trainer": "吉岡　辰弥",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2021105564"
+            }
+          ]
+        },
+        {
+          "no": 10,
+          "name": "大和ステークス",
+          "distance_m": 1200,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "14:50",
+          "horses": []
+        },
+        {
+          "no": 11,
+          "name": "きさらぎ賞",
+          "distance_m": 1800,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "15:30",
+          "horses": []
+        },
+        {
+          "no": 12,
+          "name": "ダ1200m",
+          "distance_m": 1200,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "16:10",
+          "horses": []
+        }
+      ]
+    },
+    {
       "track": "小倉",
       "kaiji": 1,
       "nichiji": 6,
@@ -2595,6 +2746,153 @@
               "ketto": "2019103672"
             }
           ]
+        }
+      ]
+    },
+    {
+      "track": "東京",
+      "kaiji": 1,
+      "nichiji": 4,
+      "position_bias": {
+        "ダ": {
+          "pace": {}
+        },
+        "芝": {
+          "pace": {}
+        }
+      },
+      "races": [
+        {
+          "no": 1,
+          "name": "ダ1400m",
+          "distance_m": 1400,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "10:05",
+          "horses": []
+        },
+        {
+          "no": 2,
+          "name": "ダ2100m",
+          "distance_m": 2100,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "10:35",
+          "horses": []
+        },
+        {
+          "no": 3,
+          "name": "ダ1600m",
+          "distance_m": 1600,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "11:05",
+          "horses": []
+        },
+        {
+          "no": 4,
+          "name": "ダ1600m",
+          "distance_m": 1600,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "11:35",
+          "horses": []
+        },
+        {
+          "no": 5,
+          "name": "芝1600m",
+          "distance_m": 1600,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "12:25",
+          "horses": []
+        },
+        {
+          "no": 6,
+          "name": "芝2400m",
+          "distance_m": 2400,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "12:55",
+          "horses": []
+        },
+        {
+          "no": 7,
+          "name": "芝1800m",
+          "distance_m": 1800,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "13:25",
+          "horses": []
+        },
+        {
+          "no": 8,
+          "name": "ダ1300m",
+          "distance_m": 1300,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "13:55",
+          "horses": []
+        },
+        {
+          "no": 9,
+          "name": "ゆりかもめ賞",
+          "distance_m": 2400,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "14:25",
+          "horses": []
+        },
+        {
+          "no": 10,
+          "name": "初音ステークス",
+          "distance_m": 1800,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "15:00",
+          "horses": [
+            {
+              "num": 0,
+              "draw": 0,
+              "name": "エストゥペンダ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 55,
+              "jockey": "戸崎　圭太",
+              "trainer": "高柳　瑞樹",
+              "ketto": "2022101192"
+            }
+          ]
+        },
+        {
+          "no": 11,
+          "name": "東京新聞杯",
+          "distance_m": 1600,
+          "ground": "芝",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "15:45",
+          "horses": []
+        },
+        {
+          "no": 12,
+          "name": "ダ1300m",
+          "distance_m": 1300,
+          "ground": "ダ",
+          "pace_score": -3.5,
+          "condition": "良",
+          "start_time": "16:25",
+          "horses": []
         }
       ]
     }
