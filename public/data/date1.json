@@ -258,7 +258,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": -1.5,
+          "pace_score": -0.5,
           "pace_mark": "★",
           "condition": "重",
           "start_time": "10:35",
@@ -301,7 +301,7 @@
               "odds": 170.3,
               "popularity": 12,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023100892"
             },
@@ -382,7 +382,7 @@
               "odds": 1.1,
               "popularity": 1,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023104103"
             },
@@ -477,7 +477,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1200,
           "ground": "ダ",
-          "pace_score": -1,
+          "pace_score": 0,
           "pace_mark": "★",
           "condition": "重",
           "start_time": "11:05",
@@ -565,7 +565,7 @@
               "odds": 6.5,
               "popularity": 3,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023103619"
             },
@@ -715,7 +715,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": -2.5,
+          "pace_score": -2,
           "pace_mark": "★",
           "condition": "重",
           "start_time": "11:35",
@@ -757,7 +757,10 @@
               "trainer": "古賀　慎明",
               "odds": 3.5,
               "popularity": 2,
-              "ketto": "2023104504"
+              "ketto": "2023104504",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 4,
@@ -889,7 +892,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 2000,
           "ground": "芝",
-          "pace_score": -1.5,
+          "pace_score": -1,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "12:25",
@@ -1538,7 +1541,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1600,
           "ground": "芝",
-          "pace_score": 4,
+          "pace_score": 6.5,
           "condition": "良",
           "start_time": "14:01",
           "horses": [
@@ -1570,6 +1573,7 @@
               "odds": 68.2,
               "popularity": 10,
               "pace_type": [
+                "A",
                 "B"
               ],
               "ketto": "2022101469"
@@ -1732,15 +1736,14 @@
               "popularity": 4,
               "ketto": "2022105162"
             }
-          ],
-          "pace_mark": "★"
+          ]
         },
         {
           "no": 9,
           "name": "水仙賞",
           "distance_m": 2200,
           "ground": "芝",
-          "pace_score": 0.5,
+          "pace_score": 1,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "14:31",
@@ -1836,7 +1839,10 @@
               "trainer": "菊沢　隆徳",
               "odds": 28.7,
               "popularity": 6,
-              "ketto": "2023106052"
+              "ketto": "2023106052",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 7,
@@ -2121,7 +2127,7 @@
           "name": "オーシャンステークス",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 12,
+          "pace_score": 11,
           "condition": "良",
           "start_time": "15:45",
           "horses": [
@@ -2211,7 +2217,7 @@
               "odds": 329.3,
               "popularity": 15,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2016104668"
             },
@@ -2227,7 +2233,7 @@
               "odds": 147.4,
               "popularity": 14,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2020103661"
             },
@@ -2309,10 +2315,7 @@
               "trainer": "中竹　和也",
               "odds": 423.3,
               "popularity": 16,
-              "ketto": "2019105658",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2019105658"
             },
             {
               "num": 13,
@@ -2326,7 +2329,7 @@
               "odds": 24.6,
               "popularity": 8,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2020100896"
             },
@@ -2636,7 +2639,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1700,
           "ground": "ダ",
-          "pace_score": 5,
+          "pace_score": 5.5,
           "condition": "不良",
           "start_time": "09:45",
           "horses": [
@@ -2665,7 +2668,7 @@
               "odds": 5,
               "popularity": 2,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2023102923"
             },
@@ -2782,7 +2785,7 @@
               "odds": 49.7,
               "popularity": 11,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2023102909"
             },
@@ -2814,7 +2817,7 @@
               "odds": 20.6,
               "popularity": 8,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023105830"
             },
@@ -2880,7 +2883,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 6.5,
+          "pace_score": 5,
           "condition": "稍重",
           "start_time": "10:15",
           "horses": [
@@ -3075,10 +3078,7 @@
               "trainer": "高橋　義忠",
               "odds": 4.5,
               "popularity": 3,
-              "ketto": "2023101122",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2023101122"
             },
             {
               "num": 14,
@@ -3091,10 +3091,7 @@
               "trainer": "青木　孝文",
               "odds": 30,
               "popularity": 8,
-              "ketto": "2023106687",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2023106687"
             },
             {
               "num": 15,
@@ -3107,10 +3104,7 @@
               "trainer": "鈴木　孝志",
               "odds": 5.7,
               "popularity": 4,
-              "ketto": "2023102363",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2023102363"
             },
             {
               "num": 16,
@@ -3161,7 +3155,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1000,
           "ground": "ダ",
-          "pace_score": 10,
+          "pace_score": 8.5,
           "condition": "不良",
           "start_time": "10:45",
           "horses": [
@@ -3239,7 +3233,6 @@
               "odds": 15.5,
               "popularity": 7,
               "pace_type": [
-                "A",
                 "B"
               ],
               "ketto": "2022102594"
@@ -3383,7 +3376,7 @@
           "name": "3歳以上障害未勝利",
           "distance_m": 2860,
           "ground": "障",
-          "pace_score": 1.5,
+          "pace_score": 2,
           "pace_mark": "★",
           "condition": "稍重",
           "start_time": "11:15",
@@ -3980,7 +3973,7 @@
           "name": "ダ1700m",
           "distance_m": 1700,
           "ground": "ダ",
-          "pace_score": 11,
+          "pace_score": 11.5,
           "condition": "重",
           "start_time": "13:10",
           "horses": [
@@ -4173,7 +4166,7 @@
               "odds": 40.1,
               "popularity": 9,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023101313"
             },
@@ -4201,7 +4194,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 2000,
           "ground": "芝",
-          "pace_score": 9,
+          "pace_score": 4.5,
           "condition": "稍重",
           "start_time": "13:40",
           "horses": [
@@ -4304,7 +4297,7 @@
               "odds": 9.2,
               "popularity": 5,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2022100626"
             },
@@ -4320,8 +4313,7 @@
               "odds": 80.4,
               "popularity": 12,
               "pace_type": [
-                "A",
-                "B"
+                "C"
               ],
               "ketto": "2022104130"
             },
@@ -4353,7 +4345,6 @@
               "odds": 8.1,
               "popularity": 4,
               "pace_type": [
-                "A",
                 "B"
               ],
               "ketto": "2022105817"
@@ -4401,7 +4392,10 @@
               "trainer": "四位　洋文",
               "odds": 36.6,
               "popularity": 10,
-              "ketto": "2022104963"
+              "ketto": "2022104963",
+              "pace_type": [
+                "C"
+              ]
             }
           ]
         },
@@ -4481,10 +4475,7 @@
               "trainer": "今野　貞一",
               "odds": 23,
               "popularity": 9,
-              "ketto": "2021101003",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2021101003"
             },
             {
               "num": 6,
@@ -4651,7 +4642,7 @@
           "name": "早鞆特別",
           "distance_m": 1700,
           "ground": "ダ",
-          "pace_score": 6.5,
+          "pace_score": 7,
           "condition": "重",
           "start_time": "14:45",
           "horses": [
@@ -4895,7 +4886,7 @@
           "name": "別府特別",
           "distance_m": 2000,
           "ground": "芝",
-          "pace_score": 6.5,
+          "pace_score": 4.5,
           "condition": "稍重",
           "start_time": "15:20",
           "horses": [
@@ -4971,10 +4962,7 @@
               "trainer": "河嶋　宏樹",
               "odds": 28.2,
               "popularity": 10,
-              "ketto": "2021106642",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2021106642"
             },
             {
               "num": 6,
@@ -5016,10 +5004,7 @@
               "trainer": "荒川　義之",
               "odds": 9.7,
               "popularity": 4,
-              "ketto": "2022105345",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2022105345"
             },
             {
               "num": 9,
@@ -5062,7 +5047,7 @@
               "odds": 12,
               "popularity": 5,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2021103790"
             },
@@ -5135,7 +5120,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 8,
+          "pace_score": 7.5,
           "condition": "稍重",
           "start_time": "16:01",
           "horses": [
@@ -5384,10 +5369,7 @@
               "trainer": "水野　貴広",
               "odds": 7.6,
               "popularity": 4,
-              "ketto": "2022102878",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2022102878"
             },
             {
               "num": 18,
@@ -5438,7 +5420,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1400,
           "ground": "ダ",
-          "pace_score": -0.5,
+          "pace_score": 1,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "09:55",
@@ -5600,7 +5582,7 @@
               "odds": 7.5,
               "popularity": 4,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023105729"
             },
@@ -5712,7 +5694,7 @@
               "odds": 3.5,
               "popularity": 3,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023105281"
             },
@@ -5753,10 +5735,7 @@
               "trainer": "安田　翔伍",
               "odds": 237,
               "popularity": 11,
-              "ketto": "2023105245",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2023105245"
             },
             {
               "num": 6,
@@ -5892,7 +5871,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1200,
           "ground": "ダ",
-          "pace_score": 0,
+          "pace_score": 1,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "10:55",
@@ -6025,7 +6004,7 @@
               "odds": 3.6,
               "popularity": 2,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023101115"
             },
@@ -6133,7 +6112,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": -1,
+          "pace_score": 1,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "11:25",
@@ -6259,7 +6238,10 @@
               "trainer": "高野　友和",
               "odds": 10.2,
               "popularity": 4,
-              "ketto": "2023104417"
+              "ketto": "2023104417",
+              "pace_type": [
+                "C"
+              ]
             },
             {
               "num": 10,
@@ -6334,7 +6316,7 @@
               "odds": 14.4,
               "popularity": 5,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2023103368"
             }
@@ -6345,7 +6327,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1800,
           "ground": "芝",
-          "pace_score": -1.5,
+          "pace_score": -0.5,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "12:15",
@@ -6554,7 +6536,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": 2.5,
+          "pace_score": 2,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "12:50",
@@ -6715,10 +6697,7 @@
               "trainer": "羽月　友彦",
               "odds": 118.6,
               "popularity": 10,
-              "ketto": "2022107299",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2022107299"
             },
             {
               "num": 12,
@@ -6756,7 +6735,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1400,
           "ground": "ダ",
-          "pace_score": 0,
+          "pace_score": 1,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "13:20",
@@ -7000,7 +6979,7 @@
           "name": "3歳以上未勝利",
           "distance_m": 1800,
           "ground": "ダ",
-          "pace_score": 0,
+          "pace_score": 0.5,
           "pace_mark": "★",
           "condition": "良",
           "start_time": "13:50",
@@ -7088,7 +7067,7 @@
               "odds": 5.9,
               "popularity": 3,
               "pace_type": [
-                "C"
+                "B"
               ],
               "ketto": "2022102138"
             },
@@ -7376,7 +7355,7 @@
           "name": "マーガレットステークス",
           "distance_m": 1200,
           "ground": "芝",
-          "pace_score": 8,
+          "pace_score": 8.5,
           "condition": "良",
           "start_time": "14:55",
           "horses": [
@@ -7392,7 +7371,8 @@
               "odds": 31.5,
               "popularity": 7,
               "pace_type": [
-                "C"
+                "A",
+                "B"
               ],
               "ketto": "2023101865"
             },
@@ -7533,7 +7513,7 @@
           "name": "仁川ステークス",
           "distance_m": 2000,
           "ground": "ダ",
-          "pace_score": 9.5,
+          "pace_score": 9,
           "condition": "良",
           "start_time": "15:30",
           "horses": [
@@ -7561,10 +7541,7 @@
               "trainer": "佐藤　悠太",
               "odds": 14,
               "popularity": 5,
-              "ketto": "2018102576",
-              "pace_type": [
-                "C"
-              ]
+              "ketto": "2018102576"
             },
             {
               "num": 3,
@@ -7782,7 +7759,7 @@
           "name": "3歳以上1勝クラス",
           "distance_m": 1400,
           "ground": "芝",
-          "pace_score": 5.5,
+          "pace_score": 4.5,
           "condition": "良",
           "start_time": "16:10",
           "horses": [
@@ -7959,7 +7936,7 @@
               "odds": 12.6,
               "popularity": 5,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2021110023"
             },
@@ -8049,7 +8026,7 @@
               "odds": 66.4,
               "popularity": 11,
               "pace_type": [
-                "B"
+                "C"
               ],
               "ketto": "2021105253"
             }
