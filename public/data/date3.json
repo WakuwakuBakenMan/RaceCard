@@ -21,6 +21,7 @@
           "ground": "ダ",
           "pace_score": 1,
           "pace_mark": "★",
+          "condition": "稍重",
           "start_time": "09:45",
           "horses": [
             {
@@ -45,7 +46,7 @@
               "weight": 57,
               "jockey": "高杉　吏麒",
               "trainer": "石橋　守",
-              "odds": 1.6,
+              "odds": 1.2,
               "popularity": 1,
               "pace_type": [
                 "C"
@@ -106,8 +107,8 @@
               "weight": 55,
               "jockey": "柴田　裕一郎",
               "trainer": "岡田　稲男",
-              "odds": 39.3,
-              "popularity": 10,
+              "odds": 45.3,
+              "popularity": 8,
               "pace_type": [
                 "C"
               ],
@@ -122,8 +123,8 @@
               "weight": 57,
               "jockey": "田口　貫太",
               "trainer": "中尾　秀正",
-              "odds": 35.5,
-              "popularity": 8,
+              "odds": 16.9,
+              "popularity": 5,
               "ketto": "2023102993"
             },
             {
@@ -135,8 +136,8 @@
               "weight": 57,
               "jockey": "浜中　俊",
               "trainer": "藤野　健太",
-              "odds": 10.8,
-              "popularity": 5,
+              "odds": 16.3,
+              "popularity": 4,
               "pace_type": [
                 "C"
               ],
@@ -235,8 +236,8 @@
               "weight": 57,
               "jockey": "中井　裕二",
               "trainer": "小野　次郎",
-              "odds": 35.3,
-              "popularity": 7,
+              "odds": 53.5,
+              "popularity": 9,
               "ketto": "2023100861"
             },
             {
