@@ -5241,6 +5241,7 @@
           "ground": "ダ",
           "pace_score": -1.5,
           "pace_mark": "★",
+          "condition": "良",
           "start_time": "09:45",
           "horses": [
             {
@@ -5252,8 +5253,8 @@
               "weight": 55,
               "jockey": "西塚　洸二",
               "trainer": "笹田　和秀",
-              "odds": 11.9,
-              "popularity": 5,
+              "odds": 11,
+              "popularity": 6,
               "ketto": "2023104413"
             },
             {
@@ -5265,8 +5266,8 @@
               "weight": 55,
               "jockey": "川又　賢治",
               "trainer": "杉山　佳明",
-              "odds": 17.2,
-              "popularity": 8,
+              "odds": 28.3,
+              "popularity": 9,
               "ketto": "2023105228"
             },
             {
@@ -5307,8 +5308,8 @@
               "weight": 55,
               "jockey": "岩田　望来",
               "trainer": "上村　洋行",
-              "odds": 3.7,
-              "popularity": 1,
+              "odds": 3,
+              "popularity": 2,
               "ketto": "2023103676"
             },
             {
@@ -5375,8 +5376,8 @@
               "weight": 55,
               "jockey": "幸　英明",
               "trainer": "高橋　義忠",
-              "odds": 21.1,
-              "popularity": 9,
+              "odds": 28.5,
+              "popularity": 10,
               "pace_type": [
                 "C"
               ],
@@ -5417,8 +5418,8 @@
               "weight": 55,
               "jockey": "斎藤　新",
               "trainer": "吉村　圭司",
-              "odds": 35.5,
-              "popularity": 11,
+              "odds": 10.1,
+              "popularity": 4,
               "pace_type": [
                 "C"
               ],
