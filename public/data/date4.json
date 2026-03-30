@@ -7,7 +7,12 @@
       "nichiji": 6,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "outer",
+            "ratio": 0.8,
+            "n_total": 15
+          }
         },
         "芝": {
           "pace": {}
@@ -2713,7 +2718,12 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "outer",
+            "ratio": 0.8333333333333334,
+            "n_total": 6
+          }
         }
       },
       "races": [
@@ -5251,10 +5261,22 @@
       "nichiji": 2,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "A",
+              "ratio": 0.75,
+              "n_total": 12
+            }
+          }
         },
         "芝": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "A",
+              "ratio": 0.7,
+              "n_total": 10
+            }
+          }
         }
       },
       "races": [
