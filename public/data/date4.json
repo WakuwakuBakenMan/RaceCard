@@ -4095,55 +4095,8 @@
           "start_time": "15:15",
           "horses": [
             {
-              "num": 0,
-              "draw": 0,
-              "name": "フィールシンパシー",
-              "sex": "牝",
-              "age": 7,
-              "weight": 55,
-              "jockey": "横山　琉人",
-              "trainer": "小島　茂之",
-              "ketto": "2019105768"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "アンリーロード",
-              "sex": "牝",
-              "age": 6,
-              "weight": 55,
-              "jockey": "富田　暁",
-              "trainer": "茶木　太樹",
-              "ketto": "2020103304"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "ミッキーゴージャス",
-              "sex": "牝",
-              "age": 6,
-              "weight": 55,
-              "jockey": "横山　典弘",
-              "trainer": "安田　翔伍",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2020103640"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "カニキュル",
-              "sex": "牝",
-              "age": 5,
-              "weight": 55,
-              "jockey": "杉原　誠人",
-              "trainer": "菊沢　隆徳",
-              "ketto": "2021104865"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 1,
+              "draw": 1,
               "name": "エラトー",
               "sex": "牝",
               "age": 5,
@@ -4156,8 +4109,66 @@
               "ketto": "2021105442"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 2,
+              "draw": 1,
+              "name": "フィールシンパシー",
+              "sex": "牝",
+              "age": 7,
+              "weight": 55,
+              "jockey": "横山　琉人",
+              "trainer": "小島　茂之",
+              "ketto": "2019105768"
+            },
+            {
+              "num": 3,
+              "draw": 2,
+              "name": "パラディレーヌ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 55,
+              "jockey": "丹内　祐次",
+              "trainer": "千田　輝彦",
+              "ketto": "2022103546"
+            },
+            {
+              "num": 4,
+              "draw": 2,
+              "name": "アンリーロード",
+              "sex": "牝",
+              "age": 6,
+              "weight": 55,
+              "jockey": "富田　暁",
+              "trainer": "茶木　太樹",
+              "ketto": "2020103304"
+            },
+            {
+              "num": 5,
+              "draw": 3,
+              "name": "パレハ",
+              "sex": "牝",
+              "age": 5,
+              "weight": 55,
+              "jockey": "田山　旺佑",
+              "trainer": "新谷　功一",
+              "ketto": "2021106752"
+            },
+            {
+              "num": 6,
+              "draw": 3,
+              "name": "ミッキーゴージャス",
+              "sex": "牝",
+              "age": 6,
+              "weight": 55,
+              "jockey": "横山　典弘",
+              "trainer": "安田　翔伍",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2020103640"
+            },
+            {
+              "num": 7,
+              "draw": 4,
               "name": "レディマリオン",
               "sex": "牝",
               "age": 5,
@@ -4170,30 +4181,22 @@
               "ketto": "2021105752"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "パレハ",
+              "num": 8,
+              "draw": 4,
+              "name": "ブラウンラチェット",
               "sex": "牝",
-              "age": 5,
+              "age": 4,
               "weight": 55,
-              "jockey": "田山　旺佑",
-              "trainer": "新谷　功一",
-              "ketto": "2021106752"
+              "jockey": "武藤　雅",
+              "trainer": "手塚　貴久",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022104994"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "コガネノソラ",
-              "sex": "牝",
-              "age": 5,
-              "weight": 55,
-              "jockey": "菊沢　一樹",
-              "trainer": "菊沢　隆徳",
-              "ketto": "2021106823"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 9,
+              "draw": 5,
               "name": "コンドゥイア",
               "sex": "牝",
               "age": 4,
@@ -4207,30 +4210,8 @@
               "ketto": "2022100201"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ケリフレッドアスク",
-              "sex": "牝",
-              "age": 4,
-              "weight": 57,
-              "jockey": "西塚　洸二",
-              "trainer": "藤原　英昭",
-              "ketto": "2022102296"
-            },
-            {
-              "num": 0,
-              "draw": 0,
-              "name": "パラディレーヌ",
-              "sex": "牝",
-              "age": 4,
-              "weight": 55,
-              "jockey": "丹内　祐次",
-              "trainer": "千田　輝彦",
-              "ketto": "2022103546"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 10,
+              "draw": 5,
               "name": "カネラフィーナ",
               "sex": "牝",
               "age": 4,
@@ -4243,36 +4224,19 @@
               "ketto": "2022104839"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "テレサ",
+              "num": 11,
+              "draw": 6,
+              "name": "ケリフレッドアスク",
               "sex": "牝",
               "age": 4,
-              "weight": 55,
-              "jockey": "松若　風馬",
-              "trainer": "杉山　晴紀",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022104885"
+              "weight": 57,
+              "jockey": "西塚　洸二",
+              "trainer": "藤原　英昭",
+              "ketto": "2022102296"
             },
             {
-              "num": 0,
-              "draw": 0,
-              "name": "ブラウンラチェット",
-              "sex": "牝",
-              "age": 4,
-              "weight": 55,
-              "jockey": "武藤　雅",
-              "trainer": "手塚　貴久",
-              "pace_type": [
-                "C"
-              ],
-              "ketto": "2022104994"
-            },
-            {
-              "num": 0,
-              "draw": 0,
+              "num": 12,
+              "draw": 6,
               "name": "レーゼドラマ",
               "sex": "牝",
               "age": 4,
@@ -4286,8 +4250,19 @@
               "ketto": "2022105346"
             },
             {
-              "num": 0,
-              "draw": 0,
+              "num": 13,
+              "draw": 7,
+              "name": "コガネノソラ",
+              "sex": "牝",
+              "age": 5,
+              "weight": 55,
+              "jockey": "菊沢　一樹",
+              "trainer": "菊沢　隆徳",
+              "ketto": "2021106823"
+            },
+            {
+              "num": 14,
+              "draw": 7,
               "name": "ジョイフルニュース",
               "sex": "牝",
               "age": 4,
@@ -4295,6 +4270,31 @@
               "jockey": "大野　拓弥",
               "trainer": "大竹　正博",
               "ketto": "2022105369"
+            },
+            {
+              "num": 15,
+              "draw": 8,
+              "name": "テレサ",
+              "sex": "牝",
+              "age": 4,
+              "weight": 55,
+              "jockey": "松若　風馬",
+              "trainer": "杉山　晴紀",
+              "pace_type": [
+                "C"
+              ],
+              "ketto": "2022104885"
+            },
+            {
+              "num": 16,
+              "draw": 8,
+              "name": "カニキュル",
+              "sex": "牝",
+              "age": 5,
+              "weight": 55,
+              "jockey": "杉原　誠人",
+              "trainer": "菊沢　隆徳",
+              "ketto": "2021104865"
             }
           ]
         },
