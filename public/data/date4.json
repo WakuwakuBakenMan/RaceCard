@@ -7,10 +7,26 @@
       "nichiji": 12,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "win_place": {
+              "target": "A",
+              "ratio": 0.8,
+              "n_total": 15
+            },
+            "quinella": {
+              "target": "A",
+              "ratio": 0.7,
+              "n_total": 10
+            }
+          }
         },
         "芝": {
-          "pace": {}
+          "pace": {},
+          "draw": {
+            "target": "inner",
+            "ratio": 0.7777777777777778,
+            "n_total": 9
+          }
         }
       },
       "races": [
