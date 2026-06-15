@@ -2250,8 +2250,8 @@
               "weight": 58,
               "jockey": "鮫島　克駿",
               "trainer": "井上　智史",
-              "odds": 11.5,
-              "popularity": 7,
+              "odds": 7.4,
+              "popularity": 6,
               "pace_type": [
                 "A",
                 "B"
@@ -2293,8 +2293,8 @@
               "weight": 58,
               "jockey": "浜中　俊",
               "trainer": "武　幸四郎",
-              "odds": 5.3,
-              "popularity": 1,
+              "odds": 6.5,
+              "popularity": 4,
               "ketto": "2022100637"
             },
             {
@@ -2351,8 +2351,8 @@
               "weight": 56,
               "jockey": "吉田　隼人",
               "trainer": "渡辺　薫彦",
-              "odds": 23.1,
-              "popularity": 10,
+              "odds": 29.8,
+              "popularity": 9,
               "ketto": "2022105973"
             },
             {
@@ -4965,10 +4965,22 @@
       "nichiji": 3,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "A",
+              "ratio": 0.75,
+              "n_total": 12
+            }
+          }
         },
         "芝": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "B",
+              "ratio": 0.7272727272727273,
+              "n_total": 11
+            }
+          }
         }
       },
       "races": [
