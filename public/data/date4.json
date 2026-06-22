@@ -7,7 +7,13 @@
       "nichiji": 4,
       "position_bias": {
         "芝": {
-          "pace": {}
+          "pace": {
+            "quinella": {
+              "target": "A",
+              "ratio": 0.8571428571428571,
+              "n_total": 14
+            }
+          }
         },
         "ダ": {
           "pace": {}
@@ -2321,7 +2327,13 @@
       "nichiji": 6,
       "position_bias": {
         "ダ": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "B",
+              "ratio": 0.8333333333333334,
+              "n_total": 6
+            }
+          }
         },
         "芝": {
           "pace": {}
@@ -5023,7 +5035,13 @@
           "pace": {}
         },
         "芝": {
-          "pace": {}
+          "pace": {
+            "longshot": {
+              "target": "B",
+              "ratio": 0.7142857142857143,
+              "n_total": 7
+            }
+          }
         }
       },
       "races": [
